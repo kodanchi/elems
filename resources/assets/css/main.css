@@ -1,0 +1,17 @@
+#cal-1, #cal-2 {
+    margin-left: 12px;
+    margin-top: 10px;
+}
+.icon-button {
+    width: 30px;
+}
+input {
+    width: 243px;
+    margin-bottom: 8px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}

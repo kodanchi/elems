@@ -12,5 +12,16 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.sass('app.scss');
+
+    mix.scripts([
+        'jquery-3.1.0.min.js',
+        'hijri-date.js',
+        'calendar.js',
+
+        'main.js'
+    ]);
+    mix.styles([
+        'main.css',
+        'calendar.css'
+    ]);
 });
