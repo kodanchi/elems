@@ -15,6 +15,7 @@ elixir(function(mix) {
 
     mix.scripts([
         'jquery-3.1.0.min.js',
+        'bootstrap.min.js',
         'hijri-date.js',
         'calendar.js',
 
@@ -22,6 +23,7 @@ elixir(function(mix) {
     ]);
     mix.styles([
         'main.css',
-        'calendar.css'
+        'calendar.css',
+        'bootstrap.min.css'
     ]);
 });

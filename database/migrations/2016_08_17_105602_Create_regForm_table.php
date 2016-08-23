@@ -12,7 +12,7 @@ class CreateRegFormTable extends Migration
      */
     public function up()
     {
-        Schema::create('regForms',function(Blueprint $table){
+        Schema::create('reg_forms',function(Blueprint $table){
             $table->increments('id');
             $table->integer('NID',false,true);
             $table->string('fname',30);
@@ -61,6 +61,6 @@ class CreateRegFormTable extends Migration
      */
     public function down()
     {
-        Schema::drop('regForms');
+        Schema::drop('reg_forms');
     }
 }

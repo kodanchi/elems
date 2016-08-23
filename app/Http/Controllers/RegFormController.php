@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\RegFormRequest;
 
-use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
 
 class RegFormController extends Controller
 {
@@ -24,9 +25,15 @@ class RegFormController extends Controller
         return view('forms.create',compact('nationality'));
     }
 
-    public function add(Request $request)
+    public function add(RegFormRequest $request)
     {
 
-        Auth::user()->form($request->all());
+        //dd((int) preg_replace("/\D/", "", Input::get("nid")));
+        $request->nid = (int) preg_replace("/\D/", "", Input::get("nid"));
+        //dd($request->all());
+        Auth::user()->form()->create($request->all());
+
+        //$form->save($request->all());
+        //dd($form);
     }
 }

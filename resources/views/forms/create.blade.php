@@ -5,20 +5,32 @@
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
+
+
+                @if(count($errors) > 0)
+                    <ul class="list-group">
+                        @foreach($errors->all() as $error)
+                            <li class="list-group-item list-group-item-danger">{{$error}}</li>
+                        @endforeach
+
+                    </ul>
+                @endif
+
+
                 <div class="panel panel-default">
                     <div class="panel-heading">التسجيل في مراقبة اختبارات التعليم عن بعد</div>
 
                     <div class="panel-body">
 
-                        {!! Form::open(['url' => 'form', 'method' => 'post', 'files' => true]) !!}
+                        {!! Form::open(['url' => 'form/add', 'method' => 'post', 'files' => true]) !!}
                         <h4>General Details</h4>
                         <hr>
                             <div class="row">
                                 <div class="col col-md-6">
                                     <!--- NID Field --->
                                     <div class="form-group">
-                                        {!! Form::label('nid', 'National/Eqama ID:') !!}
-                                        {!! Form::number('nid', null, ['class' => 'form-control']) !!}
+                                        {!! Form::label('NID', 'National/Eqama ID:') !!}
+                                        {!! Form::number('NID', null, ['class' => 'form-control']) !!}
                                     </div>
                                 </div>
                             </div>
@@ -26,28 +38,28 @@
                                 <div class="col col-md-3">
                                     <!--- first name Field --->
                                     <div class="form-group">
-                                        {!! Form::label('fname', 'first name:') !!}
+                                        {!! Form::label('fname', 'First name:') !!}
                                         {!! Form::text('fname', null, ['class' => 'form-control']) !!}
                                     </div>
                                 </div>
                                 <div class="col col-md-3">
                                     <!--- father name Field --->
                                     <div class="form-group">
-                                        {!! Form::label('faname', 'father name:') !!}
+                                        {!! Form::label('faname', 'Father name:') !!}
                                         {!! Form::text('faname', null, ['class' => 'form-control']) !!}
                                     </div>
                                 </div>
                                 <div class="col col-md-3">
                                     <!--- grand father name Field --->
                                     <div class="form-group">
-                                        {!! Form::label('gfaname', 'grand father name:') !!}
+                                        {!! Form::label('gfaname', 'Grand father name:') !!}
                                         {!! Form::text('gfaname', null, ['class' => 'form-control']) !!}
                                     </div>
                                 </div>
                                 <div class="col col-md-3">
                                     <!--- last name Field --->
                                     <div class="form-group">
-                                        {!! Form::label('lname', 'last name:') !!}
+                                        {!! Form::label('lname', 'Last name:') !!}
                                         {!! Form::text('lname', null, ['class' => 'form-control']) !!}
                                     </div>
                                 </div>
@@ -182,7 +194,7 @@
                                     <!--- IBAN Field --->
                                     <div class="form-group">
                                         {!! Form::label('IBAN', 'IBAN:') !!}
-                                        {!! Form::text('IBAN', null, ['class' => 'form-control']) !!}
+                                        {!! Form::text('IBAN', null, ['class' => 'form-control', 'data-form'=>'SAdddd dddd dddd dddd dddd ddddd']) !!}
                                     </div>
                                 </div>
                             </div>
@@ -196,15 +208,21 @@
 
                                 </div>
                                 <div class="col col-md-6">
-                                    <!--- Account holder name Field --->
-                                    <div class="form-group">
-                                        {!! Form::label('account_holder_name', 'Account holder name:') !!}
-                                        {!! Form::text('account_holder_name', null, ['class' => 'form-control']) !!}
+                                    <div class="row">
+                                        <!--- Account holder name Field --->
+                                        <div class="form-group">
+                                            {!! Form::label('account_holder_name', 'Account holder name:') !!}
+                                            {!! Form::text('account_holder_name', null, ['class' => 'form-control']) !!}
+                                        </div>
                                     </div>
-                                    <label>
-                                    	{!! Form::checkbox('sameName', '1', null,  ['id' => 'sameName']) !!}
-                                    	Himself?
-                                    </label>
+                                    <div class="row">
+                                        <div class="col col-md-8">
+                                            <label>{!! Form::checkbox('sameName', '1', null,  ['id' => 'sameName']) !!}Himself?</label>
+                                        </div>
+
+                                    </div>
+
+
                                 </div>
                             </div>
 
@@ -236,7 +254,9 @@
                         <h4>Job Identification</h4>
                         <div class="row">
                             <div class="col col-md-12">
-                                {!! Form::file('job_identity_file', ['class' => 'form-control']) !!}
+                                <div class="form-group">
+                                    {!! Form::file('job_identity_file', ['class' => 'form-control']) !!}
+                                </div>
                             </div>
                         </div>
                         <div class="row">

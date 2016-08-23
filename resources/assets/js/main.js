@@ -8,42 +8,14 @@ var //cal1 = new Calendar(),
 
 $(document).ready(function () {
 
-    //var date1 = document.getElementById('date-1');
-        //date2 = document.getElementById('date-2');
     var date = document.getElementById('date');
     var birthDate = document.getElementById('birth_date');
 
-    //document.getElementById('cal-1').appendChild(cal1.getElement());
     document.getElementById('cal').appendChild(cal.getElement());
-    //cal1.show();
-    //cal.show();
-    setDateFields();
 
-    /*cal1.callback = function() {
-        if (cal1Mode !== cal1.isHijriMode()) {
-            cal.disableCallback(true);
-            cal.changeDateMode();
-            cal.disableCallback(false);
-            cal1Mode = cal1.isHijriMode();
-            calMode = cal.isHijriMode();
-        }
-        else
-            cal.setTime(cal1.getTime());
-        setDateFields();
-    };*/
+    //setDateFields();
 
-    /*cal.callback = function() {
-        if (calMode !== cal.isHijriMode()) {
-            cal1.disableCallback(true);
-            cal1.changeDateMode();
-            cal1.disableCallback(false);
-            cal1Mode = cal1.isHijriMode();
-            calMode = cal.isHijriMode();
-        }
-        else
-            cal1.setTime(cal.getTime());
-        setDateFields();
-    };*/
+
 
     cal.callback = function() {
         if (calMode !== cal.isHijriMode()) {
@@ -98,7 +70,7 @@ function lengthValidation(len, inputS) {
     var input = inputS;
     //console.log('1value: '+input.value);
     if(typeof input.value !== 'undefined'){
-        console.log('2value: '+input.value);
+        //console.log('2value: '+input.value);
 
         if(input.value.length < len )
             return true;
