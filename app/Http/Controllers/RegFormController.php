@@ -27,5 +27,6 @@ class RegFormController extends Controller
     public function add(Request $request)
     {
 
+        Auth::user()->form($request->all());
     }
 }

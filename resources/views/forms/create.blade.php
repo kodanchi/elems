@@ -1,8 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <script type="text/javascript" src="/js/all.js"></script>
-    <link rel="stylesheet" type="text/css" href="/css/all.css">
+
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
@@ -234,6 +233,12 @@
                                     </div>
                                 </div>
                             </div>
+                        <h4>Job Identification</h4>
+                        <div class="row">
+                            <div class="col col-md-12">
+                                {!! Form::file('job_identity_file', ['class' => 'form-control']) !!}
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col col-md-3">
                                 {!! Form::submit('Submit', ['class' => 'form-control btn btn-primary']) !!}

@@ -32,5 +32,14 @@ class RegForm extends Model
         'emergency_name',
         'emer_relation',
         'emer_cellphone',
+        'center_name',
+        'user_id',
+        'job_identity_file'
+
     ];
+
+    public function user()
+    {
+        return $this->hasOne('App/User');
+    }
 }

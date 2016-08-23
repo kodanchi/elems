@@ -20,3 +20,4 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 Route::get('/form', 'RegFormController@index');
 Route::get('/form/new', 'RegFormController@create');
+Route::post('/form/add', 'RegFormController@add');
