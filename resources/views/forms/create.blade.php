@@ -22,7 +22,7 @@
 
                     <div class="panel-body">
 
-                        {!! Form::open(['url' => 'form/add', 'method' => 'post', 'files' => true]) !!}
+                        {!! Form::open(['url' => 'form/add', 'method' => 'post', 'files' => true,'id'=>'newRegForm']) !!}
                         <h4>General Details</h4>
                         <hr>
                             <div class="row">
@@ -75,9 +75,7 @@
                                         {!! Form::text('date', null, ['class' => 'form-control','onclick'=>'showCal();']) !!}
                                         {!! Form::hidden('birth_date', '',['id'=>'birth_date']) !!}
                                     </div>
-                                        <div id="cal">
-
-                                        </div>
+                                        <div id="cal"></div>
                                 </div>
                                 <div class="col col-md-6">
                                     <!--- Nationality Field --->
@@ -85,10 +83,17 @@
                                         {!! Form::label('nationality', 'Nationality:') !!}
                                         {!! Form::select('nationality', $nationality, null, ['class' => 'form-control']) !!}
                                     </div>
+                                    <div id="div_other_nationality" class="form-group">
+                                        <!--- other_nationality Field --->
+                                        <div class="form-group">
+                                            {!! Form::label('other_nationality', 'Specify:') !!}
+                                            {!! Form::text('other_nationality', null, ['class' => 'form-control']) !!}
+                                        </div>
+                                    </div>
                                     <!--- Cellphone Field --->
                                     <div class="form-group">
                                         {!! Form::label('cellphone', 'Cellphone:') !!}
-                                        {!! Form::text('cellphone', null, ['class' => 'form-control']) !!}
+                                        {!! Form::text('cellphone', null, ['class' => 'cellphone form-control']) !!}
                                     </div>
                                 </div>
                             </div>
@@ -104,7 +109,7 @@
                                     <!--- Phone Field --->
                                     <div class="form-group">
                                         {!! Form::label('phone', 'Phone:') !!}
-                                        {!! Form::text('phone', null, ['class' => 'form-control']) !!}
+                                        {!! Form::text('phone', null, ['class' => 'phone form-control']) !!}
                                     </div>
                                 </div>
                             </div>
@@ -148,7 +153,7 @@
                                         {!! Form::text('employee_ID', null, ['class' => 'form-control','placeholder'=>'in case of contract job leave it empty']) !!}
                                     </div>
                                     <label>
-                                    	{!! Form::checkbox('contract', '1', null,  ['id' => 'contract']) !!}
+                                    	{!! Form::checkbox('is_contract', '1', null,  ['id' => 'is_contract']) !!}
                                     	Contract job?
                                     </label>
                                 </div>
@@ -156,7 +161,14 @@
                                     <!--- Job Title Field --->
                                     <div class="form-group">
                                         {!! Form::label('job_title', 'Job Title:') !!}
-                                        {!! Form::text('job_title', null, ['class' => 'form-control']) !!}
+                                        {!! Form::select('job_title', $jobTitles ,null, ['class' => 'form-control']) !!}
+                                    </div>
+                                    <div id="div_other_job_title" class="form-group">
+                                        <!--- other_job_title Field --->
+                                        <div class="form-group">
+                                            {!! Form::label('other_job_title', 'Specify:') !!}
+                                            {!! Form::text('other_job_title', null, ['class' => 'form-control']) !!}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -172,7 +184,7 @@
                                     <!--- Supervisor Phone Field --->
                                     <div class="form-group">
                                         {!! Form::label('su_phone', 'Supervisor Phone:') !!}
-                                        {!! Form::text('su_phone', null, ['class' => 'form-control']) !!}
+                                        {!! Form::text('su_phone', null, ['class' => 'phone form-control']) !!}
                                     </div>
                                 </div>
 
@@ -182,7 +194,7 @@
                                     <!--- Supervisor Cellphone Field --->
                                     <div class="form-group">
                                         {!! Form::label('su_cellphone', 'Supervisor Cellphone:') !!}
-                                        {!! Form::text('su_cellphone', null, ['class' => 'form-control']) !!}
+                                        {!! Form::text('su_cellphone', null, ['class' => 'cellphone form-control']) !!}
                                     </div>
                                 </div>
                             </div>
@@ -194,7 +206,7 @@
                                     <!--- IBAN Field --->
                                     <div class="form-group">
                                         {!! Form::label('IBAN', 'IBAN:') !!}
-                                        {!! Form::text('IBAN', null, ['class' => 'form-control', 'data-form'=>'SAdddd dddd dddd dddd dddd ddddd']) !!}
+                                        {!! Form::text('IBAN', null, ['class' => 'form-control']) !!}
                                     </div>
                                 </div>
                             </div>
@@ -240,14 +252,23 @@
                                     <!--- Relation Field --->
                                     <div class="form-group">
                                         {!! Form::label('emer_relation', 'Relation:') !!}
-                                        {!! Form::select('emer_relation', [] , null , ['class' => 'form-control']) !!}
+                                        {!! Form::select('emer_relation', $relation , null , ['class' => 'form-control']) !!}
+                                    </div>
+
+                                    <div id="div_other_emer_relation" class="form-group">
+                                        <!--- other_emer_relation Field --->
+                                        <div class="form-group">
+                                            {!! Form::label('other_emer_relation', 'Specify:') !!}
+                                            {!! Form::text('other_emer_relation', null, ['class' => 'form-control']) !!}
+                                        </div>
                                     </div>
                                 </div>
+
                                 <div class="col col-md-6">
                                     <!--- Person Cellphone Field --->
                                     <div class="form-group">
                                         {!! Form::label('emer_cellphone', 'Person Cellphone:') !!}
-                                        {!! Form::text('emer_cellphone', null, ['class' => 'form-control']) !!}
+                                        {!! Form::text('emer_cellphone', null, ['class' => 'cellphone form-control']) !!}
                                     </div>
                                 </div>
                             </div>
@@ -276,9 +297,137 @@
     </div>
     <script type="text/javascript">
 
+        $('input[type=checkbox][name=sameName]').change(nameCheck);
+
+        $('input[type=checkbox][name=is_contract]').change(contractCheck);
+
+        $('#nationality').change(function () {
+            nationalityOther();
+            $('#other_nationality').focus();
+
+        });
+        $('#job_title').change(function () {
+            jobTitleOther();
+            $('#other_job_title').focus();
+        });
+        $('#emer_relation').change(function () {
+            EmerRelationOther();
+            $('#other_emer_relation').focus();
+        });
+
+        function nameCheck() {
+            if($('#sameName').is(':checked')){
+                var name = $('#fname').val() +" "+ $('#faname').val() +" "+ $('#gfaname').val() +
+                        " "+ $('#lname').val();
+                $('#account_holder_name').val(name);
+                //$('#account_holder_name').prop('disabled',true);
+            }else {
+                //$('#account_holder_name').prop('disabled',false);
+            }
+        }
+
+        function contractCheck() {
+            if($('#is_contract').is(':checked')){
+                $('#employee_ID').val('');
+                $('#employee_ID').prop('disabled',true);
+            }else {
+                $('#employee_ID').prop('disabled',false);
+            }
+        }
 
 
 
+        function nationalityOther() {
+            if($('#nationality').val() === 'other'){
+                if($('#other_nationality').val() === 'other') $('#other_nationality').val('');
+                $('#div_other_nationality').show();
+            }else {
+                $('#other_nationality').val('other');
+                $('#div_other_nationality').hide();
+            }
+        }
+
+        function jobTitleOther() {
+
+            if($('#job_title').val() === 'other'){
+                if($('#other_job_title').val() === 'other') $('#other_job_title').val('');
+                $('#div_other_job_title').show();
+            }else {
+                $('#other_job_title').val('other');
+                $('#div_other_job_title').hide();
+            }
+        }
+
+        function EmerRelationOther() {
+            if($('#emer_relation').val() === 'other'){
+                if($('#other_emer_relation').val() === 'other') $('#other_emer_relation').val('');
+                $('#div_other_emer_relation').show();
+            }else {
+                $('#other_emer_relation').val('other');
+                $('#div_other_emer_relation').hide();
+            }
+        }
+
+
+        $(document).ready(function () {
+
+            nameCheck();
+            contractCheck();
+
+
+            //$('#IBAN').mask('SA00 0000 0000 0000 0000 0000');
+            $('#IBAN').mask("SA0000000000000000000000", {
+                'translation': {
+                    0: {
+                        pattern: /[0-9*]/
+                    },
+                    'S':{
+                        pattern: /[S/]/,
+                        fallback: 'S'
+                    },
+                    'A':{
+                        pattern: /[A/]/,
+                        fallback: 'A'
+                    }
+
+                },placeholder: "SA"
+            });
+            $('.cellphone').mask("r00000000", {
+                'translation': {
+                    0: {
+                        pattern: /[0-9*]/
+                    },
+                    'r':{
+                        pattern: /[5/]/,
+                        fallback: '5'
+                    }
+
+                },placeholder: "5XXXXXXXX"
+            });
+            $('.phone').mask("r00000000", {
+                'translation': {
+                    0: {
+                        pattern: /[0-9*]/
+                    },
+                    'r':{
+                        pattern: /[1/]/,
+                        fallback: '1'
+                    }
+
+                },placeholder: "1XXXXXXXX"
+            });
+            nationalityOther();
+            jobTitleOther();
+            EmerRelationOther();
+
+            //$('#newRegForm').keypress(preventEnterSubmit(e));
+            $(window).keydown(function(event){
+                if(event.keyCode == 13) {
+                    event.preventDefault();
+                    return false;
+                }
+            });
+        });
 
         /*var uCal = $.calendars.instance('ummalqura');
         var gCal = $.calendars.instance('gregorian');

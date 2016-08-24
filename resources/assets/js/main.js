@@ -18,27 +18,30 @@ $(document).ready(function () {
 
 
     cal.callback = function() {
-        if (calMode !== cal.isHijriMode()) {
+        /*if (calMode !== cal.isHijriMode()) {
             calMode = cal.isHijriMode();
         }
-        else
+        else*/
             //cal1.setTime(cal.getTime());
         setDateFields();
+
     };
 
     function setDateFields() {
         //date1.value = cal1.getDate().getDateString();
         date.value = cal.getDate().getDateString();
-        var g = cal.getDate().getGregorianDate()+"";
+        var g = (calMode === cal.isHijriMode()? cal.getDate().getGregorianDate()+"" : cal.getDate()+"");
         birthDate.value = g.substring(0,15);
 
     }
     $('#selectCalendar').change(function() {
         if($(this).val() == 'h'){
             cal.changeDateMode();
+            calMode = cal.isHijriMode();
             cal.show();
         }else if($(this).val() == 'g'){
             cal.changeDateMode();
+            calMode = !cal.isHijriMode();
             cal.show();
         }
     });

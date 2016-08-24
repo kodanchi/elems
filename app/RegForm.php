@@ -38,8 +38,22 @@ class RegForm extends Model
 
     ];
 
+    protected $casts = [
+        'NID' => 'integer',
+        'phone' => 'integer',
+        'cellphone' => 'integer',
+        'employee_ID' => 'integer',
+        'su_phone' => 'integer',
+        'su_cellphone' => 'integer',
+        'emer_cellphone' => 'integer',
+
+
+    ];
+
     public function user()
     {
         return $this->hasOne('App/User');
     }
+
+
 }

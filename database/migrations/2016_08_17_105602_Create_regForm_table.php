@@ -29,6 +29,7 @@ class CreateRegFormTable extends Migration
             $table->string('department',255);
             $table->string('section',255);
             $table->integer('employee_ID',false,true);
+            $table->boolean('is_contract');
             $table->string('job_title',255);
             $table->string('supervisor',255);
             $table->integer('su_phone',false,true);

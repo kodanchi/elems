@@ -9,6 +9,24 @@
                     <div class="panel-heading">المتقدمين</div>
 
                     <div class="panel-body">
+                        <table class="table table-striped">
+                            <thead>
+                                <th>Name</th>
+                                <th>National/Eqama ID</th>
+                                <th>Department</th>
+                                <th>View</th>
+                            </thead>
+                            <tbody>
+                                @foreach($forms as $form)
+                                    <tr>
+                                        <td>{{$form->fname." ".$form->faname." ".$form->lname}}</td>
+                                        <td>{{$form->NID}}</td>
+                                        <td>{{$form->department}}</td>
+                                        <td><a href="{{url('form/'.$form->id)}}">view</a></td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
 
                     </div>
                 </div>
