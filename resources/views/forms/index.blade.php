@@ -9,7 +9,7 @@
                     <div class="panel-heading">المتقدمين</div>
 
                     <div class="panel-body">
-                        <table class="table table-striped">
+                        <table class="table table-stripped table-hover">
                             <thead>
                                 <th>Name</th>
                                 <th>National/Eqama ID</th>
@@ -22,7 +22,9 @@
                                         <td>{{$form->fname." ".$form->faname." ".$form->lname}}</td>
                                         <td>{{$form->NID}}</td>
                                         <td>{{$form->department}}</td>
-                                        <td><a href="{{url('form/'.$form->id)}}">view</a></td>
+                                        <td><a href="{{url('form/'.$form->id)}}">
+                                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                            </a></td>
                                     </tr>
                                 @endforeach
                             </tbody>

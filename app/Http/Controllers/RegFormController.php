@@ -6,7 +6,9 @@ use App\Http\Requests\RegFormRequest;
 
 use App\RegForm;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Storage;
 
 class RegFormController extends Controller
 {
@@ -53,9 +55,36 @@ class RegFormController extends Controller
         //dd((int) preg_replace("/\D/", "", Input::get("nid")));
         //$request->nid = (int) preg_replace("/\D/", "", Input::get("nid"));
         //dd($request->all());
+
+        $attach = $request->file('job_identity_attach');
+
+        do{
+            $fileName = str_random('20').'.'.$attach->getClientOriginalExtension();
+        }while(Storage::exists($fileName));
+
+        Storage::put($fileName,File::get($attach));
+        $request->merge(['job_identity_file' => $fileName]);
+
+
+
+        if($request->input('nationality') === 'other')
+            $request->merge(['nationality' => $request->input('other_nationality')]);
+
+
+        if($request->input('job_title') === 'other')
+            $request->merge(['job_title' => $request->input('other_job_title')]);
+
+
+        if($request->input('emer_relation') === 'other')
+            $request->merge(['emer_relation' => $request->input('other_emer_relation')]);
+
+        $request->merge(['is_contract' => $request->input('is_contract') === '1' ? 1 : 0]);
+
+
+        //dd($request->all());
         Auth::user()->form()->create($request->all());
 
-        //$form->save($request->all());
-        //dd($form);
+        return $this->index();
+
     }
 }

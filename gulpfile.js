@@ -26,4 +26,10 @@ elixir(function(mix) {
         'calendar.css',
         'bootstrap.min.css'
     ]);
+
+    //mix.copy('/fonts', 'public/assets/fonts');
+    mix.copy('node_modules/font-awesome/fonts','public/fonts');
+    mix.copy('node_modules/bootstrap-sass/assets/fonts/bootstrap','public/fonts');
+    mix.sass('app.scss', 'public/css/app.css');
+
 });

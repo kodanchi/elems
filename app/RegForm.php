@@ -22,6 +22,7 @@ class RegForm extends Model
         'department',
         'section',
         'employee_ID',
+        'is_contract',
         'job_title',
         'supervisor',
         'su_phone',
@@ -46,6 +47,8 @@ class RegForm extends Model
         'su_phone' => 'integer',
         'su_cellphone' => 'integer',
         'emer_cellphone' => 'integer',
+        'is_contract' => 'boolean',
+
 
 
     ];

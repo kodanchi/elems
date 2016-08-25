@@ -276,7 +276,7 @@
                         <div class="row">
                             <div class="col col-md-12">
                                 <div class="form-group">
-                                    {!! Form::file('job_identity_file', ['class' => 'form-control']) !!}
+                                    {!! Form::file('job_identity_attach', ['class' => 'form-control','accept'=>'.pdf']) !!}
                                 </div>
                             </div>
                         </div>
@@ -429,42 +429,44 @@
             });
         });
 
-        /*var uCal = $.calendars.instance('ummalqura');
-        var gCal = $.calendars.instance('gregorian');
-        $('#birth_date').calendarsPicker({
-            calendar: uCal,
-            minDate: uCal.newDate(1325, 1, 1),
-            maxDate: uCal.newDate(1425, 12, 29), showTrigger: '#calImg'});
+        var cal = new Calendar(true, 0, true, false),
+                calMode = cal.isHijriMode();
 
         $(document).ready(function () {
 
-        });*/
-        /*$('input[type=radio][name=calendarType]').change(function () {
-            if(this.value == 'uq'){
+            var date = document.getElementById('date');
+            var birthDate = document.getElementById('birth_date');
 
-            }else if(this.value == 'en'){
+            document.getElementById('cal').appendChild(cal.getElement());
+
+            cal.callback = function() {
+                setDateFields();
+            };
+
+            function setDateFields() {
+                date.value = cal.getDate().getDateString();
+                var g = (calMode === cal.isHijriMode()? cal.getDate().getGregorianDate()+"" : cal.getDate()+"");
+                birthDate.value = g.substring(0,15);
 
             }
-        });*/
-
-        /*$('#selectCalendar').change(function() {
-            calendar = $.calendars.instance($(this).val());
-            var convert = function(value) {
-                return (!value || typeof value != 'object' ? value :
-                        calendar.fromJD(value.toJD()));
-            };
-            $('.is-calendarsPicker').each(function() {
-                var current = $(this).calendarsPicker('option');
-                $(this).calendarsPicker('option', {calendar: calendar,
-                    onSelect: null, onChangeMonthYear: null,
-                    defaultDate: convert(current.defaultDate),
-                    minDate: convert(current.minDate),
-                    maxDate: convert(current.maxDate)}).
-                calendarsPicker('option',
-                        {onSelect: current.onSelect,
-                            onChangeMonthYear: current.onChangeMonthYear});
+            $('#selectCalendar').change(function() {
+                if($(this).val() == 'h'){
+                    cal.changeDateMode();
+                    calMode = cal.isHijriMode();
+                    cal.show();
+                }else if($(this).val() == 'g'){
+                    cal.changeDateMode();
+                    calMode = !cal.isHijriMode();
+                    cal.show();
+                }
             });
-        });*/
 
+
+
+
+            $(document).on('keypress','#nid',function () {
+                return lengthValidation(10,this);
+            });
+        });
     </script>
     @endsection

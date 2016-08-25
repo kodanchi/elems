@@ -25,7 +25,7 @@ class RegFormRequest extends Request
     {
         $email_regex = '^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@uod.edu.sa^';
         return [
-            'NID' => 'required|integer|min:1000000',
+            'NID' => 'required|unique:reg_forms|integer|min:1000000',
             'fname' => 'required|string|min:3',
             'faname' => 'required|string|min:3',
             'gfaname' => 'required|string|min:3',
@@ -53,7 +53,7 @@ class RegFormRequest extends Request
             'emer_relation' => 'required|string',
             'other_emer_relation' => 'required|string',
             'emer_cellphone' => 'required|integer|min:500000000',
-            'job_identity_file' => 'required|file',
+            'job_identity_attach' => 'required|file|max:1500',
         ];
     }
 
@@ -106,7 +106,7 @@ class RegFormRequest extends Request
             'emer_relation' => 'Emergency contact relation',
             'other_emer_relation' => 'Emergency contact relation',
             'emer_cellphone' => 'Emergency contact cellphone',
-            'job_identity_file' => 'Job Identification',
+            'job_identity_attach' => 'Job Identification',
 
 
         ];
