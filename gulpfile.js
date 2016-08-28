@@ -27,6 +27,14 @@ elixir(function(mix) {
         'bootstrap.min.css'
     ]);
 
+    mix.copy('node_modules/bootstrap-rtl/bootstrap/dist/css/bootstrap.min.css', 'resources/assets/css/bootstrap-rtl');
+    mix.copy('node_modules/bootstrap-rtl/bootstrap/dist/css/bootstrap-theme.min.css', 'resources/assets/css/bootstrap-rtl');
+
+    mix.styles([
+        'bootstrap-rtl/bootstrap.min.css',
+        'bootstrap-rtl/bootstrap-theme.min.css',
+    ],'public/css/css-ar.css');
+
     //mix.copy('/fonts', 'public/assets/fonts');
     mix.copy('node_modules/font-awesome/fonts','public/fonts');
     mix.copy('node_modules/bootstrap-sass/assets/fonts/bootstrap','public/fonts');

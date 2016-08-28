@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class HomeController extends Controller
 {
@@ -24,6 +25,13 @@ class HomeController extends Controller
      */
     public function index()
     {
+        return view('home');
+    }
+
+    public function toArabic()
+    {
+        App::setLocale('ar');
+
         return view('home');
     }
 }

@@ -11,17 +11,37 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
-Route::get('/form', 'RegFormController@index');
 
-Route::get('/form/new', 'RegFormController@create');
-Route::post('/form/add', 'RegFormController@add');
 
-Route::get('/form/{id}', 'RegFormController@view');
+
+Route::group(['prefix' => LaravelLocalization::setLocale()], function()
+{
+    /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
+    Route::get('/', function () {
+        return view('welcome');
+    });
+
+
+    Route::get('/home', 'HomeController@index');
+    Route::get('/form', 'RegFormController@index');
+
+    Route::get('/form/new', 'RegFormController@create');
+    Route::post('/form/add', 'RegFormController@add');
+
+    Route::get('/form/{id}', 'RegFormController@view');
+
+
+    //Route::get('/ar', 'HomeController@toArabic');
+
+
+    Route::get('test',function(){
+        return View::make('test');
+    });
+});
+
+
 

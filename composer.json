@@ -48,6 +48,8 @@
         "preferred-install": "dist"
     },
     "require": {
-    "laravelcollective/html": "5.2.*"
+        "laravelcollective/html": "5.2.*",
+        "mcamara/laravel-localization": "1.1.*"
+
     }
 }

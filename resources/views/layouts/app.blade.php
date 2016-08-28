@@ -1,5 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+@if(App::isLocale('ar'))
+    <html lang="ar" dir="rtl">
+@elseif(App::isLocale('en'))
+    <html lang="en">
+@endif
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +14,13 @@
 
     <script type="text/javascript" src="/js/all.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/all.css">
-    <link rel="stylesheet" type="text/css" href="/css/app.css">
+
+    @if(App::isLocale('ar'))
+        <link rel="stylesheet" type="text/css" href="/css/css-ar.css">
+    @elseif(App::isLocale('en'))
+        <link rel="stylesheet" type="text/css" href="/css/app.css">
+    @endif
+
 
     <!-- Fonts -->
 {{--
@@ -74,7 +85,15 @@
                             </ul>
                         </li>
                     @endif
+                    <li>
+                        @if(App::isLocale('ar'))
+                            <a href="{{LaravelLocalization::getLocalizedURL('en')}}">English</a>
+                        @elseif(App::isLocale('en'))
+                            <a href="{{LaravelLocalization::getLocalizedURL('ar')}}">Arabic</a>
+                        @endif
+                    </li>
                 </ul>
+
             </div>
         </div>
     </nav>
