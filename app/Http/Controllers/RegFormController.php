@@ -12,17 +12,25 @@ use Illuminate\Support\Facades\Storage;
 
 class RegFormController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+        //$this->middleware('formSubmitCheck:emr')->only('/form/emr/new');
+    }
     public function index()
     {
-        $forms = RegForm::latest()->get();
-        return view('forms.index',compact('forms'));
+        //$forms = RegForm::latest()->get();
+        $forms = Auth::user()->emrForm()->get();
+        //dd($forms);
+        return view('forms.regform.index',compact('forms'));
     }
 
     public function view($id)
     {
 
         $form = RegForm::findOrFail($id);
-        return view('forms.view',compact('form'));
+        return view('forms.regform.view',compact('form'));
     }
 
     public function create()
@@ -46,7 +54,7 @@ class RegFormController extends Controller
             'friend'=>'Friend',
             'other'=>'Other',
         ];
-        return view('forms.create',compact('nationality','jobTitles','relation'));
+        return view('forms.regform.create',compact('nationality','jobTitles','relation'));
     }
 
     public function add(RegFormRequest $request)
@@ -82,7 +90,7 @@ class RegFormController extends Controller
 
 
         //dd($request->all());
-        Auth::user()->form()->create($request->all());
+        Auth::user()->emrForm()->create($request->all());
 
         return $this->index();
 

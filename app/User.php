@@ -12,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','role',
     ];
 
     /**
@@ -24,13 +24,20 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    protected $casts = [
-        'NID' => 'integer',
-        'employee_ID' => 'integer'
-    ];
 
-    public function form()
+    public function emrForm()
     {
         return $this->hasOne('App\RegForm');
+    }
+
+    public function getRole()
+    {
+        //dd('dsds');
+        return $this->role;
+    }
+
+    public function getId()
+    {
+        return $this->id;
     }
 }

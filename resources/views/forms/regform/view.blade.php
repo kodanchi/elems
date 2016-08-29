@@ -10,11 +10,11 @@
                     <div class="panel-body">
                         <div class="row">
                             @if(App::isLocale('ar'))
-                                @include('forms.regform-view.work')
-                                @include('forms.regform-view.personal')
+                                @include('forms.regform.regform-view.work')
+                                @include('forms.regform.regform-view.personal')
                             @elseif(App::isLocale('en'))
-                                @include('forms.regform-view.personal')
-                                @include('forms.regform-view.work')
+                                @include('forms.regform.regform-view.personal')
+                                @include('forms.regform.regform-view.work')
                             @endif
 
 

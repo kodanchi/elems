@@ -22,7 +22,7 @@
 
                     <div class="panel-body">
 
-                        {!! Form::open(['url' => LaravelLocalization::getLocalizedURL(null,'form/add'), 'method' => 'post', 'files' => true,'id'=>'newRegForm']) !!}
+                        {!! Form::open(['url' => LaravelLocalization::getLocalizedURL(null,'form/emr/add'), 'method' => 'post', 'files' => true,'id'=>'newRegForm']) !!}
                         <h4>{{trans('regform.general_details')}}</h4>
                         <hr>
                             <div class="row">

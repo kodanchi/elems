@@ -58,5 +58,10 @@ class RegForm extends Model
         return $this->hasOne('App/User');
     }
 
+    public function getFormId()
+    {
+        return $this->id;
+    }
+
 
 }

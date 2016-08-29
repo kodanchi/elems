@@ -7,7 +7,7 @@
  */
 
 return [
-    'title' => 'Exam Monitoring registering form',
+    'title' => 'Exam Monitoring registering',
     'NID' => 'National/Eqamah ID',
     'fname' => 'First name',
     'faname' => 'Father name',

@@ -27,13 +27,17 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
 
     Route::get('/home', 'HomeController@index');
-    Route::get('/form', 'RegFormController@index');
 
-    Route::get('/form/new', 'RegFormController@create');
-    Route::post('/form/add', 'RegFormController@add');
+    Route::get('/form', 'FormsController@index');
+    Route::get('/form/emr', 'RegFormController@index');
+    Route::get('/form/emr/new', ['middleware'=>'formSubmitCheck:emr','uses' => 'RegFormController@create']);
+    Route::post('/form/emr/add', 'RegFormController@add');
+    Route::get('/form/emr/{id}/view', 'RegFormController@view');
 
-    Route::get('/form/{id}', 'RegFormController@view');
 
+    Route::get('/cp'  ,'CPController@index');
+    Route::get('/cp/form/emr'  ,'CPController@emrForms');
+    Route::get('/cp/form/emr/{id}/view'  ,'CPController@view');
 
     //Route::get('/ar', 'HomeController@toArabic');
 

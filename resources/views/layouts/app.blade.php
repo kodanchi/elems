@@ -58,7 +58,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Laravel
+                    E-Learning
                 </a>
             </div>
 
