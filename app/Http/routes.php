@@ -30,12 +30,16 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::get('/form', 'FormsController@index');
     Route::get('/form/emr', 'RegFormController@index');
-    Route::get('/form/emr/new', ['middleware'=>'formSubmitCheck:emr','uses' => 'RegFormController@create']);
+    Route::get('/form/emr/new', ['middleware'=>'auth','formSubmitCheck:emr','uses' => 'RegFormController@create']);
     Route::post('/form/emr/add', 'RegFormController@add');
     Route::get('/form/emr/{id}/view', 'RegFormController@view');
 
 
     Route::get('/cp'  ,'CPController@index');
+    Route::get('/cp/users'  ,'CPController@users');
+    Route::get('/cp/users/{id}/edit'  ,'CPController@userEdit');
+    Route::post('/cp/users/{id}/update'  ,'CPController@userUpdate');
+    Route::get('/cp/users/{id}/delete'  ,'CPController@delUpdate');
     Route::get('/cp/form/emr'  ,'CPController@emrForms');
     Route::get('/cp/form/emr/{id}/view'  ,'CPController@view');
 
