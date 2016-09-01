@@ -33,6 +33,8 @@ class RegFormController extends Controller
         return view('forms.regform.view',compact('form'));
     }
 
+
+
     public function create()
     {
 

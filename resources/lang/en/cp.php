@@ -31,5 +31,13 @@ return [
     'roles'=> [
         'admin' =>  'Administrator',
         'user' =>   'User'
-    ]
+    ],
+
+    'search' => [
+        'cellphone' => 'Cellphone',
+        'id' => 'National/Eqama ID'
+    ],
+
+    'noRes' => 'No Results',
+    'searchBy' => 'Search By',
 ];

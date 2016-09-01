@@ -22,13 +22,13 @@ class CPController extends Controller
 
     public function index()
     {
-        $forms = RegForm::latest()->get();
+        $forms = RegForm::latest()->simplePaginate(10);
         return view('cp.index',compact('forms'));
     }
 
     public function users()
     {
-        $users = User::latest()->get();
+        $users = User::latest()->simplePaginate(10);
         return view('cp.users.index',compact('users'));
     }
 
@@ -64,7 +64,7 @@ class CPController extends Controller
     public function emrForms()
     {
         $forms = RegForm::latest()->get();
-        return view('cp.index',compact('forms'));
+        return view('cp.form.emr.index',compact('forms'));
     }
 
     public function view($id)
@@ -73,4 +73,32 @@ class CPController extends Controller
         $form = RegForm::findOrFail($id);
         return view('forms.regform.view',compact('form'));
     }
+
+
+    public function search(Request $request)
+    {
+        $searchType = Input::get('searchType');
+        //dd($searchType);
+        switch ($searchType)
+        {
+            case 'cellphone':
+                $this->validate($request,[
+                    'search' => 'required|integer|min:500000000'
+                ]);
+                $forms = RegForm::where('cellphone','LIKE','%'.Input::get('search').'%')->get();
+                break;
+            case 'id':
+                $this->validate($request,[
+                    'search' => 'required|integer|min:1000000'
+                ],[
+                    'search.integer' => 'Search with ID number only',
+                    'search.min' => 'Search with valid ID number starting with 1 and at least 7 figures',
+                ]);
+                $forms = RegForm::where('cellphone','LIKE','%'.Input::get('search').'%')->get();
+                break;
+        }
+
+        return view('cp.form.emr.index',compact('forms'));
+    }
+
 }

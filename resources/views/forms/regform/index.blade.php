@@ -11,6 +11,7 @@
                     <div class="panel-body ">
                         <div class="row">
                             @include('errors.status')
+
                             <div class="col-md-12">
                                 @foreach($forms as $form)
                                     <a href="{{LaravelLocalization::getLocalizedURL(null,'/form/emr/'.$form->id.'/view')}}" class="btn btn-danger btn-lg" role="button"><span class="glyphicon glyphicon-eye-open"></span> <br/>View application</a>

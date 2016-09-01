@@ -42,6 +42,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/cp/users/{id}/delete'  ,'CPController@delUpdate');
     Route::get('/cp/form/emr'  ,'CPController@emrForms');
     Route::get('/cp/form/emr/{id}/view'  ,'CPController@view');
+    Route::post('/cp/form/emr/search'  ,'CPController@search');
 
     //Route::get('/ar', 'HomeController@toArabic');
 
