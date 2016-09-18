@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>{{trans('settings.siteName')}}</title>
 
     <script type="text/javascript" src="/js/all.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/all.css">
@@ -46,55 +46,71 @@
 <body id="app-layout">
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
-            <div class="navbar-header">
 
-                <!-- Collapsed Hamburger -->
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                    <span class="sr-only">Toggle Navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+            @if(App::isLocale('ar'))
+                <div class="navbar-header navbar-right">
+                    <!-- Collapsed Hamburger -->
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                        <span class="sr-only">Toggle Navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
 
-                <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    E-Learning
-                </a>
-            </div>
+                    <!-- Branding Image -->
+                    <a class="navbar-brand" href="{{ LaravelLocalization::getLocalizedURL(null,'/') }}">
+                        {{trans('settings.siteName')}}
+                    </a>
+                </div>
 
-            <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Home</a></li>
-                </ul>
+                <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="nav navbar-nav">
+                        @include('layouts.lang')
+                        @include('layouts.loginButtons')
+
+                    </ul>
 
                 <!-- Right Side Of Navbar -->
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- Authentication Links -->
-                    @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{ url('/register') }}">Register</a></li>
-                    @else
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
+                    <div class="navbar-right">
+                        @include('layouts.mainMenu')
+                    </div>
 
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
-                            </ul>
-                        </li>
-                    @endif
-                    <li>
-                        @if(App::isLocale('ar'))
-                            <a href="{{LaravelLocalization::getLocalizedURL('en')}}">English</a>
-                        @elseif(App::isLocale('en'))
-                            <a href="{{LaravelLocalization::getLocalizedURL('ar')}}">Arabic</a>
-                        @endif
-                    </li>
-                </ul>
+                </div>
 
-            </div>
+
+
+            @elseif(App::isLocale('en'))
+                <div class="navbar-header ">
+
+                    <!-- Collapsed Hamburger -->
+                    <button type="button" class="navbar-toggle collapsed " data-toggle="collapse" data-target="#app-navbar-collapse">
+                        <span class="sr-only">Toggle Navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <!-- Branding Image -->
+                    <a class="navbar-brand" href="{{ LaravelLocalization::getLocalizedURL(null,'/') }}">
+                        {{trans('settings.siteName')}}
+                    </a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                    <!-- Left Side Of Navbar -->
+                @include('layouts.mainMenu')
+
+                <!-- Right Side Of Navbar -->
+                    <ul class="nav navbar-nav navbar-right">
+                        @include('layouts.loginButtons')
+                        @include('layouts.lang')
+                    </ul>
+                </div>
+            @endif
+
+
+
         </div>
     </nav>
 

@@ -8,5 +8,30 @@
 
 return [
 
+    'siteName' => 'التعليم الإلكتروني',
+    'home' => 'الرئيسية',
+    'login' => 'الدخول',
+    'logout' => 'تسجيل خروج',
+    'register' => 'التسجيل',
+
+
+    'welcome' => 'مرحباً',
+    'welcomeBox' => 'صفحة الدخول الرئيسية',
+
+
+    //login page
+    'email' => 'الايميل',
+    'password' => 'كلمة المرور',
+    'rememberMe' => 'تذكرني',
+    'forgot' => 'نسيت كلمة المرور',
+
+    //register
+    'name' => 'الأسم',
+    'rePassword' => 'تأكيد كلمة المرور',
+
+    //reset
+    'reset' => 'إعادة ظبط كلمة المرور',
+    'sendPassRestBtn' => 'إرسال الرابط الى الايميل',
+
     'placement' => 'pull-right',
 ];

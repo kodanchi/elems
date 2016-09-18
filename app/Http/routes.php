@@ -13,13 +13,14 @@
 
 
 
-Route::auth();
+
 
 
 
 
 Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 {
+    Route::auth();
     /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
     Route::get('/', function () {
         return view('welcome');
@@ -43,6 +44,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/cp/form/emr'  ,'CPController@emrForms');
     Route::get('/cp/form/emr/{id}/view'  ,'CPController@view');
     Route::post('/cp/form/emr/search'  ,'CPController@search');
+    Route::get('/cp/form/emr/search'  ,'CPController@emrForms');
 
     //Route::get('/ar', 'HomeController@toArabic');
 

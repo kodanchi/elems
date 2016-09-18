@@ -19,7 +19,9 @@ elixir(function(mix) {
         'hijri-date.js',
         'calendar.js',
         'jquery.mask.min.js',
-        'main.js'
+        'bootstrap-submenu.js',
+        'main.js',
+
     ]);
     mix.styles([
         'main.css',

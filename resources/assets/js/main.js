@@ -2,6 +2,7 @@
  * Created by User on 8/21/2016.
  */
 
+$('[data-submenu]').submenupicker();
 
 function showCal() {
     if (cal.isHidden()) cal.show();
