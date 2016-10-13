@@ -79,6 +79,7 @@
                                     <div class="form-group">
                                         {!! Form::label('email', trans('regform.email').':') !!}
                                         {!! Form::email('email', null, ['class' => 'form-control']) !!}
+                                        <small>{{trans('regform.example')}}: username@uod.edu.sa {{trans('regform.or')}} username@uohb.com.sa</small>
                                     </div>
                                 </div>
                                 <div class="col col-md-6">
@@ -94,7 +95,8 @@
                                     <!--- Qualification Field --->
                                     <div class="form-group">
                                         {!! Form::label('qualification', trans('regform.qualification').':') !!}
-                                        {!! Form::text('qualification', null, ['class' => 'form-control']) !!}
+
+                                        {!! Form::select('qualification', $qualification, null, ['class' => 'form-control']) !!}
                                     </div>
                                 </div>
                                 <div class="col col-md-6">

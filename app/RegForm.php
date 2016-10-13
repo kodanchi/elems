@@ -53,10 +53,10 @@ class RegForm extends Model
 
     ];
 
-    public function user()
+   /* public function user()
     {
         return $this->hasOne('App/User');
-    }
+    }*/
 
     public function getFormId()
     {

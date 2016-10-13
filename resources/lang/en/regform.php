@@ -62,5 +62,19 @@ return [
     'submitted_at' => 'Submitted at',
 
 
+    'intro' => 'Welcome to registration portal for the monitoring E-Learning final exams. You' .
+        ' can submit one single request only by click on Submit now button.',
+
+    'submitNow'=> 'Submit Now',
+    'viewApplication'=> 'View my application',
+    'SuccessSubmit'=> 'You Successfully submitted your application, Thank you.',
+
+    'example'=> 'example',
+    'or'=> 'or',
+
+
+
+    'emailregex'=> 'The :attribute must be a valid UOD or UOHB email',
+
 
 ];

@@ -13,6 +13,8 @@ return [
     'login' => 'Login',
     'logout' => 'logout',
     'register' => 'Register',
+    'manage' => 'Manage',
+    'regform' => 'Manage',
 
 
     'welcome' => 'Welcome',

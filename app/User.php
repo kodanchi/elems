@@ -28,10 +28,10 @@ class User extends Authenticatable
     ];
 
 
-    public function emrForm()
+    /*public function emrForm()
     {
         return $this->hasOne('App\RegForm');
-    }
+    }*/
 
     public function getRole()
     {

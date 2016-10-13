@@ -22,16 +22,16 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 {
     Route::auth();
     /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
-    Route::get('/', function () {
-        return view('welcome');
-    });
+    Route::get('/', 'RegFormController@index');
 
 
-    Route::get('/home', 'HomeController@index');
+
+    //Route::get('/home', 'HomeController@index');
+    Route::get('/home', 'RegFormController@index');
 
     Route::get('/form', 'FormsController@index');
     Route::get('/form/emr', 'RegFormController@index');
-    Route::get('/form/emr/new', ['middleware'=>'auth','formSubmitCheck:emr','uses' => 'RegFormController@create']);
+    Route::get('/form/emr/new', 'RegFormController@create');
     Route::post('/form/emr/add', 'RegFormController@add');
     Route::get('/form/emr/{id}/view', 'RegFormController@view');
 

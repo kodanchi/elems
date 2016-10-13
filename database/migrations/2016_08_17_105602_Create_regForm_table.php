@@ -14,7 +14,7 @@ class CreateRegFormTable extends Migration
     {
         Schema::create('reg_forms',function(Blueprint $table){
             $table->increments('id');
-            $table->integer('NID',false,true);
+            $table->string('NID',64);
             $table->string('fname',30);
             $table->string('faname',30);
             $table->string('gfaname',30);
@@ -45,12 +45,12 @@ class CreateRegFormTable extends Migration
 
             $table->timestamps();
             $table->string('center_name');
-            $table->integer('user_id',false,true)->index();
+            //$table->integer('user_id',false,true)->index();
 
             $table->text('job_identity_file');
 
             $table->unique('NID');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            //$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
         });
     }

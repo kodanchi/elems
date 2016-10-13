@@ -23,9 +23,9 @@ class RegFormRequest extends Request
      */
     public function rules()
     {
-        $email_regex = '^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@uod.edu.sa^';
+        $email_regex = '^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*+(@uod|@uohb).edu.sa^';
         return [
-            'NID' => 'required|unique:reg_forms|integer|min:1000000',
+            'NID' => 'required|unique:reg_forms|numeric|min:1000000',
             'fname' => 'required|string|min:3',
             'faname' => 'required|string|min:3',
             'gfaname' => 'required|string|min:3',
@@ -33,26 +33,26 @@ class RegFormRequest extends Request
             'birth_date'=>'required',
             'nationality'=>'required|string',
             'other_nationality'=>'required|string',
-            'cellphone'=>'required|integer|min:500000000',
-            'email'=>'required|email|regex:'.$email_regex,
-            'phone' => 'required|integer',
+            'cellphone'=>'required|numeric|min:500000000',
+            'email'=> array('required','unique:reg_forms','email','regex:'.$email_regex),
+            'phone' => 'required|numeric',
             'qualification' => 'required|string',
             'major' => 'required|string',
             'department' => 'required|string',
             'section' => 'required|string',
-            'employee_ID' => 'integer',
+            'employee_ID' => 'numeric',
             'job_title' => 'required|string',
             'other_job_title' => 'required|string',
             'supervisor' => 'required|string',
-            'su_phone' => 'required|integer',
-            'su_cellphone' => 'required|integer|min:500000000',
+            'su_phone' => 'required|numeric',
+            'su_cellphone' => 'required|numeric|min:500000000',
             'IBAN' => 'required|string|size:24',
             'bank_name' => 'required|string',
             'account_holder_name' => 'required|string',
             'emergency_name' => 'required|string',
             'emer_relation' => 'required|string',
             'other_emer_relation' => 'required|string',
-            'emer_cellphone' => 'required|integer|min:500000000',
+            'emer_cellphone' => 'required|numeric|min:500000000',
             'job_identity_attach' => 'required|file|max:1500',
         ];
     }
@@ -70,7 +70,7 @@ class RegFormRequest extends Request
             'gfaname.string' => 'Grandfather name must be only in letters',
             'lname.requried' => 'Last name is required',*/
             //'lname.string' => 'Last name must be only in letters',
-            'email.regex' => 'The :attribute must be a valid UOD email'
+            'email.regex' => trans('regform.emailregex')
 
         ];
     }

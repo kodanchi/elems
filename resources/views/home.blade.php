@@ -5,10 +5,13 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+                <div class="panel-heading">{{trans('dashboard.title')}}</div>
 
                 <div class="panel-body">
-                    You are logged in!
+                    <a href="{{LaravelLocalization::getLocalizedURL(null,'/form/emr')}}" class="btn btn-sq-lg btn-primary">
+                        <i class="fa fa-user fa-5x"></i><br/>
+                        Exam monitoring
+                    </a>
                 </div>
             </div>
         </div>

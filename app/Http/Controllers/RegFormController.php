@@ -8,6 +8,7 @@ use App\RegForm;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 
 class RegFormController extends Controller
@@ -15,13 +16,13 @@ class RegFormController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
         //$this->middleware('formSubmitCheck:emr')->only('/form/emr/new');
     }
     public function index()
     {
         //$forms = RegForm::latest()->get();
-        $forms = Auth::user()->emrForm()->get();
+        //$forms = Auth::user()->emrForm()->get();
         //dd($forms);
         return view('forms.regform.index',compact('forms'));
     }
@@ -38,25 +39,22 @@ class RegFormController extends Controller
     public function create()
     {
 
-        $nationality = [
-            'Saudi Arabia' => 'Saudi Arabia',
-            'Jordan' => 'Jordan',
-            'Egypt' => 'Egypt',
-            'other' => 'Other'
-        ];
+        //$forms = Auth::user()->emrForm()->get();
+        //dd($form->isEmpty());
+        //if($forms->isEmpty()){
+            $nationality = trans('nationality');
 
-        $jobTitles = [
-            'Administrator'=>'Administrator',
-            'IT Support'=>'IT Support',
-            'other'=>'Other'
-        ];
+            $jobTitles = trans('jobsTitles');
 
-        $relation = [
-            'relative'=>'Relative',
-            'friend'=>'Friend',
-            'other'=>'Other',
-        ];
-        return view('forms.regform.create',compact('nationality','jobTitles','relation'));
+            $relation = trans('relations');
+
+            $qualification = trans('qualification');
+            return view('forms.regform.create',compact('nationality','jobTitles','relation','qualification'));
+        /*}else{
+            return Redirect::to('/form/emr')->with('status','you already submitted');
+        }*/
+
+
     }
 
     public function add(RegFormRequest $request)
@@ -92,9 +90,9 @@ class RegFormController extends Controller
 
 
         //dd($request->all());
-        Auth::user()->emrForm()->create($request->all());
+        RegForm::create($request->all());
 
-        return $this->index();
+        return Redirect::to('/')->with('status',trans('regform.SuccessSubmit'));
 
     }
 }
