@@ -14,7 +14,8 @@ return [
     'logout' => 'logout',
     'register' => 'Register',
     'manage' => 'Manage',
-    'regform' => 'Manage',
+    'regform' => 'Exams registration',
+    'language' => 'Language',
 
 
     'welcome' => 'Welcome',

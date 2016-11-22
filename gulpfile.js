@@ -21,12 +21,20 @@ elixir(function(mix) {
         'jquery.mask.min.js',
         'bootstrap-submenu.js',
         'main.js',
+        'owl.carousel.min.js',
+        'jquery.sticky.js',
+        'jquery.easing.1.3.min.js',
+        'main2.js',
 
     ]);
     mix.styles([
         'main.css',
         'calendar.css',
-        'bootstrap.min.css'
+        'bootstrap.min.css',
+        'owl.carousel.css',
+        'style.css',
+        'responsive.css',
+
     ]);
 
     mix.copy('node_modules/bootstrap-rtl/bootstrap/dist/css/bootstrap.min.css', 'resources/assets/css/bootstrap-rtl');
@@ -40,6 +48,6 @@ elixir(function(mix) {
     //mix.copy('/fonts', 'public/assets/fonts');
     mix.copy('node_modules/font-awesome/fonts','public/fonts');
     mix.copy('node_modules/bootstrap-sass/assets/fonts/bootstrap','public/fonts');
-    mix.sass('app.scss', 'public/css/app.css');
+    //mix.sass('app.scss', 'public/css/app.css');
 
 });

@@ -21,8 +21,18 @@
 Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 {
     Route::auth();
+
+    // Password reset link request routes...
+    Route::get('password/email', 'Auth\PasswordController@getEmail');
+    Route::post('password/email', 'Auth\PasswordController@postEmail');
+
+    // Password reset routes...
+    Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
+    Route::post('password/reset', 'Auth\PasswordController@postReset');
+
+
     /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
-    Route::get('/', 'RegFormController@index');
+    Route::get('/', 'HomeController@index');
 
 
 
@@ -31,6 +41,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::get('/form', 'FormsController@index');
     Route::get('/form/emr', 'RegFormController@index');
+    Route::get('/form/emr/pin', 'RegFormController@pinPage');
+    Route::post('/form/emr/validate', 'RegFormController@emailValidate');
+    Route::post('/form/emr/pinValidate', 'RegFormController@pinEmailValidate');
     Route::get('/form/emr/new', 'RegFormController@create');
     Route::post('/form/emr/add', 'RegFormController@add');
     Route::get('/form/emr/{id}/view', 'RegFormController@view');

@@ -13,6 +13,9 @@ return [
     'login' => 'الدخول',
     'logout' => 'تسجيل خروج',
     'register' => 'التسجيل',
+    'manage' => 'إدارة',
+    'regform' => 'مراقبة الإختبارت',
+    'language' => 'اللغة',
 
 
     'welcome' => 'مرحباً',

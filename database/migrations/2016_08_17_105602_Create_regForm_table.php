@@ -15,6 +15,7 @@ class CreateRegFormTable extends Migration
         Schema::create('reg_forms',function(Blueprint $table){
             $table->increments('id');
             $table->string('NID',64);
+            $table->string('gender',30);
             $table->string('fname',30);
             $table->string('faname',30);
             $table->string('gfaname',30);
@@ -32,8 +33,16 @@ class CreateRegFormTable extends Migration
             $table->boolean('is_contract');
             $table->string('job_title',255);
             $table->string('supervisor',255);
+            $table->string('su_email',255);
             $table->integer('su_phone',false,true);
             $table->integer('su_cellphone',false,true);
+
+            $table->string('center',255);
+            $table->boolean('el_exams_Before');
+            $table->integer('el_exams_num',false,true);
+            $table->boolean('other_exams_Before');
+            $table->longText('other_exams');
+
 
             $table->string('IBAN',30);
             $table->string('bank_name',255);

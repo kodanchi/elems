@@ -19,11 +19,18 @@
                         <h4>{{trans('regform.general_details')}}</h4>
                         <hr>
                             <div class="row">
-                                <div class="col col-md-6 {{trans('settings.placement')}}">
+                                <div class="col col-md-6 ">
                                     <!--- NID Field --->
                                     <div class="form-group">
                                         {!! Form::label('NID', trans('regform.NID').':') !!}
                                         {!! Form::number('NID', null, ['class' => 'form-control']) !!}
+                                    </div>
+                                </div>
+                                <div class="col col-md-6">
+                                    <!--- Gender Field --->
+                                    <div class="form-group">
+                                        {!! Form::label('gender', trans('regform.gender').':') !!}
+                                        {!! Form::select('gender', $gender, null, ['class' => 'form-control']) !!}
                                     </div>
                                 </div>
                             </div>
@@ -79,7 +86,7 @@
                                     <div class="form-group">
                                         {!! Form::label('email', trans('regform.email').':') !!}
                                         {!! Form::email('email', null, ['class' => 'form-control']) !!}
-                                        <small>{{trans('regform.example')}}: username@uod.edu.sa {{trans('regform.or')}} username@uohb.com.sa</small>
+                                        <small>{{trans('regform.example')}}: username@uod.edu.sa {{trans('regform.or')}} username@uohb.edu.sa</small>
                                     </div>
                                 </div>
                                 <div class="col col-md-6">
@@ -109,19 +116,20 @@
                             </div>
                             <div class="row">
                                 <div class="col col-md-6">
-                                    <!--- College/Department Field --->
-                                    <div class="form-group">
-                                        {!! Form::label('department', trans('regform.department').':') !!}
-                                        {!! Form::text('department', null, ['class' => 'form-control']) !!}
-                                    </div>
-                                </div>
-                                <div class="col col-md-6">
                                     <!--- Section Field --->
                                     <div class="form-group">
                                         {!! Form::label('section', trans('regform.section').':') !!}
                                         {!! Form::text('section', null, ['class' => 'form-control']) !!}
                                     </div>
                                 </div>
+                                <div class="col col-md-6">
+                                    <!--- College/Department Field --->
+                                    <div class="form-group">
+                                        {!! Form::label('department', trans('regform.department').':') !!}
+                                        {!! Form::text('department', null, ['class' => 'form-control']) !!}
+                                    </div>
+                                </div>
+
                             </div>
                             <div class="row">
                                 <div class="col col-md-6">
@@ -153,19 +161,20 @@
                             </div>
                             <div class="row">
                                 <div class="col col-md-6">
-                                    <!--- Supervisor Field --->
-                                    <div class="form-group">
-                                        {!! Form::label('supervisor', trans('regform.supervisor').':') !!}
-                                        {!! Form::text('supervisor', null, ['class' => 'form-control']) !!}
-                                    </div>
-                                </div>
-                                <div class="col col-md-6">
                                     <!--- Supervisor Phone Field --->
                                     <div class="form-group">
                                         {!! Form::label('su_phone', trans('regform.su_phone').':') !!}
                                         {!! Form::text('su_phone', null, ['class' => 'phone form-control']) !!}
                                     </div>
                                 </div>
+                                <div class="col col-md-6">
+                                    <!--- Supervisor Field --->
+                                    <div class="form-group">
+                                        {!! Form::label('supervisor', trans('regform.supervisor').':') !!}
+                                        {!! Form::text('supervisor', null, ['class' => 'form-control']) !!}
+                                    </div>
+                                </div>
+
 
                             </div>
                             <div class="row">
@@ -176,6 +185,14 @@
                                         {!! Form::text('su_cellphone', null, ['class' => 'cellphone form-control']) !!}
                                     </div>
                                 </div>
+                                <div class="col col-md-6">
+                                    <!--- Supervisor Email Field --->
+                                    <div class="form-group">
+                                        {!! Form::label('su_email', trans('regform.su_email').':') !!}
+                                        {!! Form::email('su_email', null, ['class' => 'form-control']) !!}
+                                        <small>{{trans('regform.example')}}: username@uod.edu.sa {{trans('regform.or')}} username@uohb.edu.sa</small>
+                                    </div>
+                                </div>
                             </div>
 
                             <h4>{{trans('regform.bank_details')}}</h4>
@@ -183,9 +200,9 @@
                             <div class="row">
                                 <div class="col col-md-12">
                                     <!--- IBAN Field --->
-                                    <div class="form-group">
+                                    <div class="form-group" >
                                         {!! Form::label('IBAN', trans('regform.IBAN').':') !!}
-                                        {!! Form::text('IBAN', null, ['class' => 'form-control']) !!}
+                                        {!! Form::text('IBAN', null, ['class' => 'form-control','dir' => 'ltr']) !!}
                                     </div>
                                 </div>
                             </div>
@@ -218,13 +235,6 @@
                             <hr>
                             <div class="row">
                                 <div class="col col-md-6">
-                                    <!--- Person Name Field --->
-                                    <div class="form-group">
-                                        {!! Form::label('emergency_name', trans('regform.emergency_name').':') !!}
-                                        {!! Form::text('emergency_name', null, ['class' => 'form-control']) !!}
-                                    </div>
-                                </div>
-                                <div class="col col-md-6">
                                     <!--- Relation Field --->
                                     <div class="form-group">
                                         {!! Form::label('emer_relation', trans('regform.emer_relation').':') !!}
@@ -239,7 +249,16 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col col-md-6">
+                                    <!--- Person Name Field --->
+                                    <div class="form-group">
+                                        {!! Form::label('emergency_name', trans('regform.emergency_name').':') !!}
+                                        {!! Form::text('emergency_name', null, ['class' => 'form-control']) !!}
+                                    </div>
+                                </div>
 
+
+                                <div class="col col-md-6"></div>
                                 <div class="col col-md-6">
                                     <!--- Person Cellphone Field --->
                                     <div class="form-group">
@@ -248,13 +267,62 @@
                                     </div>
                                 </div>
                             </div>
+                        <h4>{{trans('regform.other_details')}}</h4>
+                        <hr>
+                        <div class="row">
+                            <div class="col col-md-6">
+                                <!--- Exams before Field --->
+                                <div class="form-group">
+                                    {!! Form::label('other_exams_Before', trans('regform.other_exams_Before').':') !!}
+                                    {!! Form::select('other_exams_Before', $boolean , null , ['class' => 'form-control']) !!}
+                                </div>
+                                <!--- Exams number Field --->
+                                <div id="div_other_exams" class="form-group">
+                                    <!--- Exams number Field --->
+                                    <div class="form-group">
+                                        {!! Form::label('other_exams', trans('regform.specifyExams').':') !!}
+                                        {!! Form::textarea('other_exams', null, ['class' => 'form-control']) !!}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-md-6">
+
+                                <!--- El Exams before Field --->
+                                <div class="form-group">
+                                    {!! Form::label('el_exams_Before', trans('regform.el_exams_Before').':') !!}
+                                    {!! Form::select('el_exams_Before', $boolean , null , ['class' => 'form-control']) !!}
+                                </div>
+                                <!--- El Exams number Field --->
+                                <div id="div_el_exams_num" class="form-group">
+                                    <!--- El Exams number Field --->
+                                    <div class="form-group">
+                                        {!! Form::label('el_exams_num', trans('regform.howMany').':') !!}
+                                        {!! Form::text('el_exams_num', null, ['class' => 'form-control']) !!}
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col col-md-6"></div>
+                            <div class="col col-md-6">
+                                <!--- Center Field --->
+                                <div class="form-group">
+                                    {!! Form::label('center', trans('regform.center').':') !!}
+                                    {!! Form::select('center', $centers , null , ['class' => 'form-control']) !!}
+                                </div>
+                            </div>
+                        </div>
                         <h4>{{trans('regform.job_identification')}}</h4>
                         <div class="row">
                             <div class="col col-md-12">
                                 <div class="form-group">
                                     {!! Form::file('job_identity_attach', ['class' => 'form-control','accept'=>'.pdf']) !!}
+                                    <small>يرفق ملف pdf من شؤون الموظفين أو من خلال الخدمات الإلكترونية</small>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
+
                         </div>
                         <div class="row">
                             <div class="col col-md-3 {{trans('settings.placement')}}">
@@ -290,6 +358,14 @@
             EmerRelationOther();
             $('#other_emer_relation').focus();
         });
+        $('#el_exams_Before').change(function () {
+            el_exams();
+            $('#el_exams_num').focus();
+        });
+        $('#other_exams_Before').change(function () {
+            exams();
+            $('#other_exams').focus();
+        });
 
         function nameCheck() {
             if($('#sameName').is(':checked')){
@@ -323,6 +399,7 @@
             }
         }
 
+
         function jobTitleOther() {
 
             if($('#job_title').val() === 'other'){
@@ -341,6 +418,28 @@
             }else {
                 $('#other_emer_relation').val('other');
                 $('#div_other_emer_relation').hide();
+            }
+        }
+
+
+        function el_exams() {
+            if($('#el_exams_Before').val() === '1'){
+                if($('#el_exams_num').val() === '0') $('#el_exams_num').val('');
+                $('#div_el_exams_num').show();
+            }else {
+                $('#el_exams_num').val('0');
+                $('#div_el_exams_num').hide();
+            }
+        }
+
+
+        function exams() {
+            if($('#other_exams_Before').val() === '1'){
+                if($('#other_exams').val() === '0') $('#other_exams').val('');
+                $('#div_other_exams').show();
+            }else {
+                $('#other_exams').val('0');
+                $('#div_other_exams').hide();
             }
         }
 
@@ -395,6 +494,8 @@
             nationalityOther();
             jobTitleOther();
             EmerRelationOther();
+            el_exams();
+            exams();
 
             //$('#newRegForm').keypress(preventEnterSubmit(e));
             $(window).keydown(function(event){

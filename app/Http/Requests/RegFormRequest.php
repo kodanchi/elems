@@ -26,6 +26,7 @@ class RegFormRequest extends Request
         $email_regex = '^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*+(@uod|@uohb).edu.sa^';
         return [
             'NID' => 'required|unique:reg_forms|numeric|min:1000000',
+            'gender' => 'required|string',
             'fname' => 'required|string|min:3',
             'faname' => 'required|string|min:3',
             'gfaname' => 'required|string|min:3',
@@ -44,6 +45,7 @@ class RegFormRequest extends Request
             'job_title' => 'required|string',
             'other_job_title' => 'required|string',
             'supervisor' => 'required|string',
+            'su_email' => array('required','unique:reg_forms','email','regex:'.$email_regex),
             'su_phone' => 'required|numeric',
             'su_cellphone' => 'required|numeric|min:500000000',
             'IBAN' => 'required|string|size:24',
@@ -54,6 +56,11 @@ class RegFormRequest extends Request
             'other_emer_relation' => 'required|string',
             'emer_cellphone' => 'required|numeric|min:500000000',
             'job_identity_attach' => 'required|file|max:1500',
+            'el_exams_num' => 'required_if:el_exams_Before,1|numeric',
+            'el_exams_Before' => 'required',
+            'other_exams_Before' => 'required',
+            'other_exams' => 'required_if:other_exams_Before,1|string',
+            'center' => 'required|string',
         ];
     }
 
@@ -79,6 +86,7 @@ class RegFormRequest extends Request
     {
         return [
             'NID' => trans('regform.NID'),
+            'gender' => trans('regform.gender'),
             'fname' => trans('regform.fname'),
             'faname' => trans('regform.faname'),
             'gfaname' => trans('regform.gfaname'),
@@ -97,6 +105,7 @@ class RegFormRequest extends Request
             'job_title' => trans('regform.job_title'),
             'other_job_title' => trans('regform.other_job_title'),
             'supervisor' => trans('regform.supervisor'),
+            'su_email' => trans('regform.su_email'),
             'su_phone' => trans('regform.su_phone'),
             'su_cellphone' => trans('regform.su_cellphone'),
             'IBAN' => trans('regform.IBAN'),
@@ -107,6 +116,11 @@ class RegFormRequest extends Request
             'other_emer_relation' => trans('regform.other_emer_relation'),
             'emer_cellphone' => trans('regform.emer_cellphone'),
             'job_identity_attach' => trans('regform.job_identity_attach'),
+            'el_exams_Before' => 'يكون قد سبق لك المراقبة على اختبارات التعليم عن بعد بجامعة الدمام',
+            'other_exams_Before' => 'يكون قد سبق لك المراقبة على اختبارات ',
+            'other_exams' => 'ذكر الاختبارت ',
+            'center' => 'المركز المرغوب المراقبة فيه',
+            'el_exams_num' => trans('regform.el_exams_num'),
 
 
         ];

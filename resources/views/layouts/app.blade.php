@@ -12,9 +12,10 @@
 
     <title>{{trans('settings.siteName')}}</title>
 
-    <script type="text/javascript" src="/js/all.js"></script>
+
     <link rel="stylesheet" type="text/css" href="/css/all.css">
 
+    <script type="text/javascript" src="/js/all.js"></script>
     @if(App::isLocale('ar'))
         <link rel="stylesheet" type="text/css" href="/css/css-ar.css">
     @elseif(App::isLocale('en'))
@@ -43,8 +44,76 @@
         }
     </style>
 </head>
-<body id="app-layout">
-    <nav class="navbar navbar-default navbar-static-top">
+<body >
+
+<div class="header-area" dir="ltr">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="user-menu">
+                    <ul>
+                        @include('layouts.loginButtons')
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="header-right">
+                    <ul class="list-unstyled list-inline">
+
+
+                        <li class="dropdown dropdown-small">
+                            <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#">
+                                <span class="key">{{trans('settings.language')}}: </span><span class="value">{{App::isLocale('ar')?'العربية':'English'}} </span><b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                @include('layouts.lang')
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- End header area -->
+
+
+<div class="site-branding-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="logo">
+                    <h1><a href="/">e<span>Elearning</span></a></h1>
+                </div>
+            </div>
+
+            {{--<div class="col-sm-6">
+                <div class="shopping-item">
+                    <a href="cart.html">Cart - <span class="cart-amunt">$800</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
+                </div>
+            </div>--}}
+        </div>
+    </div>
+</div> <!-- End site branding area -->
+
+<div class="mainmenu-area">
+    <div class="container">
+        <div class="row">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                @include('layouts.mainMenu')
+            </div>
+        </div>
+    </div>
+</div> <!-- End mainmenu area -->
+
+   {{-- <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
 
             @if(App::isLocale('ar'))
@@ -112,9 +181,13 @@
 
 
         </div>
-    </nav>
+    </nav>--}}
 
-    @yield('content')
+    <div class="content">
+        </br>
+        @yield('content')
+    </div>
+
 
     <!-- JavaScripts -->
 {{--
