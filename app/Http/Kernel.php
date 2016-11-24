@@ -54,5 +54,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'adminAuth' => \App\Http\Middleware\RedirectIfNotAdmin::class,
         'formSubmitCheck' => \App\Http\Middleware\RedirectIfSubmitted::class,
+        'conflictAuth' => \App\Http\Middleware\RedirectIfNotConflictAdmin::class,
     ];
 }

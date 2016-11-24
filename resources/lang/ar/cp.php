@@ -33,9 +33,13 @@ return [
         'user' =>   'مستخدم'
     ],
 
-    'search' => [
+    'regFormSearch' => [
         'cellphone' => 'الجوال',
         'id' => 'رقم الهوية/الاقامة'
+    ],
+    'conflictSearch' => [
+        'name' => 'الاسم',
+        'sid' => 'الرقم الأكاديمي'
     ],
 
     'noRes' => 'لا نتائج',

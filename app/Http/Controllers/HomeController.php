@@ -25,13 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return redirect('https://elearning.uod.edu.sa/');
+        //return redirect('https://elearning.uod.edu.sa/');
+        return view('forms.index');
     }
 
-    public function toArabic()
-    {
-        App::setLocale('ar');
-
-        return view('home');
-    }
 }

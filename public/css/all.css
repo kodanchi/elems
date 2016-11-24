@@ -924,7 +924,19 @@ padding: 35px 0 180px;}
     padding: 7px 20px;
     text-transform: uppercase;border: 1px solid #1abc9c;
 }
+.newsletter-form a.button {
+    background: none repeat scroll 0 0 #767882;
+    border: medium none;
+    color: #fff;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 7px 20px;
+    text-transform: uppercase;border: 1px solid #767882;
+}
 .newsletter-form input[type="submit"]:hover {background: #222;border-color: #666}
+.newsletter-form a.button:hover {background: #222;border-color: #666}
 .newsletter-form {
     margin-top: 25px;
 }

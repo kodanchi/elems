@@ -37,4 +37,5 @@ return [
     'sendPassRestBtn' => 'إرسال الرابط الى الايميل',
 
     'placement' => 'pull-right',
+    'back' => 'رجوع',
 ];

@@ -7,28 +7,30 @@
             <div class="col-md-11 col-md-offset-1">
                 @include('errors.errors')
                 <div class="panel panel-default">
-                    <div class="panel-heading">{{trans('regform.applicants')}}</div>
+                    <div class="panel-heading">{{trans('students.applicants')}}</div>
 
 
                     <div class="panel-body ">
 
-                        @include('cp.form.emr.search')
+                        @include('cp.students.conflict.search')
 
                         <div class="col col-md-9">
                             <table class="table table-stripped table-hover">
                                 <thead class="">
-                                <th class="text-center">{{trans('regform.name')}}</th>
-                                <th class="text-center">{{trans('regform.NID')}}</th>
-                                <th class="text-center">{{trans('regform.department')}}</th>
-                                <th class="text-center">{{trans('regform.view')}}</th>
+                                <th class="text-center">{{trans('conflict.fid')}}</th>
+                                <th class="text-center">{{trans('conflict.name')}}</th>
+                                <th class="text-center">{{trans('conflict.sid')}}</th>
+                                <th class="text-center">{{trans('conflict.con_status')}}</th>
+                                <th class="text-center">{{trans('conflict.view')}}</th>
                                 </thead>
                                 <tbody>
                                 @foreach($forms as $form)
                                     <tr class="text-center">
-                                        <td>{{$form->fname." ".$form->faname." ".$form->lname}}</td>
-                                        <td>{{$form->NID}}</td>
-                                        <td>{{$form->department}}</td>
-                                        <td><a href="{{LaravelLocalization::getLocalizedURL(null,'cp/form/emr/'.$form->id.'/view')}}">
+                                        <td>{{$form->fid}}</td>
+                                        <td>{{$form->name}}</td>
+                                        <td>{{$form->SID}}</td>
+                                        <td>{{$form->status}}</td>
+                                        <td><a href="{{LaravelLocalization::getLocalizedURL(null,'cp/students/conflict/view/'.$form->id)}}">
                                                 <span class="glyphicon glyphicon-circle-arrow-right"></span>
                                             </a></td>
                                     </tr>

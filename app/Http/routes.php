@@ -59,12 +59,31 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::post('/cp/form/emr/search'  ,'CPController@search');
     Route::get('/cp/form/emr/search'  ,'CPController@emrForms');
 
+    //Route::resource('students/conflict', 'ConflictFormController');
+
+    Route::get('/students', 'FormsController@students');
+    //Route::post('/students/conflict/new', 'ConflictFormController@newF');
+    Route::get('/students/conflict', 'ConflictFormController@index');
+    Route::get('/students/conflict/agree', 'ConflictFormController@newF');
+    Route::post('/students/conflict/new', 'ConflictFormController@storeF');
+    //Route::get('/students/conflict/view', 'ConflictFormController@view');
+    Route::get('/students/conflict/view/{id}/{sid}', 'ConflictFormController@show');
+    Route::post('/students/conflict/view', 'ConflictFormController@view');
+
+    Route::group(['middleware' => 'auth','conflictAuth'], function () {
+        Route::get('/cp/students/conflict', 'ConflictFormController@CPindex');
+        Route::get('/cp/students/conflict/view/{id}', 'ConflictFormController@CPview');
+        Route::post('/cp/students/conflict/update', 'ConflictFormController@CPupdate');
+        Route::post('/cp/students/conflict/search'  ,'ConflictFormController@search');
+
+
+    });
     //Route::get('/ar', 'HomeController@toArabic');
 
 
-    Route::get('test',function(){
+   /* Route::get('test',function(){
         return View::make('test');
-    });
+    });*/
 });
 
 

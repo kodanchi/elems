@@ -46,7 +46,7 @@
 </head>
 <body >
 
-<div class="header-area" dir="ltr">
+<div class="header-area" >
     <div class="container">
         <div class="row">
             <div class="col-md-8">
@@ -60,8 +60,6 @@
             <div class="col-md-4">
                 <div class="header-right">
                     <ul class="list-unstyled list-inline">
-
-
                         <li class="dropdown dropdown-small">
                             <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#">
                                 <span class="key">{{trans('settings.language')}}: </span><span class="value">{{App::isLocale('ar')?'العربية':'English'}} </span><b class="caret"></b></a>

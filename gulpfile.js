@@ -13,8 +13,10 @@ var elixir = require('laravel-elixir');
 
 elixir(function(mix) {
 
+    mix.copy('node_modules/bootstrap-arabic/dist/js/bootstrap-arabic.min.js', 'resources/assets/js/bootstrap.min.js');
+
     mix.scripts([
-        'jquery-3.1.0.min.js',
+        'jquery-2.0.0.min.js',
         'bootstrap.min.js',
         'hijri-date.js',
         'calendar.js',
@@ -37,17 +39,23 @@ elixir(function(mix) {
 
     ]);
 
-    mix.copy('node_modules/bootstrap-rtl/bootstrap/dist/css/bootstrap.min.css', 'resources/assets/css/bootstrap-rtl');
-    mix.copy('node_modules/bootstrap-rtl/bootstrap/dist/css/bootstrap-theme.min.css', 'resources/assets/css/bootstrap-rtl');
+    //mix.copy('node_modules/bootstrap-rtl/bootstrap/dist/css/bootstrap.min.css', 'resources/assets/css/bootstrap-rtl');
+    //mix.copy('node_modules/bootstrap-rtl/bootstrap/dist/css/bootstrap-theme.min.css', 'resources/assets/css/bootstrap-rtl');
+    mix.copy('node_modules/bootstrap-arabic/dist/css/bootstrap-arabic.min.css', 'resources/assets/css/bootstrap-arabic');
+    mix.copy('node_modules/bootstrap-arabic/dist/css/bootstrap-arabic-theme.min.css', 'resources/assets/css/bootstrap-arabic');
+
 
     mix.styles([
-        'bootstrap-rtl/bootstrap.min.css',
-        'bootstrap-rtl/bootstrap-theme.min.css',
+        //'bootstrap-rtl/bootstrap.min.css',
+        //'bootstrap-rtl/bootstrap-theme.min.css',
+        'bootstrap-arabic/bootstrap-arabic.min.css',
+        'bootstrap-arabic/bootstrap-arabic-theme.min.css',
     ],'public/css/css-ar.css');
 
     //mix.copy('/fonts', 'public/assets/fonts');
     mix.copy('node_modules/font-awesome/fonts','public/fonts');
     mix.copy('node_modules/bootstrap-sass/assets/fonts/bootstrap','public/fonts');
+    mix.copy('node_modules/bootstrap-arabic/fonts','public/fonts');
     //mix.sass('app.scss', 'public/css/app.css');
 
 });

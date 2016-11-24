@@ -18,10 +18,10 @@ class RedirectIfNotAdmin
     {
 
         //dd('sdsd');
-        if(Auth::user()->getRole() == 'admin')
+        if(Auth::user()->getRole() == '000')
             return $next($request);
 
-        return redirect('/home');
+        return redirect('/home')->withErrors(trans('settings.notAuthMsg'));
 
     }
 }

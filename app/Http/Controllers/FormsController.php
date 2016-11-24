@@ -10,7 +10,7 @@ class FormsController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
         //$this->middleware('adminAuth');
     }
 
@@ -18,5 +18,10 @@ class FormsController extends Controller
     {
         return view('forms.index');
 
+    }
+
+    public function students()
+    {
+        return view('students.index');
     }
 }
