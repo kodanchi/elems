@@ -6,7 +6,9 @@
 <!-- Authentication Links -->
 @if (Auth::guest())
     <li><a href="{{ LaravelLocalization::getLocalizedURL(null,'/login') }}"><i class="fa fa-user"></i>{{trans('settings.login')}}</a></li>
+{{--
     <li><a href="{{ LaravelLocalization::getLocalizedURL(null,'/register') }}"><i class="fa fa-user"></i>{{trans('settings.register')}}</a></li>
+--}}
 @else
     @if(Auth::user()->getRole() === 'admin')
         <li class="dropdown">

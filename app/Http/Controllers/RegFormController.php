@@ -94,10 +94,11 @@ class RegFormController extends Controller
 
             $gender = trans('gender');
             $boolean = trans('boolean');
-            $centers = trans('centers');
+            $centers_male = trans('centers_male');
+            $centers_female = trans('centers_female');
 
             $qualification = trans('qualification');
-            return view('forms.regform.create',compact('nationality','gender','jobTitles','relation','qualification','boolean','centers'));
+            return view('forms.regform.create',compact('nationality','gender','jobTitles','relation','qualification','boolean','centers_male','centers_female'));
         /*}else{
             return Redirect::to('/form/emr')->with('status','you already submitted');
         }*/

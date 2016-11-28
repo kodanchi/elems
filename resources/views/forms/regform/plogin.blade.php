@@ -13,7 +13,7 @@
 
 
                             <img src="{{asset('storage/uod_portal.jpg')}}" class="img-responsive" alt="portal">
-                            <h4 class="col-md-12">{{trans('regform.email_inrto')}}</h4>
+                            <h4 class="col-md-12">{{trans('regform.valid_email_intro')}}</h4>
                             <div class="col-md-12">
 
                                 <div class="col-md-12">
@@ -27,19 +27,19 @@
                                 {!! Form::open(['url' => '/form/emr/pinValidate', 'method' => 'post']) !!}
                                     <!--- Email Field --->
                                     <div class="form-group">
-                                        {!! Form::label('email', 'Email:') !!}
+                                        {!! Form::label('email', trans('regform.email').':') !!}
                                         {!! Form::text('email', session('email') , ['class' => 'form-control']) !!}
                                     </div>
                                     <!--- Pin Field --->
                                     <div class="form-group">
-                                        {!! Form::label('pin', 'PIN:') !!}
+                                        {!! Form::label('pin', trans('regform.pin').':') !!}
                                         {!! Form::text('pin', null, ['class' => 'form-control' , 'autofocus']) !!}
                                     </div>
                                     {!! Form::submit('تحقق', ['class' => 'form-control']) !!}
 
                                     {!! Form::close() !!}
                                     </br>
-                                    <input href="/form/emr" class=" form-control btn" value="إدخال بريد إلكتروني مختلف"/>
+                                    <a href="{{url('/form/emr')}}" type="button" class=" form-control btn">إدخال بريد إلكتروني مختلف</a>
                                 </div>
 
                             </div>

@@ -6,7 +6,7 @@
         <div class="row ">
             <div class="col-md-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading">{{trans('students.applicants')}}</div>
+                    <div class="panel-heading">{{trans('conflict.applicants')}}</div>
 
                     <div class="panel-body ">
                         <div class="row">
@@ -17,75 +17,73 @@
                                 {!! Form::open(['url' => '/students/conflict/new', 'method' => 'post','class'=>'newsletter-form']) !!}
 
                                 <div class="row">
+                                    <div class="col-md-6">
+                                        <!--- Full name Field --->
+                                        <div class="form-group">
+                                            {!! Form::label('name', trans('conflict.name').':') !!}
+                                            {!! Form::text('name', null, ['class' => 'form-control']) !!}
+                                        </div>
+                                    </div>
 
                                     <div class="col-md-6">
                                         <!--- SID Field --->
                                         <div class="form-group">
-                                            {!! Form::label('SID', 'الرقم الاكاديمي:') !!}
+                                            {!! Form::label('SID', trans('conflict.sid').':') !!}
                                             {!! Form::number('SID', null, ['class' => 'form-control']) !!}
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <!--- Full name Field --->
-                                        <div class="form-group">
-                                            {!! Form::label('name', 'الأسم الكامل:') !!}
-                                            {!! Form::text('name', null, ['class' => 'form-control']) !!}
-                                        </div>
-                                    </div>
+
                                 </div>
                                 <div class="row">
+
+                                    <div class="col-md-6">
+                                        <!--- NID Field --->
+                                        <div class="form-group">
+                                            {!! Form::label('NID', trans('conflict.nid').':') !!}
+                                            {!! Form::number('NID', null, ['class' => 'form-control']) !!}
+                                        </div>
+                                    </div>
+
+
                                     <div class="col-md-6">
 
                                         <!--- Gender Field --->
                                         <div class="form-group">
-                                            {!! Form::label('gender', 'الجنس:') !!}
+                                            {!! Form::label('gender', trans('conflict.gender').':') !!}
                                             {!! Form::select('gender', $gender , null , ['class' => 'form-control']) !!}
                                         </div>
                                     </div>
 
-                                    <div class="col-md-6">
-                                        <!--- Exams Center Field --->
-                                        <div class="form-group">
-                                            {!! Form::label('exams_center', 'مركز الإختبارات المعتمد:') !!}
-                                            {!! Form::select('exams_center', $examsCenters , null , ['class' => 'form-control']) !!}
-                                        </div>
-                                    </div>
 
 
                                 </div>
 
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <!--- First Subject Field --->
-                                        <div class="form-group">
-                                            {!! Form::label('first_subject', 'المادة الأولى:') !!}
-                                            {!! Form::select('first_subject', $courses , null , ['class' => 'form-control']) !!}
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
                                         <!--- Low Level First Subject Field --->
                                         <div class="form-group">
-                                            {!! Form::label('low_lvl_first_subject', 'المادة الأولى (المستوى الادنى):') !!}
+                                            {!! Form::label('low_lvl_first_subject', trans('conflict.low_lvl_first_subject').':') !!}
                                             {!! Form::select('low_lvl_first_subject', $courses , null , ['class' => 'form-control']) !!}
                                         </div>
                                     </div>
+
+                                    <div class="col-md-6">
+                                        <!--- First Subject Field --->
+                                        <div class="form-group">
+                                            {!! Form::label('first_subject', trans('conflict.first_subject').':') !!}
+                                            {!! Form::select('first_subject', $courses , null , ['class' => 'form-control']) !!}
+                                        </div>
+                                    </div>
+
                                 </div>
 
                                 <div class="row">
                                     <div class="col-md-6">
                                         <!--- Conflict Date Field --->
                                         <div class="form-group">
-                                            {!! Form::label('conflict_date', 'تاريخ التعارض:') !!}
+                                            {!! Form::label('conflict_date', trans('conflict.conflict_date').':') !!}
                                             {!! Form::date('conflict_date', null) !!}
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <!--- Conflict Day --->
-                                        <div class="form-group">
-                                            {!! Form::label('conflict_day', 'اليوم المتعارض:') !!}
-                                            {!! Form::select('conflict_day', $days , null , ['class' => 'form-control']) !!}
-                                        </div>
-
                                     </div>
                                 </div>
 
@@ -97,9 +95,9 @@
                                 </div>
                                 </br>
 
+                                {!! Form::submit('تقدم', ['class' => ' col-md-3']) !!}
 
                                     <a href="{{url('/students/conflict')}}" class=" button col-md-3 ">رجوع</a>
-                                {!! Form::submit('تقدم', ['class' => ' col-md-3']) !!}
                                 {!! Form::close() !!}
                             </div>
                         </div>

@@ -4,15 +4,15 @@
 
     <div class="container ">
         <div class="row ">
-            <div class="col-md-12">
+            <div class="col-md-6">
                 <div class="panel panel-default">
-                    <div class="panel-heading">{{trans('students.applicants')}}</div>
+                    <div class="panel-heading">{{trans('conflict.lookup')}}</div>
 
                     <div class="panel-body ">
                         <div class="row">
 
                             @include('errors.errors')
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 {!! Form::open(['url' => '/students/conflict/view', 'method' => 'post']) !!}
                                 	<!--- SID Field --->
                                 	<div class="form-group">
@@ -27,7 +27,21 @@
                                     {!! Form::submit('تحقق', ['class' => 'form-control']) !!}
                                 {!! Form::close() !!}
                             </div>
-                            <div class="col-md-6">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">{{trans('conflict.applicants')}}</div>
+
+                    <div class="panel-body ">
+                        <div class="row">
+
+                            @include('errors.errors')
+                            <div class="col-md-12">
 
                                 {!! Form::open(['url' => '/students/conflict/agree', 'method' => 'get']) !!}
                                 <label>
@@ -38,6 +52,7 @@
                                 {!! Form::submit('تقدم', ['class' => ' col-md-6 col-md-offset-3']) !!}
                                 {!! Form::close() !!}
                             </div>
+
                         </div>
                     </div>
                 </div>

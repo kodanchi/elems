@@ -1,7 +1,7 @@
 <?php
 
     return [
-        '' => 'أختر',
+        '' => 'حدد',
         'less than elementary' => 'أقل من الإبتدائي',
         'elementary' => 'الإبتدائي',
         'intermediate' => 'المتوسط',

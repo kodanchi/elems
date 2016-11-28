@@ -13,7 +13,7 @@
 
 
                             <img src="{{asset('storage/uod_portal.jpg')}}" class="img-responsive" alt="portal">
-                            <h4 class="col-md-12">{{trans('regform.email_inrto')}}</h4>
+                            <h4 class="col-md-12 text-center">{{trans('regform.email_intro')}}</h4>
                             <div class="col-md-12">
 
                                 @include('errors.errors')
@@ -24,11 +24,12 @@
                                 {!! Form::open(['url' => '/form/emr/validate', 'method' => 'post']) !!}
                                 <!--- Email Field --->
                                     <div class="form-group">
-                                        {!! Form::label('email', 'Email:') !!}
+                                        {!! Form::label('email', trans('regform.email').':') !!}
                                         {!! Form::text('email', null, ['class' => 'form-control']) !!}
                                     </div>
                                     {!! Form::submit('إرسال', ['class' => 'form-control']) !!}
                                     {!! Form::close() !!}
+                                    <a class="btn btn-block" href="{{url('/form/emr/pin')}}">{{trans('regform.gotPinAlready')}}</a>
                                 </div>
 
                             </div>

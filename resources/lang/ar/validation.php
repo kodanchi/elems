@@ -77,7 +77,7 @@ return [
     ],
     'string'               => ':attribute يجب أن يكون نص.',
     'timezone'             => ':attribute يجب أن يكون منطقة زمنية.',
-    'unique'               => ':attribute متواجد فعليا في قاعدة البيانات.',
+    'unique'               => ':attribute المدخل موجود مسبقاً في قاعدة البيانات.',
     'url'                  => 'صيغة :attribute يجب ان تكون صالحة.',
 
     /*

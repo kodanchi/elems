@@ -15,9 +15,16 @@
 
                     <div class="panel-body">
 
-                        {!! Form::open(['url' => LaravelLocalization::getLocalizedURL(null,'form/emr/add'), 'method' => 'post', 'files' => true,'id'=>'newRegForm']) !!}
+                        {!! Form::open(['url' => LaravelLocalization::getLocalizedURL(null,'form/emr/add'), 'method' => 'post', 'files' => true,'id'=>'newRegForm','class' => 'newsletter-form']) !!}
                         <h4>{{trans('regform.general_details')}}</h4>
                         <hr>
+                        <div class="row">
+                            @include('forms.regform.fname')
+                            @include('forms.regform.faname')
+                            @include('forms.regform.gfaname')
+                            @include('forms.regform.lname')
+
+                        </div>
                             <div class="row">
                                 <div class="col col-md-6 ">
                                     <!--- NID Field --->
@@ -34,19 +41,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                @if(App::isLocale('ar'))
-                                    @include('forms.regform.lname')
-                                    @include('forms.regform.gfaname')
-                                    @include('forms.regform.faname')
-                                    @include('forms.regform.fname')
-                                @elseif(App::isLocale('en'))
-                                    @include('forms.regform.fname')
-                                    @include('forms.regform.faname')
-                                    @include('forms.regform.gfaname')
-                                    @include('forms.regform.lname')
-                                @endif
-                            </div>
+
                             <div class="row">
                                 <div class="col col-md-6">
 
@@ -116,19 +111,20 @@
                             </div>
                             <div class="row">
                                 <div class="col col-md-6">
-                                    <!--- Section Field --->
-                                    <div class="form-group">
-                                        {!! Form::label('section', trans('regform.section').':') !!}
-                                        {!! Form::text('section', null, ['class' => 'form-control']) !!}
-                                    </div>
-                                </div>
-                                <div class="col col-md-6">
                                     <!--- College/Department Field --->
                                     <div class="form-group">
                                         {!! Form::label('department', trans('regform.department').':') !!}
                                         {!! Form::text('department', null, ['class' => 'form-control']) !!}
                                     </div>
                                 </div>
+                                <div class="col col-md-6">
+                                    <!--- Section Field --->
+                                    <div class="form-group">
+                                        {!! Form::label('section', trans('regform.section').':') !!}
+                                        {!! Form::text('section', null, ['class' => 'form-control']) !!}
+                                    </div>
+                                </div>
+
 
                             </div>
                             <div class="row">
@@ -161,19 +157,20 @@
                             </div>
                             <div class="row">
                                 <div class="col col-md-6">
-                                    <!--- Supervisor Phone Field --->
-                                    <div class="form-group">
-                                        {!! Form::label('su_phone', trans('regform.su_phone').':') !!}
-                                        {!! Form::text('su_phone', null, ['class' => 'phone form-control']) !!}
-                                    </div>
-                                </div>
-                                <div class="col col-md-6">
                                     <!--- Supervisor Field --->
                                     <div class="form-group">
                                         {!! Form::label('supervisor', trans('regform.supervisor').':') !!}
                                         {!! Form::text('supervisor', null, ['class' => 'form-control']) !!}
                                     </div>
                                 </div>
+                                <div class="col col-md-6">
+                                    <!--- Supervisor Phone Field --->
+                                    <div class="form-group">
+                                        {!! Form::label('su_phone', trans('regform.su_phone').':') !!}
+                                        {!! Form::text('su_phone', null, ['class' => 'phone form-control']) !!}
+                                    </div>
+                                </div>
+
 
 
                             </div>
@@ -197,24 +194,9 @@
 
                             <h4>{{trans('regform.bank_details')}}</h4>
                             <hr>
-                            <div class="row">
-                                <div class="col col-md-12">
-                                    <!--- IBAN Field --->
-                                    <div class="form-group" >
-                                        {!! Form::label('IBAN', trans('regform.IBAN').':') !!}
-                                        {!! Form::text('IBAN', null, ['class' => 'form-control','dir' => 'ltr']) !!}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col col-md-6">
-                                    <!--- Bank Name Field --->
-                                    <div class="form-group">
-                                        {!! Form::label('bank_name', trans('regform.bank_name').':') !!}
-                                        {!! Form::text('bank_name', null, ['class' => 'form-control']) !!}
-                                    </div>
 
-                                </div>
+                            <div class="row">
+
                                 <div class="col col-md-6">
 
                                         <!--- Account holder name Field --->
@@ -229,11 +211,36 @@
 
 
                                 </div>
+                                <div class="col col-md-6">
+                                    <!--- Bank Name Field --->
+                                    <div class="form-group">
+                                        {!! Form::label('bank_name', trans('regform.bank_name').':') !!}
+                                        {!! Form::text('bank_name', null, ['class' => 'form-control']) !!}
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col col-md-12">
+                                    <!--- IBAN Field --->
+                                    <div class="form-group" >
+                                        {!! Form::label('IBAN', trans('regform.IBAN').':') !!}
+                                        {!! Form::text('IBAN', null, ['class' => 'form-control','dir' => 'ltr']) !!}
+                                    </div>
+                                </div>
                             </div>
 
                             <h4>{{trans('regform.emergency_contacts_details')}}</h4>
                             <hr>
                             <div class="row">
+                                <div class="col col-md-6">
+                                    <!--- Person Name Field --->
+                                    <div class="form-group">
+                                        {!! Form::label('emergency_name', trans('regform.emergency_name').':') !!}
+                                        {!! Form::text('emergency_name', null, ['class' => 'form-control']) !!}
+                                    </div>
+                                </div>
                                 <div class="col col-md-6">
                                     <!--- Relation Field --->
                                     <div class="form-group">
@@ -249,16 +256,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col col-md-6">
-                                    <!--- Person Name Field --->
-                                    <div class="form-group">
-                                        {!! Form::label('emergency_name', trans('regform.emergency_name').':') !!}
-                                        {!! Form::text('emergency_name', null, ['class' => 'form-control']) !!}
-                                    </div>
-                                </div>
 
 
-                                <div class="col col-md-6"></div>
+
+
                                 <div class="col col-md-6">
                                     <!--- Person Cellphone Field --->
                                     <div class="form-group">
@@ -271,22 +272,6 @@
                         <hr>
                         <div class="row">
                             <div class="col col-md-6">
-                                <!--- Exams before Field --->
-                                <div class="form-group">
-                                    {!! Form::label('other_exams_Before', trans('regform.other_exams_Before').':') !!}
-                                    {!! Form::select('other_exams_Before', $boolean , null , ['class' => 'form-control']) !!}
-                                </div>
-                                <!--- Exams number Field --->
-                                <div id="div_other_exams" class="form-group">
-                                    <!--- Exams number Field --->
-                                    <div class="form-group">
-                                        {!! Form::label('other_exams', trans('regform.specifyExams').':') !!}
-                                        {!! Form::textarea('other_exams', null, ['class' => 'form-control']) !!}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col col-md-6">
-
                                 <!--- El Exams before Field --->
                                 <div class="form-group">
                                     {!! Form::label('el_exams_Before', trans('regform.el_exams_Before').':') !!}
@@ -302,13 +287,36 @@
                                 </div>
 
                             </div>
-
-                            <div class="col col-md-6"></div>
                             <div class="col col-md-6">
+                                <!--- Exams before Field --->
+                                <div class="form-group">
+                                    {!! Form::label('other_exams_Before', trans('regform.other_exams_Before').':') !!}
+                                    {!! Form::select('other_exams_Before', $boolean , null , ['class' => 'form-control']) !!}
+                                </div>
+                                <!--- Exams number Field --->
+                                <div id="div_other_exams" class="form-group">
+                                    <!--- Exams number Field --->
+                                    <div class="form-group">
+                                        {!! Form::label('other_exams', trans('regform.specifyExams').':') !!}
+                                        {!! Form::textarea('other_exams', null, ['class' => 'form-control']) !!}
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+                        <div class="row">
+                            <div id="div_center" class="col col-md-6">
                                 <!--- Center Field --->
                                 <div class="form-group">
                                     {!! Form::label('center', trans('regform.center').':') !!}
-                                    {!! Form::select('center', $centers , null , ['class' => 'form-control']) !!}
+                                    {!! Form::select('center', [] , null , ['class' => 'form-control']) !!}
+                                </div>
+                                <div id="div_center_select">
+                                    {!! Form::select('center_m', $centers_male , null , ['class' => 'form-control','id'=>'center_m']) !!}
+                                    {!! Form::select('center_f', $centers_female , null , ['class' => 'form-control','id'=>'center_f']) !!}
                                 </div>
                             </div>
                         </div>
@@ -325,13 +333,10 @@
 
                         </div>
                         <div class="row">
-                            <div class="col col-md-3 {{trans('settings.placement')}}">
-                                {!! Form::submit(trans('regform.submit'), ['class' => 'form-control btn btn-primary']) !!}
-                            </div>
-                            <div class="col col-md-3 {{trans('settings.placement')}}">
 
-                                <a href="{{LaravelLocalization::getLocalizedURL(null,'/form')}}" class="btn btn-default">{{trans('regform.cancel')}}</a>
-                            </div>
+                                {!! Form::submit(trans('regform.submit'), ['class' => ' col-md-3']) !!}
+                                <a href="{{LaravelLocalization::getLocalizedURL(null,'/form')}}" class="button">{{trans('regform.cancel')}}</a>
+
                         </div>
                         {!! Form::close() !!}
                     </div>
@@ -340,6 +345,7 @@
         </div>
     </div>
     <script type="text/javascript">
+
 
         $('input[type=checkbox][name=sameName]').change(nameCheck);
 
@@ -365,6 +371,10 @@
         $('#other_exams_Before').change(function () {
             exams();
             $('#other_exams').focus();
+        });
+        $('#gender').change(function () {
+            centers();
+            //$('#other_exams').focus();
         });
 
         function nameCheck() {
@@ -442,6 +452,21 @@
                 $('#div_other_exams').hide();
             }
         }
+        function centers() {
+            if($('#gender').val() === 'male'){
+                $('#center').html($('#center_m').html());
+                $('#center').show();
+                /* Insert the new ones from the array above */
+
+            }else if($('#gender').val() === 'female'){
+                $('#center').html($('#center_f').html());
+                $('#center').show();
+                /* Insert the new ones from the array above */
+
+            }else {
+                $('#center').hide();
+            }
+        }
 
 
         $(document).ready(function () {
@@ -496,6 +521,9 @@
             EmerRelationOther();
             el_exams();
             exams();
+            centers();
+            $('#center_m').hide();
+            $('#center_f').hide();
 
             //$('#newRegForm').keypress(preventEnterSubmit(e));
             $(window).keydown(function(event){
