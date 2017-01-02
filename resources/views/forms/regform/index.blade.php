@@ -13,6 +13,7 @@
 
 
                             <img src="{{asset('storage/uod_portal.jpg')}}" class="img-responsive" alt="portal">
+                            <hr>
                             <h4 class="col-md-12 text-center">{{trans('regform.email_intro')}}</h4>
                             <div class="col-md-12">
 
@@ -26,6 +27,7 @@
                                     <div class="form-group">
                                         {!! Form::label('email', trans('regform.email').':') !!}
                                         {!! Form::text('email', null, ['class' => 'form-control']) !!}
+                                        <small>{{trans('regform.example')}}: username@uod.edu.sa {{trans('regform.or')}} username@uohb.edu.sa</small>
                                     </div>
                                     {!! Form::submit('إرسال', ['class' => 'form-control']) !!}
                                     {!! Form::close() !!}

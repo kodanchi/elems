@@ -6,7 +6,7 @@
         <div class="row ">
             <div class="col-md-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading">{{trans('students.applicants')}}</div>
+                    <div class="panel-heading">{{trans('conflict.applicants')}}</div>
 
                     <div class="panel-body ">
                         <div class="row">
@@ -19,6 +19,10 @@
 
                                 <div class="row">
                                     <div class="col-md-6">
+                                        <h5>{{trans('conflict.NID')}}: {{$form->NID}} </h5>
+                                    </div>
+
+                                    <div class="col-md-6">
                                         <h5>{{trans('conflict.sid')}}: {{$form->SID}} </h5>
                                     </div>
 
@@ -26,12 +30,9 @@
                                         <h5>{{trans('conflict.name')}}: {{$form->name}} </h5>
                                     </div>
 
-                                    <div class="col-md-6">
-                                        <h5>{{trans('conflict.exams_center')}}: {{$form->exams_center}}</h5>
-                                    </div>
 
                                     <div class="col-md-6">
-                                        <h5>{{trans('conflict.gender')}}: {{$form->gender}}</h5>
+                                        <h5>{{trans('conflict.gender')}}: {{trans('studentGender.'.$form->gender)}}</h5>
                                     </div>
 
                                 </div>
@@ -49,10 +50,6 @@
                                     </div>
 
 
-
-                                    <div class="col-md-6">
-                                        <h5>{{trans('conflict.conflict_day')}}: {{$form->conflict_day}}</h5>
-                                    </div>
                                     <div class="col-md-6">
                                         <h5>{{trans('conflict.conflict_date')}}: {{$form->conflict_date}}</h5>
                                     </div>
@@ -61,7 +58,7 @@
                                 <h4>{{trans('conflict.con_status')}}</h4>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <h5>{{trans('conflict.con_status')}}: {{$form->status}}</h5>
+                                        <h5>{{trans('conflict.con_status')}}: {{trans('status')[$form->status]}}</h5>
                                     </div>
                                     <div class="col-md-12">
                                         <h5>{{trans('conflict.des')}}: {{$form->description}}</h5>

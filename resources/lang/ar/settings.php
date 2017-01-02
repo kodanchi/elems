@@ -15,6 +15,10 @@ return [
     'register' => 'التسجيل',
     'manage' => 'إدارة',
     'regform' => 'مراقبة الإختبارت',
+    'facultyform' => 'إستقطاب أعضاء التدريس',
+    'conflict' => 'التعارضات',
+    'sp' => 'الأعذار',
+    'objection' => 'الإعتراضات',
     'language' => 'اللغة',
 
 
@@ -38,4 +42,8 @@ return [
 
     'placement' => 'pull-right',
     'back' => 'رجوع',
+    'next' => 'التالي',
+
+
+    'notAuthMsg' => 'غير مصرح لك الدخول للصفحة',
 ];

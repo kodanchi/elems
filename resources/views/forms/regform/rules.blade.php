@@ -13,6 +13,7 @@
 
 
                             <img src="{{asset('storage/uod_portal.jpg')}}" class="img-responsive" alt="portal">
+                            <hr>
                             <h4 class="col-md-12">{{trans('regform.intro')}}</h4>
                             <div class="col-md-12">
                                 @include('errors.status')

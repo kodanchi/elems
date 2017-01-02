@@ -13,7 +13,8 @@
 
 
                             <img src="{{asset('storage/uod_portal.jpg')}}" class="img-responsive" alt="portal">
-                            <h4 class="col-md-12">{{trans('regform.valid_email_intro')}}</h4>
+                            <hr>
+                            <h4 class="col-md-12 text-center">{{trans('regform.valid_email_intro')}}</h4>
                             <div class="col-md-12">
 
                                 <div class="col-md-12">
@@ -36,10 +37,10 @@
                                         {!! Form::text('pin', null, ['class' => 'form-control' , 'autofocus']) !!}
                                     </div>
                                     {!! Form::submit('تحقق', ['class' => 'form-control']) !!}
-
+                                    <p></p>
+                                    <a href="{{url('/form/emr')}}" type="button" class=" btn btn-block">إدخال بريد إلكتروني مختلف</a>
                                     {!! Form::close() !!}
-                                    </br>
-                                    <a href="{{url('/form/emr')}}" type="button" class=" form-control btn">إدخال بريد إلكتروني مختلف</a>
+
                                 </div>
 
                             </div>

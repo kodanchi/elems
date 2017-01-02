@@ -37,6 +37,11 @@ class Kernel extends HttpKernel
         'api' => [
             'throttle:60,1',
         ],
+
+        'conflictCP' => [
+            \App\Http\Middleware\Authenticate::class,
+            \App\Http\Middleware\RedirectIfNotConflictAdmin::class
+        ]
     ];
 
     /**

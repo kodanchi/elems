@@ -14,27 +14,29 @@
 
 
     <link rel="stylesheet" type="text/css" href="/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-select.min.css">
+
+
 
     <script type="text/javascript" src="/js/all.js"></script>
-    @if(App::isLocale('ar'))
-        <link rel="stylesheet" type="text/css" href="/css/css-ar.css">
-    @elseif(App::isLocale('en'))
-        <link rel="stylesheet" type="text/css" href="/css/app.css">
-    @endif
+    <script type="text/javascript" src="/js/bootstrap-select.min.js"></script>
+
+
+
 
 
     <!-- Fonts -->
 {{--
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
 --}}
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
+
 
     <!-- Styles -->
 {{--
      <link href="{{ elixir('css/app.css') }}" rel="stylesheet">
 --}}
 
-    <style>
+    {{--<style>
         body {
             font-family: 'Lato';
         }
@@ -42,7 +44,7 @@
         .fa-btn {
             margin-right: 6px;
         }
-    </style>
+    </style>--}}
 </head>
 <body >
 
@@ -79,8 +81,8 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <div class="logo">
-                    <h1><a href="/">e<span>Elearning</span></a></h1>
+                <div class="logo" dir="ltr">
+                    <img src="{{asset('storage/logo.png')}}" alt="E-Learning" width="370px">
                 </div>
             </div>
 

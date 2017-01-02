@@ -1,7 +1,7 @@
 <div class="col col-md-6">
     <h4>{{trans('regform.work_details')}}</h4>
     <hr>
-    <p>{{trans('regform.qualification')}} : {{$form->qualification}}</p>
+    <p>{{trans('regform.qualification')}} : {{trans('qualification.'.$form->qualification)}}</p>
     <p>{{trans('regform.major')}} : {{$form->major}}</p>
     <p>{{trans('regform.department')}} : {{$form->department}}</p>
     <p>{{trans('regform.section')}} : {{$form->section}}</p>
@@ -10,6 +10,6 @@
     @else
         <p>{{trans('regform.job_contract')}}</p>
     @endif
-    <p>{{trans('regform.job_title')}} : {{$form->job_title}}</p>
+    <p>{{trans('regform.job_title')}} : {{trans('jobsTitles.'.$form->job_title)}}</p>
     <br/>
 </div>

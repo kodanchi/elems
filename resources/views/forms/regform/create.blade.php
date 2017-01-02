@@ -80,8 +80,8 @@
                                     <!--- Email Field --->
                                     <div class="form-group">
                                         {!! Form::label('email', trans('regform.email').':') !!}
-                                        {!! Form::email('email', null, ['class' => 'form-control']) !!}
-                                        <small>{{trans('regform.example')}}: username@uod.edu.sa {{trans('regform.or')}} username@uohb.edu.sa</small>
+                                        <p>{!! Session::get('email','NULL')!!}</p>
+
                                     </div>
                                 </div>
                                 <div class="col col-md-6">
@@ -99,6 +99,15 @@
                                         {!! Form::label('qualification', trans('regform.qualification').':') !!}
 
                                         {!! Form::select('qualification', $qualification, null, ['class' => 'form-control']) !!}
+                                    </div>
+                                </div>
+                                <div class="col col-md-6">
+                                    <!--- Upload Field --->
+                                    <div class="form-group">
+                                        {!! Form::label('qualification_identity_attach', trans('regform.qia').':') !!}
+                                        {!! Form::file('qualification_identity_attach', ['class' => 'form-control','accept'=>'.pdf']) !!}
+                                        <small>يرفق ملف pdf </small>
+                                        <small class="red">الحجم المسموح: 4MB أو أقل</small>
                                     </div>
                                 </div>
                                 <div class="col col-md-6">
@@ -215,7 +224,7 @@
                                     <!--- Bank Name Field --->
                                     <div class="form-group">
                                         {!! Form::label('bank_name', trans('regform.bank_name').':') !!}
-                                        {!! Form::text('bank_name', null, ['class' => 'form-control']) !!}
+                                        {!! Form::select('bank_name', $banks , null , ['class' => 'form-control']) !!}
                                     </div>
 
                                 </div>
@@ -282,8 +291,23 @@
                                     <!--- El Exams number Field --->
                                     <div class="form-group">
                                         {!! Form::label('el_exams_num', trans('regform.howMany').':') !!}
-                                        {!! Form::text('el_exams_num', null, ['class' => 'form-control']) !!}
+                                        {!! Form::selectRange('el_exams_num', 1, 9 , null , ['class' => 'form-control']) !!}
+                                        فصل/فصول
+
                                     </div>
+                                    <p><label>{{trans('regform.selectRoles')}}:</label></p>
+                                    <label>
+                                    	{!! Form::checkbox('isSV', '1', null,  ['id' => 'isSV']) !!}
+                                    	{{trans('regform.isSV')}}
+                                    </label>
+                                    <label>
+                                    	{!! Form::checkbox('isInspector', '1', null,  ['id' => 'isInspector']) !!}
+                                    	{{trans('regform.isIns')}}
+                                    </label>
+                                    <label>
+                                    	{!! Form::checkbox('isController', '1', null,  ['id' => 'isController']) !!}
+                                    	{{trans('regform.isCont')}}
+                                    </label>
                                 </div>
 
                             </div>
@@ -309,10 +333,17 @@
                         </div>
                         <div class="row">
                             <div id="div_center" class="col col-md-6">
-                                <!--- Center Field --->
-                                <div class="form-group">
-                                    {!! Form::label('center', trans('regform.center').':') !!}
-                                    {!! Form::select('center', [] , null , ['class' => 'form-control']) !!}
+                                <div id="center_div">
+                                    <!--- Center Field --->
+                                    <div class="form-group">
+                                        {!! Form::label('center_first', trans('regform.center_first').':') !!}
+                                        {!! Form::select('center_first', [] , null , ['class' => 'form-control']) !!}
+                                    </div>
+                                    <!--- Second Center Field --->
+                                    <div class="form-group">
+                                        {!! Form::label('center_second', trans('regform.center_second').':') !!}
+                                        {!! Form::select('center_second', [] , null , ['class' => 'form-control']) !!}
+                                    </div>
                                 </div>
                                 <div id="div_center_select">
                                     {!! Form::select('center_m', $centers_male , null , ['class' => 'form-control','id'=>'center_m']) !!}
@@ -325,7 +356,7 @@
                             <div class="col col-md-12">
                                 <div class="form-group">
                                     {!! Form::file('job_identity_attach', ['class' => 'form-control','accept'=>'.pdf']) !!}
-                                    <small>يرفق ملف pdf من شؤون الموظفين أو من خلال الخدمات الإلكترونية</small>
+                                    <small>يرفق ملف pdf حجم المسموح: 4MB أو أقل، ويمكن الحصول عليه من شؤون الموظفين أو من خلال الخدمات الإلكترونية</small>
                                 </div>
                             </div>
                         </div>
@@ -333,7 +364,7 @@
 
                         </div>
                         <div class="row">
-
+                            {!! Form::hidden('email', Session::get('email'), ['id' => 'email']) !!}
                                 {!! Form::submit(trans('regform.submit'), ['class' => ' col-md-3']) !!}
                                 <a href="{{LaravelLocalization::getLocalizedURL(null,'/form')}}" class="button">{{trans('regform.cancel')}}</a>
 
@@ -454,17 +485,19 @@
         }
         function centers() {
             if($('#gender').val() === 'male'){
-                $('#center').html($('#center_m').html());
-                $('#center').show();
+                $('#center_first').html($('#center_m').html());
+                $('#center_second').html($('#center_m').html());
+                $('#center_div').show();
                 /* Insert the new ones from the array above */
 
             }else if($('#gender').val() === 'female'){
-                $('#center').html($('#center_f').html());
-                $('#center').show();
+                $('#center_first').html($('#center_f').html());
+                $('#center_second').html($('#center_f').html());
+                $('#center_div').show();
                 /* Insert the new ones from the array above */
 
             }else {
-                $('#center').hide();
+                $('#center_div').hide();
             }
         }
 
@@ -479,7 +512,7 @@
             $('#IBAN').mask("SA0000000000000000000000", {
                 'translation': {
                     0: {
-                        pattern: /[0-9*]/
+                        pattern: /[A-Za-z0-9]/
                     },
                     'S':{
                         pattern: /[S/]/,
@@ -515,6 +548,18 @@
                     }
 
                 },placeholder: "1XXXXXXXX"
+            });
+            $('#NID').mask("0000000000", {
+                'translation': {
+                    0: {
+                        pattern: /[0-9*]/
+                    },
+                    /*'r':{
+                        pattern: /[1|2|3/]/,
+                        fallback: '1'
+                    }*/
+
+                },placeholder: "XXXXXXXXX"
             });
             nationalityOther();
             jobTitleOther();

@@ -29,21 +29,26 @@ elixir(function(mix) {
         'main2.js',
 
     ]);
-    mix.styles([
-        'main.css',
-        'calendar.css',
-        'bootstrap.min.css',
-        'owl.carousel.css',
-        'style.css',
-        'responsive.css',
 
-    ]);
 
     //mix.copy('node_modules/bootstrap-rtl/bootstrap/dist/css/bootstrap.min.css', 'resources/assets/css/bootstrap-rtl');
     //mix.copy('node_modules/bootstrap-rtl/bootstrap/dist/css/bootstrap-theme.min.css', 'resources/assets/css/bootstrap-rtl');
     mix.copy('node_modules/bootstrap-arabic/dist/css/bootstrap-arabic.min.css', 'resources/assets/css/bootstrap-arabic');
     mix.copy('node_modules/bootstrap-arabic/dist/css/bootstrap-arabic-theme.min.css', 'resources/assets/css/bootstrap-arabic');
 
+    mix.styles([
+
+        'calendar.css',
+        'bootstrap.min.css',
+        'bootstrap-arabic/bootstrap-arabic.min.css',
+        'bootstrap-arabic/bootstrap-arabic-theme.min.css',
+
+        'owl.carousel.css',
+        'style.css',
+        'responsive.css',
+        'main.css',
+
+    ]);
 
     mix.styles([
         //'bootstrap-rtl/bootstrap.min.css',
@@ -57,5 +62,6 @@ elixir(function(mix) {
     mix.copy('node_modules/bootstrap-sass/assets/fonts/bootstrap','public/fonts');
     mix.copy('node_modules/bootstrap-arabic/fonts','public/fonts');
     //mix.sass('app.scss', 'public/css/app.css');
+
 
 });

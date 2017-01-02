@@ -7,7 +7,7 @@
             <div class="col-md-11 col-md-offset-1">
                 @include('errors.errors')
                 <div class="panel panel-default">
-                    <div class="panel-heading">{{trans('students.applicants')}}</div>
+                    <div class="panel-heading">{{trans('cp.conflict_title')}}  | عدد النتائج: {{$forms->count()}}</div>
 
 
                     <div class="panel-body ">
@@ -29,8 +29,8 @@
                                         <td>{{$form->fid}}</td>
                                         <td>{{$form->name}}</td>
                                         <td>{{$form->SID}}</td>
-                                        <td>{{$form->status}}</td>
-                                        <td><a href="{{LaravelLocalization::getLocalizedURL(null,'cp/students/conflict/view/'.$form->id)}}">
+                                        <td>{{trans('status.'.$form->status)}}</td>
+                                        <td><a href="{{url('cp/students/conflict/view/'.$form->id)}}">
                                                 <span class="glyphicon glyphicon-circle-arrow-right"></span>
                                             </a></td>
                                     </tr>
@@ -42,6 +42,7 @@
                                     @endif
                                 </tbody>
                             </table>
+                            {{$forms->links()}}
                         </div>
 
 

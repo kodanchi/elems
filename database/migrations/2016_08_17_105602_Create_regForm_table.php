@@ -29,7 +29,7 @@ class CreateRegFormTable extends Migration
             $table->string('major',255);
             $table->string('department',255);
             $table->string('section',255);
-            $table->integer('employee_ID',false,true);
+            $table->integer('employee_ID',false,true)->nullable();
             $table->boolean('is_contract');
             $table->string('job_title',255);
             $table->string('supervisor',255);
@@ -37,11 +37,17 @@ class CreateRegFormTable extends Migration
             $table->integer('su_phone',false,true);
             $table->integer('su_cellphone',false,true);
 
-            $table->string('center',255);
+
             $table->boolean('el_exams_Before');
-            $table->integer('el_exams_num',false,true);
+            $table->integer('el_exams_num',false,true)->nullable();
             $table->boolean('other_exams_Before');
-            $table->longText('other_exams');
+            $table->longText('other_exams')->nullable();
+            //$table->string('center_name')->nullable();
+
+            $table->boolean('isSV');
+            $table->boolean('isInspector');
+            $table->boolean('isController');
+
 
 
             $table->string('IBAN',30);
@@ -52,8 +58,12 @@ class CreateRegFormTable extends Migration
             $table->string('emer_relation',25);
             $table->integer('emer_cellphone',false,true);
 
+            $table->string('center_first',255);
+            $table->string('center_second',255);
+
+
             $table->timestamps();
-            $table->string('center_name');
+
             //$table->integer('user_id',false,true)->index();
 
             $table->text('job_identity_file');

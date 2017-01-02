@@ -84,7 +84,7 @@ return [
             'port' => env('DB_PORT', '1433'),
             'database' => env('DB_DATABASE', 'Eldb01'),
             'username' => env('DB_USERNAME', 'Eldb01_user'),
-            'password' => env('DB_PASSWORD', 'Zw%8Brfa[@')
+            'password' => env('DB_PASSWORD', '05tF823#')
         ],
 
     ],

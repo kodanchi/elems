@@ -38,14 +38,15 @@ class RegFormRequest extends Request
             'email'=> array('required','unique:reg_forms','email','regex:'.$email_regex),
             'phone' => 'required|numeric',
             'qualification' => 'required|string',
+            'qualification_identity_attach' => 'required|file|max:4096',
             'major' => 'required|string',
             'department' => 'required|string',
             'section' => 'required|string',
-            'employee_ID' => 'numeric',
+            'employee_ID' => 'numeric|required_without:is_contract',
             'job_title' => 'required|string',
             'other_job_title' => 'required|string',
             'supervisor' => 'required|string',
-            'su_email' => array('required','unique:reg_forms','email','regex:'.$email_regex),
+            'su_email' => array('required','email','regex:'.$email_regex),
             'su_phone' => 'required|numeric',
             'su_cellphone' => 'required|numeric|min:500000000',
             'IBAN' => 'required|string|size:24',
@@ -55,12 +56,13 @@ class RegFormRequest extends Request
             'emer_relation' => 'required|string',
             'other_emer_relation' => 'required|string',
             'emer_cellphone' => 'required|numeric|min:500000000',
-            'job_identity_attach' => 'required|file|max:1500',
+            'job_identity_attach' => 'required|file|max:4096',
             'el_exams_num' => 'required_if:el_exams_Before,1|numeric',
             'el_exams_Before' => 'required',
             'other_exams_Before' => 'required',
             'other_exams' => 'required_if:other_exams_Before,1|string',
-            'center' => 'required|string',
+            'center_first' => 'required|string',
+            'center_second' => 'string',
         ];
     }
 
@@ -77,7 +79,8 @@ class RegFormRequest extends Request
             'gfaname.string' => 'Grandfather name must be only in letters',
             'lname.requried' => 'Last name is required',*/
             //'lname.string' => 'Last name must be only in letters',
-            'email.regex' => trans('regform.emailregex')
+            'email.regex' => trans('regform.emailregex'),
+            'employee_ID.required_without' => 'الرقم الوظيفي مطلوب إلا في حال كانت الوظيفة بعقد',
 
         ];
     }
@@ -98,6 +101,7 @@ class RegFormRequest extends Request
             'email' => trans('regform.email'),
             'phone' => trans('regform.phone'),
             'qualification' => trans('regform.qualification'),
+            'qualification_identity_attach' => trans('regform.qia'),
             'major' => trans('regform.major'),
             'department' => trans('regform.department'),
             'section' => trans('regform.section'),
@@ -119,7 +123,8 @@ class RegFormRequest extends Request
             'el_exams_Before' => 'يكون قد سبق لك المراقبة على اختبارات التعليم عن بعد بجامعة الدمام',
             'other_exams_Before' => 'يكون قد سبق لك المراقبة على اختبارات ',
             'other_exams' => 'ذكر الاختبارت ',
-            'center' => 'المركز المرغوب المراقبة فيه',
+            'center_first' => 'المركز المرغوب المراقبة فيه كرغبة أولى',
+            'center_second' => 'المركز المرغوب المراقبة فيه كرغبة أولى',
             'el_exams_num' => trans('regform.el_exams_num'),
 
 

@@ -31,7 +31,7 @@ return [
     'confirmed'            => ':attribute للتأكد غير متطابقة',
     'date'                 => ':attribute ليس تاريخ صالح',
     'date_format'          => ':attribute تاريخ ليس بتاريخ يطابق الصيغة  :format.',
-    'different'            => ':attribute يجب عن يختلف عن :other',
+    'different'            => ':attribute يجب أن تختلف عن :other',
     'digits'               => ':attribute يجب أن يكون يكون :digits ارقام',
     'digits_between'       => ':attribute يجب أن يكون بين :min و :max أرقام',
     'distinct'             => ':attribute يحتوي على قيمة مكررة',

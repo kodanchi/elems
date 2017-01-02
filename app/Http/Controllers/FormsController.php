@@ -24,4 +24,9 @@ class FormsController extends Controller
     {
         return view('students.index');
     }
+
+    public function closed()
+    {
+        return view('forms.regform.closed');
+    }
 }

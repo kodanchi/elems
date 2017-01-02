@@ -21,7 +21,7 @@
                                         <!--- Full name Field --->
                                         <div class="form-group">
                                             {!! Form::label('name', trans('conflict.name').':') !!}
-                                            {!! Form::text('name', null, ['class' => 'form-control']) !!}
+                                            {{$student[0]->name}}
                                         </div>
                                     </div>
 
@@ -29,7 +29,7 @@
                                         <!--- SID Field --->
                                         <div class="form-group">
                                             {!! Form::label('SID', trans('conflict.sid').':') !!}
-                                            {!! Form::number('SID', null, ['class' => 'form-control']) !!}
+                                            {{$student[0]->sid}}
                                         </div>
                                     </div>
 
@@ -40,7 +40,7 @@
                                         <!--- NID Field --->
                                         <div class="form-group">
                                             {!! Form::label('NID', trans('conflict.nid').':') !!}
-                                            {!! Form::number('NID', null, ['class' => 'form-control']) !!}
+                                            {{$student[0]->nid}}
                                         </div>
                                     </div>
 
@@ -50,7 +50,7 @@
                                         <!--- Gender Field --->
                                         <div class="form-group">
                                             {!! Form::label('gender', trans('conflict.gender').':') !!}
-                                            {!! Form::select('gender', $gender , null , ['class' => 'form-control']) !!}
+                                            {{trans('studentGender.'.$student[0]->gender)}}
                                         </div>
                                     </div>
 
@@ -77,18 +77,10 @@
 
                                 </div>
 
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <!--- Conflict Date Field --->
-                                        <div class="form-group">
-                                            {!! Form::label('conflict_date', trans('conflict.conflict_date').':') !!}
-                                            {!! Form::date('conflict_date', null) !!}
-                                        </div>
-                                    </div>
-                                </div>
 
                                 <div class="col-md-12">
                                     <label>
+                                        {!! Form::hidden('conflict_date', $conflict_date) !!}
                                         {!! Form::checkbox('agree', '1', null,  ['id' => 'agree']) !!}
                                         أوفق على الإدلاء بالمعلومات الصحيحة وأتحمل كامل المسؤولية في حال كانت المعلومات غير صحيحة
                                     </label>
@@ -97,7 +89,7 @@
 
                                 {!! Form::submit('تقدم', ['class' => ' col-md-3']) !!}
 
-                                    <a href="{{url('/students/conflict')}}" class=" button col-md-3 ">رجوع</a>
+                                    <a href="{{url('/students/conflict/agree?agree=1')}}" class=" button col-md-3 ">رجوع</a>
                                 {!! Form::close() !!}
                             </div>
                         </div>
@@ -106,5 +98,37 @@
             </div>
         </div>
     </div>
+    <script type="application/javascript">
+        $(document).ready(function () {
 
+
+            $('#SID').mask("r000000000", {
+                'translation': {
+                    0: {
+                        pattern: /[0-9*]/
+                    },
+                    'r':{
+                        pattern: /[2/]/,
+                        fallback: '1'
+                    }
+
+                },placeholder: "2XXXXXXXX"
+            });
+
+            $('#NID').mask("r000000000", {
+                'translation': {
+                    0: {
+                        pattern: /[0-9*]/
+                    },
+                    'r':{
+                        pattern: /[1/]/,
+                        fallback: '1'
+                    }
+
+                },placeholder: "1XXXXXXXX"
+            });
+
+
+        });
+    </script>
     @endsection

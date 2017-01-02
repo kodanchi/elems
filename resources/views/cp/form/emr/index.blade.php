@@ -6,13 +6,16 @@
         <div class="row ">
             <div class="col-md-11 col-md-offset-1">
                 @include('errors.errors')
+                @include('errors.status')
                 <div class="panel panel-default">
-                    <div class="panel-heading">{{trans('regform.applicants')}}</div>
+                    <div class="panel-heading">{{trans('cp.emr_title')}} | عدد النتائج: {{$forms->count()}}</div>
 
 
                     <div class="panel-body ">
 
+
                         @include('cp.form.emr.search')
+
 
                         <div class="col col-md-9">
                             <table class="table table-stripped table-hover">
@@ -28,9 +31,11 @@
                                         <td>{{$form->fname." ".$form->faname." ".$form->lname}}</td>
                                         <td>{{$form->NID}}</td>
                                         <td>{{$form->department}}</td>
-                                        <td><a href="{{LaravelLocalization::getLocalizedURL(null,'cp/form/emr/'.$form->id.'/view')}}">
+                                        <td>
+                                            <a href="{{url('cp/form/emr/'.$form->id.'/view')}}">
                                                 <span class="glyphicon glyphicon-circle-arrow-right"></span>
-                                            </a></td>
+                                            </a>
+                                        </td>
                                     </tr>
                                 @endforeach
                                 @if($forms->isEmpty())
@@ -40,6 +45,7 @@
                                     @endif
                                 </tbody>
                             </table>
+                            {{$forms->links()}}
                         </div>
 
 

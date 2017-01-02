@@ -6,7 +6,7 @@
         <div class="row ">
             <div class="col-md-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading">{{trans('students.applicants')}}</div>
+                    <div class="panel-heading">{{trans('students.applicants')}} | {{$form->id}}</div>
 
                     <div class="panel-body ">
                         <div class="row">
@@ -27,12 +27,14 @@
                                         <h5>{{trans('conflict.name')}}: {{$form->name}} </h5>
                                     </div>
 
+
+
                                     <div class="col-md-6">
-                                        <h5>{{trans('conflict.exams_center')}}: {{$form->exams_center}}</h5>
+                                        <h5>{{trans('conflict.gender')}}: {{trans('studentGender.'.$form->gender)}}</h5>
                                     </div>
 
                                     <div class="col-md-6">
-                                        <h5>{{trans('conflict.gender')}}: {{$form->gender}}</h5>
+                                        <h5>{{trans('conflict.major')}}: {{trans('majorCodes.'.$form->major)}}</h5>
                                     </div>
 
                                 </div>
@@ -50,9 +52,6 @@
 
 
                                     <div class="col-md-6">
-                                        <h5>{{trans('conflict.conflict_day')}}: {{$form->conflict_day}}</h5>
-                                    </div>
-                                    <div class="col-md-6">
                                         <h5>{{trans('conflict.conflict_date')}}: {{$form->conflict_date}}</h5>
                                     </div>
                                 </div>
@@ -60,7 +59,7 @@
                                 <h4>{{trans('conflict.con_status')}}</h4>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <h5>{{trans('conflict.con_status')}}: {{$form->status}}</h5>
+                                        <h5>{{trans('conflict.con_status')}}:  {{trans('status.'.$form->status)}}</h5>
                                     </div>
                                     <div class="col-md-12">
                                         <h5>{{trans('conflict.des')}}: {{$form->description}}</h5>
@@ -85,6 +84,7 @@
                                         </div>
 
                                         {!! Form::submit(trans('cp.update'), ['class' => 'form-control']) !!}
+                                        <small>سيتم إرسال بريد إلكتروني إلى الطالب/الطالبة فور النقر على تحديث البيانات</small>
                                     </div>
                                     {!! Form::close() !!}
                                 </div>
@@ -92,6 +92,9 @@
 
 
                                 <a href="/cp/students/conflict" class="button col-md-3">{{trans('settings.back')}}</a>
+                                @if($next != null)
+                                <a href="/cp/students/conflict/view/{{$next}}" class="button col-md-3">{{trans('settings.next')}}</a>
+                                    @endif
                             </div>
                             <div class="col-md-12">
 

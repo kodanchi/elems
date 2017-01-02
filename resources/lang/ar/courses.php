@@ -1,6 +1,8 @@
 <?php
 
     return [
-        '' => 'حدد',
-        'طرق البحث' => 'طرق البحث',
+        'dsdsd' => 'hllo',
+        'dsdssd' => 'hll dddo',
+        'dsdssfd' => 'dfsdfs',
+        'dsdssfd' => 'h d fllo',
     ];

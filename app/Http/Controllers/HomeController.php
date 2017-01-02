@@ -25,8 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //return redirect('https://elearning.uod.edu.sa/');
-        return view('forms.index');
+        return redirect('https://elearning.uod.edu.sa/');
+        //return view('forms.index');
     }
 
 }

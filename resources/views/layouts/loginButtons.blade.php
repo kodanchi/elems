@@ -20,7 +20,11 @@
             <!--manage menu-->
             <ul class="dropdown-menu" role="menu" >
 
-                <li><a tabindex="0" href="{{ LaravelLocalization::getLocalizedURL(null,'cp/form/emr')}}"><i class="fa fa-btn fa-list-alt"></i>{{trans('settings.regform')}}</a></li>
+                <li><a tabindex="0" href="{{ url('cp/form/emr')}}"><i class="fa fa-btn fa-list-alt"></i>{{trans('settings.regform')}}</a></li>
+                <li><a tabindex="0" href="{{ url('cp/form/ff')}}"><i class="fa fa-btn fa-list-alt"></i>{{trans('settings.facultyform')}}</a></li>
+                <li><a tabindex="0" href="{{ url('cp/students/conflict')}}"><i class="fa fa-btn fa-list-alt"></i>{{trans('settings.conflict')}}</a></li>
+                <li><a tabindex="0" href="{{ url('cp/students/sp')}}"><i class="fa fa-btn fa-list-alt"></i>{{trans('settings.sp')}}</a></li>
+                <li><a tabindex="0" href="{{ url('cp/students/objection')}}"><i class="fa fa-btn fa-list-alt"></i>{{trans('settings.objection')}}</a></li>
 
             </ul>
         </li>
@@ -31,7 +35,7 @@
         </a>
 
         <ul class="dropdown-menu" role="menu">
-            <li><a href="{{ LaravelLocalization::getLocalizedURL(null,'/logout') }}"><i class="fa fa-btn fa-sign-out"></i>{{trans('settings.logout')}}</a></li>
+            <li><a href="{{url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>{{trans('settings.logout')}}</a></li>
         </ul>
     </li>
 @endif
