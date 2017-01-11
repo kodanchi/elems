@@ -66,16 +66,13 @@ return [
             'engine' => null,
         ],
 
-        'pgsql' => [
-            'driver' => 'pgsql',
+        'delsql' => [
+            'driver' => 'sqlsrv',
             'host' => env('DB_HOST', 'UODSQLCL'),
-            'port' => env('DB_PORT', '1432'),
-            'database' => env('DB_DATABASE', 'Eldb01'),
-            'username' => env('DB_USERNAME', 'Eldb01_user'),
-            'password' => env('DB_PASSWORD', 'Zw%8Brfa[@'),
-            'charset' => 'utf8',
-            'prefix' => '',
-            'schema' => 'public',
+            'port' => env('DB_PORT', '1433'),
+            'database' => 'Eldb02',
+            'username' =>  'Eldb02_user',
+            'password' => env('DB_PASSWORD', '05tF823#')
         ],
 
         'sqlsrv' => [

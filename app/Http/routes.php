@@ -59,17 +59,17 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     //Route::get('/home', 'HomeController@index');
     Route::get('/home', 'RegFormController@index');
 
-    Route::get('/form', 'FormsController@closed');
+    /*Route::get('/form', 'FormsController@closed');
     Route::get('/form/emr', 'RegFormController@closed');
     Route::get('/form/emr/pin', 'RegFormController@closed');
     Route::post('/form/emr/validate', 'RegFormController@closed');
     Route::post('/form/emr/pinValidate', 'RegFormController@closed');
     Route::get('/form/emr/new', 'RegFormController@closed');
     Route::post('/form/emr/add', 'RegFormController@closed');
-    Route::get('/form/emr/{id}/view', 'RegFormController@view');
+    Route::get('/form/emr/{id}/view', 'RegFormController@view');*/
 
     // routes up are closed original routes are below
-    /*
+
     Route::get('/form', 'FormsController@index');
     Route::get('/form/emr', 'RegFormController@index');
     Route::get('/form/emr/pin', 'RegFormController@pinPage');
@@ -77,7 +77,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::post('/form/emr/pinValidate', 'RegFormController@pinEmailValidate');
     Route::get('/form/emr/new', 'RegFormController@create');
     Route::post('/form/emr/add', 'RegFormController@add');
-    Route::get('/form/emr/{id}/view', 'RegFormController@view');*/
+    Route::get('/form/emr/{id}/view', 'RegFormController@view');
 
 
     Route::get('/form/facultyform', 'FacultyFormController@index');
@@ -88,6 +88,13 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::post('/form/facultyform/add', 'FacultyFormController@add');
     Route::get('/form/facultyform/{id}/view', 'FacultyFormController@view');
 
+    //for admin to check the requested applications
+    Route::get('/cp/students/sp/requested'  ,'CPController@SPRequested');
+    Route::post('/cp/students/sp/validate'  ,'CPController@SPValidate');
+    //for admin to enter new emr form
+    Route::get('/cp/form/emr/new'  ,'CPController@regFormNew');
+
+    //Route::get('/cp/updateBatch'  ,'CPController@updateBatch');
 
 
     Route::get('/cp'  ,'CPController@index');
@@ -105,6 +112,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/cp/form/ff/{id}/reject'  ,'CPController@rejectFF');
     Route::post('/cp/form/ff/{id}/update'  ,'CPController@updateFF');
 
+
     Route::get('/cp/form/emr'  ,'CPController@emrForms');
     Route::get('/cp/form/emr/approved'  ,'CPController@emrFormsApproved');
     Route::get('/cp/form/emr/rejected'  ,'CPController@emrFormsRejected');
@@ -119,8 +127,11 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/cp/form/emr/{id}/reject'  ,'CPController@rejectRegForm');
     Route::post('/cp/form/emr/{id}/update'  ,'CPController@updateRegForm');
 
+    Route::get('/cp/form/emr/export'  ,'CPController@excelExport');
+
     Route::get('/cp/form/emr/evaluation'  ,'CPController@evaIndex');
     Route::post('/cp/form/emr/evaluation'  ,'CPController@evaView');
+    Route::post('/cp/form/emr/evaluation/rate'  ,'CPController@rateUpdate');
 
 
     //Route::resource('students/conflict', 'ConflictFormController');
@@ -196,6 +207,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
         Route::get('/cp/students/sp/rejected'  ,'SPController@CPRejected');
         Route::get('/cp/students/sp/pending'  ,'SPController@CPPending');
 
+
     });
     Route::group(['middleware' => ['conflictCP']], function () {
         Route::get('/cp/students/objection', 'ObjectionController@CPindex');
@@ -214,6 +226,19 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
         Route::get('/cp/exams/major/{id}'  ,'ExamsController@showExam');
         Route::get('/cp/exams/delete/{id}'  ,'ExamsController@delete');
         Route::post('/cp/exams'  ,'ExamsController@create');
+
+    });
+    //warehouse
+    Route::group(['middleware' => 'warehouse'], function () {
+        Route::get('/cp/warehouse'  ,'WarehouseController@index');
+        Route::get('/cp/warehouse/list'  ,'WarehouseController@WHlist');
+        Route::get('/cp/warehouse/new'  ,'WarehouseController@WHnew');
+        Route::get('/cp/warehouse/view/{id}'  ,'WarehouseController@WHview');
+        Route::get('/cp/warehouse/edit/{id}'  ,'WarehouseController@WHedit');
+        Route::post('/cp/warehouse/update/{id}'  ,'WarehouseController@WHupdate');
+        Route::post('/cp/warehouse/search'  ,'WarehouseController@WHsearch');
+        Route::post('/cp/warehouse/'  ,'WarehouseController@create');
+
 
     });
     Route::get('/cp/exams/conflict'  ,'ExamsController@conflictView');

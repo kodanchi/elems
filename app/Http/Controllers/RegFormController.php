@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
+use Maatwebsite\Excel\Facades\Excel;
 use Session;
 use Mail;
 use Illuminate\Support\Facades\Redirect;
@@ -31,7 +32,8 @@ class RegFormController extends Controller
         //$forms = Auth::user()->emrForm()->get();
         //dd($forms);
 
-        return view('forms.regform.index');
+        return view('forms.regform.index')
+            ->withErrors('انتهت فترة التسجيل، تسجيلك الآن لا يعني إحتسابك من ضمن المسجلين هذه الفترة وإنما فقط تسجيل بياناتك في قاعدة البيانات.');
     }
 
     public function emailValidate(EmailValidationRequest $request)
@@ -207,5 +209,7 @@ class RegFormController extends Controller
     {
         return view('forms.regform.closed');
     }
+
+
 
 }

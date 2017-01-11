@@ -83,26 +83,29 @@
                         </div>
 
                         <hr>
+                        @include('errors.errors')
+                        @include('errors.status')
                         <div class="row">
                             <div class="col col-md-6">
                                 <h4>{{trans('regform.evaluate')}}</h4>
-                                {!! Form::model($rateForm, ['url' => '/cp/form/emr/evaluation/rate/'.$form->id, 'method' => 'post']) !!}
+                                {!! Form::model($rateForm, ['url' => '/cp/form/emr/evaluation/rate', 'method' => 'post']) !!}
                                 	<!--- Rate Field --->
                                 	<div class="form-group">
-                                	    {!! Form::label('rate', 'Rate:') !!}
+                                	    {!! Form::label('rate', 'التقييم:') !!}
                                         {!! Form::selectRange('rate', 1, 10 , null , ['class' => 'form-control']) !!}
                                 	</div>
                                 <!--- days Field --->
                                 <div class="form-group">
-                                    {!! Form::label('days', 'days:') !!}
-                                    {!! Form::selectRange('rate', 1, 10 , null , ['class' => 'form-control']) !!}
+                                    {!! Form::label('days', 'عدد أيام المراقبة:') !!}
+                                    {!! Form::selectRange('days', 1, 10 , null , ['class' => 'form-control']) !!}
                                 </div>
 
                                 <!--- Des Field --->
                                 <div class="form-group">
-                                    {!! Form::label('des', 'Des:') !!}
+                                    {!! Form::label('des', 'تقرير التقييم:') !!}
                                     {!! Form::textarea('des', null, ['class' => 'form-control']) !!}
                                 </div>
+                                {!! Form::hidden('form_id', $form->id, ['id' => 'id']) !!}
                                 {!! Form::submit('Submit', ['class' => 'form-control']) !!}
                                 {!! Form::close() !!}
 

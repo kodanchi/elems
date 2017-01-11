@@ -41,6 +41,10 @@ class Kernel extends HttpKernel
         'conflictCP' => [
             \App\Http\Middleware\Authenticate::class,
             \App\Http\Middleware\RedirectIfNotConflictAdmin::class
+        ],
+        'warehouse' => [
+            \App\Http\Middleware\Authenticate::class,
+            \App\Http\Middleware\RedirectIfNotWarehouseAdmin::class
         ]
     ];
 

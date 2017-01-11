@@ -64,7 +64,7 @@
                                 <div class="row">
 
                                     <div class="col-md-6">
-                                        <h5>{{trans('sp.reason')}}: {{$course->reason}}</h5>
+                                        <h5>{{trans('sp.reason')}}: {{$form->reason}}</h5>
                                     </div>
                                 </div>
                                 <hr>

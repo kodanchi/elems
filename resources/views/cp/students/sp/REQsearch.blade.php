@@ -6,7 +6,7 @@
     	<div class="form-group">
     	    {!! Form::label('searchType', trans('cp.searchBy').':') !!}
 
-            {!! Form::select('searchType', trans('cp.spSearch') , null , ['class' => 'form-control']) !!}
+            {!! Form::select('searchType', trans('cp.reqSearch') , null , ['class' => 'form-control']) !!}
     	</div>
 
         <!--- Search Field --->
