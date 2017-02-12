@@ -1,7 +1,7 @@
 <div class="col col-md-3">
-    <p><a href="{{url('/cp/warehouse/')}}" class="btn btn-default form-control button">{{trans('cp.all_res')}}</a></p>
-    <p><a href="{{url('/cp/warehouse/uptodate')}}" class="btn btn-primary form-control button">{{trans('warehouse.uptodate')}}</a></p>
-    <p><a href="{{url('/cp/warehouse/outdated')}}" class="btn btn-danger form-control button">{{trans('warehouse.outdated')}}</a></p>
+    <p><a href="{{url('/cp/warehouse/list')}}" class="btn btn-default form-control button">{{trans('cp.all_devices')}}</a></p>
+    <p><a href="{{url('/cp/warehouse/list/uptodate')}}" class="btn btn-primary form-control button">{{trans('warehouse.uptodate')}}</a></p>
+    <p><a href="{{url('/cp/warehouse/list/outdated')}}" class="btn btn-danger form-control button">{{trans('warehouse.outdated')}}</a></p>
     <hr>
     {!! Form::open(['url' => 'cp/warehouse/search', 'method' => 'post']) !!}
     	<!--- Search By Field --->
@@ -25,5 +25,6 @@
         </script>
 
     <hr>
+    <a href="{{url('cp/warehouse/new')}}" class="btn btn-default form-control button">{{trans('warehouse.create')}}</a>
     <a href="{{url('cp/warehouse/')}}" class="btn btn-default form-control button">{{trans('warehouse.back')}}</a>
 </div>

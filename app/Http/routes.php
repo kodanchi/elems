@@ -59,6 +59,28 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     //Route::get('/home', 'HomeController@index');
     Route::get('/home', 'RegFormController@index');
 
+    //Rooms Reservations
+    Route::get('/reservation/new', 'ScheduleController@index');
+    Route::get('/reservation/newGuest', 'ScheduleController@regNew');
+    Route::get('/reservation/check/{id}', 'ScheduleController@regEdit');
+    Route::get('/reservation/schedule', 'ScheduleController@RoomSchedule');
+
+    Route::post('/reservation/check', 'ScheduleController@regCheck');
+    Route::patch('/reservation/guest/update/{id}', 'ScheduleController@regUpdate');
+
+    Route::post('/reservation/guest/', 'ScheduleController@regCreate');
+    Route::post('/reservation/schedule', 'ScheduleController@schedule');
+
+
+
+    //Surveys for students
+    Route::get('/survey/study', 'SurveysController@index');
+    Route::get('/survey/study/new', 'SurveysController@createStudySurv');
+    Route::get('/survey/study/error', 'SurveysController@error');
+
+    Route::post('/survey/study/', 'SurveysController@submitStudySurv');
+
+
     /*Route::get('/form', 'FormsController@closed');
     Route::get('/form/emr', 'RegFormController@closed');
     Route::get('/form/emr/pin', 'RegFormController@closed');
@@ -69,6 +91,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/form/emr/{id}/view', 'RegFormController@view');*/
 
     // routes up are closed original routes are below
+
+
 
     Route::get('/form', 'FormsController@index');
     Route::get('/form/emr', 'RegFormController@index');
@@ -90,11 +114,17 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     //for admin to check the requested applications
     Route::get('/cp/students/sp/requested'  ,'CPController@SPRequested');
+    Route::get('/cp/students/objection/requested'  ,'CPController@ObjRequested');
     Route::post('/cp/students/sp/validate'  ,'CPController@SPValidate');
-    //for admin to enter new emr form
+    Route::post('/cp/students/objection/validate'  ,'CPController@ObjValidate');
+    //for college admin and super admin to enter new emr form
     Route::get('/cp/form/emr/new'  ,'CPController@regFormNew');
+    Route::post('/cp/form/emr/add', 'CPController@regFormAdd');
 
     //Route::get('/cp/updateBatch'  ,'CPController@updateBatch');
+    //for admin to get export the emr/evaluation
+    Route::get('/cp/form/emr/evaluation/export'  ,'CPController@EmrEvaluationExcelExport');
+    Route::get('/cp/survey/export'  ,'SurveysController@surveyExcelExport');
 
 
     Route::get('/cp'  ,'CPController@index');
@@ -129,9 +159,28 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::get('/cp/form/emr/export'  ,'CPController@excelExport');
 
-    Route::get('/cp/form/emr/evaluation'  ,'CPController@evaIndex');
-    Route::post('/cp/form/emr/evaluation'  ,'CPController@evaView');
-    Route::post('/cp/form/emr/evaluation/rate'  ,'CPController@rateUpdate');
+
+
+
+    Route::get('/cp/survey/'  ,'CPController@surveyList');
+    Route::get('/cp/survey/fillSidHash'  ,'CPController@SIDHashAll');
+
+    Route::post('/cp/survey/search'  ,'CPController@surveySearch');
+
+
+
+    //helpdesk route
+    Route::get('/helpdesk', 'TecsController@index');
+    Route::post('/helpdesk/pin', 'TecsController@pin');
+    Route::post('/helpdesk/validate', 'TecsController@pinValidate');
+    Route::get('/helpdesk/pin', 'TecsController@getValidate');
+    Route::get('/helpdesk/validate', 'TecsController@getValidate');
+    Route::get('/helpdesk/agree', 'TecsController@newF');
+    Route::post('/helpdesk/new', 'TecsController@storeF');
+    Route::post('/helpdesk/view', 'TecsController@view');
+    Route::get('/helpdesk/view/{id}/{sid}', 'TecsController@show');
+
+
 
 
     //Route::resource('students/conflict', 'ConflictFormController');
@@ -196,7 +245,25 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
         Route::get('/cp/students/conflict/approved'  ,'ConflictFormController@CPApproved');
         Route::get('/cp/students/conflict/rejected'  ,'ConflictFormController@CPRejected');
         Route::get('/cp/students/conflict/pending'  ,'ConflictFormController@CPPending');
+
+
     });
+
+    Route::group(['middleware' => ['helpdeskCP']], function () {
+        Route::get('/cp/students/helpdesk', 'TecsController@CPindex');
+        Route::get('/cp/students/helpdesk/view/{id}', 'TecsController@CPview');
+        //Route::post('/cp/students/helpdesk/update', 'TecsController@CPupdate');
+        Route::post('/cp/students/helpdesk/update', array('uses' => 'TecsController@CPupdateOrCPtrans'));
+        Route::post('/cp/students/helpdesk/search'  ,'TecsController@search');
+
+
+        Route::get('/cp/students/helpdesk/approved'  ,'TecsController@CPApproved');
+        Route::get('/cp/students/helpdesk/rejected'  ,'TecsController@CPRejected');
+        Route::get('/cp/students/helpdesk/pending'  ,'TecsController@CPPending');
+
+    });
+
+
     Route::group(['middleware' => ['conflictCP']], function () {
         Route::get('/cp/students/sp', 'SPController@CPindex');
         Route::get('/cp/students/sp/view/{id}', 'SPController@CPview');
@@ -206,18 +273,28 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
         Route::get('/cp/students/sp/approved'  ,'SPController@CPApproved');
         Route::get('/cp/students/sp/rejected'  ,'SPController@CPRejected');
         Route::get('/cp/students/sp/pending'  ,'SPController@CPPending');
+        Route::get('/cp/students/sp/export'  ,'SPController@excelExport');
+
 
 
     });
-    Route::group(['middleware' => ['conflictCP']], function () {
+    Route::group(['middleware' => ['objection']], function () {
         Route::get('/cp/students/objection', 'ObjectionController@CPindex');
         Route::get('/cp/students/objection/view/{id}', 'ObjectionController@CPview');
         Route::post('/cp/students/objection/update', 'ObjectionController@CPupdate');
+        Route::get('/cp/students/objection/search'  ,'ObjectionController@CPindex');
         Route::post('/cp/students/objection/search'  ,'ObjectionController@search');
+        Route::post('/cp/students/objection/requested'  ,'ObjectionController@search');
 
         Route::get('/cp/students/objection/approved'  ,'ObjectionController@CPApproved');
         Route::get('/cp/students/objection/rejected'  ,'ObjectionController@CPRejected');
         Route::get('/cp/students/objection/pending'  ,'ObjectionController@CPPending');
+        Route::get('/cp/students/objection/export'  ,'ObjectionController@objectionExcelExport');
+    });
+    Route::group(['middleware' => ['evaluation']], function () {
+        Route::get('/cp/form/emr/evaluation'  ,'RegFormController@evaIndex');
+        Route::post('/cp/form/emr/evaluation'  ,'RegFormController@evaView');
+        Route::post('/cp/form/emr/evaluation/rate'  ,'RegFormController@rateUpdate');
 
     });
     Route::group(['middleware' => 'auth'], function () {
@@ -230,14 +307,56 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     });
     //warehouse
     Route::group(['middleware' => 'warehouse'], function () {
+
         Route::get('/cp/warehouse'  ,'WarehouseController@index');
         Route::get('/cp/warehouse/list'  ,'WarehouseController@WHlist');
+        Route::get('/cp/warehouse/list/uptodate'  ,'WarehouseController@WHlistUptodate');
+        Route::get('/cp/warehouse/list/outdated'  ,'WarehouseController@WHlistOutdated');
         Route::get('/cp/warehouse/new'  ,'WarehouseController@WHnew');
         Route::get('/cp/warehouse/view/{id}'  ,'WarehouseController@WHview');
         Route::get('/cp/warehouse/edit/{id}'  ,'WarehouseController@WHedit');
+
+        //employees -get
+        Route::get('/cp/warehouse/employees'  ,'WarehouseController@EmpList');
+        Route::get('/cp/warehouse/employees/new'  ,'WarehouseController@EmpNew');
+        Route::get('/cp/warehouse/employees/edit/{id}'  ,'WarehouseController@EmpEdit');
+        Route::get('/cp/warehouse/employees/view/{id}'  ,'WarehouseController@EmpView');
+        Route::get('/cp/warehouse/employees/link/new/{id}'  ,'WarehouseController@EmpNewLink');
+        Route::get('/cp/warehouse/employees/link/edit/{id}/{link}'  ,'WarehouseController@EmpEditLink');
+        Route::get('/cp/warehouse/employees/link/delete/{link}'  ,'WarehouseController@EmpDelLink');
+
+        //rooms -get
+        Route::get('/cp/warehouse/rooms/'  ,'ScheduleController@RoomList');
+        Route::get('/cp/warehouse/rooms/new'  ,'ScheduleController@RoomNew');
+        Route::get('/cp/warehouse/rooms/edit/{id}'  ,'ScheduleController@RoomEdit');
+        Route::get('/cp/warehouse/rooms/view/{id}'  ,'ScheduleController@RoomView');
+        Route::get('/cp/warehouse/rooms/link/new/{id}'  ,'ScheduleController@RoomNewLink');
+        Route::get('/cp/warehouse/rooms/link/edit/{id}/{link}'  ,'ScheduleController@RoomEditLink');
+        Route::get('/cp/warehouse/rooms/link/delete/{link}'  ,'ScheduleController@RoomDelLink');
+
+
+        //employees -post
+        Route::patch('/cp/warehouse/employees/update/{id}'  ,'WarehouseController@EmpUpdate');
+        Route::post('/cp/warehouse/employees/search'  ,'WarehouseController@EmpSearch');
+        Route::post('/cp/warehouse/employees/link'  ,'WarehouseController@EmpCreateLink');
+        Route::patch('/cp/warehouse/employees/link/update/{id}'  ,'WarehouseController@EmpUpdateLink');
+
+        Route::post('/cp/warehouse/employees/'  ,'WarehouseController@empCreate');
+
+        //rooms -post
+        Route::patch('/cp/warehouse/rooms/update/{id}'  ,'ScheduleController@RoomUpdate');
+        Route::post('/cp/warehouse/rooms/link'  ,'ScheduleController@RoomCreateLink');
+        Route::patch('/cp/warehouse/rooms/link/update/{id}'  ,'ScheduleController@RoomUpdateLink');
+
+        Route::post('/cp/warehouse/rooms/'  ,'ScheduleController@RoomCreate');
+
+
         Route::post('/cp/warehouse/update/{id}'  ,'WarehouseController@WHupdate');
         Route::post('/cp/warehouse/search'  ,'WarehouseController@WHsearch');
         Route::post('/cp/warehouse/'  ,'WarehouseController@create');
+
+
+
 
 
     });

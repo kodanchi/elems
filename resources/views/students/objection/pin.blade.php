@@ -12,6 +12,7 @@
                         <div class="row">
 
                             @include('errors.errors')
+                            @include('errors.status')
                             <div class="col-md-12">
                                 {!! Form::open(['url' => '/students/objection/validate', 'method' => 'post','class'=>'newsletter-form']) !!}
 

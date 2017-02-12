@@ -14,6 +14,10 @@
 
                         <div class="col col-md-6">
                             <a href="{{url('cp/warehouse/list')}}" class="button">المعهودات</a>
+                            <a href="{{url('cp/warehouse/employees')}}" class="button">الموظفين</a>
+                        </div>
+                        <div class="col col-md-6">
+
                         </div>
 
 

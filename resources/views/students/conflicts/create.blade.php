@@ -14,6 +14,7 @@
                             @include('errors.errors')
                             <div class="col-md-12">
 
+
                                 {!! Form::open(['url' => '/students/conflict/new', 'method' => 'post','class'=>'newsletter-form']) !!}
 
                                 <div class="row">

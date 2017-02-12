@@ -95,6 +95,12 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'email' => [
+            'unique' => 'البريد الإلكتروني مسجل لدينا مسبقاً',
+        ],
+        'agree.required' => 'يجب الموافقة على صحة البيانات',
+
+
     ],
 
     /*

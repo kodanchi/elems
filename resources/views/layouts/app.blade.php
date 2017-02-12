@@ -15,11 +15,16 @@
 
     <link rel="stylesheet" type="text/css" href="/css/all.css">
     <link rel="stylesheet" type="text/css" href="/css/bootstrap-select.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/classic-min.css">
 
 
 
     <script type="text/javascript" src="/js/all.js"></script>
     <script type="text/javascript" src="/js/bootstrap-select.min.js"></script>
+    <script  src="/js/jquery-ui.js"></script>
+    <script  src="/js/jquery.mousewheel.min.js"></script>
+    <script  src="/js/jQDateRangeSlider-min.js"></script>
+    <script  src="/js/bootbox.min.js"></script>
 
 
 
@@ -61,7 +66,7 @@
 
             <div class="col-md-4">
                 <div class="header-right">
-                    <ul class="list-unstyled list-inline">
+                   {{-- <ul class="list-unstyled list-inline">
                         <li class="dropdown dropdown-small">
                             <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#">
                                 <span class="key">{{trans('settings.language')}}: </span><span class="value">{{App::isLocale('ar')?'العربية':'English'}} </span><b class="caret"></b></a>
@@ -69,7 +74,7 @@
                                 @include('layouts.lang')
                             </ul>
                         </li>
-                    </ul>
+                    </ul>--}}
                 </div>
             </div>
         </div>

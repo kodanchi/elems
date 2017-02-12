@@ -51,7 +51,7 @@
 
 
                                     <div class="col-md-6">
-                                        <h5>{{trans('C.course_ins_name')}}: {{$course->name}}</h5>
+                                        <h5>{{trans('objection.course_ins_name')}}: {{$course->name}}</h5>
                                     </div>
 
                                     <div class="col-md-6">

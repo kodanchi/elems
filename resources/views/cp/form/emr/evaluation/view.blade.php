@@ -89,24 +89,44 @@
                             <div class="col col-md-6">
                                 <h4>{{trans('regform.evaluate')}}</h4>
                                 {!! Form::model($rateForm, ['url' => '/cp/form/emr/evaluation/rate', 'method' => 'post']) !!}
-                                	<!--- Rate Field --->
-                                	<div class="form-group">
-                                	    {!! Form::label('rate', 'التقييم:') !!}
-                                        {!! Form::selectRange('rate', 1, 10 , null , ['class' => 'form-control']) !!}
-                                	</div>
-                                <!--- days Field --->
-                                <div class="form-group">
-                                    {!! Form::label('days', 'عدد أيام المراقبة:') !!}
-                                    {!! Form::selectRange('days', 1, 10 , null , ['class' => 'form-control']) !!}
-                                </div>
+                                    <div class="col-md-12">
 
-                                <!--- Des Field --->
-                                <div class="form-group">
-                                    {!! Form::label('des', 'تقرير التقييم:') !!}
-                                    {!! Form::textarea('des', null, ['class' => 'form-control']) !!}
-                                </div>
+                                        <h5>ملاحضات</h5>
+                                        <ul>
+                                            <li>                        يرجى أن يكون تقييمك للمراقب منطقياً وبعناية حيث أن ذلك سوف يكون عاملاً مؤثراً في الاختيار مستقبلاً </li>
+                                            <li>اختيار الخانة "صفر" تعني استبعاد المراقب</li>
+                                        </ul>
+                                        <hr>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <!--- Rate Field --->
+                                        <div class="form-group">
+                                            {!! Form::label('rate', 'التقييم:') !!}
+                                            {!! Form::selectRange('rate', 0, 10 , null , ['class' => 'form-control']) !!}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <!--- days Field --->
+                                        <div class="form-group">
+                                            {!! Form::label('days', 'عدد أيام المراقبة:') !!}
+                                            {!! Form::selectRange('days', 1, 10 , null , ['class' => 'form-control']) !!}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <!--- Des Field --->
+                                        <div class="form-group">
+                                            {!! Form::label('des', 'تقرير التقييم:') !!}
+                                            {!! Form::textarea('des', null, ['class' => 'form-control']) !!}
+                                        </div>
+                                    </div>
+
+
+
+
+
                                 {!! Form::hidden('form_id', $form->id, ['id' => 'id']) !!}
-                                {!! Form::submit('Submit', ['class' => 'form-control']) !!}
+                                {!! Form::submit('تقييم', ['class' => 'form-control']) !!}
                                 {!! Form::close() !!}
 
                             </div>

@@ -45,6 +45,18 @@ class Kernel extends HttpKernel
         'warehouse' => [
             \App\Http\Middleware\Authenticate::class,
             \App\Http\Middleware\RedirectIfNotWarehouseAdmin::class
+        ],
+        'evaluation' => [
+            \App\Http\Middleware\Authenticate::class,
+            \App\Http\Middleware\RedirectIfNotEvaluationAdmin::class
+        ],
+        'objection' => [
+            \App\Http\Middleware\Authenticate::class,
+            \App\Http\Middleware\RedirectIfNotObjectionAdmin::class
+        ],
+         'helpdeskCP' => [
+            \App\Http\Middleware\Authenticate::class,
+            \App\Http\Middleware\RedirectIfNothelpdeskAdmin::class
         ]
     ];
 

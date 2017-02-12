@@ -3,6 +3,7 @@
 namespace App\Http\Controllers ;
 
 use App\EmailValidation;
+use App\Evaluation;
 use App\Http\Requests\EmailValidationRequest;
 use App\Http\Requests\RegFormRequest;
 
@@ -11,9 +12,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\URL;
 use Maatwebsite\Excel\Facades\Excel;
 use Session;
 use Mail;
+use Validator;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 
@@ -209,6 +212,76 @@ class RegFormController extends Controller
     {
         return view('forms.regform.closed');
     }
+
+
+    public function evaIndex()
+    {
+        return view('cp.form.emr.evaluation.index');
+    }
+    public function evaView(Request $request)
+    {
+        $validator = Validator::make($request->all(),[
+            'nid' => 'required|numeric|exists:reg_forms,nid,status,1,id,'.$request->get('id'),
+            'id' => 'required|numeric|exists:reg_forms,id,status,1'
+        ],[
+            'nid.numeric' => 'يجب إدخال رقم الهوية/الإقامة',
+            'nid.required' => 'يجب إدخال رقم الهوية/الإقامة',
+            'id.numeric' => 'يجب إدخال رقم الموظف',
+            'id.required' => 'يجب إدخال رقم الموظف',
+            'nid.exists' => 'هناك خطأ في رقم الهوية/الإقامة أو رقم الموظف ',
+            'id.exists' => 'رقم الموظف غير متواجد',
+        ]);
+        if($validator->fails()){
+            return redirect(URL::previous())
+                ->withErrors($validator)
+                ->withInput();
+        }
+        $nid = $request->get('nid');
+        $id = $request->get('id');
+        $form = RegForm::where('NID','=',$nid)->where('id','=',$id)->first();
+        //dd($form);
+        //$rateForm = DB::select('select * from evaluation where form_id = ?',[$form->id]);
+        $rateForm = Evaluation::where('form_id',$form->id)->first();
+        //dd($rateForm);
+        return view('cp.form.emr.evaluation.view',compact('form','rateForm'));
+    }
+
+    public function rateUpdate(Request $request)
+    {
+        $validator = Validator::make($request->all(),[
+            'form_id' => 'required|numeric|exists:reg_forms,id,status,1',
+            'rate' => 'required|numeric|max:10',
+            'days' => 'required|numeric|max:10',
+        ],[
+            'form_id.numeric' => 'هنالك خطاُ في رقم النموذج، تواصل مع الدعم الفني',
+            'rate.numeric' => 'التقييم يجب أن يكون رقمياً',
+            'form_id.required' => 'هنالك خطاُ في رقم النموذج، تواصل مع الدعم الفني',
+            'rate.required' => 'يجب إختيار التقييم للمراقب',
+            'form_id.exists' => 'رقم النموذج غير متواجد',
+        ]);
+        if($validator->fails()){
+            return redirect(URL::previous())
+                ->withErrors($validator)
+                ->withInput();
+        }
+        $rateForm = Evaluation::firstOrNew(array('form_id' => Input::get('form_id')));
+        $rateForm->rate = Input::get('rate');
+        $rateForm->days = Input::get('days');
+        $rateForm->des = Input::get('des');
+        $rateForm->user = Auth::User()->name;
+
+
+        $rateForm->save();
+
+        $form = RegForm::where('id','=',Input::get('form_id'))->first();
+        //dd($form);
+        $rateForm = Evaluation::where('form_id',$form->id)->first();
+
+        Session::flash('status','تم تحديث التقييم');
+        return view('cp.form.emr.evaluation.view',compact('form','rateForm'));
+
+    }
+
 
 
 

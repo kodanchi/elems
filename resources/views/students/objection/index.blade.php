@@ -10,27 +10,22 @@
 
             <div class="col-md-6">
                 <div class="panel panel-default">
-                    <div class="panel-heading">شروط قبول الأعذار لاختبارات طلاب التعليم عن بعد</div>
+                    <div class="panel-heading">شروط نظام الإعتراض على نتائج اختبارات طلاب التعليم عن بعد</div>
 
                     <div class="panel-body ">
                         <div class="row">
                             <div class="col-md-12">
                                 <ul class="list-group">
                                     <li class="list-group-item">
-                                        حالات الأعذار الطبية: إحضار تقرير طبي باللغة العربية ومختوم بالختم الرسمي من المستشفى، وينص بشكل واضح على مدة الإجازة المرضية .
-                                    </li>
+                                        يمكن للطالب الاعتراض على درجة مقررين فقط.                                    </li>
                                     <li class="list-group-item">
-                                        حالات أعذار حوادث السير: إحضار خطاب أو تقرير من المرور أو شركة نجم يثبت وقوع الحادث .
-                                    </li>
+                                        تقديم معلومات غير صحيحة تؤثر على طلبات الطالب.                                    </li>
                                     <li class="list-group-item">
-                                        حالات أعذار الوفاة: إحضار ما يثبت ذلك (شهادة الوفاة أو تصريح الدفن أو تقرير طبي)
-                                    </li>
+                                        يجب ذكر سبب الاعتراض بشكل واضح.                                    </li>
                                     <li class="list-group-item">
-                                        تقديم أصل العذر وليس الصورة منه .
-                                    </li>
+                                        تقوم لجنة التصحيح بإعادة التصحيح والرد على الطلب .                                    </li>
                                     <li class="list-group-item">
-                                        تقديم عذر الطالب/ ـة في مدة لا تتجاوز خمسة أيام من تاريخ الاختبار المعني.
-                                    </li>
+                                        يمكن للطالب تقديم طلب الاعتراض خلال 6 أيام فقط من تاريخ إعلان النتائج.                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -42,6 +37,10 @@
 
 
                 <div class="panel panel-default">
+                    <div class="alert alert-danger" role="alert">
+                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                        تم اغلاق التقديم
+                    </div>
                     <div class="panel-heading">{{trans('objection.applicants')}}</div>
 
                     <div class="panel-body ">
@@ -54,7 +53,7 @@
                                 <!--- SID Field --->
                                 <div class="form-group">
                                     {!! Form::label('sid', trans('objection.sid').':') !!}
-                                    {!! Form::text('sid', null, ['class' => 'form-control']) !!}
+                                    {!! Form::text('sid', null, ['class' => 'form-control' , 'readonly' => 'true']) !!}
                                 </div>
                                 <label>
                                     {!! Form::checkbox('agree', '1', null,  ['id' => 'agree']) !!}

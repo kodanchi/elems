@@ -3,6 +3,10 @@
     <p><a href="{{url('/cp/students/objection/pending')}}" class="btn btn-primary form-control button">{{trans('cp.new_res')}}</a></p>
     <p><a href="{{url('/cp/students/objection/approved')}}" class="btn btn-success form-control button">{{trans('cp.approved_res')}}</a></p>
     <p><a href="{{url('/cp/students/objection/rejected')}}" class="btn btn-danger form-control button">{{trans('cp.rejected_res')}}</a></p>
+    @if(Auth::User()->getRole() == 'admin')
+        <p><a href="{{url('/cp/students/objection/export')}}" class="btn btn-danger form-control button">{{trans('cp.export_res')}}</a></p>
+
+    @endif
     <hr>
     {!! Form::open(['url' => 'cp/students/objection/search', 'method' => 'post']) !!}
     	<!--- Search By Field --->

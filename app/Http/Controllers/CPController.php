@@ -6,9 +6,11 @@ use App\EmailValidation;
 use App\Evaluation;
 use App\FacultyForm;
 use App\Http\Requests\AgreeRequest;
+use App\Http\Requests\RegFormRequest;
 use App\Http\Requests\updateRegFormRequest;
 use App\Http\Requests\UsersRequest;
 use App\RegForm;
+use App\Survey;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -16,8 +18,11 @@ use DB;
 use App\Http\Requests;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\URL;
 use Maatwebsite\Excel\Facades\Excel;
 use Validator;
@@ -300,72 +305,13 @@ class CPController extends Controller
         return view('cp.form.emr.index',compact('forms'));
     }
 
-    public function evaIndex()
-    {
-        return view('cp.form.emr.evaluation.index');
-    }
-    public function evaView(Request $request)
-    {
-        $validator = Validator::make($request->all(),[
-            'nid' => 'required|numeric|exists:reg_forms,nid,status,1'
-        ]);
-        if($validator->fails()){
-            return redirect(URL::previous())
-                ->withErrors([
-                    'nid.numeric' => 'يجب إدخال رقم الهوية/الإقامة',
-                    'nid.exists' => 'رقم الهوية/الإقامة غير متواجد',
-                ])
-                ->withInput();
-        }
-        $nid = $request->get('nid');
-        $form = RegForm::where('NID','=',$nid)->first();
-        //dd($form);
-        //$rateForm = DB::select('select * from evaluation where form_id = ?',[$form->id]);
-        $rateForm = Evaluation::where('form_id',$form->id)->first();
-        //dd($rateForm);
-        return view('cp.form.emr.evaluation.view',compact('form','rateForm'));
-    }
 
-    public function rateUpdate(Request $request)
-    {
-        $validator = Validator::make($request->all(),[
-            'form_id' => 'required|numeric|exists:reg_forms,id,status,1',
-            'rate' => 'required|numeric|max:10',
-            'days' => 'required|numeric|max:9',
-        ]);
-        if($validator->fails()){
-            return redirect(URL::previous())
-                ->withErrors([
-                    'form_id.numeric' => 'هنالك خطاُ في رقم النموذج، تواصل مع الدعم الفني',
-                    'rate.numeric' => 'هنالك خطاُ في رقم النموذج، تواصل مع الدعم الفني',
-                    'form_id.required' => 'هنالك خطاُ في رقم النموذج، تواصل مع الدعم الفني',
-                    'rate.required' => 'يجب إختيار التقييم للمراقب',
-                    'form_id.exists' => 'رقم النموذج غير متواجد',
-                ])
-                ->withInput();
-        }
-        $rateForm = Evaluation::firstOrNew(array('form_id' => Input::get('form_id')));
-        $rateForm->rate = Input::get('rate');
-        $rateForm->days = Input::get('days');
-        $rateForm->des = Input::get('des');
-        $rateForm->user = Auth::User()->name;
-
-
-        $rateForm->save();
-
-        $form = RegForm::where('id','=',Input::get('form_id'))->first();
-        //dd($form);
-        $rateForm = Evaluation::where('form_id',$form->id)->first();
-
-        return view('cp.form.emr.evaluation.view',compact('form','rateForm'))->with('status','تم تحديث التقييم');
-
-    }
 
 
     public function excelExport()
     {
         $forms = DB::select('
-select id as \'ID\',
+    select id as \'ID\',
 		NID as \'NID\',
 		fname as \'First\',
 		faname as \'Father\',
@@ -449,6 +395,16 @@ from reg_forms ');
         })->download('xls');
     }
 
+    public function ObjRequested()
+    {
+
+            $forms = EmailValidation::where('valid_for', 'objection')
+                ->latest()->paginate(15);
+
+
+        return view('cp.students.objection.requested',compact('forms'));
+    }
+
     public function SPRequested()
     {
 
@@ -458,6 +414,7 @@ from reg_forms ');
 
         return view('cp.students.sp.requested',compact('forms'));
     }
+
     public function SPValidate()
     {
 
@@ -486,27 +443,182 @@ from reg_forms ');
 
     }
 
+    public function ObjValidate()
+        {
+
+            $email = Input::get('email');
+            $sid = explode('@',$email)[0];
+
+            Session::put('sid', $sid);
+
+            $classes = DB::select('select courses.des, courses.cid, classes.name, SSC.class_id from courses, classes, SSC '.
+                'WHERE SSC.class_id = classes.class_id '.
+                'AND classes.cid = courses.cid '.
+                'AND SSC.sid= ?',[$sid]);
+            //dd($classes);
+            //$majors = trans('majors');
+            //$dates = DB::table('exams')->select('exams.date')->get();
+            //$datesArr = DB::select('select date from exams ');
+            $courses = [''=>'حدد'];
+            foreach($classes as $class)
+            {
+                //print_r(get_object_vars($date));
+                $courses[$class->class_id] = $class->des . ' - ' . $class->name;
+                //print_r($dates);
+            }
+            //dd(get_object_vars($dates));
+            return view('students.objection.search', compact('courses'));
+
+        }
+
+
+    public function SIDHashAll()
+    {
+        $deleted = DB::delete('delete from hashedSID');
+        $students = DB::table('students')->get();
+
+        foreach ($students as $student) {
+
+            //$hsid = Hash::make($student->sid);
+            $pin = str_random(20);
+            DB::insert('insert into hashedSID (sid,hash) values (?,?)',[ $student->sid, $pin]);
+        }
+
+    }
+
+    public function surveyList()
+    {
+        $forms = Survey::paginate(20);
+
+        return view('cp.surveys.index',compact('forms'));
+    }
+
+    public function surveySearch(Request $request)
+    {
+        $searchType = Input::get('searchType');
+        //dd($searchType);
+        switch ($searchType)
+        {
+
+            case 'sid':
+                $this->validate($request,[
+                    'search' => 'required|numeric|exists:surveys,sid'
+                ],[
+                    'search.string' => 'البحث عن طريق الرقم الاكاديمي',
+                    'search.exists' => 'الرقم الاكاديمي غير متواجد',
+                ]);
+                $forms = Survey::where('sid','LIKE','%'.Input::get('search').'%')->paginate(20);
+                break;
+        }
+
+        return view('cp.surveys.index',compact('forms'));
+    }
+
+
     public function regFormNew()
     {
 
-            $nationality = trans('nationality');
+        $nationality = trans('nationality');
 
-            $jobTitles = trans('jobsTitles');
+        $jobTitles = trans('jobsTitles');
 
-            $relation = trans('relations');
+        $relation = trans('relations');
 
-            $gender = trans('gender');
-            $boolean = trans('boolean');
-            $centers_male = trans('centers_male');
-            $centers_female = trans('centers_female');
+        $gender = trans('gender');
+        $boolean = trans('boolean');
+        $centers_male = trans('centers_male');
+        $centers_female = trans('centers_female');
 
-            $qualification = trans('qualification');
-            $banks = trans('banks');
-            return view('cp.form.emr.create',compact('nationality','gender','jobTitles','relation','qualification','boolean','centers_male','centers_female','banks'));
+        $qualification = trans('qualification');
+        $banks = trans('banks');
+        return view('cp.form.emr.create',compact('nationality','gender','jobTitles','relation','qualification','boolean','centers_male','centers_female','banks'));
 
 
     }
 
+    public function regFormAdd(RegFormRequest $request)
+    {
+
+        $attach = $request->file('job_identity_attach');
+
+        do{
+            $fileName = str_random('20').'.'.$attach->getClientOriginalExtension();
+        }while(Storage::exists($fileName));
+
+        Storage::put($fileName,File::get($attach));
+        $request->merge(['job_identity_file' => $fileName]);
+
+        //qualification_attach
+        $attach = $request->file('qualification_identity_attach');
+
+        do{
+            $fileName = str_random('20').'.'.$attach->getClientOriginalExtension();
+        }while(Storage::exists($fileName));
+
+        Storage::put($fileName,File::get($attach));
+        $request->merge(['qualification_identity_file' => $fileName]);
+
+
+
+        if($request->input('nationality') === 'other')
+            $request->merge(['nationality' => $request->input('other_nationality')]);
+
+
+        if($request->input('job_title') === 'other')
+            $request->merge(['job_title' => $request->input('other_job_title')]);
+
+
+        if($request->input('emer_relation') === 'other')
+            $request->merge(['emer_relation' => $request->input('other_emer_relation')]);
+
+        $request->merge(['is_contract' => $request->input('is_contract') === '1' ? 1 : 0]);
+        $request->merge(['isSV' => $request->input('isSV') === '1' ? 1 : 0]);
+        $request->merge(['isInspector' => $request->input('isInspector') === '1' ? 1 : 0]);
+        $request->merge(['isController' => $request->input('isController') === '1' ? 1 : 0]);
+
+        RegForm::create($request->all());
+
+        //return Redirect::to('/form/emr/form/success')->with('status',trans('regform.SuccessSubmit'));
+        return redirect('/cp/form/emr/')->with('status','تم إضافة المراقب');
+
+    }
+
+    public function EmrEvaluationExcelExport()
+    {
+        $forms = DB::select('  select form_id as \'ID\',
+  NID AS \'NID\',
+		fname as \'First Name\',
+		faname as \'Father Name\',
+		gfaname as \'Grandfather Name\',
+		lname as \'Last name\',
+		rate as \'Rate\',
+		evaluation.days as \'Days\',
+		evaluation.des as \'Description\',
+		evaluation.[user] as \'Evaluator\',
+
+
+		
+		evaluation.created_at	,
+		evaluation.updated_at
+
+from evaluation, reg_forms
+where evaluation.form_id = reg_forms.id ');
+
+        $forms = collect($forms)->map(function($x){ return (array) $x; })->toArray();
+
+        //dd($forms);
+        $date = Carbon::now();
+
+        Excel::create('Evaluation-'.$date, function($excel) use($forms) {
+
+            $excel->sheet('All', function($sheet) use($forms) {
+
+                $sheet->fromArray($forms);
+
+            });
+
+        })->download('xls');
+    }
 
 
 }

@@ -28,7 +28,7 @@
                                     <tr class="text-center">
                                         <td>{{$asset->SN}}</td>
                                         <td>{{$asset->DL_code}}</td>
-                                        <td>{{trans('warehouse.assetTypes.'.$asset->type)}}</td>
+                                        <td>{{$asset->type}}</td>
                                         <td>{{trans('warehouse.assetStatus.'.$asset->status)}}</td>
                                         <td><a href="{{url('cp/warehouse/view/'.$asset->id)}}">
                                                 <span class="glyphicon glyphicon-circle-arrow-right"></span>
@@ -37,7 +37,7 @@
                                 @endforeach
                                 @if($WHassets->isEmpty())
                                     <tr class="text-center">
-                                        <td colspan="4">{{trans('warehouse.noRes')}}</td>
+                                        <td colspan="5">{{trans('warehouse.noRes')}}</td>
                                     </tr>
                                 @endif
                                 </tbody>

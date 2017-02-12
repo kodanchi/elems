@@ -12,7 +12,7 @@
 
                     <div class="panel-body ">
 
-                        @include('cp.students.objection.search')
+                        @include('cp.students.objection.REQsearch')
 
                         <div class="col col-md-9">
                             <table class="table table-stripped table-hover">

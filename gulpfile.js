@@ -17,16 +17,21 @@ elixir(function(mix) {
 
     mix.scripts([
         'jquery-2.0.0.min.js',
+        //'jquery-ui.js',
         'bootstrap.min.js',
         'hijri-date.js',
         'calendar.js',
+        'timetable.min.js',
         'jquery.mask.min.js',
         'bootstrap-submenu.js',
         'main.js',
         'owl.carousel.min.js',
         'jquery.sticky.js',
         'jquery.easing.1.3.min.js',
+        //'bootstrap-slider.min.js',
+
         'main2.js',
+        'nouislider.min.js',
 
     ]);
 
@@ -38,15 +43,20 @@ elixir(function(mix) {
 
     mix.styles([
 
+        'jquery-ui.min.css',
         'calendar.css',
+        'timetablejs.css',
         'bootstrap.min.css',
         'bootstrap-arabic/bootstrap-arabic.min.css',
         'bootstrap-arabic/bootstrap-arabic-theme.min.css',
+        //'bootstrap-slider.min.css',
 
         'owl.carousel.css',
         'style.css',
         'responsive.css',
         'main.css',
+        'nouislider.min.css',
+
 
     ]);
 
@@ -55,6 +65,7 @@ elixir(function(mix) {
         //'bootstrap-rtl/bootstrap-theme.min.css',
         'bootstrap-arabic/bootstrap-arabic.min.css',
         'bootstrap-arabic/bootstrap-arabic-theme.min.css',
+        'nouislider.min.css',
     ],'public/css/css-ar.css');
 
     //mix.copy('/fonts', 'public/assets/fonts');

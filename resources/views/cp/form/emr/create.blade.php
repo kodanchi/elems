@@ -15,7 +15,7 @@
 
                     <div class="panel-body">
 
-                        {!! Form::open(['url' => LaravelLocalization::getLocalizedURL(null,'form/emr/add'), 'method' => 'post', 'files' => true,'id'=>'newRegForm','class' => 'newsletter-form']) !!}
+                        {!! Form::open(['url' => url('cp/form/emr/add'), 'method' => 'post', 'files' => true,'id'=>'newRegForm','class' => 'newsletter-form']) !!}
                         <h4>{{trans('regform.general_details')}}</h4>
                         <hr>
                         <div class="row">
@@ -364,7 +364,6 @@
 
                         </div>
                         <div class="row">
-                            {!! Form::hidden('email', Session::get('email'), ['id' => 'email']) !!}
                                 {!! Form::submit(trans('regform.submit'), ['class' => ' col-md-3']) !!}
                                 <a href="{{LaravelLocalization::getLocalizedURL(null,'/form')}}" class="button">{{trans('regform.cancel')}}</a>
 

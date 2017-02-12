@@ -17,7 +17,7 @@
                         <div class="row">
 
 
-                            <div class="col-md-12">
+                            <div class="col-md-12 newsletter-form">
                             {!! Form::open(['url' => '/cp/form/emr/evaluation', 'method' => 'post']) !!}
 
                                 <!--- NID Field --->
@@ -25,7 +25,15 @@
                                     {!! Form::label('nid', 'رقم الهوية/الإقامة:') !!}
                                     {!! Form::text('nid', null, ['class' => 'form-control']) !!}
                                 </div>
+                                <!--- ID Field --->
+                                <div class="form-group">
+                                    {!! Form::label('id', 'رقم المراقب:') !!}
+                                    {!! Form::text('id', null, ['class' => 'form-control']) !!}
+                                </div>
                                 {!! Form::submit('تحقق', ['class' => 'form-control']) !!}
+                                @if(Auth::user()->getRole() == 'admin')
+                                    <a href="{{url('cp/form/emr/evaluation/export')}}" class=" form-control button">{{trans('cp.export_res')}}</a>
+                                    @endif
                                 {!! Form::close() !!}
                             </div>
 
