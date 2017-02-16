@@ -67,7 +67,7 @@
                                     أوفق على الإدلاء بالمعلومات الصحيحة وأتحمل كامل المسؤولية في حال كانت المعلومات غير صحيحة
                                 </label>
                                 </br>
-                                {!! Form::submit('تقدم', ['class' => ' col-md-6 col-md-offset-3']) !!}
+                                {!! Form::submit('تقدم', ['class' => 'form-control']) !!}
                                 {!! Form::close() !!}
                             </div>
 

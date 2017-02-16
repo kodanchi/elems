@@ -3,7 +3,9 @@
         <li><a href="{{url('cp/form/emr')}}">{{trans('settings.home')}}</a></li>
     @elseif(Request::is('helpdesk/*') || Request::is('helpdesk'))
          <li><a href="{{url('helpdesk')}}">{{trans('settings.home')}}</a></li>
-    @elseif(Request::is('cp/form/ff/*') || Request::is('cp/form/ff'))
+    @elseif(Request::is('cp/students/helpdesk/*') || Request::is('cp/students/helpdesk'))
+         <li><a href="{{url('cp/students/helpdesk')}}">{{trans('settings.home')}}</a></li>
+   @elseif(Request::is('cp/form/ff/*') || Request::is('cp/form/ff'))
          <li><a href="{{url('cp/form/ff')}}">{{trans('settings.home')}}</a></li>
     @elseif(Request::is('cp/students/conflict/*') || Request::is('cp/students/conflict'))
          <li><a href="{{url('cp/students/conflict')}}">{{trans('settings.home')}}</a></li>

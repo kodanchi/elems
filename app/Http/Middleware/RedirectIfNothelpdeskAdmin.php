@@ -16,17 +16,28 @@ class RedirectIfNothelpdeskAdmin
      */
     public function handle($request, Closure $next)
     {
-        switch (Auth::user()->getRole()){
-            case 'admin':
-            case 'Registration':
-            case 'financial':
-            case 'graduate':
-            case 'technicalSupport':
+        //dd(Auth::user()->getAllroles());
+        $authRoles = [
+            'admin',
+            'Registration',
+            'financial',
+            'graduate',
+            'technicalSupport',
+            'academicAffairs',
+            'blackboard',
+        ];
 
+        $userRoles = Auth::user()->getAllroles();
+
+
+        foreach ($authRoles as $authRole) {
+            if(array_key_exists($authRole,$userRoles)){
                 return $next($request);
-                break;
-            default:
-                return redirect('/login')->withErrors(trans('settings.notAuthMsg'));
+            }
         }
+
+        return redirect('/login')->withErrors(trans('settings.notAuthMsg'));
+
+
     }
 }

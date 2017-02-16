@@ -113,6 +113,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/form/facultyform/{id}/view', 'FacultyFormController@view');
 
     //for admin to check the requested applications
+
     Route::get('/cp/students/sp/requested'  ,'CPController@SPRequested');
     Route::get('/cp/students/objection/requested'  ,'CPController@ObjRequested');
     Route::post('/cp/students/sp/validate'  ,'CPController@SPValidate');
@@ -120,6 +121,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     //for college admin and super admin to enter new emr form
     Route::get('/cp/form/emr/new'  ,'CPController@regFormNew');
     Route::post('/cp/form/emr/add', 'CPController@regFormAdd');
+    Route::post('/cp/students/sp/requested/search'  ,'SPController@requestedsearch');
+
 
     //Route::get('/cp/updateBatch'  ,'CPController@updateBatch');
     //for admin to get export the emr/evaluation
@@ -245,6 +248,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
         Route::get('/cp/students/conflict/approved'  ,'ConflictFormController@CPApproved');
         Route::get('/cp/students/conflict/rejected'  ,'ConflictFormController@CPRejected');
         Route::get('/cp/students/conflict/pending'  ,'ConflictFormController@CPPending');
+        Route::get('/cp/students/conflict/export'  ,'ConflictFormController@conflictExcelExport');
 
 
     });
@@ -260,6 +264,11 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
         Route::get('/cp/students/helpdesk/approved'  ,'TecsController@CPApproved');
         Route::get('/cp/students/helpdesk/rejected'  ,'TecsController@CPRejected');
         Route::get('/cp/students/helpdesk/pending'  ,'TecsController@CPPending');
+        Route::get('/cp/students/helpdesk/requested'  ,'TecsController@HdRequested');
+        Route::get('/cp/students/helpdesk/export'  ,'TecsController@excelExport');
+
+        Route::post('/cp/students/helpdesk/requested'  ,'TecsController@search');
+        Route::post('/cp/students/helpdesk/requested/search'  ,'TecsController@requestedsearch');
 
     });
 
@@ -285,6 +294,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
         Route::get('/cp/students/objection/search'  ,'ObjectionController@CPindex');
         Route::post('/cp/students/objection/search'  ,'ObjectionController@search');
         Route::post('/cp/students/objection/requested'  ,'ObjectionController@search');
+        Route::post('/cp/students/objection/requested/search'  ,'ObjectionController@requestedsearch');
 
         Route::get('/cp/students/objection/approved'  ,'ObjectionController@CPApproved');
         Route::get('/cp/students/objection/rejected'  ,'ObjectionController@CPRejected');
@@ -333,6 +343,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
         Route::get('/cp/warehouse/rooms/link/new/{id}'  ,'ScheduleController@RoomNewLink');
         Route::get('/cp/warehouse/rooms/link/edit/{id}/{link}'  ,'ScheduleController@RoomEditLink');
         Route::get('/cp/warehouse/rooms/link/delete/{link}'  ,'ScheduleController@RoomDelLink');
+
+        //reservations -get
+        Route::get('/cp/warehouse/reservations/'  ,'ScheduleController@resvView');
+
 
 
         //employees -post

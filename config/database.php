@@ -74,7 +74,7 @@ return [
             'username' =>  'Eldb02_user',
             'password' => env('DB_PASSWORD', '05tF823#')
         ],
-'delsql3' => [
+        'delsql3' => [
             'driver' => 'sqlsrv',
             'host' => env('DB_HOST', 'UODSQLCL'),
             'port' => env('DB_PORT', '1433'),

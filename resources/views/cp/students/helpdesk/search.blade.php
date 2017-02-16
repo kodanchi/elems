@@ -21,4 +21,16 @@
             });
 
         </script>
+
+    <hr>
+    @if(Auth::User()->getRole() != 'admin' )
+
+    <div class="">
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-success">
+                الطلبات المظللة باللون الأخضر تم تعيينها إليك شخصياً
+            </li>
+        </ul>
+    </div>
+        @endif
 </div>

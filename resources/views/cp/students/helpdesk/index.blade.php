@@ -15,21 +15,50 @@
                         @include('cp.students.helpdesk.search')
 
                         <div class="col col-md-9">
+
                             <table class="table table-stripped table-hover">
                                 <thead class="">
                                 <th class="text-center">{{trans('sp.fid')}}</th>
                                 <th class="text-center">{{trans('sp.sid')}}</th>
                                 <th class="text-center">{{trans('الطلب')}}</th>
                                 <th class="text-center">{{trans('sp.con_status')}}</th>
+                                @if(Auth::User()->getRole() == 'admin' )
+                                    <th class="text-center">تمت المعالجة عن طريق</th>
+                                    <th class="text-center">تم تعيين الطلب إلى</th>
+                                    @else
+                                    <th></th>
+                                    <th></th>
+
+
+
+
+                                @endif
+
                                 <th class="text-center">{{trans('sp.view')}}</th>
+
+
                                 </thead>
                                 <tbody>
                                 @foreach($forms as $form)
-                                    <tr class="text-center">
+                                    <tr class="text-center {{$hlclass = $form->username == Auth::User()->name ? 'success' : ''}}">
                                         <td>{{$form->fid}}</td>
                                         <td>{{$form->sid}}</td>
                                         <td>{{trans('serviceType.'.$form->serviceType)}}</td>
-                                        <td>{{trans('status.'.$form->status)}}</td>
+
+                                        <td>{{trans('HdStatus.'.$form->status)}}</td>
+                                        @if(Auth::User()->getRole() == 'admin' and $form->status == 'closed')
+                                            <td>{{$form->username}}</td>
+                                          @else
+                                            <td></td>
+
+                                        @endif
+
+                                        @if(Auth::User()->getRole() == 'admin' and $form->status == 'pending')
+                                            <td>{{$form->username}}</td>
+                                        @else
+                                            <td></td>
+
+                                        @endif
                                         <td><a href="{{url('cp/students/helpdesk/view/'.$form->id)}}">
                                                 <span class="glyphicon glyphicon-circle-arrow-right"></span>
                                             </a></td>

@@ -29,10 +29,13 @@
 
     <hr>
 
+    @if($form->attach_file !='null')
 
-        <a href="{{asset('storage/'.$form->attachment)}}" target="_blank" class="btn btn-info">
+        <a href="{{asset('storage/'.$form->attach_file)}}" target="_blank" class="btn btn-info">
             <span class="glyphicon glyphicon-paperclip"></span> {{trans('sp.view_attach')}}
         </a>
+
+    @endif
     </div>
 
 
@@ -43,7 +46,7 @@
             <h5>{{trans('sp.con_status')}}: {{$form->status}}</h5>
         </div>
         <div class="col-md-12">
-            <h5>{{trans('sp.des')}}: {{$form->subject}}</h5>
+            <h5>الموضوع: {{$form->subject}}</h5>
         </div>
         <div class="col-md-12">
             <h5>{{trans('sp.des')}}: {{$form->des}}</h5>

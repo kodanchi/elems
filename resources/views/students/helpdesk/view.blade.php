@@ -48,15 +48,20 @@
 
                                         <div class="col-md-6">
                                             <h4>{{trans('حالة الطلب')}}</h4>
-                                            <h5>{{trans('حالة الطلب')}}: {{trans('status')[$form->status]}}</h5>
+                                            <h5>{{trans('حالة الطلب')}}: {{trans('HdStatus.'.$form->status)}}</h5>
                                         </div>
 
                                 <div class="col-md-6">
+                                    @if($form->attach_file !='null')
+
+                                    <a href="{{asset('storage/'.$form->attach_file)}}" target="_blank" class="btn btn-info">
+                                        <span class="glyphicon glyphicon-paperclip"></span> {{trans('sp.view_attach')}}
+                                    </a>
+
+                                        @endif
 
 
-                                <a href="{{asset('storage/'.$form->attachment)}}" target="_blank" class="btn btn-info">
-                                    <span class="glyphicon glyphicon-paperclip"></span> {{trans('sp.view_attach')}}
-                                </a>
+
 
                             </div>
                                 </div>
@@ -78,7 +83,7 @@
                                  <br>
                             <div class="row">
                             <div class="col-md-6">
-                                <h4>{{trans('الرد على الطلب')}}: </h4>
+                                <h4>الرد على الطلب: </h4>
 
                                     <h5>{{$form->replay}}</h5>
                             </div>

@@ -7,12 +7,12 @@
             <div class="col-md-11 col-md-offset-1">
                 @include('errors.errors')
                 <div class="panel panel-default">
-                    <div class="panel-heading">{{trans('cp.sp_title')}}  | عدد النتائج: {{$forms->count()}}</div>
+                    <div class="panel-heading">الطلبات المتعثرة للدعم الفني  | عدد النتائج: {{$forms->count()}}</div>
 
 
                     <div class="panel-body ">
 
-                        @include('cp.students.sp.REQsearch')
+                        @include('cp.students.helpdesk.REQsearch')
 
                         <div class="col col-md-9">
                             <table class="table table-stripped table-hover">
@@ -27,10 +27,10 @@
                                         <td>{{$form->pin}}</td>
                                         <td>{{$form->email}}</td>
                                         <td>
-                                        {!! Form::open(['url' => 'cp/students/sp/validate', 'method' => 'post','class'=>'newsletter-form','target'=>'_blank']) !!}
+                                        {!! Form::open(['url' => '/helpdesk/validate', 'method' => 'post','class'=>'newsletter-form','target'=>'_blank']) !!}
 
-                                            {!! Form::hidden('pin', $form->pin, ['id' => 'id']) !!}
-                                            {!! Form::hidden('email', $form->email, ['id' => 'id']) !!}
+                                            {!! Form::hidden('pin', $form->pin, ['id' => 'pin']) !!}
+                                            {!! Form::hidden('email', $form->email, ['id' => 'email']) !!}
 
                                             {!! Form::submit('تقديم', ['class' => 'form-control btn-xs']) !!}
 

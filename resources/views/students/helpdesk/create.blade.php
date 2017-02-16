@@ -77,7 +77,7 @@
                                         <!--- Select Field --->
                                         <div class="form-group">
                                             {!! Form::label('major', 'التخصص :') !!}
-                                            {{$student->major}}
+                                            {{trans('majorCodes.'.$student->major)}}
                                         </div>
                                     </div>
                                 </div>
@@ -104,8 +104,8 @@
                                         <div class="col col-md-6">
                                             <!--- Upload Field --->
                                             <div class="form-group">
-                                                {!! Form::label('attachment', trans('sp.attach').':') !!}
-                                                {!! Form::file('attachment', ['class' => 'form-control','accept'=>'.pdf']) !!}
+                                                {!! Form::label('file', trans('sp.attach').':') !!}
+                                                {!! Form::file('file', ['class' => 'form-control','accept'=>'.pdf']) !!}
                                                 <small>يرفق ملف pdf </small>
                                                 <small class="red">الحجم المسموح: 4MB أو أقل</small>
                                             </div>
@@ -128,7 +128,7 @@
                                 </div>
 
 
-                                <div class="col-md-12">
+                                <div class="col-md-12 ">
                                     <label>
                                         {!! Form::checkbox('agree', '1', null,  ['id' => 'agree']) !!}
                                         أوفق على الإدلاء بالمعلومات الصحيحة وأتحمل كامل المسؤولية في حال كانت المعلومات غير صحيحة
@@ -136,9 +136,9 @@
                                 </div>
                         <br>
                         <br>
-                        {!! Form::submit('تقدم', ['class' => ' col-md-3 btn-lg']) !!}
+                        {!! Form::submit('تقدم', ['class' => ' col-md-3']) !!}
 
-                                    <a href="{{url('/helpdesk')}}" class="btn btn-default col-md-3  btn-lg">رجوع</a>
+                                    <a href="{{url('/helpdesk')}}" class=" button col-md-3 ">رجوع</a>
                                 {!! Form::close() !!}
                             </div>
                         </div>

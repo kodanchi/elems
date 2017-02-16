@@ -42,16 +42,20 @@
                                     <div class="col-md-6">
                                         <h4>{{trans('حالة الطلب')}}</h4>
                                         <hr>
-                                        <h5>{{trans('حالة الطلب')}}: {{trans('status')[$form->status]}}</h5>
+                                        <h5>{{trans('حالة الطلب')}}: {{trans('HdStatus.'.$form->status)}}</h5>
 
                                     </div>
 
                                     <div class="col-md-6">
 
+                                        @if($form->attach_file !='null')
 
-                                    <a href="{{asset('storage/'.$form->attach_file)}}" target="_blank" class="btn btn-info">
-                                        <span class="glyphicon glyphicon-paperclip"></span> {{trans('sp.view_attach')}}
-                                    </a>
+                                        <a href="{{asset('storage/'.$form->attach_file)}}" target="_blank" class="btn btn-info">
+                                            <span class="glyphicon glyphicon-paperclip"></span> {{trans('sp.view_attach')}}
+                                        </a>
+
+                                        @endif
+
                                 </div>
                                     </div>
 
@@ -82,24 +86,29 @@
 
                                         <!--- Description Field --->
                                         <div class="form-group">
-                                            {!! Form::label('des', trans('الرد على الطلب').':') !!}
-                                            {!! Form::textarea('des', $form->replay, ['class' => 'form-control']) !!}
+                                            {!! Form::label('replay', trans('الرد على الطلب').':') !!}
+                                            {!! Form::textarea('replay', $form->replay, ['class' => 'form-control']) !!}
                                         </div>
 
                                         {!! Form::submit(trans('cp.update'),  ['class' => 'form-control' , 'name'=> 'CPupdate' , 'value'=> 'CPupdate']) !!}
                                         <small>سيتم إرسال بريد إلكتروني إلى الطالب/الطالبة فور النقر على تحديث البيانات</small>
                                     </div>
 
-                                    <div class="col-md-3">
-                                        <!--- Status Field --->
-                                        <div class="form-group">
-                                            {!! Form::label('serviceType', trans('تحويل الطلب إلى إدارة أخرى').':') !!}
-                                            {!! Form::select('serviceType', $serviceType, $form->serviceType , ['class' => 'form-control']) !!}
+                                    <div class="col-md-6">
+                                        <div class="col-md-6">
+                                            <!--- Status Field --->
+                                            <div class="form-group">
+                                                {!! Form::label('serviceType', trans('تحويل الطلب إلى إدارة أخرى').':') !!}
+                                                {!! Form::select('serviceType', $serviceType, $form->serviceType , ['class' => 'form-control']) !!}
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            </br>
+                                            {!! Form::submit(trans('تحويل'),  ['class' => 'form-control' , 'name'=> 'CPtrans' , 'value'=> 'CPtrans' ]) !!}
 
                                         </div>
-                                        <div class="col-xs-6">
-                                            {!! Form::submit(trans('تحويل'),  ['class' => 'form-control' , 'name'=> 'CPtrans' , 'value'=> 'CPtrans' ]) !!}
-                                        </div>
+
                                     </div>
 
 

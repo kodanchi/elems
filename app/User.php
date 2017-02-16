@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\DB;
 
 class User extends Authenticatable
 {
@@ -43,4 +44,15 @@ class User extends Authenticatable
     {
         return $this->id;
     }
+     public function getAllroles()
+    {
+        $roles=DB::select('select role from roles where user_id=?',[$this->id]);
+        foreach ($roles as $role){
+
+            $rolesArr[$role->role]=$role->role;
+        }
+        return $rolesArr;
+    }
+
+
 }

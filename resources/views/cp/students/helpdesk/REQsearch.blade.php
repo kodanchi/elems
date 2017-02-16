@@ -1,7 +1,7 @@
 <div class="col col-md-3">
-    @include('cp.students.sp.buttons')
+    @include('cp.students.helpdesk.buttons')
     <hr>
-    {!! Form::open(['url' => 'cp/students/sp/requested/search', 'method' => 'post']) !!}
+    {!! Form::open(['url' => 'cp/students/helpdesk/search', 'method' => 'post']) !!}
     	<!--- Search By Field --->
     	<div class="form-group">
     	    {!! Form::label('searchType', trans('cp.searchBy').':') !!}

@@ -128,7 +128,7 @@
 
                                 {!! Form::submit('تقدم', ['class' => ' col-md-3']) !!}
 
-                                    <a href="{{url('/students/sp')}}" class=" button col-md-3 ">رجوع</a>
+                                    <a href="{{url('/students/sp/agree?agree=1')}}" class=" button col-md-3 ">رجوع</a>
                                 {!! Form::close() !!}
                             </div>
                         </div>
