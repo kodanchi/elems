@@ -8,7 +8,10 @@
                 @include('errors.errors')
                 @include('errors.status')
                 <div class="panel panel-default">
+{{--
                     <div class="panel-heading">{{trans('cp.emr_title')}} | عدد النتائج: {{$forms->count()}}</div>
+--}}
+                    <div class="panel-heading">  | عدد النتائج: {{$totalResult->count()}}</div>
 
 
                     <div class="panel-body ">

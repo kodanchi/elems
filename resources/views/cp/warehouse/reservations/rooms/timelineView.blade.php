@@ -41,16 +41,13 @@
                 'aui-scheduler',
                 function(Y) {
                     var events = [
-                        {
-                            content: 'Partial Lunar Eclipse',
-                            endDate: new Date(2013, 3, 25, 5),
-                            startDate: new Date(2013, 3, 25, 1)
-                        },
+
                         @foreach($events as $event)
                             {
                                 content: '{{$event->purpose}}',
-                                endDate: new Date({{date('Y, n, d, H,i',strtotime($event->end_date))}}),
-                                startDate: new Date({{date('Y, n, d, H,i',strtotime($event->start_date))}})
+                                disabled: true,
+                                endDate: new Date({{date('Y, m, d, H,i',strtotime($event->end_date))}}),
+                                startDate: new Date({{date('Y, m, d, H,i',strtotime($event->start_date))}})
                             },
                         @endforeach
                     ];
@@ -60,7 +57,7 @@
                     new Y.Scheduler(
                             {
                                 boundingBox: '#myScheduler',
-                                date: new Date({{date('Y, n, d, H,i')}}),
+                                date: new Date({{date('Y, m, d, H,i')}}),
                                 items: events,
                                 render: true,
                                 views: [weekView]

@@ -262,7 +262,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
 
         Route::get('/cp/students/helpdesk/approved'  ,'TecsController@CPApproved');
-        Route::get('/cp/students/helpdesk/rejected'  ,'TecsController@CPRejected');
+        Route::get('/cp/students/helpdesk/closed'  ,'TecsController@CPClosed');
         Route::get('/cp/students/helpdesk/pending'  ,'TecsController@CPPending');
         Route::get('/cp/students/helpdesk/requested'  ,'TecsController@HdRequested');
         Route::get('/cp/students/helpdesk/export'  ,'TecsController@excelExport');

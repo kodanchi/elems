@@ -94,7 +94,10 @@
                                         <small>سيتم إرسال بريد إلكتروني إلى الطالب/الطالبة فور النقر على تحديث البيانات</small>
                                     </div>
 
+
+
                                     <div class="col-md-6">
+                                        @if($form->status == 'pending')
                                         <div class="col-md-6">
                                             <!--- Status Field --->
                                             <div class="form-group">
@@ -108,8 +111,51 @@
                                             {!! Form::submit(trans('تحويل'),  ['class' => 'form-control' , 'name'=> 'CPtrans' , 'value'=> 'CPtrans' ]) !!}
 
                                         </div>
+                                        @endif
 
+                                        @if(!empty($logs))
+                                        <div class="col-md-12">
+
+                                            <h5>سجل تحويل الطلب</h5>
+                                            <table class="table table-striped">
+                                                <thead>
+                                                    <th>
+                                                        المحول
+                                                    </th>
+                                                    <th>
+                                                        من
+                                                    </th>
+                                                    <th>
+                                                        إلى
+                                                    </th>
+                                                    <th>
+                                                        الوقت
+                                                    </th>
+                                                </thead>
+                                                <tbody>
+                                                @foreach($logs as $log)
+                                                    <tr>
+                                                        <td>
+                                                            {{$log->username}}
+                                                        </td>
+                                                        <td>
+{{--                                                            {{trans("hd_dep.").$log->from_department}}--}}
+                                                            {{trans('hd_dep.'.$log->from_department)}}
+                                                        </td>
+                                                        <td>
+                                                            {{trans('hd_dep.'.$log->to_department)}}
+                                                        </td>
+                                                        <td>
+                                                            {{date("D | M j Y | G:i:s",strtotime($log->added_on)) }}
+                                                        </td>
+                                                    </tr>
+                                                    @endforeach
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                            @endif
                                     </div>
+
 
 
 

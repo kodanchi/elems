@@ -81,7 +81,10 @@ class CPController extends Controller
     public function facultyForms()
     {
         $forms = FacultyForm::latest()->get();
-        return view('cp.form.facultyForm.index',compact('forms'));
+
+        $totalResult = FacultyForm::all();
+
+        return view('cp.form.facultyForm.index',compact('forms','totalResult'));
     }
 
 
@@ -158,17 +161,20 @@ class CPController extends Controller
     public function FFApproved()
     {
         $forms = FacultyForm::where('status',1)->latest()->get();
-        return view('cp.form.facultyform.index',compact('forms'));
+        $totalResult = FacultyForm::where('status',1);
+        return view('cp.form.facultyform.index',compact('forms','totalResult'));
     }
     public function FFRejected()
     {
         $forms = FacultyForm::where('status',2)->latest()->get();
-        return view('cp.form.facultyform.index',compact('forms'));
+        $totalResult = FacultyForm::where('status',2);
+        return view('cp.form.facultyform.index',compact('forms','totalResult'));
     }
     public function FFPending()
     {
         $forms = FacultyForm::where('status',0)->latest()->get();
-        return view('cp.form.facultyform.index',compact('forms'));
+        $totalResult = FacultyForm::where('status',0);
+        return view('cp.form.facultyform.index',compact('forms','totalResult'));
     }
 
 
@@ -178,23 +184,27 @@ class CPController extends Controller
     public function emrForms()
     {
         $forms = RegForm::latest()->paginate(25);
-        return view('cp.form.emr.index',compact('forms'));
+        $totalResult = RegForm::all();
+        return view('cp.form.emr.index',compact('forms', 'totalResult'));
     }
 
     public function emrFormsApproved()
     {
         $forms = RegForm::where('status',1)->latest()->paginate(25);
-        return view('cp.form.emr.index',compact('forms'));
+        $totalResult = RegForm::where('status',1);
+        return view('cp.form.emr.index',compact('forms', 'totalResult'));
     }
     public function emrFormsRejected()
     {
         $forms = RegForm::where('status',2)->latest()->paginate(25);
-        return view('cp.form.emr.index',compact('forms'));
+        $totalResult = RegForm::where('status',2);
+        return view('cp.form.emr.index',compact('forms', 'totalResult'));
     }
     public function emrFormsPending()
     {
         $forms = RegForm::where('status',0)->latest()->paginate(25);
-        return view('cp.form.emr.index',compact('forms'));
+        $totalResult = RegForm::where('status',0);
+        return view('cp.form.emr.index',compact('forms', 'totalResult'));
     }
 
     public function viewRegForm($id)
@@ -490,7 +500,9 @@ from reg_forms ');
     {
         $forms = Survey::paginate(20);
 
-        return view('cp.surveys.index',compact('forms'));
+        $totalResult = Survey::all();
+
+        return view('cp.surveys.index',compact('forms', 'totalResult'));
     }
 
     public function surveySearch(Request $request)

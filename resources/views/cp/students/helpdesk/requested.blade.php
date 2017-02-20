@@ -7,7 +7,11 @@
             <div class="col-md-11 col-md-offset-1">
                 @include('errors.errors')
                 <div class="panel panel-default">
+{{--
                     <div class="panel-heading">الطلبات المتعثرة للدعم الفني  | عدد النتائج: {{$forms->count()}}</div>
+--}}
+
+                    <div class="panel-heading"> الطلبات المتعثرة للدعم الفني  | عدد النتائج{{$totalResult->count()}}</div>
 
 
                     <div class="panel-body ">
