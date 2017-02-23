@@ -5,6 +5,9 @@
     @if(Auth::User()->getRole() == 'admin')
     <p><a href="{{url('/cp/students/helpdesk/requested')}}" class="btn btn-danger form-control button">{{trans('cp.requested_res')}}</a></p>
     @endif
+    @if(Auth::User()->getRole() != 'admin')
+    <p><a href="{{url('/cp/students/helpdesk/myRequests')}}" class="btn btn-warning form-control button" >{{trans('cp.myRequests')}}</a></p>
+    @endif
     <p><a href="{{url('/cp/students/helpdesk/export')}}" class="btn btn-default form-control button">{{trans('cp.export_res')}}</a></p>
 
 

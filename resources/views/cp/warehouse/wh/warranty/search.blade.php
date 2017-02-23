@@ -1,14 +1,14 @@
 <div class="col col-md-3">
-{{--    <p><a href="{{url('/cp/warehouse/list')}}" class="btn btn-default form-control button">{{trans('cp.all_res')}}</a></p>
+    {{--<p><a href="{{url('/cp/warehouse/list')}}" class="btn btn-default form-control button">{{trans('cp.all_devices')}}</a></p>
     <p><a href="{{url('/cp/warehouse/list/uptodate')}}" class="btn btn-primary form-control button">{{trans('warehouse.uptodate')}}</a></p>
     <p><a href="{{url('/cp/warehouse/list/outdated')}}" class="btn btn-danger form-control button">{{trans('warehouse.outdated')}}</a></p>
     <hr>--}}
-    {!! Form::open(['url' => 'cp/warehouse/search', 'method' => 'post']) !!}
+    {!! Form::open(['url' => 'cp/warehouse/warranty/search', 'method' => 'post']) !!}
     	<!--- Search By Field --->
     	<div class="form-group">
     	    {!! Form::label('searchType', trans('cp.searchBy').':') !!}
 
-            {!! Form::select('searchType', trans('cp.WHSearch') , null , ['class' => 'form-control']) !!}
+            {!! Form::select('searchType', trans('cp.warrantySearch') , null , ['class' => 'form-control']) !!}
     	</div>
 
         <!--- Search Field --->
@@ -25,6 +25,6 @@
         </script>
 
     <hr>
-    <a href="{{url('cp/warehouse/rooms/new')}}" class="btn btn-default form-control button">{{trans('warehouse.RoomCreate')}}</a>
+    <a href="{{url('cp/warehouse/warranty/new')}}" class="btn btn-default form-control button">إضافة ضمان جديد</a>
     <a href="{{url('cp/warehouse/')}}" class="btn btn-default form-control button">{{trans('warehouse.back')}}</a>
 </div>

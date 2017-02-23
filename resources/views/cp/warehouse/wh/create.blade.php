@@ -66,8 +66,8 @@
 
                             <!--- Warranty Field --->
                             <div class="form-group">
-                                {!! Form::label('warranty', trans('warehouse.warranty').':') !!}
-                                {!! Form::select('warranty', $assetWarranty , null , ['class' => 'form-control']) !!}
+                                {!! Form::label('warranty_id', trans('warehouse.warranty').':') !!}
+                                {!! Form::select('warranty_id', $assetWarranty , null , ['class' => 'form-control']) !!}
 
 
                             </div>

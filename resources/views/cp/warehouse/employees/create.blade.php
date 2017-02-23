@@ -7,7 +7,7 @@
             <div class="col-md-7 col-md-offset-3">
                 @include('errors.errors')
                 <div class="panel panel-default">
-                    <div class="panel-heading">{{trans('warehouse.newAsset')}} </div>
+                    <div class="panel-heading">{{trans('warehouse.newEmp')}} </div>
 
 
                     <div class="panel-body newsletter-form ">

@@ -25,6 +25,7 @@ class RedirectIfNothelpdeskAdmin
             'technicalSupport',
             'academicAffairs',
             'blackboard',
+            'WH',
         ];
 
         $userRoles = Auth::user()->getAllroles();

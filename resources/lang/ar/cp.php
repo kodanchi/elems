@@ -16,6 +16,7 @@ return [
     'edit' =>   'تحديث',
     'role' =>   'الصلاحيات',
     'delete' => 'حذف',
+    'username' => 'استلمت من قبل',
 
 
     'updateUser' => 'تحديث مستخدم',
@@ -75,6 +76,11 @@ return [
         'brand' => 'شركة التصنيع',
         'trolley_id' => 'رقم العربة',
     ],
+    'warrantySearch' => [
+        'name' => 'اسم الضمان',
+        'location' => 'العنوان',
+        'email' => 'ايميل الشركة',
+    ],
     'EmpSearch' => [
         'cellphone' => 'الجوال',
         'name' => 'الاسم',
@@ -99,6 +105,7 @@ return [
     'requested_res' => 'الطلبات المتعثرة',
     'create' => 'إضافة مراقب جديد',
     'export_res' => 'تصدير النتائج إلى Excel',
+    'myRequests' => 'طلباتي',
 
 
     'surv_title' => 'نتائج الإستطلاع',

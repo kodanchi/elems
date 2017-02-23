@@ -258,6 +258,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
         Route::get('/cp/students/helpdesk/view/{id}', 'TecsController@CPview');
         //Route::post('/cp/students/helpdesk/update', 'TecsController@CPupdate');
         Route::post('/cp/students/helpdesk/update', array('uses' => 'TecsController@CPupdateOrCPtrans'));
+        Route::get('/cp/students/helpdesk/assign/{id}', 'TecsController@AssignToMe');
         Route::post('/cp/students/helpdesk/search'  ,'TecsController@search');
 
 
@@ -265,6 +266,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
         Route::get('/cp/students/helpdesk/closed'  ,'TecsController@CPClosed');
         Route::get('/cp/students/helpdesk/pending'  ,'TecsController@CPPending');
         Route::get('/cp/students/helpdesk/requested'  ,'TecsController@HdRequested');
+        Route::get('/cp/students/helpdesk/myRequests'  ,'TecsController@CPMyRequests');
         Route::get('/cp/students/helpdesk/export'  ,'TecsController@excelExport');
 
         Route::post('/cp/students/helpdesk/requested'  ,'TecsController@search');
@@ -325,6 +327,18 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
         Route::get('/cp/warehouse/new'  ,'WarehouseController@WHnew');
         Route::get('/cp/warehouse/view/{id}'  ,'WarehouseController@WHview');
         Route::get('/cp/warehouse/edit/{id}'  ,'WarehouseController@WHedit');
+
+        //warranty
+        Route::get('/cp/warehouse/warranty'  ,'WarehouseController@warrantyList');
+        Route::get('/cp/warehouse/warranty/new'  ,'WarehouseController@warrantyNew');
+        Route::get('/cp/warehouse/warranty/edit/{id}'  ,'WarehouseController@warrantyEdit');
+        Route::get('/cp/warehouse/warranty/view/{id}'  ,'WarehouseController@warrantyView');
+
+        Route::post('/cp/warehouse/warranty'  ,'WarehouseController@warrantyCreate');
+        Route::post('/cp/warehouse/warranty/update/{id}'  ,'WarehouseController@warrantyUpdate');
+        Route::post('/cp/warehouse/warranty/search'  ,'WarehouseController@warrantySearch');
+
+
 
         //employees -get
         Route::get('/cp/warehouse/employees'  ,'WarehouseController@EmpList');

@@ -12,9 +12,12 @@
 
                     <div class="panel-body newsletter-form">
 
-                        <div class="col col-md-6">
+                        <div class="col col-md-12">
                             <a href="{{url('cp/warehouse/list')}}" class="button">المعهودات</a>
+                            <a href="{{url('cp/warehouse/warranty')}}" class="button">الضمان</a>
                             <a href="{{url('cp/warehouse/employees')}}" class="button">الموظفين</a>
+                            <a href="{{url('cp/warehouse/rooms')}}" class="button">القاعات</a>
+                            <a href="{{url('cp/warehouse/reservations')}}" class="button">الحجوزات</a>
                         </div>
                         <div class="col col-md-6">
 

@@ -6,7 +6,23 @@
         <div class="row ">
             <div class="col-md-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading">{{trans('students.applicants')}}  | {{$form->id}}</div>
+                    <div class="panel-heading" style="">
+{{--                        {!! Form::open(array('url' => '/cp/students/helpdesk/assign/'.$form->id))!!}
+                        {!! Form::hidden('id', $form->id, ['id' => 'id']) !!}
+                        {!! Form::submit(trans('استلام'),  ['class' => 'form-control' , 'name'=> 'CPassign' , 'value'=> 'CPassign' ]) !!}
+                        {{trans('students.applicants')}}  | {{$form->id}}
+                        {!! Form::close() !!}--}}
+                        {{trans('students.applicants')}}  | {{$form->id}}
+                        @if(!in_array('admin',Auth::user()->getAllroles()) && !$form->username)
+                            <a href="{{url('cp/students/helpdesk/assign/'.$form->id)}}" style="float: left">
+                                <span class="btn" style="padding: 5px; background-color: #122b40; color: white">استلام الطلب</span>
+                            </a>
+                        @else
+                            @if($form->username)
+                            <p style="float: left">{{trans('cp.username')}}: {{$form->username}}</p>
+                            @endif
+                        @endforelse
+                    </div>
 
                     <div class="panel-body ">
                         <div class="row">
@@ -81,17 +97,28 @@
                                         <!--- Status Field --->
                                         <div class="form-group">
                                             {!! Form::label('status', trans('sp.con_status').':') !!}
-                                            {!! Form::select('status', $status , $form->status , ['class' => 'form-control']) !!}
+                                            @if(in_array('admin',Auth::user()->getAllroles()) || Auth::user()->getUsername() == $form->username)
+                                                {!! Form::select('status', $status , $form->status , ['class' => 'form-control']) !!}
+                                            @else
+                                            {!! Form::select('status', $status , $form->status , ['class' => 'form-control', 'readonly']) !!}
+                                                @endforelse
                                         </div>
 
                                         <!--- Description Field --->
                                         <div class="form-group">
                                             {!! Form::label('replay', trans('الرد على الطلب').':') !!}
-                                            {!! Form::textarea('replay', $form->replay, ['class' => 'form-control']) !!}
-                                        </div>
 
+                                            @if(in_array('admin',Auth::user()->getAllroles()) || Auth::user()->getUsername() == $form->username)
+
+                                                {!! Form::textarea('replay', $form->replay, ['class' => 'form-control']) !!}
+                                                @else
+                                                {!! Form::textarea('replay', $form->replay, ['class' => 'form-control', 'readonly']) !!}
+                                                @endforelse
+                                        </div>
+                                        @if(in_array('admin',Auth::user()->getAllroles()) || Auth::user()->getUsername() == $form->username)
                                         {!! Form::submit(trans('cp.update'),  ['class' => 'form-control' , 'name'=> 'CPupdate' , 'value'=> 'CPupdate']) !!}
-                                        <small>سيتم إرسال بريد إلكتروني إلى الطالب/الطالبة فور النقر على تحديث البيانات</small>
+                                            <small>سيتم إرسال بريد إلكتروني إلى الطالب/الطالبة فور النقر على تحديث البيانات</small>
+                                        @endif
                                     </div>
 
 
@@ -108,8 +135,9 @@
                                         </div>
                                         <div class="col-md-6">
                                             </br>
-                                            {!! Form::submit(trans('تحويل'),  ['class' => 'form-control' , 'name'=> 'CPtrans' , 'value'=> 'CPtrans' ]) !!}
-
+                                            @if(in_array('admin',Auth::user()->getAllroles()) || Auth::user()->getUsername() == $form->username)
+                                                {!! Form::submit(trans('تحويل'),  ['class' => 'form-control' , 'name'=> 'CPtrans' , 'value'=> 'CPtrans' ]) !!}
+                                            @endif
                                         </div>
                                         @endif
 
@@ -163,7 +191,7 @@
                                     {!! Form::close() !!}
                                 </div>
                                 <hr>
-                                <a href="/cp/students/helpdesk" class="button col-md-3">{{trans('settings.back')}}</a>
+                                <a href="/cp/students/helpdesk/pending" class="button col-md-3">{{trans('settings.back')}}</a>
                                 @if($next != null)
                                     <a href="/cp/students/helpdesk/view/{{$next}}" class="button col-md-3">{{trans('settings.next')}}</a>
                                 @endif

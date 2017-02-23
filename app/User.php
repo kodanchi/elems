@@ -44,7 +44,13 @@ class User extends Authenticatable
     {
         return $this->id;
     }
-     public function getAllroles()
+
+    public function getUsername()
+    {
+        return $this->name;
+    }
+
+    public function getAllroles()
     {
         $roles=DB::select('select role from roles where user_id=?',[$this->id]);
         foreach ($roles as $role){

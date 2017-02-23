@@ -41,7 +41,7 @@
                                 {!! Form::submit('تعديل', ['class' => 'form-control']) !!}
                             </div>
                             <div class="col-md-6">
-                                <a href="{{url('cp/warehouse/')}}" class="form-control button">رجوع</a>
+                                <a href="{{url('cp/warehouse/rooms')}}" class="form-control button">رجوع</a>
                             </div>
 
                         {!! Form::close() !!}
