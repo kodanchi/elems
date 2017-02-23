@@ -2,27 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="542d1520-2e6c-47d4-91f6-538cee2d3387" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/cp/warehouse/wh/warranty/create.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/cp/warehouse/wh/warranty/edit.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/cp/warehouse/wh/warranty/index.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/cp/warehouse/wh/warranty/search.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/cp/warehouse/wh/warranty/view.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfNothelpdeskAdmin.php" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfNothelpdeskAdmin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/User.php" afterPath="$PROJECT_DIR$/app/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/ar/cp.php" afterPath="$PROJECT_DIR$/resources/lang/ar/cp.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/ar/settings.php" afterPath="$PROJECT_DIR$/resources/lang/ar/settings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cp/students/helpdesk/buttons.blade.php" afterPath="$PROJECT_DIR$/resources/views/cp/students/helpdesk/buttons.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cp/students/helpdesk/view.blade.php" afterPath="$PROJECT_DIR$/resources/views/cp/students/helpdesk/view.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cp/warehouse/employees/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/cp/warehouse/employees/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cp/warehouse/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/cp/warehouse/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cp/warehouse/reservations/rooms/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/cp/warehouse/reservations/rooms/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cp/warehouse/reservations/rooms/search.blade.php" afterPath="$PROJECT_DIR$/resources/views/cp/warehouse/reservations/rooms/search.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cp/warehouse/wh/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/cp/warehouse/wh/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cp/warehouse/wh/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/cp/warehouse/wh/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cp/warehouse/wh/view.blade.php" afterPath="$PROJECT_DIR$/resources/views/cp/warehouse/wh/view.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/loginButtons.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/loginButtons.blade.php" />
     </list>
     <ignored path="elems.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1006,7 +986,7 @@
       <workItem from="1483600261514" duration="4898000" />
       <workItem from="1483609179269" duration="7749000" />
       <workItem from="1484033582823" duration="84242000" />
-      <workItem from="1484735769834" duration="439368000" />
+      <workItem from="1484735769834" duration="439780000" />
     </task>
     <task id="LOCAL-00001" summary="EMR is complete but without emailing">
       <created>1479797757022</created>
@@ -1064,11 +1044,18 @@
       <option name="project" value="LOCAL" />
       <updated>1487580817583</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="before employees table">
+      <created>1487845460468</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1487845460468</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="994726000" />
+    <option name="totallyTimeSpent" value="995138000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="2" width="1598" height="858" extended-state="0" />
