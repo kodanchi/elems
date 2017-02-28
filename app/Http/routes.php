@@ -259,6 +259,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
         //Route::post('/cp/students/helpdesk/update', 'TecsController@CPupdate');
         Route::post('/cp/students/helpdesk/update', array('uses' => 'TecsController@CPupdateOrCPtrans'));
         Route::get('/cp/students/helpdesk/assign/{id}', 'TecsController@AssignToMe');
+        /*Route::get('/cp/students/helpdesk/view/cp/students/helpdesk/selectUsersFromDepartment/{type}/{id}', 'TecsController@SelectUsersFromDepartment');*/
         Route::post('/cp/students/helpdesk/search'  ,'TecsController@search');
 
 

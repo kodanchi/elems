@@ -122,18 +122,90 @@
                                     </div>
 
 
-
                                     <div class="col-md-6">
                                         @if($form->status == 'pending')
                                         <div class="col-md-6">
                                             <!--- Status Field --->
                                             <div class="form-group">
+
                                                 {!! Form::label('serviceType', trans('تحويل الطلب إلى إدارة أخرى').':') !!}
-                                                {!! Form::select('serviceType', $serviceType, $form->serviceType , ['class' => 'form-control']) !!}
+                                                {!! Form::select('serviceType', $serviceType, $form->serviceType , ['class' => 'form-control selectpicker'] ) !!}
+
+                                                {{--<select name="serviceType" id="serviceType" class="form-control selectpicker" data-live-search="true" onchange="myFunction()">
+                                                    <option disabled>{{trans('serviceType.'.$form->serviceType)}}</option>
+                                                --}}{{--@foreach ($serviceType as $key => $value)
+                                                    <option value="{{$value}}">{{$value}}</option>
+                                                @endforeach--}}{{--
+                                                    @foreach ($serviceType as $key => $value)
+                                                        <option value="{{$value}}">{{$value}}</option>
+                                                    @endforeach
+                                                </select>--}}
+{{--{{dd($to_user[0])}}--}}
+                                                {{--{!! Form::label('to_user', trans('تحويل الطلب إلى شخص محدد').':') !!}
+                                                {!! Form::select('to_user', $to_user[0], $to_user[0], ['class' => 'form-control']) !!}
+                                                @foreach($to_user as $user)
+                                                    {{$user->name}}
+                                                @endforeach--}}
+                                                {{--{!! Form::label('to_user', trans('تحويل الطلب إلى شخص محدد').':') !!}
+                                                {!! Form::select('to_user', $to_user[0], $to_user[0], ['class' => 'form-control']) !!}--}}
+
 
                                             </div>
                                         </div>
+                                            <div class="col-md-6">
+                                                {{--{!! Form::label('to_user', trans('تحويل الطلب إلى شخص محدد').':') !!}
+                                                <select name="from_user" id="from_user" class="form-control selectpicker" data-live-search="true">
+                                                    <option disabled>المستلم</option>
+                                                    @foreach ($to_user as $user)
+                                                        <option value="{{$user->name}}">{{$user->name}}</option>
+                                                    @endforeach
+                                                </select>--}}
+
+                                                {!! Form::label('to_user', trans('تحويل الطلب إلى شخص محدد').':') !!}
+                                                <select name="to_user" id="to_user" class="form-control selectpicker" data-live-search="true">
+                                                    <option value="غير محدد" selected>المستلم</option>
+                                                    @foreach ($to_user as $user)
+                                                        @if($user->name!=="Abdullah1" && $user->name!=="abdulla2")
+                                                        <option {{--@if($user->name!=="Abdullah1" && $user->name!=="abdulla2")--}}value="{{$user->name}}">{{--@if($user->name!=="Abdullah1" && $user->name!=="abdulla2")--}}{{$user->name}}{{--@endif--}}</option>
+                                                        @endif
+                                                    @endforeach
+                                                </select>
+                                                <br>
+                                                <br>
+                                                <p>*في حالة عدم تحديد الشخص المحول له سوف يتم التحويل للقسم المحدد</p>
+                                            </div>
+
+
+
+
+
+
+{{--                                            <div class="form-group">
+                                                <label>State
+                                                    <select name="state" id="state" class="form-control input-sm">
+                                                        <option value=""></option>
+                                                        @foreach($serviceType as $type=>$value)
+                                                            <option value="">{{$value}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </label>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>City
+                                                    <select id="city" class="form-control input-sm" name="city_id">
+                                                        <option value=""></option>
+                                                    </select>
+                                                </label>
+                                            </div>--}}
+
+
+
+
+
+
                                         <div class="col-md-6">
+
                                             </br>
                                             @if(in_array('admin',Auth::user()->getAllroles()) || Auth::user()->getUsername() == $form->username)
                                                 {!! Form::submit(trans('تحويل'),  ['class' => 'form-control' , 'name'=> 'CPtrans' , 'value'=> 'CPtrans' ]) !!}
@@ -151,6 +223,9 @@
                                                         المحول
                                                     </th>
                                                     <th>
+                                                        المحول له
+                                                    </th>
+                                                    <th>
                                                         من
                                                     </th>
                                                     <th>
@@ -164,7 +239,10 @@
                                                 @foreach($logs as $log)
                                                     <tr>
                                                         <td>
-                                                            {{$log->username}}
+                                                            {{$log->from_user}}
+                                                        </td>
+                                                        <td>
+                                                            {{$log->to_user}}
                                                         </td>
                                                         <td>
 {{--                                                            {{trans("hd_dep.").$log->from_department}}--}}
@@ -200,6 +278,7 @@
 
 
                             </div>
+
                         </div>
                     </div>
                 </div>
