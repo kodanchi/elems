@@ -23,7 +23,7 @@
                                 <thead class="">
                                 <th class="text-center">{{trans('sp.fid')}}</th>
                                 <th class="text-center">{{trans('sp.sid')}}</th>
-                                <th class="text-center">{{trans('الطلب')}}</th>
+                                <th class="text-center">الإدارة</th>
                                 <th class="text-center">{{trans('sp.con_status')}}</th>
                                 @if(Auth::User()->getRole() == 'admin' )
                                     <th class="text-center">تمت المعالجة عن طريق</th>
@@ -74,7 +74,14 @@
                                     @endif
                                 </tbody>
                             </table>
-                            <div>{{$forms->links()}}</div>
+                            {{--{!! str_replace('/?', '?', $forms->render()) !!}--}}
+                            {{--<h2>{{dd($searchRequest)}}</h2>--}}
+                           @if(isset($searchText))
+                            <div>{{$forms->appends(['search' => $searchText])->links()}}</div>
+                                @else
+                                <div>{{$forms->links()}}</div>
+                                @endforelse
+                            {{--<div>{{$forms->links()}}</div>--}}
                         </div>
 
 

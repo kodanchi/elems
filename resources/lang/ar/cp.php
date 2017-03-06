@@ -46,12 +46,16 @@ return [
         'sid' => 'الرقم الأكاديمي'
     ],
     'spSearch' => [
-        'name' => 'الاسم',
         'sid' => 'الرقم الأكاديمي',
 
     ],'helpdeskSearch' => [
 
         'sid' => 'الرقم الأكاديمي',
+
+    ], 'helpdeskSearchAdmin' => [
+
+        'sid' => 'الرقم الأكاديمي',
+        'department' => 'الإدارة'
 
     ],
     'reqSearch' => [

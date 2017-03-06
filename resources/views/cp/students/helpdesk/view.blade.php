@@ -252,7 +252,7 @@
                                                             {{trans('hd_dep.'.$log->to_department)}}
                                                         </td>
                                                         <td>
-                                                            {{date("D | M j Y | G:i:s",strtotime($log->added_on)) }}
+                                                           {{date("D | M j Y | G:i:s ",strtotime($log->added_on)) }}
                                                         </td>
                                                     </tr>
                                                     @endforeach
@@ -282,6 +282,13 @@
                         </div>
                     </div>
                 </div>
+                <h5 style="float: right"><b>تاريخ الطلب : </b>{{date("D | j M Y | g:i  A",strtotime($form->created_at))}}</h5>
+
+                @if($form->username)
+
+                <h5 style=" float: left;"><b>   تاريخ تعديل/استلام الطلب :</b>{{date("D | j M Y | g:i  A",strtotime($form->updated_at))}}</h5>
+
+                    @endif
             </div>
         </div>
     </div>

@@ -261,6 +261,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
         Route::get('/cp/students/helpdesk/assign/{id}', 'TecsController@AssignToMe');
         /*Route::get('/cp/students/helpdesk/view/cp/students/helpdesk/selectUsersFromDepartment/{type}/{id}', 'TecsController@SelectUsersFromDepartment');*/
         Route::post('/cp/students/helpdesk/search'  ,'TecsController@search');
+        Route::get('/cp/students/helpdesk/search'  ,'TecsController@search2');
 
 
         Route::get('/cp/students/helpdesk/approved'  ,'TecsController@CPApproved');

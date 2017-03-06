@@ -101,6 +101,7 @@ class CPController extends Controller
     public function searchFF(Request $request)
     {
         $searchType = Input::get('searchType');
+        $totalResult = '';
         //dd($searchType);
         switch ($searchType)
         {
@@ -109,6 +110,7 @@ class CPController extends Controller
                     'search' => 'required|integer|min:500000000'
                 ]);
                 $forms = FacultyForm::where('cellphone','LIKE','%'.Input::get('search').'%')->get();
+                $totalResult = FacultyForm::where('cellphone','LIKE','%'.Input::get('search').'%');
                 break;
             case 'id':
                 $this->validate($request,[
@@ -118,6 +120,7 @@ class CPController extends Controller
                     'search.min' => 'Search with valid ID number starting with 1 and at least 7 figures',
                 ]);
                 $forms = FacultyForm::where('nid','LIKE','%'.Input::get('search').'%')->get();
+                $totalResult = FacultyForm::where('nid','LIKE','%'.Input::get('search').'%')->get();
                 break;
             case 'email':
                 $this->validate($request,[
@@ -127,10 +130,11 @@ class CPController extends Controller
                     'search.exists' => 'الأيميل غير متواجد',
                 ]);
                 $forms = FacultyForm::where('email','LIKE','%'.Input::get('search').'%')->get();
+                $totalResult = FacultyForm::where('email','LIKE','%'.Input::get('search').'%')->get();
                 break;
         }
 
-        return view('cp.form.facultyform.index',compact('forms'));
+        return view('cp.form.facultyform.index',compact('forms', 'totalResult'));
     }
 
 
@@ -283,6 +287,7 @@ class CPController extends Controller
     public function search(Request $request)
     {
         $searchType = Input::get('searchType');
+        $totalResult = '';
         //dd($searchType);
         switch ($searchType)
         {
@@ -291,6 +296,7 @@ class CPController extends Controller
                     'search' => 'required|integer|min:500000000'
                 ]);
                 $forms = RegForm::where('cellphone','LIKE','%'.Input::get('search').'%')->paginate(25);
+                $totalResult = RegForm::where('cellphone','LIKE','%'.Input::get('search').'%');
                 break;
             case 'id':
                 $this->validate($request,[
@@ -300,6 +306,7 @@ class CPController extends Controller
                     'search.min' => 'Search with valid ID number starting with 1 and at least 7 figures',
                 ]);
                 $forms = RegForm::where('nid','LIKE','%'.Input::get('search').'%')->paginate(25);
+                $totalResult = RegForm::where('nid','LIKE','%'.Input::get('search').'%');
                 break;
             case 'email':
                 $this->validate($request,[
@@ -309,10 +316,11 @@ class CPController extends Controller
                     'search.exists' => 'الأيميل غير متواجد',
                 ]);
                 $forms = RegForm::where('email','LIKE','%'.Input::get('search').'%')->paginate(25);
+                $totalResult = RegForm::where('email','LIKE','%'.Input::get('search').'%');
                 break;
         }
 
-        return view('cp.form.emr.index',compact('forms'));
+        return view('cp.form.emr.index',compact('forms', 'totalResult'));
     }
 
 

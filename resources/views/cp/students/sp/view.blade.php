@@ -113,6 +113,10 @@
                         </div>
                     </div>
                 </div>
+                <h5><b>تاريخ الطلب : </b>{{date("D | M j Y | G:i:s A",strtotime($form->created_at))}}</h5>
+
+
+
             </div>
         </div>
     </div>

@@ -35,8 +35,8 @@ class RegFormController extends Controller
         //$forms = Auth::user()->emrForm()->get();
         //dd($forms);
 
-        return view('forms.regform.index')
-            ->withErrors('انتهت فترة التسجيل، تسجيلك الآن لا يعني إحتسابك من ضمن المسجلين هذه الفترة وإنما فقط تسجيل بياناتك في قاعدة البيانات.');
+        return view('forms.regform.index');
+            //->withErrors('انتهت فترة التسجيل، تسجيلك الآن لا يعني إحتسابك من ضمن المسجلين هذه الفترة وإنما فقط تسجيل بياناتك في قاعدة البيانات.');
     }
 
     public function emailValidate(EmailValidationRequest $request)

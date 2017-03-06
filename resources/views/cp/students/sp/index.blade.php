@@ -40,7 +40,9 @@
                                     @endif
                                 </tbody>
                             </table>
+
                             <div>{{$forms->links()}}</div>
+
                         </div>
 
 
