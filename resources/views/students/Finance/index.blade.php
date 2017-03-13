@@ -15,6 +15,7 @@
                     <div class="panel-body ">
                         <div class="row">
                             <div class="col-md-12">
+                                <h1>ssssssss</h1>
                                 <ul class="list-group">
                                     <ul class="list-group-item">
                                       يتوجّب إدخال الطلب من قِبلْ الطالب ويشترط تفعيل الطلب من خلال البريد الجامعي.
@@ -63,14 +64,13 @@
                     <div class="panel-body ">
                         <div class="row">
 
-
                             <div class="col-md-12">
 
-                                {!! Form::open(['url' => 'helpdesk/pin', 'method' => 'post']) !!}
+                                {!! Form::open(['url' => 'finance/pin', 'method' => 'post']) !!}
                                 <!--- SID Field --->
                                 <div class="form-group">
-                                    {!! Form::label('sid', trans('objection.sid').':') !!}
-                                    {!! Form::text('sid', null, ['class' => 'form-control']) !!}
+                                    {!! Form::label('student_id', trans('objection.sid').':') !!}
+                                    {!! Form::text('student_id', null, ['class' => 'form-control']) !!}
                                 </div>
                                 <label>
                                     {!! Form::checkbox('agree', '1', null,  ['id' => 'agree']) !!}
@@ -85,33 +85,6 @@
                     </div>
                 </div>
 
-
-                <div class="panel panel-default">
-                    <div class="panel-heading">{{trans('objection.lookup')}}</div>
-
-                    <div class="panel-body ">
-                        <div class="row">
-
-
-                            <div class="col-md-12">
-                            {!! Form::open(['url' => '/helpdesk/view', 'method' => 'post']) !!}
-                            <!--- SID Field --->
-                                <div class="form-group">
-                                    {!! Form::label('sid', 'الرقم الأكاديمي:') !!}
-                                    {!! Form::text('sid', null, ['class' => 'form-control']) !!}
-                                </div>
-                                <!--- FID Field --->
-                                <div class="form-group">
-                                    {!! Form::label('id', 'رمز الطلب:') !!}
-                                    {!! Form::text('id', null, ['class' => 'form-control']) !!}
-                                </div>
-                                {!! Form::submit('تحقق', ['class' => 'form-control']) !!}
-                                {!! Form::close() !!}
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

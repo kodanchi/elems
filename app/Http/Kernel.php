@@ -57,6 +57,10 @@ class Kernel extends HttpKernel
          'helpdeskCP' => [
             \App\Http\Middleware\Authenticate::class,
             \App\Http\Middleware\RedirectIfNothelpdeskAdmin::class
+        ],
+        'CPfinance' => [
+            \App\Http\Middleware\Authenticate::class,
+            \App\Http\Middleware\RedirectIfNotFinanceAdmin::class
         ]
     ];
 

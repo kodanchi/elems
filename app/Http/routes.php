@@ -185,6 +185,17 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
 
 
+    //finance route
+    Route::get('/finance', 'FinanceController@index');
+    Route::post('/finance/pin', 'FinanceController@pin');
+    Route::post('/finance/validate', 'FinanceController@pinValidate');
+    Route::get('/finance/pin', 'FinanceController@getValidate');
+    Route::get('/finance/validate', 'FinanceController@getValidate');
+    Route::get('/finance/agree', 'FinanceController@newF');
+    Route::post('/finance/new', 'FinanceController@storeF');
+    Route::post('/finance/view', 'TecsController@view');
+    Route::get('/finance/view/{id}/{sid}', 'TecsController@show');
+
 
     //Route::resource('students/conflict', 'ConflictFormController');
 
@@ -256,13 +267,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::group(['middleware' => ['helpdeskCP']], function () {
         Route::get('/cp/students/helpdesk', 'TecsController@CPindex');
         Route::get('/cp/students/helpdesk/view/{id}', 'TecsController@CPview');
-        //Route::post('/cp/students/helpdesk/update', 'TecsController@CPupdate');
         Route::post('/cp/students/helpdesk/update', array('uses' => 'TecsController@CPupdateOrCPtrans'));
         Route::get('/cp/students/helpdesk/assign/{id}', 'TecsController@AssignToMe');
-        /*Route::get('/cp/students/helpdesk/view/cp/students/helpdesk/selectUsersFromDepartment/{type}/{id}', 'TecsController@SelectUsersFromDepartment');*/
         Route::post('/cp/students/helpdesk/search'  ,'TecsController@search');
         Route::get('/cp/students/helpdesk/search'  ,'TecsController@search2');
-
 
         Route::get('/cp/students/helpdesk/approved'  ,'TecsController@CPApproved');
         Route::get('/cp/students/helpdesk/closed'  ,'TecsController@CPClosed');
@@ -273,6 +281,35 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
         Route::post('/cp/students/helpdesk/requested'  ,'TecsController@search');
         Route::post('/cp/students/helpdesk/requested/search'  ,'TecsController@requestedsearch');
+
+    });
+
+ Route::group(['middleware' => ['CPfinance']], function () {
+        Route::get('/cp/students/finance', 'FinanceController@CPindex');
+        Route::get('/cp/students/finance/view/{id}', 'FinanceController@CPview');
+        Route::get('/cp/students/finance/edit/{id}', 'FinanceController@EditIndex');
+        Route::post('/cp/students/finance/update/{id}', 'FinanceController@UpdateIndex');
+        //Route::post('/cp/students/helpdesk/update', array('uses' => 'TecsController@CPupdateOrCPtrans'));
+        //Route::post('/cp/students/finance/import/update', 'FinanceController@importExcel');
+        Route::post('/cp/students/finance/import/update', 'FinanceController@importExcelNew');
+        Route::get('/cp/students/finance/import', 'FinanceController@importIndex');
+        Route::get('/cp/students/finance/create', 'FinanceController@AddNewIndex');
+        Route::post('/cp/students/finance/create/AddNew', 'FinanceController@AddNew');
+     Route::get('/cp/students/finance/export'  ,'FinanceController@excelExport');
+
+
+        /*Route::post('/cp/students/helpdesk/search'  ,'TecsController@search');
+        Route::get('/cp/students/helpdesk/search'  ,'TecsController@search2');
+
+        Route::get('/cp/students/helpdesk/approved'  ,'TecsController@CPApproved');
+        Route::get('/cp/students/helpdesk/closed'  ,'TecsController@CPClosed');
+        Route::get('/cp/students/helpdesk/pending'  ,'TecsController@CPPending');
+        Route::get('/cp/students/helpdesk/requested'  ,'TecsController@HdRequested');
+        Route::get('/cp/students/helpdesk/myRequests'  ,'TecsController@CPMyRequests');
+        Route::get('/cp/students/helpdesk/export'  ,'TecsController@excelExport');
+
+        Route::post('/cp/students/helpdesk/requested'  ,'TecsController@search');
+        Route::post('/cp/students/helpdesk/requested/search'  ,'TecsController@requestedsearch');*/
 
     });
 

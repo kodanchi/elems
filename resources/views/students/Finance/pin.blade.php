@@ -14,7 +14,7 @@
                             @include('errors.errors')
                             @include('errors.status')
                             <div class="col-md-12">
-                                {!! Form::open(['url' => '/helpdesk/validate', 'method' => 'post','class'=>'newsletter-form']) !!}
+                                {!! Form::open(['url' => '/finance/validate', 'method' => 'post','class'=>'newsletter-form']) !!}
 
                                     <!--- email Field --->
                                     <div class="form-group" >
@@ -28,7 +28,7 @@
                                     </div>
                                     {!! Form::submit('تحقق', ['class' => 'form-control']) !!}
                                     <p></p>
-                                    <a href="{{url('/helpdesk')}}" type="button" class="button form-control">إدخال رقم اكاديمي مختلف</a>
+                                    <a href="{{url('/finance')}}" type="button" class="button form-control">إدخال رقم اكاديمي مختلف</a>
                                 {!! Form::close() !!}
 
                             </div>

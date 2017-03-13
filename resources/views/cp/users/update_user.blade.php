@@ -13,8 +13,6 @@
 
                     <div class="panel-body ">
 
-
-
                         {!! Form::model($user, array('action' => array('CPController@userUpdate', $user->id))) !!}
 
                             <!--- Role Field --->
@@ -32,7 +30,6 @@
                                 {!! Form::label('email', trans('cp.email').':') !!}
                                 {!! Form::email('email', null, ['class' => 'form-control']) !!}
                             </div>
-
 
                         <div class="">
                             {!! Form::submit(trans('cp.update'), ['class' => 'btn btn-primary ']) !!}
