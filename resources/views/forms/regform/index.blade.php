@@ -11,7 +11,6 @@
                     <div class="panel-body ">
                         <div class="row">
 
-
                             <img src="{{asset('storage/uod_portal.jpg')}}" class="img-responsive" alt="portal">
                             <hr>
 
@@ -19,8 +18,6 @@
                             @include('errors.errors')
                             <h4 class="col-md-12 text-center">{{trans('regform.email_intro')}}</h4>
                             <div class="col-md-12">
-
-
 
                                 {{--@foreach($forms as $form)
                                     <a href="{{LaravelLocalization::getLocalizedURL(null,'/form/emr/'.$form->id.'/view')}}" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-eye-open"></span> <br/>{{trans('regform.viewApplication')}}</a>

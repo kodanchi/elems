@@ -329,7 +329,7 @@ class CPController extends Controller
     public function excelExport()
     {
         $forms = DB::select('
-    select id as \'ID\',
+    select 
 		NID as \'NID\',
 		fname as \'First\',
 		faname as \'Father\',

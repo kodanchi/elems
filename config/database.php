@@ -82,6 +82,14 @@ return [
             'username' =>  'Eldb03_user',
             'password' => env('DB_PASSWORD', '05tF823#')
         ],
+        'delsql4' => [
+            'driver' => 'sqlsrv',
+            'host' => env('DB_HOST', 'UODSQLCL'),
+            'port' => env('DB_PORT', '1433'),
+            'database' => 'Eldb04',
+            'username' =>  'Eldb04_user',
+            'password' => env('DB_PASSWORD', '05tF823#')
+        ],
 
         'sqlsrv' => [
             'driver' => 'sqlsrv',

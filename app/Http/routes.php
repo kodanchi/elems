@@ -81,6 +81,16 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::post('/survey/study/', 'SurveysController@submitStudySurv');
 
 
+    //Info route 3/14/2017
+
+    Route::get('students/Info', 'Std_updates@index');
+    Route::post('students/Info/update', 'Std_updates@StdShowInfo');
+    Route::post('students/Info/update/done', 'Std_updates@StdUpdate');
+
+
+    Route::get('students/Info/edit/{id}/{nid}', 'Std_updates@EditIndex');
+    Route::any('students/Info/update/{id}', 'Std_updates@UpdateIndex');
+
     /*Route::get('/form', 'FormsController@closed');
     Route::get('/form/emr', 'RegFormController@closed');
     Route::get('/form/emr/pin', 'RegFormController@closed');
@@ -193,7 +203,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/finance/validate', 'FinanceController@getValidate');
     Route::get('/finance/agree', 'FinanceController@newF');
     Route::post('/finance/new', 'FinanceController@storeF');
-    Route::post('/finance/view', 'TecsController@view');
+    Route::post('c', 'TecsController@view');
     Route::get('/finance/view/{id}/{sid}', 'TecsController@show');
 
 
@@ -286,6 +296,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
  Route::group(['middleware' => ['CPfinance']], function () {
         Route::get('/cp/students/finance', 'FinanceController@CPindex');
+        Route::get('/cp/students/finance/voucher', 'FinanceController@ViewVoucher');
+        Route::get('/cp/students/finance/NewVoucher', 'FinanceController@NewVoucherindex');
+        Route::post('/cp/students/finance/NewVoucher/add', 'FinanceController@AddNewVoucher');
         Route::get('/cp/students/finance/view/{id}', 'FinanceController@CPview');
         Route::get('/cp/students/finance/edit/{id}', 'FinanceController@EditIndex');
         Route::post('/cp/students/finance/update/{id}', 'FinanceController@UpdateIndex');
@@ -296,7 +309,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
         Route::get('/cp/students/finance/create', 'FinanceController@AddNewIndex');
         Route::post('/cp/students/finance/create/AddNew', 'FinanceController@AddNew');
      Route::get('/cp/students/finance/export'  ,'FinanceController@excelExport');
-
+     Route::get('/cp/students/finance/term', 'FinanceController@AddNewTermIndex');
+     Route::post('/cp/students/finance/term/AddNew', 'FinanceController@CPAddNewTerm');
+     Route::get('/cp/students/finance/account', 'FinanceController@AddNewAccountIndex');
+     Route::post('/cp/students/finance/account/AddNew', 'FinanceController@CPAddNewAccount');
 
         /*Route::post('/cp/students/helpdesk/search'  ,'TecsController@search');
         Route::get('/cp/students/helpdesk/search'  ,'TecsController@search2');
