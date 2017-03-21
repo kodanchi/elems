@@ -44,8 +44,10 @@
                                             {!! Form::label('name4', 'اسم العائلة') !!}
                                             {!! Form::text('name4',null ,['class' => 'form-control']) !!}
                                         </div>
-
+                                        </div>
                                     </div>
+                                        <div class="row">
+
                                     <div class="col-md-6">
                                         <!--- SID  --->
                                         <div class="form-group">
@@ -54,7 +56,7 @@
                                         </div>
                                     </div>
 
-                                <div class="row">
+
 
                                     <div class="col-md-6">
                                         <!--- NID  --->
@@ -63,7 +65,8 @@
                                             {!! Form::text('national_id', null, ['class' => 'form-control']) !!}
                                         </div>
                                     </div>
-
+                                        </div>
+                                <div class="row">
 
                                     <div class="col-md-6">
 
@@ -75,16 +78,6 @@
                                         </div>
                                     </div>
 
-
-
-                                </div>
-
-
-
-
-                                <div class="row">
-
-
                                     <div class="col-md-6">
                                         <!--- Select Field --->
                                         <div class="form-group">
@@ -94,6 +87,16 @@
                                         </div>
                                     </div>
 
+                                </div>
+
+
+
+
+                                <div class="row">
+
+
+
+
                                 <div class="col-md-6">
                                     <!--- Select Field --->
                                     <div class="form-group">
@@ -101,8 +104,7 @@
                                         {!! Form::text('status_disc',null ,['class' => 'form-control', ]) !!}
                                     </div>
                                 </div>
-                                </div>
-                            <div class="row">
+
 
                                 <div class="col-md-6">
                                     <!--- Select Field --->
@@ -111,6 +113,9 @@
                                         {!! Form::text('general_major',null ,['class' => 'form-control', ]) !!}
                                     </div>
                                 </div>
+                                </div>
+
+                                <div class="row">
 
                                 <div class="col-md-6">
                                     <!--- Select Field --->
@@ -118,10 +123,7 @@
                                         {!! Form::label('acad_group', 'المجموعة الأكاديمية :') !!}
                                         {!! Form::text('acad_group',null ,['class' => 'form-control']) !!}
                                     </div>
-                                </div></div>
-                        <div class="row">
-
-
+                                </div>
 
 
                             <div class="col-md-6">
@@ -131,9 +133,12 @@
                                     {!! Form::text('GPA',null ,['class' => 'form-control']) !!}
                                 </div>
                             </div>
+                                    </div>
 
 
 
+
+                                <div class="row">
 
                             <div class="col-md-6">
                                 <!--- Select Field --->
@@ -150,10 +155,7 @@
 
                                 </div>
                             </div>
-                        </div>
 
-
-                                <div class="row">
 
                                     <div class="col-md-6">
                                         <!--- Select Field --->
@@ -164,6 +166,7 @@
                                         </div>
                                     </div>
                                 </div>
+
 
 
                         <br>

@@ -4,93 +4,64 @@
 
     <div class="container ">
         <div class="row ">
-            <div class="col-md-12">
+            <div class="col-md-11 col-md-offset-1">
+                @include('errors.errors')
+                @include('errors.status')
                 <div class="panel panel-default">
-
-                    <div class="panel-heading">{{' إضافة فصل جديد:'}}</div>
+                    <div class="panel-heading"> فصل </div>
 
                     <div class="panel-body ">
-                        <div class="row">
 
-                            @include('errors.errors')
-                            @include('errors.status')
-                            <div class="col-md-12 newsletter-form">
+                        <div class="col col-md-12">
 
-                                {!! Form::open(['url' => '/cp/students/finance/term/AddNew', 'method' => 'post', 'files' => true ,'class'=>'newsletter-form' ]) !!}
+                            @if($forms)
+                            <table class="table table-stripped table-hover">
+                                <thead class="">
+                                <th class="text-center">الفصل</th>
+                                <th class="text-center">تاريخ الانشاء</th>
+                                </thead>
+                                <tbody>
+
+                                @foreach($forms as $form)
+                                    <tr class="text-center">
+                                        <td>
+                                            <?php $newstr = substr_replace($form->term_id, "0", 1 , 0); ?>
+                                            <?php $n=substr($form->term_id, -1); ?>
+                                            <?php $newarraynama=substr($newstr, 0, -1); ?>
+                                            @if($n=='1')
+                                                الفصل الأول
+                                            @elseif($n=='2')
+                                                الفصل الثاني
+                                                @endforelse
+                                            {{$newarraynama}}
+                                        </td>
+                                        <td>{{str_replace(substr($form->created_at, 19, 4), '', $form->created_at)}}</td>
+                                    </tr>
+
+                                @endforeach
+                                @if(!$forms)
+                                    <tr class="text-center">
+                                        <td colspan="4">{{trans('cp.noRes')}}</td>
+                                    </tr>
+                                @endif
+
+                                </tbody>
+                            </table>
+
+                            <div></div>
+
+                                @endif
+                        </div>
 
 
-                                <div class="row">
+                        <div class="col col-md-2">
 
-                                    <div class="col-md-6">
-                                        <!--- NID  --->
-                                        <div class="form-group">
-                                            {!! Form::label('term','الفصل') !!}
-                                            {!! Form::select('term' , array('' => 'اختر الفصل', '1' => 'الفصل الأول', '2' => 'الفصل الثاني'), null ,['class' => 'form-control', 'required']) !!}
-
-                                        </div>
-                                    </div>
-
-
-                                    <div class="col-md-6">
-
-                                        <!--- Gender  --->
-                                        <div class="form-group">
-                                            {!! Form::label('year','السنة الدراسية') !!}
-                                            {!! Form::select('year' , array('' => 'اختر السنة', '216' => '2016', '217' => '2017', '218' => '2018', '219' => '2019', '202' => '2020', '221' => '2021'), null ,['class' => 'form-control', 'required']) !!}
-
-                                        </div>
-                                    </div>
-
-
-
-                                </div>
-
-
-                        <br>
-                        <br>
-                        {!! Form::submit('إضافة', ['class' => ' col-md-3']) !!}
-
-                                    <a href="{{url('cp/students/finance')}}" class=" button col-md-3 ">رجوع</a>
-                                {!! Form::close() !!}
+                        <p><a href="{{url('/cp/students/finance/term/add')}}" class="btn btn-info form-control button">إضافة فصل جديد</a></p>
                             </div>
-                        </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-    <script type="application/javascript">
-        $(document).ready(function () {
-
-
-            $('#SID').mask("r000000000", {
-                'translation': {
-                    0: {
-                        pattern: /[0-9*]/
-                    },
-                    'r':{
-                        pattern: /[2/]/,
-                        fallback: '1'
-                    }
-
-                },placeholder: "2XXXXXXXX"
-            });
-
-            $('#NID').mask("r000000000", {
-                'translation': {
-                    0: {
-                        pattern: /[0-9*]/
-                    },
-                    'r':{
-                        pattern: /[1/]/,
-                        fallback: '1'
-                    }
-
-                },placeholder: "1XXXXXXXX"
-            });
-
-
-        });
-    </script>
     @endsection

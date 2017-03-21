@@ -306,12 +306,14 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
         //Route::post('/cp/students/finance/import/update', 'FinanceController@importExcel');
         Route::post('/cp/students/finance/import/update', 'FinanceController@importExcelNew');
         Route::get('/cp/students/finance/import', 'FinanceController@importIndex');
-        Route::get('/cp/students/finance/create', 'FinanceController@AddNewIndex');
-        Route::post('/cp/students/finance/create/AddNew', 'FinanceController@AddNew');
+        Route::get('/cp/students/finance/create', 'FinanceController@AddNewStudentsIndex');
+        Route::post('/cp/students/finance/create/AddNew', 'FinanceController@AddNewsStudents');
      Route::get('/cp/students/finance/export'  ,'FinanceController@excelExport');
-     Route::get('/cp/students/finance/term', 'FinanceController@AddNewTermIndex');
+     Route::get('/cp/students/finance/term', 'FinanceController@ViewTerm');
+     Route::get('/cp/students/finance/term/add', 'FinanceController@AddNewTermIndex');
      Route::post('/cp/students/finance/term/AddNew', 'FinanceController@CPAddNewTerm');
-     Route::get('/cp/students/finance/account', 'FinanceController@AddNewAccountIndex');
+     Route::get('/cp/students/finance/account', 'FinanceController@ViewAccount');
+     Route::get('/cp/students/finance/account/add', 'FinanceController@AddNewAccountIndex');
      Route::post('/cp/students/finance/account/AddNew', 'FinanceController@CPAddNewAccount');
 
         /*Route::post('/cp/students/helpdesk/search'  ,'TecsController@search');

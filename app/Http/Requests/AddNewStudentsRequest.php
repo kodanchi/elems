@@ -19,7 +19,10 @@ class AddNewStudentsRequest extends Request
     {
         return [
 
-            'name' => 'الأسم الرباعي',
+            'name1' => 'الاسم الأول',
+            'name2' => 'اسم الأب',
+            'name3' => 'اسم الجد',
+            'name4' => 'اسم العائلة',
             'student_id' => 'الرقم الأكاديمي',
             'national_id' => 'رقم الهوية',
             //'discount' => 'الخصم',
@@ -38,7 +41,10 @@ class AddNewStudentsRequest extends Request
     public function rules()
     {
         return [
-            'name' => 'required|string',
+            'name1' => 'required|string',
+            'name2' => 'required|string',
+            'name3' => 'required|string',
+            'name4' => 'required|string',
             'student_id' => 'required|integer|min:9',
             'national_id' => 'required|integer',
             'major' => 'required',
@@ -53,7 +59,10 @@ class AddNewStudentsRequest extends Request
     public function messages()
     {
         return [
-            'name.required' => 'يجب ادخال الاسم ',
+            'name1' => 'يجب ادخال الاسم الأول',
+            'name2' => 'يجب ادخال اسم الأب',
+            'name3' => 'يجب ادخال اسم الجد',
+            'name4' => 'يجب ادخال اسم العائلة',
             'student_id.required' => 'يجب ادخال الرقم الجامعي بشكل صحيح',
             'national_id.required' => 'يجب ادخال رقم الهوية الوطنية / الإقامة',
             //'discount.required' => 'يجب اختيار نوع الخصم',
