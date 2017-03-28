@@ -8,7 +8,7 @@
                 @include('errors.errors')
                 @include('errors.status')
                 <div class="panel panel-default">
-                    <div class="panel-heading">الضمان  | عدد النتائج: {{$forms->count()}}</div>
+                    <div class="panel-heading">الضمان{{--  | عدد النتائج: {{$forms->count()}}--}}</div>
 
 
                     <div class="panel-body ">
@@ -18,7 +18,7 @@
                         <div class="col col-md-9">
                             <table class="table table-stripped table-hover">
                                 <thead class="">
-                                <th class="text-center">ID</th>
+                                <th class="text-center">الرقم التعريفي</th>
                                 <th class="text-center">اسم الضمان</th>
                                 <th class="text-center">المكان</th>
                                 <th class="text-center">مشاهدة</th>

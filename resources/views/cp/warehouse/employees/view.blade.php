@@ -13,7 +13,7 @@
 
                             @include('errors.status')
                             <div class="col-md-12 newsletter-form">
-                                <h4>{{trans('warehouse.sn')}}:  {{$employee->email}}</h4>
+                                <h4>الايميل:  {{$employee->email}}</h4>
 
 
                                 <hr>

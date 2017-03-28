@@ -15,7 +15,7 @@
 
                     <div class="panel-body ">
                         <div class="row">
-                            @include('errors.status')
+                            <p><a href="{{url('/cp/students/Info/export')}}" class="btn btn-default form-control button">تصدير الروابط </a></p>
                             <div class="col-md-12">
 
                             </div>

@@ -507,10 +507,11 @@ from reg_forms ');
     public function surveyList()
     {
         $forms = Survey::paginate(20);
+        $infos=DB::select('select * from surveys_questions ,Surveys  where id = survey_id ');
 
         $totalResult = Survey::all();
 
-        return view('cp.surveys.index',compact('forms', 'totalResult'));
+        return view('cp.surveys.index',compact('forms', 'totalResult', 'infos'));
     }
 
     public function surveySearch(Request $request)
@@ -527,11 +528,12 @@ from reg_forms ');
                     'search.string' => 'البحث عن طريق الرقم الاكاديمي',
                     'search.exists' => 'الرقم الاكاديمي غير متواجد',
                 ]);
-                $forms = Survey::where('sid','LIKE','%'.Input::get('search').'%')->paginate(20);
+                $forms = Survey::paginate(20);
+                $infos = DB::select('select * from surveys_questions ,Surveys  where id = survey_id ');
                 break;
         }
 
-        return view('cp.surveys.index',compact('forms'));
+        return view('cp.surveys.index',compact('infos' , 'forms'));
     }
 
 

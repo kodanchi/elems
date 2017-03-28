@@ -21,6 +21,6 @@
         </script>
 
     <hr>
-    <a href="{{url('cp/warehouse/employees/new')}}" class="btn btn-default form-control button">{{trans('warehouse.createNewEmp')}}</a>
+    <a href="{{url('cp/warehouse/employees/new')}}" class="btn btn-info form-control button" style="margin-bottom: 20px">{{trans('warehouse.createNewEmp')}}</a>
     <a href="{{url('cp/warehouse/')}}" class="btn btn-default form-control button">{{trans('warehouse.back')}}</a>
 </div>

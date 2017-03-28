@@ -7,7 +7,7 @@
             <div class="col-md-11 col-md-offset-1">
                 @include('errors.errors')
                 <div class="panel panel-default">
-                    <div class="panel-heading">{{trans('warehouse.title')}}  | عدد النتائج: {{$WHassets->count()}}</div>
+                    <div class="panel-heading">{{trans('warehouse.title')}}  {{--| عدد النتائج: {{$WHassets->count()}}--}}</div>
 
 
                     <div class="panel-body ">
@@ -27,7 +27,7 @@
                                 @foreach($WHassets as $asset)
                                     <tr class="text-center">
                                         <td>{{$asset->SN}}</td>
-                                        <td>{{$asset->DL_code}}</td>
+                                        <td style="direction: ltr">{{$asset->DL_code}}</td>
                                         <td>{{$asset->type}}</td>
                                         <td>{{trans('warehouse.assetStatus.'.$asset->status)}}</td>
                                         <td><a href="{{url('cp/warehouse/view/'.$asset->id)}}">
@@ -43,8 +43,6 @@
                                 </tbody>
                             </table>
                             <div>{{$WHassets->links()}}</div>
-
-
 
                         </div>
 

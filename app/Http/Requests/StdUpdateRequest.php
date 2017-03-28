@@ -70,6 +70,7 @@ class StdUpdateRequest extends Request
     public function messages()
     {
         return [
+
             'name1' => 'يجب ادخال الاسم الأول',
             'name2' => 'يجب ادخال اسم الأب',
             'name3' => 'يجب ادخال اسم الجد',

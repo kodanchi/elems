@@ -24,7 +24,7 @@
                             <!--- DL-Code Field --->
                             <div class="form-group">
                                 {!! Form::label('DL_code', trans('warehouse.dlcode').':') !!}
-                                {!! Form::text('DL_code', null, ['class' => 'form-control']) !!}
+                                {!! Form::text('DL_code', null, ['class' => 'form-control'] , ['direction' => 'ltr']) !!}
                             </div>
 
 

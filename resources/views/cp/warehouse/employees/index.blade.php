@@ -7,7 +7,7 @@
             <div class="col-md-11 col-md-offset-1">
                 @include('errors.errors')
                 <div class="panel panel-default">
-                    <div class="panel-heading">{{trans('warehouse.emp_title')}}  | عدد النتائج: {{$users->count()}}</div>
+                    <div class="panel-heading">{{trans('warehouse.emp_title')}}  {{--| عدد النتائج: {{$users->count()}}--}}</div>
 
 
                     <div class="panel-body ">

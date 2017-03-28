@@ -61,6 +61,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     //Rooms Reservations
     Route::get('/reservation/new', 'ScheduleController@index');
+    Route::post('/reservation/pin', 'ScheduleController@pin');
+    Route::post('/reservation/validate', 'ScheduleController@pinValidate');
+    Route::get('/reservation/pin', 'ScheduleController@getValidate');
+    Route::get('/reservation/validate', 'ScheduleController@getValidate');
     Route::get('/reservation/newGuest', 'ScheduleController@regNew');
     Route::get('/reservation/check/{id}', 'ScheduleController@regEdit');
     Route::get('/reservation/schedule', 'ScheduleController@RoomSchedule');
@@ -84,11 +88,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     //Info route 3/14/2017
 
     Route::get('students/Info', 'Std_updates@index');
-    Route::post('students/Info/update', 'Std_updates@StdShowInfo');
-    Route::post('students/Info/update/done', 'Std_updates@StdUpdate');
-
-
-    Route::get('students/Info/edit/{id}/{nid}', 'Std_updates@EditIndex');
+    Route::get('students/Info/edit/{id}', 'Std_updates@EditIndex');
+    Route::get('cp/students/Info/export', 'Std_updates@linksExcelExport');
     Route::any('students/Info/update/{id}', 'Std_updates@UpdateIndex');
 
     /*Route::get('/form', 'FormsController@closed');
@@ -275,6 +276,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     });
 
     Route::group(['middleware' => ['helpdeskCP']], function () {
+
         Route::get('/cp/students/helpdesk', 'TecsController@CPindex');
         Route::get('/cp/students/helpdesk/view/{id}', 'TecsController@CPview');
         Route::post('/cp/students/helpdesk/update', array('uses' => 'TecsController@CPupdateOrCPtrans'));
@@ -417,6 +419,11 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
         //reservations -get
         Route::get('/cp/warehouse/reservations/'  ,'ScheduleController@resvView');
+        Route::get('/cp/warehouse/reservation/approve/'  ,'ScheduleController@resvApproveView');
+        Route::get('/cp/warehouse/reservation/approve/accept/{id}'  ,'ScheduleController@resvApproveAccept');
+        Route::get('/cp/warehouse/reservation/approve/reject/{id}/{reason}'  ,'ScheduleController@resvApproveReject');
+        Route::get('/cp/warehouse/reservation/approved/'  ,'ScheduleController@resvApprovedView');
+        Route::get('/cp/warehouse/reservation/approved/delete/{id}'  ,'ScheduleController@resvApprovedDelete');
 
 
 
@@ -438,7 +445,14 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
         Route::post('/cp/warehouse/update/{id}'  ,'WarehouseController@WHupdate');
         Route::post('/cp/warehouse/search'  ,'WarehouseController@WHsearch');
+        Route::get('/cp/warehouse/search'  ,'WarehouseController@WHsearch2');
         Route::post('/cp/warehouse/'  ,'WarehouseController@create');
+
+        //report
+
+        Route::get('/cp/warehouse/reports/'  ,'WarehouseController@reportsindex');
+        Route::post('/cp/warehouse/reports/new'  ,'WarehouseController@ExcelExport');
+
 
 
 

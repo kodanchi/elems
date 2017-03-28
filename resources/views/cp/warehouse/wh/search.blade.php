@@ -12,7 +12,7 @@
     	</div>
 
         <!--- Search Field --->
-        <div class="form-group" id="sf">
+        <div class="form-group" id="sf" style="direction:ltr">
             {!! Form::text('search', null, ['class' => 'form-control','id'=>'search', 'placeholder'=> 'Search']) !!}
         </div>
         {!! Form::submit('بحث', ['class' => 'form-control btn-success']) !!}
@@ -25,6 +25,6 @@
         </script>
 
     <hr>
-    <a href="{{url('cp/warehouse/new')}}" class="btn btn-default form-control button">{{trans('warehouse.create')}}</a>
+    <a href="{{url('cp/warehouse/new')}}" class="btn btn-info form-control button" style="margin-bottom: 20px">{{trans('warehouse.create')}}</a>
     <a href="{{url('cp/warehouse/')}}" class="btn btn-default form-control button">{{trans('warehouse.back')}}</a>
 </div>

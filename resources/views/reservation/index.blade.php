@@ -5,6 +5,7 @@
     <div class="container ">
         <div class="row ">
             @include('errors.errors')
+            @include('errors.status')
 
 
 
@@ -60,7 +61,7 @@
 
 
                             <div class="col-md-12">
-                            {!! Form::open(['url' => '/reservation/check', 'method' => 'post']) !!}
+                            {!! Form::open(['url' => '/reservation/pin', 'method' => 'post']) !!}
                             <!--- Email Field --->
                                 <div class="form-group">
                                     {!! Form::label('email', trans('warehouse.email').':') !!}

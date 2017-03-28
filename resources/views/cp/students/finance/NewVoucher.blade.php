@@ -22,7 +22,13 @@
                                         <!--- Full name  --->
                                         <div class="form-group">
                                             {!! Form::label('account_id_1','من رقم حساب:') !!}
-                                            {!! Form::text('account_id_1', null, ['class' => 'form-control', 'required']) !!}
+                                            <select name="account_id_1" id="account_id_1" class="form-control selectpicker" data-live-search="true" required>
+                                                <option value="" selected>اختر حساب</option>
+                                                    @foreach ($account as $acnt)
+                                                        <option value="{{$acnt->account_no}}">
+                                                                {{$acnt->account_no}} - {{$acnt->account_name}}</option>
+                                                    @endforeach
+                                            </select>
                                         </div>
                                     </div>
 
@@ -30,30 +36,32 @@
                                         <!--- Full name  --->
                                         <div class="form-group">
                                             {!! Form::label('account_id_2','إلى رقم حساب:') !!}
-                                            {!! Form::text('account_id_2', null, ['class' => 'form-control', 'required']) !!}
+                                            <select name="account_id_2" id="account_id_2" class="form-control selectpicker" data-live-search="true" required>
+                                                <option value="" selected>اختر حساب</option>
+                                                @foreach ($account as $acnt)
+                                                    <option value="{{$acnt->account_no}}">
+                                                        {{$acnt->account_no}} - {{$acnt->account_name}}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
 
-                                    <div class="col-md-6">
+                                    {{--<div class="col-md-6">
                                         <!--- SID  --->
                                         <div class="form-group">
                                             {!! Form::label('voucher_id',' رقم القيد:') !!}
                                             {!! Form::text('voucher_id', null, ['class' => 'form-control', 'required']) !!}
                                         </div>
-                                    </div>
+                                    </div>--}}
 
-                                    <div class="col-md-6">
+                                    {{--<div class="col-md-6">
 
                                         <!--- Gender  --->
                                         <div class="form-group">
                                             {!! Form::label('time', '  الوقت والتاريخ:') !!}
                                             {!! Form::date('time', null, ['class' => 'form-control', 'required']) !!}
-
                                         </div>
-                                    </div>
-
-                                </div>
-                                <div class="row">
+                                    </div>--}}
 
                                     <div class="col-md-6">
                                         <!--- NID  --->
@@ -62,6 +70,21 @@
                                             {!! Form::text('amount', null, ['class' => 'form-control', 'required']) !!}
                                         </div>
                                     </div>
+
+                                    <div class="col-md-6">
+                                        <!--- Select Field --->
+                                        <div class="form-group">
+                                            {!! Form::hidden('user_id', $systemUserID) !!}
+                                            {!! Form::label('user_name', 'معرف المستخدم:') !!}
+                                            {!! Form::text('user_name', $systemUserName ,['class' => 'form-control', 'required', 'readonly']) !!}
+                                            <input type="number" min="0.01" step="0.01" max="2500" value="25.67" />
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+
+
                                     {{--<div class="col-md-6">
                                         <!--- NID  --->
                                         <div class="form-group">
@@ -78,15 +101,7 @@
                                         </div>
                                     </div>--}}
 
-                                    <div class="col-md-6">
-                                        <!--- Select Field --->
-                                        <div class="form-group">
-                                            {!! Form::hidden('user_id', $systemUserID) !!}
-                                            {!! Form::label('user_name', 'معرف المستخدم:') !!}
-                                            {!! Form::text('user_name', $systemUserName ,['class' => 'form-control', 'required', 'readonly']) !!}
 
-                                        </div>
-                                    </div>
 
                                 </div>
 
@@ -103,6 +118,8 @@
                                             {!! Form::textarea('description',null ,['class' => 'form-control', 'required']) !!}
                                         </div>
                                     </div>
+
+
 
                                 </div>
 

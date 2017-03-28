@@ -16,8 +16,8 @@
 
 
                             <div class="col-md-12">
-                                <p>{{trans('warehouse.name')." : ".$room->name}}</p>
-                                <p>{{trans('warehouse.email')." : ".$room->des}}</p>
+                                <p>{{trans('إسم القاعة ')." : ".$room->name}}</p>
+                                <p>{{trans('موقع القاعة')." : ".$room->des}}</p>
                             </div>
 
                             <div class="col-md-12">

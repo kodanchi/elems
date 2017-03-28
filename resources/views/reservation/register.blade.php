@@ -23,7 +23,7 @@
                                     <!--- Name Field --->
                                     <div class="form-group">
 
-                                        <h5>{!! Form::label('emp_name', 'Name :') !!}{{$guest->name}}</h5>
+                                        <h5>{!! Form::label('emp_name', 'الاسم :') !!}{{$guest->name}}</h5>
                                     </div>
                                 </div>
                             </div>
@@ -33,14 +33,14 @@
                                 <div class="col-md-6">
                                     <!--- Date Field --->
                                     <div class="form-group">
-                                        {!! Form::label('date', 'Date:') !!}
+                                        {!! Form::label('date', 'التاريخ:') !!}
                                         {!! Form::date('date', null, ['class' => 'form-control']) !!}
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        {!! Form::label('res', 'Resources:') !!}
+                                        {!! Form::label('res', 'الوقت:') !!}
                                         <div id="timeSlider"></div>
 
                                     </div>
@@ -49,30 +49,40 @@
                                 <div class="col-md-12">
                                     <!--- Purpose Field --->
                                     <div class="form-group">
-                                        {!! Form::label('purpose', 'Purpose:') !!}
+                                        {!! Form::label('purpose', 'سبب الحجز:') !!}
                                         {!! Form::textarea('purpose', null, ['class' => 'form-control']) !!}
                                     </div>
 
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-12">
-                                    <hr>
-                                    <h5>أختر القاعة المناسبة لكم عن طريق اختيار ما تحتاجه من موارد في القاعة</h5>
-                                </div>
-                                <div class="col-md-6">
-                                    <!--- Resources Field --->
-                                    <div class="form-group">
-                                        {!! Form::label('res', 'Resources:') !!}
-                                        {{ Form::select('res[]', $resArr, null,['class' => 'form-control selectpicker', 'id'=>'resDropdown', 'data-live-search'=> 'true','multiple'=>'multiple'])}}
+                                <?php if (isset($resArr)){ ?>
+                                    <div class="col-md-12">
+                                            <hr>
+                                            <h5>أختر القاعة المناسبة لك عن طريق اختيار ما تحتاجه من موارد في القاعة</h5>
                                     </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <table class="table table-responsive table-stripped table-hover" id="roomsTable">
+
+                                    <div class="col-md-6">
+                                        <!--- Resources Field --->
+
+                                    <div class="form-group">
+
+                                        {!! Form::label('res', 'مصادر:') !!}
+                                        {{ Form::select('res[]', $resArr, null,['class' => 'form-control selectpicker', 'id'=>'resDropdown', 'data-live-search'=> 'true','multiple'=>'multiple'])}}
+
+                                    </div>
+
+                                    </div>
+                                        <div class="col-md-6">
+                                <?php }
+                                else {?>
+                                    <div class="col-md-12">
+                                <?php }?>
+                                        <table class="table table-responsive table-stripped table-hover" id="roomsTable">
                                         <thead>
-                                        <th>name</th>
-                                        <th>max</th>
-                                        <th>Register</th>
+                                        <th>اسم القاعة</th>
+                                        <th>الاستيعابية</th>
+                                        <th>اختر</th>
                                         </thead>
                                         <tbody>
                                         @foreach($rooms as $room)
@@ -97,13 +107,13 @@
                             </div>
                         
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-2">
                                 {!! Form::hidden('gid', $guest->id, ['id' => 'id']) !!}
                                 {!! Form::hidden('fromH', '9', ['id' => 'fromH']) !!}
                                 {!! Form::hidden('fromM', '30', ['id' => 'fromM']) !!}
                                 {!! Form::hidden('toH', '14', ['id' => 'toH']) !!}
                                 {!! Form::hidden('toM', '0', ['id' => 'toM']) !!}
-                                {!! Form::submit('Submit', ['class' => 'form-control']) !!}
+                                {!! Form::submit('ارسال', ['class' => 'form-control']) !!}
                             </div>
                         </div>
                         {!! Form::close() !!}
@@ -133,7 +143,7 @@
                                 max: new Date(2017, 1, 1,20,0,0,0)
                             },
                             step: {
-                                minutes: 30
+                                minutes: 15
                             },
                             formatter:function(val){
                                 /*var days = val.getDate(),

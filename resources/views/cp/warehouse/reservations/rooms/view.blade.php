@@ -13,7 +13,7 @@
 
                             @include('errors.status')
                             <div class="col-md-12 newsletter-form">
-                                <h4>{{trans('warehouse.sn')}}:  {{$room->des}}</h4>
+                                <h4>معلومة دلالية:  {{$room->des}}</h4>
                                 <h4>{{trans('warehouse.max')}}:  {{$room->max}}</h4>
 
 
@@ -26,6 +26,8 @@
                                         <hr>
                                         <table class="table table-stripped table-hover">
                                             <thead class="">
+
+                                            <th class="text-center"></th>
                                             <th class="text-center">{{trans('warehouse.type')}}</th>
                                             <th class="text-center">{{trans('warehouse.sn')}}</th>
                                             <th class="text-center">{{trans('warehouse.status')}}</th>
@@ -33,8 +35,11 @@
                                             <th class="text-center">{{trans('warehouse.edit')}}</th>
                                             </thead>
                                             <tbody>
+                                            <?php  $x=1; ?>
                                             @foreach($assets as $asset)
                                                 <tr class="text-center">
+                                                    <td>{{$x}}</td>
+                                                    <?php  $x++; ?>
                                                     <td>{{$asset->type}}</td>
                                                     <td>{{$asset->SN}}</td>
                                                     <td>{{$asset->status}}</td>

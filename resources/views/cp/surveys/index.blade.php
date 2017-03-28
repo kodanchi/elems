@@ -9,7 +9,7 @@
                 @include('errors.status')
                 <div class="panel panel-default">
 
-                    <div class="panel-heading">{{trans('cp.surv_title')}} | عدد النتائج: {{$totalResult->count()}}</div>
+                    <div class="panel-heading">{{trans('cp.surv_title')}} {{--| عدد النتائج: {{$totalResult->count()}}--}}</div>
 
                     <div class="panel-body">
 
@@ -26,12 +26,12 @@
                                 <th class="text-center">{{trans('surveys.createAt')}}</th>
                                 </thead>
                                 <tbody>
-                                @foreach($forms as $form)
+                                @foreach($infos as $info)
                                     <tr class="text-center">
-                                        <td>{{$form->sid}}</td>
-                                        <td>{{$form->Question_id}}</td>
-                                        <td>{{$form->Answer}}</td>
-                                        <td>{{$form->created_at}}</td>
+                                        <td>{{$info->sid}}</td>
+                                        <td>{{$info->question_disc}}</td>
+                                        <td>{{$info->answer}}</td>
+                                        <td>{{str_replace(substr($info->created_at, 16, 7), '', $info->created_at)}}</td>
 
                                     </tr>
                                 @endforeach

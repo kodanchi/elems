@@ -37,12 +37,26 @@
 
 
                                     <div class="col-md-6">
-                                        <h5>{{trans('warehouse.warranty')}}:    {{$warranty->warranty_name}} </h5>
+                                        <h5>{{trans('warehouse.warranty')}}:
+                                            <?php if ($warranty){ ?>
+                                            {{$warranty->warranty_name}}
+                                            <?php }
+                                            else {?>
+                                            لا يوجد
+                                            <?php }?>
+                                        </h5>
                                     </div>
 
 
                                     <div class="col-md-6">
-                                        <h5>{{trans('warehouse.expdate')}}: {{$asset->exp_date}} </h5>
+                                        <h5>{{trans('warehouse.expdate')}}:
+                                            <?php if ($asset->exp_date){ ?>
+                                            {{$asset->exp_date}}
+                                            <?php }
+                                            else {?>
+                                            لا يوجد
+                                            <?php }?>
+                                        </h5>
                                     </div>
 
 

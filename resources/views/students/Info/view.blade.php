@@ -10,6 +10,7 @@
 
                     <div class="panel-body ">
                         @include('errors.errors')
+                        @include('errors.status')
                         {{--{{dd($student)}}--}}
                         {{--{!! Form::model($student, array('action' => array('Std_updates@UpdateIndex', $student->SID))) !!}--}}
                         {!! Form::model($student, ['method' => 'PATCH', 'action' =>  ['Std_updates@UpdateIndex', $student->SID], 'files' => true]) !!}
@@ -99,18 +100,24 @@
                         </div>
 
                       <div class="row">
+                       <div class="col-md-4">
+                            <div class="form-group">
+                                {!! Form::label('NID', 'رقم الهوية/الإقامة') !!}
+                                {!! Form::text('NID',null,['class' => 'form-control'] ) !!}
+                            </div>
+                       </div>
 
-                        <div class="col-md-6">
+                          <div class="col-md-4">
                             <div class="form-group">
                                 {!! Form::label('Phone', 'رقم الجوال') !!}
                                 {!! Form::text('Phone',null ,['class' => 'form-control']) !!}
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 {!! Form::label('Nationally', 'الجنسية') !!}
                                 {!! Form::select('Nationally',$nationals ,null,['class' => 'form-control'] ) !!}
-                            </div>
+
                             <div id="div_other_nationality" class="form-group">
                                 <!--- other_nationality Field --->
                                 <div class="form-group">
@@ -120,6 +127,7 @@
                             </div>
                         </div>
                     </div>
+                       </div>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">

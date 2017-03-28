@@ -7,23 +7,71 @@
             <div class="col-md-11 col-md-offset-1">
                 @include('errors.errors')
                 <div class="panel panel-default">
-                    <div class="panel-heading">{{trans('warehouse.title')}}</div>
+                    <div class="panel-heading"></div>
+
 
 
                     <div class="panel-body newsletter-form">
 
-                        <div class="col col-md-12">
-                            <a href="{{url('cp/warehouse/list')}}" class="button">المعهودات</a>
-                            <a href="{{url('cp/warehouse/warranty')}}" class="button">الضمان</a>
-                            <a href="{{url('cp/warehouse/employees')}}" class="button">الموظفين</a>
-                            <a href="{{url('cp/warehouse/rooms')}}" class="button">القاعات</a>
-                            <a href="{{url('cp/warehouse/reservations')}}" class="button">الحجوزات</a>
-                        </div>
-                        <div class="col col-md-6">
+                        <div class="row" class="col-md-11" >
+                            <div class="col-md-2">
+                                <div class="center">
 
-                        </div>
+                                    <a href="{{url('cp/warehouse/list')}}" >
+                                <img src="{{asset('storage/warehouse.png')}}" alt="E-Learning" width="500px"  height="100px">
+                        <br><br><h4 style="text-align: center">أجهزة العمادة</h4></a></div>
 
 
+                            </div><!--/.col-md-4-->
+                            <div class="col-md-2">
+                                <div class="center">
+                                    <a href="{{url('cp/warehouse/warranty')}}">
+                                    <img src="{{asset('storage/warranty.png')}}" alt="E-Learning" width="500px"  height="120px">
+                                    <br><br><h4 style="text-align: center">الضمان</h4></a>
+                                </div>
+
+
+                            </div><!--/.col-md-4-->
+                            <div class="col-md-2">
+                                <div class="center">
+                                    <a href="{{url('cp/warehouse/employees')}}">
+                                    <img src="{{asset('storage/employee.png')}}" alt="E-Learning" width="500px" height="120px">
+                              <br><br><br><h4 style="text-align: center">الموظفين</h4></a>
+                                </div>
+
+
+                                <hr>
+
+
+                            </div><!--/.col-md-4-->
+                            <div class="col-md-2">
+                                <div class="center">
+                                    <a href="{{url('cp/warehouse/rooms')}}" >
+                                    <img src="{{asset('storage/rooms.png')}}" alt="E-Learning" width="500px"  height="120px" class="img-circle">
+                                </div><br><br>
+                                <h4 style="text-align: center">القاعات</h4></a>
+
+                            </div><!--/.col-md-4-->
+                            <div class="col-md-2">
+                                <div class="center">
+                                    <a href="{{url('cp/warehouse/reservations')}}">
+                                    <img src="{{asset('storage/booking.png')}}" alt="E-Learning" width="500px"  height="120px">
+                                    <br><br><h4 style="text-align: center">الحجوزات</h4></a>
+                                </div>
+
+
+                            </div>
+                            <div class="col-md-2" >
+                            <div class="center">
+                                    <a href="{{url('cp/warehouse/reports')}}">
+                                    <img src="{{asset('storage/report.png')}}" alt="E-Learning" width="500px"  height="120px">
+                                    <br><br><h4 style="text-align: center">طباعة التقارير</h4></a>
+                                </div>
+
+
+                            </div><!--/.col-md-4-->
+
+                    </div><!--/.row-->
 
 
                     </div>
