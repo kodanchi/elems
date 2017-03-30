@@ -68,6 +68,10 @@
                                     {!! Form::email('email', null, ['class' => 'form-control']) !!}
                                 </div>
 
+                                <div align="center">
+                                    {!! Recaptcha::render() !!}
+                                </div>
+                                <br>
                                 {!! Form::submit('تحقق', ['class' => 'form-control']) !!}
                                 {!! Form::close() !!}
                             </div>

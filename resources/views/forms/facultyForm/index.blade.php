@@ -29,6 +29,10 @@
                                         {!! Form::text('email', null, ['class' => 'form-control']) !!}
                                         <small>{{trans('facultyForm.example')}}: username@uod.edu.sa {{trans('facultyForm.or')}} username@uohb.edu.sa</small>
                                     </div>
+                                    <div align="center">
+                                        {!! Recaptcha::render() !!}
+                                    </div>
+                                    <br>
                                     {!! Form::submit('إرسال', ['class' => 'form-control']) !!}
                                     {!! Form::close() !!}
                                     <a class="btn btn-block" href="{{url('/form/facultyform/pin')}}">{{trans('facultyForm.gotPinAlready')}}</a>

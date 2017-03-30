@@ -10,8 +10,8 @@
         "laravelcollective/html": "5.2.*",
         "mcamara/laravel-localization": "1.1.*",
         "doctrine/dbal": "^2.5",
-        "maatwebsite/excel": "~2.1.0"
-
+        "maatwebsite/excel": "~2.1.0",
+        "greggilbert/recaptcha": "^2.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

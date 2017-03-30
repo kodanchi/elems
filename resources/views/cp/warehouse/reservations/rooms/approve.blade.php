@@ -56,7 +56,7 @@
                                     </tr>
                                 @endforeach
 
-                                @if(sizeof($event)==0)
+                                @if(sizeof($events)==0)
                                     <tr class="text-center">
                                         <td colspan="5">{{trans('warehouse.noRes')}}</td>
                                     </tr>
@@ -184,33 +184,6 @@
                                 document.getElementById('form-id').action = "approve/reject/"+recipient+"/"+document.getElementById('reason').value;
                                 return true;
                             }
-
-
-                            $('#editForm').submit( function(e) {
-                                e.preventDefault();
-                                var currentForm = this;
-                                bootbox.confirm({
-                                    size: "small",
-                                    message: "هل أنت متأكد من التعديل؟",
-                                    buttons: {
-
-                                        cancel: {
-                                            label: 'إلغاء',
-                                            className: 'btn-danger'
-                                        },
-                                        confirm: {
-                                            label: 'نعم',
-                                            className: 'btn-success'
-                                        }
-                                    },
-                                    callback: function (result) {
-                                        if(result){
-                                            currentForm.submit();
-                                        }
-                                    }
-                                });
-
-                            });
 
                         </script>
 

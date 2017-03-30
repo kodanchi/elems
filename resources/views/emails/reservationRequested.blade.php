@@ -5,15 +5,13 @@
     <body>
     <div>
         <h4 style="text-align: right;color: #204d74">أهلاً بك في مركز نظام حجز القاعات في عمادة التعليم الإلكتروني و التعليم عن بعد</h4>
-        <h4 style="text-align: right;color: red">نأسف لقد تم رفض طلبك في النظام، لطلب حجز</h4>
-
-
+        <h4 style="text-align: right">طلب حجز جديد</h4>
+        <h3>
             <table  style="border:solid;border-color: #204d74; width:100%" border="1">
-
              <tr style="text-align: right">
                  <td>{{$info[0]->room_name}}</td>
 
-                 <td >القاعة</td>
+                 <td >   القاعة</td>
 
 
              </tr>
@@ -39,8 +37,8 @@
 
 
 
-                        <td>{{$reason}}</td>
-                        <td >  ذلك بسبب</td>
+                        <td>{{$info[0]->purpose}}</td>
+                        <td >  ذلك لسبب</td>
 
                     </tr>
 

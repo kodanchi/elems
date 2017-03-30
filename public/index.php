@@ -47,6 +47,7 @@ $app = require_once __DIR__.'/../bootstrap/app.php';
 |
 */
 
+
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
 
 $response = $kernel->handle(
@@ -56,3 +57,4 @@ $response = $kernel->handle(
 $response->send();
 
 $kernel->terminate($request, $response);
+

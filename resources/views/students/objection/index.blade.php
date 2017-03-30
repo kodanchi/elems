@@ -53,13 +53,16 @@
                                 <!--- SID Field --->
                                 <div class="form-group">
                                     {!! Form::label('sid', trans('objection.sid').':') !!}
-                                    {!! Form::text('sid', null, ['class' => 'form-control' , 'readonly' => 'true']) !!}
+                                    {!! Form::text('sid', null, ['class' => 'form-control' ]) !!}
                                 </div>
                                 <label>
                                     {!! Form::checkbox('agree', '1', null,  ['id' => 'agree']) !!}
                                     أوفق على الإدلاء بالمعلومات الصحيحة وأتحمل كامل المسؤولية في حال كانت المعلومات غير صحيحة
                                 </label>
-                                </br>
+                                    <div align="center">
+                                        {!! Recaptcha::render() !!}
+                                    </div>
+                                    <br>
                                 {!! Form::submit('تقدم', ['class' => 'form-control']) !!}
                                 {!! Form::close() !!}
                             </div>

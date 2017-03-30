@@ -11,11 +11,12 @@
             <div class="col-md-6 col-md-offset-3">
 
                 <div class="panel panel-default">
-                    <div class="panel-heading">تحديث بيانات الطالب / الطالبة</div>
+                    <div class="panel-heading">تحديث بيانات الطالب / الطالبة - تصدير النتائج</div>
 
                     <div class="panel-body ">
                         <div class="row">
                             <p><a href="{{url('/cp/students/Info/export')}}" class="btn btn-default form-control button">تصدير الروابط </a></p>
+                            <p><a href="{{url('/cp/students/Info/export2')}}" class="btn btn-success form-control button">تصدير بيانات الطلاب  </a></p>
                             <div class="col-md-12">
 
                             </div>

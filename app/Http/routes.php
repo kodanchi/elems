@@ -18,8 +18,7 @@
 
 
 
-Route::group(['prefix' => LaravelLocalization::setLocale()], function()
-{
+Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
     //Route::auth();
 
 
@@ -32,8 +31,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
         // Registration Routes...
 
     });
-    $this->get('register', 'Auth\AuthController@showRegistrationForm');
-    $this->post('register', 'Auth\AuthController@register');
+    /*$this->get('register', 'Auth\AuthController@showRegistrationForm');
+    $this->post('register', 'Auth\AuthController@register');*/
 
 
     // Password Reset Routes...
@@ -53,7 +52,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
     Route::get('/', 'HomeController@index');
-
 
 
     //Route::get('/home', 'HomeController@index');
@@ -76,7 +74,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::post('/reservation/schedule', 'ScheduleController@schedule');
 
 
-
     //Surveys for students
     Route::get('/survey/study', 'SurveysController@index');
     Route::get('/survey/study/new', 'SurveysController@createStudySurv');
@@ -89,7 +86,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::get('students/Info', 'Std_updates@index');
     Route::get('students/Info/edit/{id}', 'Std_updates@EditIndex');
+    Route::get('cp/students/Info/exportindex', 'Std_updates@ExcelExportIndex');
     Route::get('cp/students/Info/export', 'Std_updates@linksExcelExport');
+    Route::get('cp/students/Info/export2', 'Std_updates@ResultExcelExport');
     Route::any('students/Info/update/{id}', 'Std_updates@UpdateIndex');
 
     /*Route::get('/form', 'FormsController@closed');
@@ -102,7 +101,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/form/emr/{id}/view', 'RegFormController@view');*/
 
     // routes up are closed original routes are below
-
 
 
     Route::get('/form', 'FormsController@index');
@@ -125,62 +123,59 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     //for admin to check the requested applications
 
-    Route::get('/cp/students/sp/requested'  ,'CPController@SPRequested');
-    Route::get('/cp/students/objection/requested'  ,'CPController@ObjRequested');
-    Route::post('/cp/students/sp/validate'  ,'CPController@SPValidate');
-    Route::post('/cp/students/objection/validate'  ,'CPController@ObjValidate');
+    Route::get('/cp/students/sp/requested', 'CPController@SPRequested');
+    Route::get('/cp/students/objection/requested', 'CPController@ObjRequested');
+    Route::post('/cp/students/sp/validate', 'CPController@SPValidate');
+    Route::post('/cp/students/objection/validate', 'CPController@ObjValidate');
     //for college admin and super admin to enter new emr form
-    Route::get('/cp/form/emr/new'  ,'CPController@regFormNew');
+    Route::get('/cp/form/emr/new', 'CPController@regFormNew');
     Route::post('/cp/form/emr/add', 'CPController@regFormAdd');
-    Route::post('/cp/students/sp/requested/search'  ,'SPController@requestedsearch');
+    Route::post('/cp/students/sp/requested/search', 'SPController@requestedsearch');
 
 
     //Route::get('/cp/updateBatch'  ,'CPController@updateBatch');
     //for admin to get export the emr/evaluation
-    Route::get('/cp/form/emr/evaluation/export'  ,'CPController@EmrEvaluationExcelExport');
-    Route::get('/cp/survey/export'  ,'SurveysController@surveyExcelExport');
+    Route::get('/cp/form/emr/evaluation/export', 'CPController@EmrEvaluationExcelExport');
+    Route::get('/cp/survey/export', 'SurveysController@surveyExcelExport');
 
 
-    Route::get('/cp'  ,'CPController@index');
-    Route::get('/cp/users'  ,'CPController@users');
-    Route::get('/cp/users/{id}/edit'  ,'CPController@userEdit');
-    Route::post('/cp/users/{id}/update'  ,'CPController@userUpdate');
-    Route::get('/cp/users/{id}/delete'  ,'CPController@delUpdate');
-    Route::get('/cp/form/ff'  ,'CPController@facultyForms');
-    Route::get('/cp/form/ff/{id}/view'  ,'CPController@viewFF');
-    Route::post('/cp/form/ff/search'  ,'CPController@searchFF');
-    Route::get('/cp/form/ff/approved'  ,'CPController@FFApproved');
-    Route::get('/cp/form/ff/rejected'  ,'CPController@FFRejected');
-    Route::get('/cp/form/ff/pending'  ,'CPController@FFPending');
-    Route::get('/cp/form/ff/{id}/approve'  ,'CPController@approveFF');
-    Route::get('/cp/form/ff/{id}/reject'  ,'CPController@rejectFF');
-    Route::post('/cp/form/ff/{id}/update'  ,'CPController@updateFF');
+    Route::get('/cp', 'CPController@index');
+    Route::get('/cp/users', 'CPController@users');
+    Route::get('/cp/users/{id}/edit', 'CPController@userEdit');
+    Route::post('/cp/users/{id}/update', 'CPController@userUpdate');
+    Route::get('/cp/users/{id}/delete', 'CPController@delUpdate');
+    Route::get('/cp/form/ff', 'CPController@facultyForms');
+    Route::get('/cp/form/ff/{id}/view', 'CPController@viewFF');
+    Route::post('/cp/form/ff/search', 'CPController@searchFF');
+    Route::get('/cp/form/ff/approved', 'CPController@FFApproved');
+    Route::get('/cp/form/ff/rejected', 'CPController@FFRejected');
+    Route::get('/cp/form/ff/pending', 'CPController@FFPending');
+    Route::get('/cp/form/ff/{id}/approve', 'CPController@approveFF');
+    Route::get('/cp/form/ff/{id}/reject', 'CPController@rejectFF');
+    Route::post('/cp/form/ff/{id}/update', 'CPController@updateFF');
 
 
-    Route::get('/cp/form/emr'  ,'CPController@emrForms');
-    Route::get('/cp/form/emr/approved'  ,'CPController@emrFormsApproved');
-    Route::get('/cp/form/emr/rejected'  ,'CPController@emrFormsRejected');
-    Route::get('/cp/form/emr/pending'  ,'CPController@emrFormsPending');
-    Route::get('/cp/form/emr/{id}/view'  ,'CPController@viewRegForm');
-    Route::get('/cp/form/emr/{id}/edit'  ,'CPController@editRegForm');
-    Route::post('/cp/form/emr/{id}/update'  ,'CPController@updateRegForm');
-    Route::get('/cp/form/emr/search'  ,'CPController@emrForms');
-    Route::post('/cp/form/emr/search'  ,'CPController@search');
-    Route::get('/cp/form/emr/{id}/edit'  ,'CPController@editRegForm');
-    Route::get('/cp/form/emr/{id}/approve'  ,'CPController@approveRegForm');
-    Route::get('/cp/form/emr/{id}/reject'  ,'CPController@rejectRegForm');
-    Route::post('/cp/form/emr/{id}/update'  ,'CPController@updateRegForm');
+    Route::get('/cp/form/emr', 'CPController@emrForms');
+    Route::get('/cp/form/emr/approved', 'CPController@emrFormsApproved');
+    Route::get('/cp/form/emr/rejected', 'CPController@emrFormsRejected');
+    Route::get('/cp/form/emr/pending', 'CPController@emrFormsPending');
+    Route::get('/cp/form/emr/{id}/view', 'CPController@viewRegForm');
+    Route::get('/cp/form/emr/{id}/edit', 'CPController@editRegForm');
+    Route::post('/cp/form/emr/{id}/update', 'CPController@updateRegForm');
+    Route::get('/cp/form/emr/search', 'CPController@emrForms');
+    Route::post('/cp/form/emr/search', 'CPController@search');
+    Route::get('/cp/form/emr/{id}/edit', 'CPController@editRegForm');
+    Route::get('/cp/form/emr/{id}/approve', 'CPController@approveRegForm');
+    Route::get('/cp/form/emr/{id}/reject', 'CPController@rejectRegForm');
+    Route::post('/cp/form/emr/{id}/update', 'CPController@updateRegForm');
 
-    Route::get('/cp/form/emr/export'  ,'CPController@excelExport');
-
-
+    Route::get('/cp/form/emr/export', 'CPController@excelExport');
 
 
-    Route::get('/cp/survey/'  ,'CPController@surveyList');
-    Route::get('/cp/survey/fillSidHash'  ,'CPController@SIDHashAll');
+    Route::get('/cp/survey/', 'CPController@surveyList');
+    Route::get('/cp/survey/fillSidHash', 'CPController@SIDHashAll');
 
-    Route::post('/cp/survey/search'  ,'CPController@surveySearch');
-
+    Route::post('/cp/survey/search', 'CPController@surveySearch');
 
 
     //helpdesk route
@@ -193,7 +188,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::post('/helpdesk/new', 'TecsController@storeF');
     Route::post('/helpdesk/view', 'TecsController@view');
     Route::get('/helpdesk/view/{id}/{sid}', 'TecsController@show');
-
 
 
     //finance route
@@ -241,8 +235,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     //Route::get('/students/sp/view', 'SPController@view');
     Route::get('/students/sp/view/{id}/{sid}', 'SPController@show');
     Route::post('/students/sp/view', 'SPController@view');
-    
-    
+
+
     Route::get('/students/objection', 'ObjectionController@index');
     Route::get('/students/objection/agree', 'ObjectionController@newF');
     Route::get('/students/objection/pin', 'ObjectionController@getValidate');
@@ -265,12 +259,12 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
         Route::get('/cp/students/conflict', 'ConflictFormController@CPindex');
         Route::get('/cp/students/conflict/view/{id}', 'ConflictFormController@CPview');
         Route::post('/cp/students/conflict/update', 'ConflictFormController@CPupdate');
-        Route::post('/cp/students/conflict/search'  ,'ConflictFormController@search');
+        Route::post('/cp/students/conflict/search', 'ConflictFormController@search');
 
-        Route::get('/cp/students/conflict/approved'  ,'ConflictFormController@CPApproved');
-        Route::get('/cp/students/conflict/rejected'  ,'ConflictFormController@CPRejected');
-        Route::get('/cp/students/conflict/pending'  ,'ConflictFormController@CPPending');
-        Route::get('/cp/students/conflict/export'  ,'ConflictFormController@conflictExcelExport');
+        Route::get('/cp/students/conflict/approved', 'ConflictFormController@CPApproved');
+        Route::get('/cp/students/conflict/rejected', 'ConflictFormController@CPRejected');
+        Route::get('/cp/students/conflict/pending', 'ConflictFormController@CPPending');
+        Route::get('/cp/students/conflict/export', 'ConflictFormController@conflictExcelExport');
 
 
     });
@@ -281,22 +275,22 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
         Route::get('/cp/students/helpdesk/view/{id}', 'TecsController@CPview');
         Route::post('/cp/students/helpdesk/update', array('uses' => 'TecsController@CPupdateOrCPtrans'));
         Route::get('/cp/students/helpdesk/assign/{id}', 'TecsController@AssignToMe');
-        Route::post('/cp/students/helpdesk/search'  ,'TecsController@search');
-        Route::get('/cp/students/helpdesk/search'  ,'TecsController@search2');
+        Route::post('/cp/students/helpdesk/search', 'TecsController@search');
+        Route::get('/cp/students/helpdesk/search', 'TecsController@search2');
 
-        Route::get('/cp/students/helpdesk/approved'  ,'TecsController@CPApproved');
-        Route::get('/cp/students/helpdesk/closed'  ,'TecsController@CPClosed');
-        Route::get('/cp/students/helpdesk/pending'  ,'TecsController@CPPending');
-        Route::get('/cp/students/helpdesk/requested'  ,'TecsController@HdRequested');
-        Route::get('/cp/students/helpdesk/myRequests'  ,'TecsController@CPMyRequests');
-        Route::get('/cp/students/helpdesk/export'  ,'TecsController@excelExport');
+        Route::get('/cp/students/helpdesk/approved', 'TecsController@CPApproved');
+        Route::get('/cp/students/helpdesk/closed', 'TecsController@CPClosed');
+        Route::get('/cp/students/helpdesk/pending', 'TecsController@CPPending');
+        Route::get('/cp/students/helpdesk/requested', 'TecsController@HdRequested');
+        Route::get('/cp/students/helpdesk/myRequests', 'TecsController@CPMyRequests');
+        Route::get('/cp/students/helpdesk/export', 'TecsController@excelExport');
 
-        Route::post('/cp/students/helpdesk/requested'  ,'TecsController@search');
-        Route::post('/cp/students/helpdesk/requested/search'  ,'TecsController@requestedsearch');
+        Route::post('/cp/students/helpdesk/requested', 'TecsController@search');
+        Route::post('/cp/students/helpdesk/requested/search', 'TecsController@requestedsearch');
 
     });
 
- Route::group(['middleware' => ['CPfinance']], function () {
+    Route::group(['middleware' => ['CPfinance']], function () {
         Route::get('/cp/students/finance', 'FinanceController@CPindex');
         Route::get('/cp/students/finance/voucher', 'FinanceController@ViewVoucher');
         Route::get('/cp/students/finance/NewVoucher', 'FinanceController@NewVoucherindex');
@@ -310,13 +304,13 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
         Route::get('/cp/students/finance/import', 'FinanceController@importIndex');
         Route::get('/cp/students/finance/create', 'FinanceController@AddNewStudentsIndex');
         Route::post('/cp/students/finance/create/AddNew', 'FinanceController@AddNewsStudents');
-     Route::get('/cp/students/finance/export'  ,'FinanceController@excelExport');
-     Route::get('/cp/students/finance/term', 'FinanceController@ViewTerm');
-     Route::get('/cp/students/finance/term/add', 'FinanceController@AddNewTermIndex');
-     Route::post('/cp/students/finance/term/AddNew', 'FinanceController@CPAddNewTerm');
-     Route::get('/cp/students/finance/account', 'FinanceController@ViewAccount');
-     Route::get('/cp/students/finance/account/add', 'FinanceController@AddNewAccountIndex');
-     Route::post('/cp/students/finance/account/AddNew', 'FinanceController@CPAddNewAccount');
+        Route::get('/cp/students/finance/export', 'FinanceController@excelExport');
+        Route::get('/cp/students/finance/term', 'FinanceController@ViewTerm');
+        Route::get('/cp/students/finance/term/add', 'FinanceController@AddNewTermIndex');
+        Route::post('/cp/students/finance/term/AddNew', 'FinanceController@CPAddNewTerm');
+        Route::get('/cp/students/finance/account', 'FinanceController@ViewAccount');
+        Route::get('/cp/students/finance/account/add', 'FinanceController@AddNewAccountIndex');
+        Route::post('/cp/students/finance/account/AddNew', 'FinanceController@CPAddNewAccount');
 
         /*Route::post('/cp/students/helpdesk/search'  ,'TecsController@search');
         Route::get('/cp/students/helpdesk/search'  ,'TecsController@search2');
@@ -338,13 +332,12 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
         Route::get('/cp/students/sp', 'SPController@CPindex');
         Route::get('/cp/students/sp/view/{id}', 'SPController@CPview');
         Route::post('/cp/students/sp/update', 'SPController@CPupdate');
-        Route::post('/cp/students/sp/search'  ,'SPController@search');
+        Route::post('/cp/students/sp/search', 'SPController@search');
 
-        Route::get('/cp/students/sp/approved'  ,'SPController@CPApproved');
-        Route::get('/cp/students/sp/rejected'  ,'SPController@CPRejected');
-        Route::get('/cp/students/sp/pending'  ,'SPController@CPPending');
-        Route::get('/cp/students/sp/export'  ,'SPController@excelExport');
-
+        Route::get('/cp/students/sp/approved', 'SPController@CPApproved');
+        Route::get('/cp/students/sp/rejected', 'SPController@CPRejected');
+        Route::get('/cp/students/sp/pending', 'SPController@CPPending');
+        Route::get('/cp/students/sp/export', 'SPController@excelExport');
 
 
     });
@@ -352,123 +345,112 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
         Route::get('/cp/students/objection', 'ObjectionController@CPindex');
         Route::get('/cp/students/objection/view/{id}', 'ObjectionController@CPview');
         Route::post('/cp/students/objection/update', 'ObjectionController@CPupdate');
-        Route::get('/cp/students/objection/search'  ,'ObjectionController@CPindex');
-        Route::post('/cp/students/objection/search'  ,'ObjectionController@search');
-        Route::post('/cp/students/objection/requested'  ,'ObjectionController@search');
-        Route::post('/cp/students/objection/requested/search'  ,'ObjectionController@requestedsearch');
+        Route::get('/cp/students/objection/search', 'ObjectionController@CPindex');
+        Route::post('/cp/students/objection/search', 'ObjectionController@search');
+        Route::post('/cp/students/objection/requested', 'ObjectionController@search');
+        Route::post('/cp/students/objection/requested/search', 'ObjectionController@requestedsearch');
 
-        Route::get('/cp/students/objection/approved'  ,'ObjectionController@CPApproved');
-        Route::get('/cp/students/objection/rejected'  ,'ObjectionController@CPRejected');
-        Route::get('/cp/students/objection/pending'  ,'ObjectionController@CPPending');
-        Route::get('/cp/students/objection/export'  ,'ObjectionController@objectionExcelExport');
+        Route::get('/cp/students/objection/approved', 'ObjectionController@CPApproved');
+        Route::get('/cp/students/objection/rejected', 'ObjectionController@CPRejected');
+        Route::get('/cp/students/objection/pending', 'ObjectionController@CPPending');
+        Route::get('/cp/students/objection/export', 'ObjectionController@objectionExcelExport');
     });
     Route::group(['middleware' => ['evaluation']], function () {
-        Route::get('/cp/form/emr/evaluation'  ,'RegFormController@evaIndex');
-        Route::post('/cp/form/emr/evaluation'  ,'RegFormController@evaView');
-        Route::post('/cp/form/emr/evaluation/rate'  ,'RegFormController@rateUpdate');
+        Route::get('/cp/form/emr/evaluation', 'RegFormController@evaIndex');
+        Route::post('/cp/form/emr/evaluation', 'RegFormController@evaView');
+        Route::post('/cp/form/emr/evaluation/rate', 'RegFormController@rateUpdate');
 
     });
     Route::group(['middleware' => 'auth'], function () {
-        Route::get('/cp/exams'  ,'ExamsController@index');
-        Route::get('/cp/exams/new'  ,'ExamsController@add');
-        Route::get('/cp/exams/major/{id}'  ,'ExamsController@showExam');
-        Route::get('/cp/exams/delete/{id}'  ,'ExamsController@delete');
-        Route::post('/cp/exams'  ,'ExamsController@create');
+        Route::get('/cp/exams', 'ExamsController@index');
+        Route::get('/cp/exams/new', 'ExamsController@add');
+        Route::get('/cp/exams/major/{id}', 'ExamsController@showExam');
+        Route::get('/cp/exams/delete/{id}', 'ExamsController@delete');
+        Route::post('/cp/exams', 'ExamsController@create');
 
     });
     //warehouse
     Route::group(['middleware' => 'warehouse'], function () {
 
-        Route::get('/cp/warehouse'  ,'WarehouseController@index');
-        Route::get('/cp/warehouse/list'  ,'WarehouseController@WHlist');
-        Route::get('/cp/warehouse/list/uptodate'  ,'WarehouseController@WHlistUptodate');
-        Route::get('/cp/warehouse/list/outdated'  ,'WarehouseController@WHlistOutdated');
-        Route::get('/cp/warehouse/new'  ,'WarehouseController@WHnew');
-        Route::get('/cp/warehouse/view/{id}'  ,'WarehouseController@WHview');
-        Route::get('/cp/warehouse/edit/{id}'  ,'WarehouseController@WHedit');
+        Route::get('/cp/warehouse', 'WarehouseController@index');
+        Route::get('/cp/warehouse/list', 'WarehouseController@WHlist');
+        Route::get('/cp/warehouse/list/uptodate', 'WarehouseController@WHlistUptodate');
+        Route::get('/cp/warehouse/list/outdated', 'WarehouseController@WHlistOutdated');
+        Route::get('/cp/warehouse/new', 'WarehouseController@WHnew');
+        Route::get('/cp/warehouse/view/{id}', 'WarehouseController@WHview');
+        Route::get('/cp/warehouse/edit/{id}', 'WarehouseController@WHedit');
 
         //warranty
-        Route::get('/cp/warehouse/warranty'  ,'WarehouseController@warrantyList');
-        Route::get('/cp/warehouse/warranty/new'  ,'WarehouseController@warrantyNew');
-        Route::get('/cp/warehouse/warranty/edit/{id}'  ,'WarehouseController@warrantyEdit');
-        Route::get('/cp/warehouse/warranty/view/{id}'  ,'WarehouseController@warrantyView');
+        Route::get('/cp/warehouse/warranty', 'WarehouseController@warrantyList');
+        Route::get('/cp/warehouse/warranty/new', 'WarehouseController@warrantyNew');
+        Route::get('/cp/warehouse/warranty/edit/{id}', 'WarehouseController@warrantyEdit');
+        Route::get('/cp/warehouse/warranty/view/{id}', 'WarehouseController@warrantyView');
 
-        Route::post('/cp/warehouse/warranty'  ,'WarehouseController@warrantyCreate');
-        Route::post('/cp/warehouse/warranty/update/{id}'  ,'WarehouseController@warrantyUpdate');
-        Route::post('/cp/warehouse/warranty/search'  ,'WarehouseController@warrantySearch');
-
+        Route::post('/cp/warehouse/warranty', 'WarehouseController@warrantyCreate');
+        Route::post('/cp/warehouse/warranty/update/{id}', 'WarehouseController@warrantyUpdate');
+        Route::post('/cp/warehouse/warranty/search', 'WarehouseController@warrantySearch');
 
 
         //employees -get
-        Route::get('/cp/warehouse/employees'  ,'WarehouseController@EmpList');
-        Route::get('/cp/warehouse/employees/new'  ,'WarehouseController@EmpNew');
-        Route::get('/cp/warehouse/employees/edit/{id}'  ,'WarehouseController@EmpEdit');
-        Route::get('/cp/warehouse/employees/view/{id}'  ,'WarehouseController@EmpView');
-        Route::get('/cp/warehouse/employees/link/new/{id}'  ,'WarehouseController@EmpNewLink');
-        Route::get('/cp/warehouse/employees/link/edit/{id}/{link}'  ,'WarehouseController@EmpEditLink');
-        Route::get('/cp/warehouse/employees/link/delete/{link}'  ,'WarehouseController@EmpDelLink');
+        Route::get('/cp/warehouse/employees', 'WarehouseController@EmpList');
+        Route::get('/cp/warehouse/employees/new', 'WarehouseController@EmpNew');
+        Route::get('/cp/warehouse/employees/edit/{id}', 'WarehouseController@EmpEdit');
+        Route::get('/cp/warehouse/employees/view/{id}', 'WarehouseController@EmpView');
+        Route::get('/cp/warehouse/employees/link/new/{id}', 'WarehouseController@EmpNewLink');
+        Route::get('/cp/warehouse/employees/link/edit/{id}/{link}', 'WarehouseController@EmpEditLink');
+        Route::get('/cp/warehouse/employees/link/delete/{link}', 'WarehouseController@EmpDelLink');
 
         //rooms -get
-        Route::get('/cp/warehouse/rooms/'  ,'ScheduleController@RoomList');
-        Route::get('/cp/warehouse/rooms/new'  ,'ScheduleController@RoomNew');
-        Route::get('/cp/warehouse/rooms/edit/{id}'  ,'ScheduleController@RoomEdit');
-        Route::get('/cp/warehouse/rooms/view/{id}'  ,'ScheduleController@RoomView');
-        Route::get('/cp/warehouse/rooms/link/new/{id}'  ,'ScheduleController@RoomNewLink');
-        Route::get('/cp/warehouse/rooms/link/edit/{id}/{link}'  ,'ScheduleController@RoomEditLink');
-        Route::get('/cp/warehouse/rooms/link/delete/{link}'  ,'ScheduleController@RoomDelLink');
+        Route::get('/cp/warehouse/rooms/', 'ScheduleController@RoomList');
+        Route::get('/cp/warehouse/rooms/new', 'ScheduleController@RoomNew');
+        Route::get('/cp/warehouse/rooms/edit/{id}', 'ScheduleController@RoomEdit');
+        Route::get('/cp/warehouse/rooms/view/{id}', 'ScheduleController@RoomView');
+        Route::get('/cp/warehouse/rooms/link/new/{id}', 'ScheduleController@RoomNewLink');
+        Route::get('/cp/warehouse/rooms/link/edit/{id}/{link}', 'ScheduleController@RoomEditLink');
+        Route::get('/cp/warehouse/rooms/link/delete/{link}', 'ScheduleController@RoomDelLink');
 
         //reservations -get
-        Route::get('/cp/warehouse/reservations/'  ,'ScheduleController@resvView');
-        Route::get('/cp/warehouse/reservation/approve/'  ,'ScheduleController@resvApproveView');
-        Route::get('/cp/warehouse/reservation/approve/accept/{id}'  ,'ScheduleController@resvApproveAccept');
-        Route::get('/cp/warehouse/reservation/approve/reject/{id}/{reason}'  ,'ScheduleController@resvApproveReject');
-        Route::get('/cp/warehouse/reservation/approved/'  ,'ScheduleController@resvApprovedView');
-        Route::get('/cp/warehouse/reservation/approved/delete/{id}'  ,'ScheduleController@resvApprovedDelete');
-
+        Route::get('/cp/warehouse/reservations/', 'ScheduleController@resvView');
+        Route::get('/cp/warehouse/reservation/approve/', 'ScheduleController@resvApproveView');
+        Route::get('/cp/warehouse/reservation/approve/accept/{id}', 'ScheduleController@resvApproveAccept');
+        Route::get('/cp/warehouse/reservation/approve/reject/{id}/{reason}', 'ScheduleController@resvApproveReject');
+        Route::get('/cp/warehouse/reservation/approved/', 'ScheduleController@resvApprovedView');
+        Route::get('/cp/warehouse/reservation/approved/delete/{id}', 'ScheduleController@resvApprovedDelete');
 
 
         //employees -post
-        Route::patch('/cp/warehouse/employees/update/{id}'  ,'WarehouseController@EmpUpdate');
-        Route::post('/cp/warehouse/employees/search'  ,'WarehouseController@EmpSearch');
-        Route::post('/cp/warehouse/employees/link'  ,'WarehouseController@EmpCreateLink');
-        Route::patch('/cp/warehouse/employees/link/update/{id}'  ,'WarehouseController@EmpUpdateLink');
+        Route::patch('/cp/warehouse/employees/update/{id}', 'WarehouseController@EmpUpdate');
+        Route::post('/cp/warehouse/employees/search', 'WarehouseController@EmpSearch');
+        Route::post('/cp/warehouse/employees/link', 'WarehouseController@EmpCreateLink');
+        Route::patch('/cp/warehouse/employees/link/update/{id}', 'WarehouseController@EmpUpdateLink');
 
-        Route::post('/cp/warehouse/employees/'  ,'WarehouseController@empCreate');
+        Route::post('/cp/warehouse/employees/', 'WarehouseController@empCreate');
 
         //rooms -post
-        Route::patch('/cp/warehouse/rooms/update/{id}'  ,'ScheduleController@RoomUpdate');
-        Route::post('/cp/warehouse/rooms/link'  ,'ScheduleController@RoomCreateLink');
-        Route::patch('/cp/warehouse/rooms/link/update/{id}'  ,'ScheduleController@RoomUpdateLink');
+        Route::patch('/cp/warehouse/rooms/update/{id}', 'ScheduleController@RoomUpdate');
+        Route::post('/cp/warehouse/rooms/link', 'ScheduleController@RoomCreateLink');
+        Route::patch('/cp/warehouse/rooms/link/update/{id}', 'ScheduleController@RoomUpdateLink');
 
-        Route::post('/cp/warehouse/rooms/'  ,'ScheduleController@RoomCreate');
+        Route::post('/cp/warehouse/rooms/', 'ScheduleController@RoomCreate');
 
 
-        Route::post('/cp/warehouse/update/{id}'  ,'WarehouseController@WHupdate');
-        Route::post('/cp/warehouse/search'  ,'WarehouseController@WHsearch');
-        Route::get('/cp/warehouse/search'  ,'WarehouseController@WHsearch2');
-        Route::post('/cp/warehouse/'  ,'WarehouseController@create');
+        Route::post('/cp/warehouse/update/{id}', 'WarehouseController@WHupdate');
+        Route::post('/cp/warehouse/search', 'WarehouseController@WHsearch');
+        Route::get('/cp/warehouse/search', 'WarehouseController@WHsearch2');
+        Route::post('/cp/warehouse/', 'WarehouseController@create');
 
         //report
 
-        Route::get('/cp/warehouse/reports/'  ,'WarehouseController@reportsindex');
-        Route::post('/cp/warehouse/reports/new'  ,'WarehouseController@ExcelExport');
-
-
-
-
+        Route::get('/cp/warehouse/reports/', 'WarehouseController@reportsindex');
+        Route::post('/cp/warehouse/reports/new', 'WarehouseController@ExcelExport');
 
 
     });
-    Route::get('/cp/exams/conflict'  ,'ExamsController@conflictView');
-    Route::get('/cp/exams/centers'  ,'ExamsController@showCentersCourses');
+    Route::get('/cp/exams/conflict', 'ExamsController@conflictView');
+    Route::get('/cp/exams/centers', 'ExamsController@showCentersCourses');
 
     //Route::get('/ar', 'HomeController@toArabic');
 
-
-   /* Route::get('test',function(){
-        return View::make('test');
-    });*/
 });
 
-
-
+   /* Route:

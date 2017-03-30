@@ -86,12 +86,29 @@
                                         <div class="col-md-6">
                                             <h5>{{trans('شرح المشكلة')}}: {{$form->des}}</h5>
                                         </div>
+
+
+                                    @if($form->response_attach_file !='null' && isset($form->response_attach_file))
+                                        <hr>
+                                        <hr>
+                                        <div class="col-md-6">
+
+                                            <h5>المرفق من قبل الموظف:</h5>
+
+                                            <a href="{{asset('storage/'.$form->response_attach_file)}}" target="_blank" class="btn btn-info">
+                                                <span class="glyphicon glyphicon-paperclip"></span> {{trans('sp.view_attach')}}
+                                            </a>
+
+                                        </div>
+                                    @endif
                                     </div>
+
+
 
                                 <hr>
                                 <h4>{{trans('sp.updateStatus')}}</h4>
                                 <div class="row">
-                                    {!! Form::open(array('url' => '/cp/students/helpdesk/update'))!!}
+                                    {!! Form::open(array('url' => '/cp/students/helpdesk/update', 'files' => true))!!}
                                     {!! Form::hidden('id', $form->id, ['id' => 'id']) !!}
                                     <div class="col-md-6">
                                         <!--- Status Field --->
@@ -115,10 +132,17 @@
                                                 {!! Form::textarea('replay', $form->replay, ['class' => 'form-control', 'readonly']) !!}
                                                 @endforelse
                                         </div>
+
+                                        <div class="form-group">
+                                            {!! Form::label('response_attach_file_L', 'إرفاق ملف') !!}
+                                            {!! Form::file('response_attach_file', ['class' => 'form-control','accept'=>'.pdf', 'id'=>'response_attach_file']) !!}
+                                        </div>
                                         @if(in_array('admin',Auth::user()->getAllroles()) || Auth::user()->getUsername() == $form->username)
-                                        {!! Form::submit(trans('cp.update'),  ['class' => 'form-control' , 'name'=> 'CPupdate' , 'value'=> 'CPupdate']) !!}
-                                            <small>سيتم إرسال بريد إلكتروني إلى الطالب/الطالبة فور النقر على تحديث البيانات</small>
+                                        {!! Form::submit('الرد على الطلب',  ['class' => 'form-control' , 'name'=> 'CPupdate' , 'value'=> 'CPupdate', 'onclick'=>'return foo();']) !!}
+                                            <small>سيتم إرسال بريد إلكتروني إلى الطالب/الطالبة فور النقر على الرد على الطلب</small>
                                         @endif
+
+
                                     </div>
 
 
@@ -208,7 +232,7 @@
 
                                             </br>
                                             @if(in_array('admin',Auth::user()->getAllroles()) || Auth::user()->getUsername() == $form->username)
-                                                {!! Form::submit(trans('تحويل'),  ['class' => 'form-control' , 'name'=> 'CPtrans' , 'value'=> 'CPtrans' ]) !!}
+                                                {!! Form::submit(trans('تحويل'),  ['class' => 'form-control' , 'name'=> 'CPtrans' , 'value'=> 'CPtrans' , 'onclick'=>'return foo2();']) !!}
                                             @endif
                                         </div>
                                         @endif
@@ -292,5 +316,46 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function foo()
+        {
+            //alert("Submit button clicked! ");
+            //document.getElementById('form-id').action = "approve/reject/"+recipient+"/"+document.getElementById('reason').value;
+            var status = $("#status").val();
+
+            if(status == 'pending') {
+                // is not a and is not b
+                //alert("يجب أن ");
+                window.alert("يجب اختيار حالة الطلب (تمت المعالجة) قبل الرد على الطلب");
+                return false;
+            }
+            return true;
+        }
+
+        function foo2()
+        {
+            //alert("Submit button clicked! ");
+            //document.getElementById('form-id').action = "approve/reject/"+recipient+"/"+document.getElementById('reason').value;
+            var status = $("#status").val();
+
+            if(status == 'closed') {
+                // is not a and is not b
+                //alert("يجب أن ");
+                window.alert("يجب اختيار حالة الطلب (تحت الدراسة) قبل تحويل الطلب");
+                return false;
+            }
+            return true;
+        }
+
+        $('#response_attach_file').bind('change', function() {
+            //alert(this.files[0].size);
+            if (this.files[0].size>4000095) {
+                //this.files[0].size gets the size of your file.
+                alert("حجم الملف يجب ان يكون أقل من 4 ميجابايت");
+                $("#response_attach_file").val('');
+            }
+        });
+    </script>
 
     @endsection

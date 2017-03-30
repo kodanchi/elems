@@ -30,6 +30,10 @@
                                         {!! Form::text('email', null, ['class' => 'form-control']) !!}
                                         <small>{{trans('regform.example')}}: username@uod.edu.sa {{trans('regform.or')}} username@uohb.edu.sa</small>
                                     </div>
+                                    <div align="center">
+                                        {!! Recaptcha::render() !!}
+                                    </div>
+                                    <br>
                                     {!! Form::submit('إرسال', ['class' => 'form-control']) !!}
                                     {!! Form::close() !!}
                                     <a class="btn btn-block" href="{{url('/form/emr/pin')}}">{{trans('regform.gotPinAlready')}}</a>

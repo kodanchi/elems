@@ -160,6 +160,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
 
+        Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
 
 
     ],
@@ -212,6 +213,10 @@ return [
         'LaravelLocalization'   => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
         'Excel' => 'Maatwebsite\Excel\Facades\Excel',
 
+        'Recaptcha' => Greggilbert\Recaptcha\Facades\Recaptcha::class,
+
     ],
+
+
 
 ];

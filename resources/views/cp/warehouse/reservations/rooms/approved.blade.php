@@ -39,9 +39,14 @@
                                         <td>{{str_replace(substr($event->end_date, 16, 7), '', $event->end_date)}}</td>
                                         {{--<td>{{strlen($event->des) > 15 ? substr($event->des,0,15).'...':$event->des}}</td>--}}
                                         <td>
-                                            <a href="{{url('cp/warehouse/reservation/approved/delete/'.$event->id)}}">
+                                            {!! Form::open(['url' => url('cp/warehouse/reservation/approved/delete/'.$event->id), 'method' => 'get', 'id' => 'editForm']) !!}
+
+                                            {{Form::button('<span class="glyphicon glyphicon-trash alert-danger"></span>', array('type' => 'submit', 'style' => 'background-color: white'))}}
+                                            {!! Form::close() !!}
+
+                                           {{-- <a href="{{url('cp/warehouse/reservation/approved/delete/'.$event->id)}}">
                                                 <span class="glyphicon glyphicon-trash alert-danger"></span>
-                                            </a>
+                                            </a>--}}
                                         </td>
                                     </tr>
                                 @endforeach
@@ -65,6 +70,35 @@
                                 <a href="{{url('cp/warehouse/reservations')}}" class="button form-control">{{trans('warehouse.back')}}</a>
                             </div>
 
+                            <script type="text/javascript" src="/js/jquery-2.0.0.min.js"></script>
+                            <script >
+
+                                $('#editForm').submit( function(e) {
+                                    e.preventDefault();
+                                    var currentForm = this;
+                                    bootbox.confirm({
+                                        size: "small",
+                                        message: "هل أنت متأكد من الحذف؟",
+                                        buttons: {
+
+                                            cancel: {
+                                                label: 'تراجع',
+                                                className: 'btn-default'
+                                            },
+                                            confirm: {
+                                                label: 'نعم',
+                                                className: 'btn-danger'
+                                            }
+                                        },
+                                        callback: function (result) {
+                                            if(result){
+                                                currentForm.submit();
+                                            }
+                                        }
+                                    });
+
+                                });
+                            </script>
                         </div>
 
                     </div>
@@ -72,5 +106,7 @@
             </div>
         </div>
     </div>
+
+
 
     @endsection

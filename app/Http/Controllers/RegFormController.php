@@ -41,6 +41,16 @@ class RegFormController extends Controller
 
     public function emailValidate(EmailValidationRequest $request)
     {
+        $validator = Validator::make($request->all(), [
+            'g-recaptcha-response' => 'required|recaptcha',
+        ], [
+            'g-recaptcha-response.required' => 'يجب ادخال التحقق من الهوية',
+        ]);
+        if($validator->fails()){
+            return redirect(URL::previous())
+                ->withErrors($validator)
+                ->withInput();
+        }
         //dd(str_random(10));
         //$request->merge(['pin', str_random(10)]);
         $pin = str_random(10);

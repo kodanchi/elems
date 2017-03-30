@@ -522,12 +522,17 @@ from reg_forms ');
         {
 
             case 'sid':
-                $this->validate($request,[
+                $validator = Validator::make($request->all(),[
                     'search' => 'required|numeric|exists:surveys,sid'
                 ],[
                     'search.string' => 'البحث عن طريق الرقم الاكاديمي',
                     'search.exists' => 'الرقم الاكاديمي غير متواجد',
                 ]);
+                if($validator->fails()){
+                    return redirect(URL::previous())
+                        ->withErrors($validator)
+                        ->withInput();
+                }
                 $forms = Survey::paginate(20);
                 $infos = DB::select('select * from surveys_questions ,Surveys  where id = survey_id ');
                 break;

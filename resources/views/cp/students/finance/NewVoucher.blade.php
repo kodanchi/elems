@@ -67,7 +67,7 @@
                                         <!--- NID  --->
                                         <div class="form-group">
                                             {!! Form::label('amount', ' المبلغ:') !!}
-                                            {!! Form::text('amount', null, ['class' => 'form-control', 'required']) !!}
+                                            {!! Form::number('amount', null, ['class' => 'form-control', 'min'=>'0.001', 'step'=>'0.001', 'required']) !!}
                                         </div>
                                     </div>
 
@@ -77,7 +77,6 @@
                                             {!! Form::hidden('user_id', $systemUserID) !!}
                                             {!! Form::label('user_name', 'معرف المستخدم:') !!}
                                             {!! Form::text('user_name', $systemUserName ,['class' => 'form-control', 'required', 'readonly']) !!}
-                                            <input type="number" min="0.01" step="0.01" max="2500" value="25.67" />
                                         </div>
                                     </div>
 
@@ -125,7 +124,7 @@
 
                                 <br>
                                 <br>
-                                {!! Form::submit('تنفيذ', ['class' => ' col-md-3']) !!}
+                                {!! Form::submit('تنفيذ', ['class' => ' col-md-3', 'onclick'=>'return foo();'] ) !!}
 
                                 <a href="{{url('cp/students/finance/voucher')}}" class=" button col-md-3 ">إلغاء</a>
                                 {!! Form::close() !!}
@@ -138,5 +137,21 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function foo()
+        {
+            //alert("Submit button clicked! ");
+            //document.getElementById('form-id').action = "approve/reject/"+recipient+"/"+document.getElementById('reason').value;
+            var account_id_1 = $("#account_id_1").val();
+            var account_id_2 = $("#account_id_2").val();
+            if(account_id_1 == account_id_2) {
+                // is not a and is not b
+                alert("يجب أن ");
+                return false;
+            }
+            return true;
+        }
+    </script>
 
     @endsection

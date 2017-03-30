@@ -51,6 +51,18 @@
                                             <h5>{{trans('حالة الطلب')}}: {{trans('HdStatus.'.$form->status)}}</h5>
                                         </div>
 
+                                    @if($form->response_attach_file !='null' && isset($form->response_attach_file))
+                                        <div class="col-md-6">
+
+                                            <h5>المرفق من قبل الموظف:</h5>
+
+                                            <a href="{{asset('storage/'.$form->response_attach_file)}}" target="_blank" class="btn btn-info">
+                                                <span class="glyphicon glyphicon-paperclip"></span> {{trans('sp.view_attach')}}
+                                            </a>
+
+                                        </div>
+                                    @endif
+
                                 <div class="col-md-6">
                                     @if($form->attach_file !='null')
 

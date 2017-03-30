@@ -76,7 +76,11 @@
                                     {!! Form::checkbox('agree', '1', null,  ['id' => 'agree']) !!}
                                     أوفق على الإدلاء بالمعلومات الصحيحة وأتحمل كامل المسؤولية في حال كانت المعلومات غير صحيحة
                                 </label>
-                                </br>
+                                <br>
+                                    <div align="center">
+                                        {!! Recaptcha::render() !!}
+                                    </div>
+                                    <br>
                                 {!! Form::submit('تقدم', ['class' => 'form-control']) !!}
                                 {!! Form::close() !!}
                             </div>
