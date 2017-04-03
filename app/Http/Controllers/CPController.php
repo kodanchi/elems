@@ -403,6 +403,7 @@ from reg_forms ');
 		
 		REPLACE(hash,hash,\'http://elweb.uod.edu.sa/form/emr/updateform/\'+hash) as \'link\' ,
 			
+			email as \'email\'
 
 		from hashedSID');
 
