@@ -37,6 +37,9 @@
                 @if(in_array('admin',Auth::user()->getAllroles()))
                 <li><a tabindex="0" href="{{url('cp/students/objection')}}"><i class="fa fa-btn fa-list-alt"></i>{{trans('settings.objection')}}</a></li>
                 @endif
+                {{--@if(in_array('admin',Auth::user()->getAllroles()))
+                    <li><a tabindex="0" href="{{url('cp/students/finance')}}"><i class="fa fa-btn fa-list-alt"></i>{{trans('settings.finance')}}</a></li>
+                @endif--}}
                 @if(in_array('admin',Auth::user()->getAllroles()))
                 <li><a tabindex="0" href="{{url('cp/survey')}}"><i class="fa fa-btn fa-list-alt"></i>{{trans('settings.surveys')}}</a></li>
                 @endif

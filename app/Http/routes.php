@@ -111,6 +111,12 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
     Route::get('/form/emr/new', 'RegFormController@create');
     Route::post('/form/emr/add', 'RegFormController@add');
     Route::get('/form/emr/{id}/view', 'RegFormController@view');
+    Route::get('students/Info/edit/{id}', 'Std_updates@EditIndex');
+    Route::get('/form/emr/updateform', 'RegFormController@updateTheRegFormIndex');
+    Route::get('/form/emr/updateform/{id}', 'RegFormController@EditFormIndex');
+    Route::post('/form/emr/updateform/updateStatus', 'RegFormController@updateFormIndex');
+
+
 
 
     Route::get('/form/facultyform', 'FacultyFormController@index');

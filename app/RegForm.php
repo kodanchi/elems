@@ -48,6 +48,7 @@ class RegForm extends Model
         'isSV',
         'isInspector',
         'isController',
+        'update_status',
 
     ];
 

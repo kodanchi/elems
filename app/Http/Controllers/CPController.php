@@ -397,6 +397,15 @@ class CPController extends Controller
 
 from reg_forms ');
 
+
+
+        $forms2 = DB::select('select NID , 
+		
+		REPLACE(hash,hash,\'http://elweb.uod.edu.sa/form/emr/updateform/\'+hash) as \'link\' ,
+			
+
+		from hashedSID');
+
         $forms = collect($forms)->map(function($x){ return (array) $x; })->toArray();
 
         //dd($forms);
@@ -517,6 +526,7 @@ from reg_forms ');
     public function surveySearch(Request $request)
     {
         $searchType = Input::get('searchType');
+        $searchText = Input::get('search');
         //dd($searchType);
         switch ($searchType)
         {
@@ -534,7 +544,7 @@ from reg_forms ');
                         ->withInput();
                 }
                 $forms = Survey::paginate(20);
-                $infos = DB::select('select * from surveys_questions ,Surveys  where id = survey_id ');
+                $infos = DB::select('select * from surveys_questions ,Surveys  where id = survey_id and sid = ?',[$searchText]);
                 break;
         }
 

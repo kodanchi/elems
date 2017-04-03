@@ -4,7 +4,7 @@
 
     <div class="container ">
         <div class="row ">
-            <div class="col-md-11 col-md-offset-1">
+            <div class="col-md-12">
                 @include('errors.errors')
                 <div class="panel panel-default">
                     <div class="panel-heading">{{trans('warehouse.emp_title')}}  {{--| عدد النتائج: {{$users->count()}}--}}</div>
@@ -14,7 +14,7 @@
 
                         @include('cp.warehouse.employees.search')
 
-                        <div class="col col-md-9">
+                        <div class="col col-md-10">
                             <table class="table table-stripped table-hover">
                                 <thead class="">
                                 <th class="text-center">{{trans('warehouse.email')}}</th>

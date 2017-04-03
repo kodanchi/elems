@@ -1,4 +1,4 @@
-<div class="col col-md-3">
+<div class="col col-md-2">
     {!! Form::open(['url' => 'cp/warehouse/employees/search', 'method' => 'post']) !!}
     	<!--- Search By Field --->
     	<div class="form-group">

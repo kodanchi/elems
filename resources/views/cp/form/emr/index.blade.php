@@ -4,14 +4,14 @@
 
     <div class="container ">
         <div class="row ">
-            <div class="col-md-11 col-md-offset-1">
+            <div class="col-md-12 ">
                 @include('errors.errors')
                 @include('errors.status')
                 <div class="panel panel-default">
 {{--
                     <div class="panel-heading">{{trans('cp.emr_title')}} | عدد النتائج: {{$forms->count()}}</div>
 --}}
-                    <div class="panel-heading">  | عدد النتائج: {{$totalResult->count()}}</div>
+                    <div class="panel-heading">   عدد النتائج: {{$totalResult->count()}}</div>
 
 
                     <div class="panel-body ">
@@ -20,7 +20,7 @@
                         @include('cp.form.emr.search')
 
 
-                        <div class="col col-md-9">
+                        <div class="col col-md-10">
                             <table class="table table-stripped table-hover">
                                 <thead class="">
                                 <th class="text-center">{{trans('regform.name')}}</th>

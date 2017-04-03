@@ -1,5 +1,7 @@
-<div class="col col-md-3">
+<div class="col col-md-2">
 
+    <p><a href="{{url('/cp/survey/export')}}" class="btn btn-default form-control button">{{trans('cp.export_res')}}</a></p>
+    <hr>
     {!! Form::open(['url' => 'cp/survey/search', 'method' => 'post']) !!}
     	<!--- Search By Field --->
     	<div class="form-group">
@@ -15,7 +17,7 @@
         {!! Form::submit('بحث', ['class' => 'form-control btn-success']) !!}
     {!! Form::close() !!}
 
-        <p><a href="{{url('/cp/survey/export')}}" class="btn btn-danger form-control button">{{trans('cp.export_res')}}</a></p>
+
 
 
 

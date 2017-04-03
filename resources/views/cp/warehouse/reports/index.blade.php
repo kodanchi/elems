@@ -4,13 +4,13 @@
 
     <div class="container ">
         <div class="row ">
-            <div class="col-md-11 col-md-offset-1">
+            <div class="col-md-12">
                 @include('errors.errors')
                 <div class="panel panel-default">
                     <div class="panel-heading">طباعة التقارير</div>
 
                         <div class="panel-body ">
-                            <div class="col col-md-9">
+                            <div class="col col-md-10">
                                 {!! Form::open(['url' => '/cp/warehouse/reports/new/', 'method' => 'post', 'files' => true ,'class'=>'newsletter-form' ]) !!}
 
                                     <div class="col-md-6">

@@ -4,7 +4,7 @@
 
     <div class="container ">
         <div class="row ">
-            <div class="col-md-11 col-md-offset-1">
+            <div class="col-md-12">
                 @include('errors.errors')
                 <div class="panel panel-default">
                     <div class="panel-heading">{{trans('cp.conflict_title')}}  | عدد النتائج: {{$forms->count()}}</div>
@@ -14,7 +14,7 @@
 
                         @include('cp.students.conflict.search')
 
-                        <div class="col col-md-9">
+                        <div class="col col-md-10">
                             <table class="table table-stripped table-hover">
                                 <thead class="">
                                 <th class="text-center">{{trans('conflict.fid')}}</th>

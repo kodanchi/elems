@@ -22,6 +22,7 @@ return [
     'objection' => 'الإعتراضات',
     'surveys' => 'الإستطلاعات',
     'warehouse' => 'المستودع',
+    'finance' => 'المالية',
     'language' => 'اللغة',
 
 

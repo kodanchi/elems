@@ -4,7 +4,7 @@
 
     <div class="container ">
         <div class="row ">
-            <div class="col-md-11 col-md-offset-1">
+            <div class="col-md-12">
                 @include('errors.errors')
                 @include('errors.status')
                 <div class="panel panel-default">
@@ -15,7 +15,7 @@
 
                         @include('cp.warehouse.wh.warranty.search')
 
-                        <div class="col col-md-9">
+                        <div class="col col-md-10">
                             <table class="table table-stripped table-hover">
                                 <thead class="">
                                 <th class="text-center">الرقم التعريفي</th>

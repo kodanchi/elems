@@ -1,4 +1,4 @@
-<div class="col col-md-3">
+<div class="col col-md-2">
     @include('cp.students.finance.buttons')
     <hr>
     {!! Form::open(['url' => 'cp/students/sp/search', 'method' => 'post']) !!}

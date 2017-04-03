@@ -1,4 +1,4 @@
-<div class="col col-md-3">
+<div class="col col-md-2">
     <p><a href="{{url('/cp/form/ff/')}}" class="btn btn-default form-control button">{{trans('cp.all_res')}}</a></p>
     <p><a href="{{url('/cp/form/ff/pending')}}" class="btn btn-primary form-control button">{{trans('cp.new_res')}}</a></p>
     <p><a href="{{url('/cp/form/ff/approved')}}" class="btn btn-success form-control button">{{trans('cp.approved_res')}}</a></p>

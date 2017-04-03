@@ -10,13 +10,14 @@ use App\Http\Requests\RegFormRequest;
 use App\RegForm;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\Validator;
 use Maatwebsite\Excel\Facades\Excel;
 use Session;
 use Mail;
-use Validator;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 
@@ -261,7 +262,7 @@ class RegFormController extends Controller
         $validator = Validator::make($request->all(),[
             'form_id' => 'required|numeric|exists:reg_forms,id,status,1',
             'rate' => 'required|numeric|max:10',
-            'days' => 'required|numeric|max:10',
+            'days' => 'required|numeric|max:25',
         ],[
             'form_id.numeric' => 'هنالك خطاُ في رقم النموذج، تواصل مع الدعم الفني',
             'rate.numeric' => 'التقييم يجب أن يكون رقمياً',
@@ -293,6 +294,110 @@ class RegFormController extends Controller
     }
 
 
+
+    public function updateTheRegFormIndex()
+    {
+
+
+        return view('forms.regform.updateform');
+
+
+    }
+
+
+    public function EditFormIndex($id)
+    {
+
+
+
+          $NID = DB::select('select * from RegHash where hash = ?  ', [$id]);
+
+        $info = DB::select('select * from reg_forms where NID = ?  ', [$NID[0]->NID]);
+
+            return view('forms.regform.updateform', compact('info'));
+
+
+    }
+
+
+    public function updateFormIndex(Request $request)
+    {
+
+        $data = Input::all();
+        if (isset($data['YES'])) {
+            $validator = Validator::make($request->all(), [
+                'center_first' => 'required',
+                'center_second' => 'required',
+                'agree' => 'required',
+
+            ], [
+                'center_first.required' => 'يجب اختيار المركز الذي ترغب المراقبة فيه كرغبة أولى',
+                'center_second.required' => 'يجب  اختيار المركز الذي ترغب المراقبة فيه كرغبة ثانية',
+                'agree.required' => 'يجب الإقرار على التعهد',
+            ]);
+
+
+            if ($validator->fails()) {
+                return redirect(URL::previous())
+                    ->withErrors($validator)
+                    ->withInput();
+            }
+
+            if ($request->get('center_first') == $request->get('center_second')) {
+                return redirect(URL::previous())->withErrors('يجب ان تختلف الرغبة الأولى عن الرغبة الثانية ');
+            }
+
+            RegForm::where('NID','=', $request->get('NID'))->update([
+                'center_first' => $request->get('center_first'),
+                'center_second' => $request->get('center_second'),
+                'update_status' => ('OK'),
+
+            ]);
+        }
+
+        if (isset($data['NO'])) {
+
+            $validator = Validator::make($request->all(), [
+                'agree' => 'required',
+
+            ], [
+                'agree.required' => 'يجب الإقرار على التعهد',
+            ]);
+
+
+            if ($validator->fails()) {
+                return redirect(URL::previous())
+                    ->withErrors($validator)
+                    ->withInput();
+            }
+            RegForm::where('NID','=', $request->get('NID'))->update([
+                'update_status' => ('NO'),
+            ]);
+        }
+
+        if (isset($data['NOTSURE'])) {
+
+            $validator = Validator::make($request->all(), [
+                'agree' => 'required',
+
+            ], [
+                'agree.required' => 'يجب الإقرار على التعهد',
+            ]);
+
+
+            if ($validator->fails()) {
+                return redirect(URL::previous())
+                    ->withErrors($validator)
+                    ->withInput();
+            }
+            RegForm::where('NID','=', $request->get('NID'))->update([
+                'update_status' => ('NOTSURE'),
+            ]);
+        }
+
+        return view('forms.regform.done');
+
+    }
 
 
 }

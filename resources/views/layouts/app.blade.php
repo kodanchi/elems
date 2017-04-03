@@ -60,7 +60,6 @@
     </style>--}}
 </head>
 <body >
-
 <div class="header-area" >
     <div class="container">
         <div class="row">

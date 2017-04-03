@@ -4,15 +4,15 @@
 
     <div class="container ">
         <div class="row ">
-            <div class="col-md-11 col-md-offset-1">
+            <div class="col-md-12">
                 @include('errors.errors')
                 @include('errors.status')
                 <div class="panel panel-default">
-                    <div class="panel-heading"> فصل </div>
+                    <div class="panel-heading"> فصول </div>
 
                     <div class="panel-body ">
-
-                        <div class="col col-md-12">
+                        <div class="row ">
+                        <div class="col-md-12">
 
                             @if($forms)
                             <table class="table table-stripped table-hover">
@@ -52,12 +52,18 @@
 
                                 @endif
                         </div>
-
-
-                        <div class="col col-md-2">
-
-                        <p><a href="{{url('/cp/students/finance/term/add')}}" class="btn btn-info form-control button">إضافة فصل جديد</a></p>
+</div>
+                            <div class="row ">
+                            <div class="col-md-4">
+                                <div style="float: right" class="col-md-6">
+                                    <a href="{{url('/cp/students/finance/term/add')}}" class="btn btn-primary form-control button">إضافة فصل جديد</a>
+                                </div>
+                                <div  style="float: left" class="col-md-6">
+                                    <a href="{{url('cp/students/finance/')}}" class="btn btn-default form-control button">{{trans('warehouse.back')}}</a>
+                                </div>
                             </div>
+                            </div>
+                                </div>
                     </div>
                 </div>
             </div>
