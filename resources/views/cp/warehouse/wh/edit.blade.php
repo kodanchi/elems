@@ -6,6 +6,7 @@
         <div class="row ">
             <div class="col-md-7 col-md-offset-3">
                 @include('errors.errors')
+                @include('errors.status')
                 <div class="panel panel-default">
                     <div class="panel-heading">{{trans('warehouse.editAsset')}} </div>
 
@@ -18,13 +19,13 @@
                         <!--- SN Field --->
                         <div class="form-group">
                             {!! Form::label('SN', trans('warehouse.sn').':') !!}
-                            {!! Form::text('SN', null, ['class' => 'form-control']) !!}
+                            {!! Form::text('SN', null, ['class' => 'form-control'  , 'readonly' => 'true']) !!}
                         </div>
 
                             <!--- DL-Code Field --->
                             <div class="form-group">
                                 {!! Form::label('DL_code', trans('warehouse.dlcode').':') !!}
-                                {!! Form::text('DL_code', null, ['class' => 'form-control'] , ['direction' => 'ltr']) !!}
+                                {!! Form::text('DL_code', null, ['class' => 'form-control'  , 'readonly' => 'true'] , ['direction' => 'ltr']) !!}
                             </div>
 
 
@@ -140,7 +141,7 @@
                             <!--- Expiration Date Field --->
                             <div class="form-group">
                                 {!! Form::label('exp_date', trans('warehouse.expdate').':') !!}
-                                {!! Form::date('exp_date', null, ['class' => 'form-control']) !!}
+                                {!! Form::text('exp_date', null, ['class' => 'form-control', 'readonly' => 'true']) !!}
                             </div>
 
                             <!--- Trolly ID Field --->

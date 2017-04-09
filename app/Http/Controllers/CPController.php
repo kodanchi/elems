@@ -330,6 +330,8 @@ class CPController extends Controller
     {
         $forms = DB::select('
     select 
+    
+        id as \'ID\',
 		NID as \'NID\',
 		fname as \'First\',
 		faname as \'Father\',
@@ -398,6 +400,79 @@ class CPController extends Controller
 from reg_forms ');
 
 
+        $forms3 = DB::select('
+    select 
+            id as \'ID\',
+		NID as \'NID\',
+		fname as \'First\',
+		faname as \'Father\',
+		gfaname as \'Grand Father\',
+		lname as \'Lastname\',
+		birth_date as \'Birthdate\',
+		nationality as \'Nationality\',
+		gender as \'Gender\',
+		phone as \'Phone\',
+		cellphone as \'Cellphone\',
+		email as \'Email\',
+
+		qualification as \'Qualification\',
+		major as \'Major\',
+		department as \'Department\',
+		section,
+		employee_ID	,
+		Case when is_contract = 0 then \'No\' else \'Yes\' end as \'Contract\' ,
+		job_title as \'Job Title\'	,
+		supervisor as \'Supervisor Name\'	,
+		su_email as \'Supervisor email\'	,
+		su_phone as \'Supervisor phone\'	,
+		su_cellphone	as \'Supervisor Cellphone\',
+		Case when el_exams_Before = 0 then \'No\' else \'Yes\' end as \'participate in EL exams inside university\',
+		el_exams_num as \'Number of Exams\',
+		Case when other_exams_Before = 0 then \'No\' else \'Yes\' end as \'participate in other exams?\',
+		other_exams as \'specify ther exams\'	,
+		Case when isSV = 0 then \'No\' else \'Yes\' end as \'Supervisor\'	,
+		Case when isInspector = 0 then \'No\' else \'Yes\' end as \'Inspector\' 	,
+		Case when isController = 0 then \'No\' else \'Yes\' end as \'Controller\'	,
+		IBAN	,
+		bank_name as \'Bank Name\'	,
+		account_holder_name as \'Bank Holder name\'	,
+		emergency_name as \'Emergency Person name\'	,
+		emer_relation as \'Emergency Person Relation\'	,
+		emer_cellphone as \'Emergency Person Cellphone\'	,
+
+		Case when center_first = 1 then \'Main-Alrakkah\'
+			when center_first = 2 then  \'college-of-education-dammam\'
+			when center_first = 3 then  \'girls rayyan-dammam\'
+			when center_first = 4 then   \'college-of-education-jubail\'
+			when center_first = 5 then  \'college-arts-and-sciences-nairiyah\'
+			when center_first = 6 then  \'orienation building -hafralbatin\'
+			when center_first = 7 then  \'college-arts-and-sciences-al-khafji\'
+			when center_first = 8 then   \'college-education-hafralbatin\'
+			end as \'First select center\'	,
+		Case when center_second = 1 then \'Main-Alrakkah\'
+			when center_second = 2 then  \'college-of-education-dammam\'
+			when center_second = 3 then  \'girls rayyan-dammam\'
+			when center_second = 4 then   \'college-of-education-jubail\'
+			when center_second = 5 then  \'college-arts-and-sciences-nairiyah\'
+			when center_second = 6 then  \'orienation building -hafralbatin\'
+			when center_second = 7 then  \'college-arts-and-sciences-al-khafji\'
+			when center_second = 8 then   \'college-education-hafralbatin\'
+			end as \'Second select center\'	,
+		created_at	,
+		updated_at	,
+		REPLACE(job_identity_file,job_identity_file,\'http://elweb.uod.edu.sa/storage/\'+job_identity_file) as \'job Identitification\'	,
+		REPLACE(qualification_identity_file,qualification_identity_file,\'http://elweb.uod.edu.sa/storage/\'+qualification_identity_file) as \'Qualification Proof\'	,
+		Case when status = 0 then \'Pending\'
+			when status = 1 then  \'Approved\'
+			when status = 2 then  \'Rejected\'
+		end as \'Status\'		
+
+
+from reg_forms 
+ WHERE  update_status = \'OK\'
+
+');
+
 
         $forms2 = DB::select('select NID , 
 		
@@ -405,18 +480,32 @@ from reg_forms ');
 			
 			email as \'email\'
 
-		from hashedSID');
+		from RegHash');
 
         $forms = collect($forms)->map(function($x){ return (array) $x; })->toArray();
+        $forms2 = collect($forms2)->map(function($x){ return (array) $x; })->toArray();
+        $forms3 = collect($forms3)->map(function($x){ return (array) $x; })->toArray();
 
         //dd($forms);
         $date = Carbon::now();
 
-        Excel::create('RegForm-'.$date, function($excel) use($forms) {
+        Excel::create('RegForm-'.$date, function($excel) use($forms , $forms2 ,$forms3) {
 
-            $excel->sheet('All_registered', function($sheet) use($forms) {
+            $excel->sheet('جميع المسجلين', function($sheet) use($forms) {
 
                 $sheet->fromArray($forms);
+
+            });
+
+                $excel->sheet('روابط تجديد الرغبة', function($sheet) use($forms2) {
+
+                $sheet->fromArray($forms2);
+
+            });
+
+            $excel->sheet('تم تجديد الرغبة', function($sheet) use($forms3) {
+
+                $sheet->fromArray($forms3);
 
             });
 

@@ -4,14 +4,14 @@
 
     <div class="container ">
         <div class="row ">
-            <div class="col-md-11 col-md-offset-1">
+            <div class="col-md-12 form-group">
                 @include('errors.status')
                 @include('errors.errors')
                 <div class="panel panel-default">
 
-                    <h3>رفع بيانات الطلاب</h3>
+                    <h3 style="margin-right: 20px; margin-top: 20px">رفع بيانات الطلاب</h3>
                     <div class="row ">
-                        <div class="form-group">
+                        <div class="col-md-12 col-md-offset-1 form-group">
                             {!! Form::open(['url' => '/cp/students/finance/import/update', 'method' => 'post', 'files' => true ,'class'=>'newsletter-form' ]) !!}
                             <div class="col-md-3">
                                 {!! Form::label('term', trans('اختر الفصل الدراسي').':') !!}
@@ -33,15 +33,12 @@
                                 </select>
                             </div>
                          </div>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
+                    </div>
+                    <hr>
                     <div class="row ">
-                        <div class="form-group">
-                            <h5>أرفع الملف  نفس الترتيب جزاك الله خير</h5>
-                            {!! Form::label('ارفق الملف') !!}
+                        <div class="col-md-12 col-md-offset-1 form-group">
+                            <h5 style="margin-right: 20px">أرفع الملف  نفس الترتيب جزاك الله خير</h5>
+                            {{--{!! Form::label('ارفق الملف') !!}--}}
                             <div class="col-md-6">
                             {!! Form::file('import_file', ['class' => 'form-control']) !!}
                             </div>
@@ -50,11 +47,8 @@
                         </div>
                     </div>
 
-                    {!! Form::submit('أرفع', ['class' => ' col-md-3']) !!}
-
-                    </div>
-
                 </div>
+                {!! Form::submit('أرفع', ['class' => ' col-md-3']) !!}
             </div>
         </div>
     </div>

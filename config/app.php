@@ -163,6 +163,8 @@ return [
         Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
 
 
+        Barryvdh\Snappy\ServiceProvider::class,
+
     ],
 
     /*
@@ -215,6 +217,8 @@ return [
 
         'Recaptcha' => Greggilbert\Recaptcha\Facades\Recaptcha::class,
 
+        'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class,
+        'SnappyImage' => Barryvdh\Snappy\Facades\SnappyImage::class,
     ],
 
 

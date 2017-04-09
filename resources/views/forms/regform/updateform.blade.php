@@ -1,10 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.Generalapp')
 
 @section('content')
 
     <div class="container">
         <div class="row">
-            <div class="col-md-15 col-md-offset-1">
+            <div class="col-md-12 col-md-offset-1">
 
 
                 @include('errors.errors')
@@ -92,18 +92,22 @@
                                         @endif
                                 </div>
 
-                                        <div class="row">
+
+                                <div class="row">
 
                                             <div  class="col col-md-12">
+
                                                 <div class="form-group">
                                                     <label>
                                                         {!! Form::checkbox('agree', '1', null,  ['id' => 'agree']) !!}
-                                                        أتعهد بصحة جميع البيانات التي دونتها في هذا الطلب، وأتحمل كامل المسؤولية في حال كانت المعلومات غير صحيحة
-                                                    </label>
+                     أتعهّد بأن ألتزم بتعليمات المراقبة في اختبارات التعلم عن بعد وفي حالة وجود أي ملاحظة علي فإنه يحق للعمادة اتخاذ المناسب حيال ذلك، كما أتعهد بالاطلاع على
+
+
+            تعليمات واجبات ومهام المراقب وحضور الاجتماع التحضيري مع مشرف المركز لتلقّي التدريب المناسب.                   </label>
 
                                                 </div>
-                                            </div>
                                         </div>
+                                    </div>
                                 {!! Form::submit(trans('regform.submit'), ['class' => ' col-md-3' , 'name'=> 'YES']) !!}
 
 
@@ -119,13 +123,7 @@
                                 <div class="row">
 
                                     <div  class="col col-md-12">
-                                        <div class="form-group">
-                                            <label>
-                                                {!! Form::checkbox('agree', '1', null,  ['id' => 'agree']) !!}
-                                                أتعهد بصحة جميع البيانات التي دونتها في هذا الطلب، وأتحمل كامل المسؤولية في حال كانت المعلومات غير صحيحة
-                                            </label>
 
-                                        </div>
                                     </div>
                                 </div>
                                 {!! Form::submit(trans('regform.submit'), ['class' => ' col-md-3' , 'name'=> 'NO']) !!}
@@ -138,13 +136,7 @@
                                 <div class="row">
 
                                     <div  class="col col-md-12">
-                                        <div class="form-group">
-                                            <label>
-                                                {!! Form::checkbox('agree', '1', null,  ['id' => 'agree']) !!}
-                                                أتعهد بصحة جميع البيانات التي دونتها في هذا الطلب، وأتحمل كامل المسؤولية في حال كانت المعلومات غير صحيحة
-                                            </label>
 
-                                        </div>
                                     </div>
                                 </div>
                                 {!! Form::submit(trans('regform.submit'), ['class' => ' col-md-3' , 'name'=> 'NOTSURE']) !!}

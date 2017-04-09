@@ -110,7 +110,7 @@
                                         <!--- days Field --->
                                         <div class="form-group">
                                             {!! Form::label('days', 'عدد أيام المراقبة:') !!}
-                                            {!! Form::selectRange('days', 1, 20 , null , ['class' => 'form-control']) !!}
+                                            {!! Form::selectRange('days', 1, 25 , null , ['class' => 'form-control']) !!}
                                         </div>
                                     </div>
                                     <div class="col-md-12">

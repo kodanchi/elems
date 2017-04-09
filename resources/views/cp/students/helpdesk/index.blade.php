@@ -27,13 +27,10 @@
                                 <th class="text-center">{{trans('sp.con_status')}}</th>
                                 @if(Auth::User()->getRole() == 'admin' )
                                     <th class="text-center">تمت المعالجة عن طريق</th>
-                                    <th class="text-center">تم تعيين الطلب إلى</th>
+                                      <th class="text-center">تم تعيين الطلب إلى</th>
+                                    <th class="text-center">مشاركة الرابط</th>
                                     @else
-                                    <th></th>
-                                    <th></th>
-
-
-
+                                    <th></th> <th></th> <th></th>
 
                                 @endif
 
@@ -58,6 +55,16 @@
 
                                         @if(Auth::User()->getRole() == 'admin' and $form->status == 'pending')
                                             <td>{{$form->username}}</td>
+                                        @else
+                                            <td></td>
+
+                                        @endif
+                                        @if(Auth::User()->getRole() == 'admin')
+                                            <td><a href="{{url('/helpdesk/view/'.$form->fid.'/'.$form->sid)}}">
+                                                    <span class="glyphicon glyphicon glyphicon-link"></span>
+
+
+                                            </a></td>
                                         @else
                                             <td></td>
 

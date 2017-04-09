@@ -82,6 +82,21 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
     Route::post('/survey/study/', 'SurveysController@submitStudySurv');
 
 
+    //print
+    Route::get('/cp/printforms/', 'PrintController@Index');
+    //Route::get('/cp/printforms/search/', 'PrintController@GeneratePDF');
+
+    Route::get('/cp/printforms/searches/', 'PrintController@GeneratePDF3');
+
+    Route::get('/cp/printforms/export', 'PrintController@stickerExcelExport');
+
+    Route::get('cp/printforms',array('as'=>'index','uses'=>'PrintController@myform'));
+
+    Route::get('cp/printforms/ajax/{id}',array('as'=>'index.ajax','uses'=>'PrintController@myformAjax'));
+
+    Route::post('/cp/printforms/search/', 'PrintController@serachcenters');
+
+
     //Info route 3/14/2017
 
     Route::get('students/Info', 'Std_updates@index');
@@ -90,6 +105,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
     Route::get('cp/students/Info/export', 'Std_updates@linksExcelExport');
     Route::get('cp/students/Info/export2', 'Std_updates@ResultExcelExport');
     Route::any('students/Info/update/{id}', 'Std_updates@UpdateIndex');
+
+
 
     /*Route::get('/form', 'FormsController@closed');
     Route::get('/form/emr', 'RegFormController@closed');
@@ -372,6 +389,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
         Route::get('/cp/exams/new', 'ExamsController@add');
         Route::get('/cp/exams/major/{id}', 'ExamsController@showExam');
         Route::get('/cp/exams/delete/{id}', 'ExamsController@delete');
+        Route::get('/cp/exams/absence ',array('as'=>'absence ','uses'=>'ExamsController@myform'));
+        Route::get('/cp/exams/absence /ajax/{id}',array('as'=>'absence .ajax','uses'=>'ExamsController@myformAjax'));
         Route::post('/cp/exams', 'ExamsController@create');
 
     });
