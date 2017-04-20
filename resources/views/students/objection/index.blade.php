@@ -37,10 +37,10 @@
 
 
                 <div class="panel panel-default">
-                    <div class="alert alert-danger" role="alert">
+             {{--       <div class="alert alert-danger" role="alert">
                         <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                         تم اغلاق التقديم
-                    </div>
+                    </div>--}}
                     <div class="panel-heading">{{trans('objection.applicants')}}</div>
 
                     <div class="panel-body ">

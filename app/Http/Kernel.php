@@ -61,6 +61,11 @@ class Kernel extends HttpKernel
         'CPfinance' => [
             \App\Http\Middleware\Authenticate::class,
             \App\Http\Middleware\RedirectIfNotFinanceAdmin::class
+        ],
+
+        'CPInfo' => [
+            \App\Http\Middleware\Authenticate::class,
+            \App\Http\Middleware\RedirectIfNotStdUpdateAdmin::class
         ]
     ];
 

@@ -332,6 +332,7 @@ class CPController extends Controller
     select 
     
         id as \'ID\',
+        card_id,
 		NID as \'NID\',
 		fname as \'First\',
 		faname as \'Father\',
@@ -403,6 +404,7 @@ from reg_forms ');
         $forms3 = DB::select('
     select 
             id as \'ID\',
+            card_id,
 		NID as \'NID\',
 		fname as \'First\',
 		faname as \'Father\',
@@ -474,22 +476,41 @@ from reg_forms
 ');
 
 
-        $forms2 = DB::select('select NID , 
+        $forms2 = DB::select('select reg_forms.NID , 
 		
 		REPLACE(hash,hash,\'http://elweb.uod.edu.sa/form/emr/updateform/\'+hash) as \'link\' ,
 			
-			email as \'email\'
+			reg_forms.email as \'email\' , Cellphone , fname as \'First\',
+		faname as \'Father\',
+		gfaname as \'Grand Father\',
+		lname as \'Lastname\', rate
 
-		from RegHash');
+
+		from RegHash,reg_forms, evaluation where reg_forms.NID = RegHash.NID and reg_forms.id = evaluation.form_id');
+
+        $forms4 = DB::select('select reg_forms.NID , 
+		
+		REPLACE(hash,hash,\'http://elweb.uod.edu.sa/form/emr/updateform/\'+hash) as \'link\' ,
+			
+			reg_forms.email as \'email\' , Cellphone , fname as \'First\',
+		faname as \'Father\',
+		gfaname as \'Grand Father\',
+		lname as \'Lastname\'
+
+
+		from RegHash,reg_forms where reg_forms.NID = RegHash.NID and reg_forms.id NOT IN (SELECT evaluation.form_id
+                   FROM   reg_forms,evaluation
+                   WHERE  reg_forms.id = evaluation.form_id)');
 
         $forms = collect($forms)->map(function($x){ return (array) $x; })->toArray();
         $forms2 = collect($forms2)->map(function($x){ return (array) $x; })->toArray();
         $forms3 = collect($forms3)->map(function($x){ return (array) $x; })->toArray();
+        $forms4 = collect($forms4)->map(function($x){ return (array) $x; })->toArray();
 
         //dd($forms);
         $date = Carbon::now();
 
-        Excel::create('RegForm-'.$date, function($excel) use($forms , $forms2 ,$forms3) {
+        Excel::create('RegForm-'.$date, function($excel) use($forms , $forms2 ,$forms3, $forms4) {
 
             $excel->sheet('جميع المسجلين', function($sheet) use($forms) {
 
@@ -497,9 +518,15 @@ from reg_forms
 
             });
 
-                $excel->sheet('روابط تجديد الرغبة', function($sheet) use($forms2) {
+                $excel->sheet('روابط تجديد للسابقين', function($sheet) use($forms2) {
 
                 $sheet->fromArray($forms2);
+
+            });
+
+            $excel->sheet('روابط تجديد المستجدين', function($sheet) use($forms4) {
+
+                $sheet->fromArray($forms4);
 
             });
 

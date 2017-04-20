@@ -2,7 +2,71 @@
 <script src="http://demo.itsolutionstuff.com/plugin/jquery.js"></script>
 <link rel="stylesheet" href="http://demo.itsolutionstuff.com/plugin/bootstrap-3.min.css">
 @section('content')
+    <!--formden.js communicates with FormDen server to validate fields and submit via AJAX -->
 
+    <!-- Special version of Bootstrap that is isolated to content wrapped in .bootstrap-iso -->
+
+    <!--Font Awesome (added because you use icons in your prepend/append)-->
+    <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
+    <style>
+        .datepicker,
+        .table-condensed {
+            margin-right: 200px;
+            width: 300px;
+            height:300px;
+        }
+    </style>
+    <!-- HTML Form (wrapped in a .bootstrap-iso div) -->
+    <div class="bootstrap-iso col-sm-offset-2">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                        <div class="form-group ">
+                            <label class="control-label col-sm-2 requiredField" for="d">
+                                Date
+                            </label>
+                            <div class="col-sm-10">
+                                <div class="input-group">
+                                    {{--<div class="input-group-addon">
+                                        <i class="fa fa-calendar">
+                                        </i>
+                                    </div>--}}
+                                    <input class="form-control" id="d" name="d" placeholder="MM/DD/YYYY" type="text" readonly/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-10 col-sm-offset-2">
+                                <input name="_honey" style="display:none" type="text"/>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Extra JavaScript/CSS added manually in "Settings" tab -->
+    <!-- Include jQuery -->
+
+    <!-- Include Date Range Picker -->
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+    <script>
+        $(document).ready(function(){
+            var date_input=$('input[name="d"]'); //our date input has the name "date"
+            var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+            date_input.datepicker({
+                format: 'mm/dd/yyyy',
+                container: container,
+                todayHighlight: true,
+                autoclose: true,
+            })
+        })
+    </script>
     <style>
         #spinner {
             position: fixed;

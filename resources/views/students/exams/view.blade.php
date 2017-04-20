@@ -14,10 +14,22 @@
                             @include('errors.status')
                             <div class="col-md-12 newsletter-form">
                                 <h4>{{trans('exams.studentExam')}}</h4>
+                                <br>
+                                @if($student[0]->status=='AC')
+                                    <h4 style="color: green">حالة الطالب/ـة : {{$student[0]->status}} (نشط)</h4>
+                                @else
+                                <h4 style="color: red">حالة الطالب/ـة : {{$student[0]->status}} (غير نشط)</h4>
+                                @endforelse
+                                    {{--@elseif($student[0]->status=='LA')
+                                        <h4 style="color: red">حالة الطالب/ـة : {{$student[0]->status}} </h4>
+                                    @elseif($student[0]->status=='CN')
+                                        <h4 style="color: red">حالة الطالب/ـة : {{$student[0]->status}} </h4>
+                                    @endforelse--}}
 
                                 <hr>
 
                                 <div class="row">
+
                                     <div class="col-md-6">
                                         <h5>{{trans('exams.sname')}}: {{$student[0]->stud_name}} </h5>
                                     </div>
@@ -73,7 +85,7 @@
 
 
 
-                                <a href="/students/exams/lookup" class="button col-md-3">{{trans('settings.back')}}</a>
+                               {{-- <a href="/students/exams/lookup" class="button col-md-3">{{trans('settings.back')}}</a>--}}
                             </div>
                             <div class="col-md-12">
 

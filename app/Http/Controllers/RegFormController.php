@@ -190,6 +190,8 @@ class RegFormController extends Controller
         $request->merge(['isController' => $request->input('isController') === '1' ? 1 : 0]);
 
 
+
+//dd($request->all());
         //$request->merge(['employee_ID' => $request->input('is_contract') === '1' ? 'contract' : 0]);
         //dd($request->all());
         RegForm::create($request->all());
@@ -200,6 +202,7 @@ class RegFormController extends Controller
 
         //return Redirect::to('/form/emr/form/success')->with('status',trans('regform.SuccessSubmit'));
         Session::forget('email');
+
         return view('forms.regform.success');
 
     }

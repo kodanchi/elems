@@ -3,7 +3,7 @@
 namespace App\Http\Requests;
 
 
-class StdUpdateRequest extends Request
+class CPStdUpdateRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -29,13 +29,13 @@ class StdUpdateRequest extends Request
             'name5' => '  اسم العائلة باللغة الانجليزية',
             'Phone' => 'رقم الجوال',
             'Nationally' => 'الجنسية',
-            'Graduation_Date' => 'تاريخ التخرج',
-            'Birth_day' => 'تاريخ الميلاد',
+            //'Graduation_Date' => 'تاريخ التخرج',
+            //'Birth_day' => 'تاريخ الميلاد',
             'Graduation_Place' => ' مكان التخرج',
             'School_name' => 'اسم المدرسة',
             'HS_pers' => 'نسبة الثانوية',
-            'attachment1' => 'إرفاق الشهادة الثانوية',
-            'attachment2' => 'إرفاق الهوية الوطنية',
+            'attachment1' => 'file|max:4096',
+            'attachment2' => 'file|max:4096',
 
         ];
     }
@@ -54,14 +54,13 @@ class StdUpdateRequest extends Request
             'name8' => 'required|string',
             'Phone' => 'required|numeric|min:10',
             'Nationally' => 'required',
-            'Graduation_Date' => 'required',
+            //'Graduation_Date' => 'required',
             'other_nationality'=>'required|string',
-            'Birth_day' => 'required',
+            //'Birth_day' => 'required',
             'Graduation_Place' => 'required|string',
             'School_name' => 'required|string',
             'HS_pers' => 'required|numeric|between:0.0,100',
-            'attachment1' => 'required|file|max:4096',
-            'attachment2' => 'required|file|max:4096',
+
 
         ];
     }
@@ -85,8 +84,7 @@ class StdUpdateRequest extends Request
             'Graduation_Place' => 'يجب ادخال مكان التخرج',
             'School_name' => 'يجب ادخال اسم المدرسة',
             'HS_pers' => 'يجب ادخال نسبة الثانوية',
-            'attachment1' => 'يجب إرفاق نسخة الشهادة الثانوية',
-            'attachment2' => 'يجب إرفاق  نسخة الهوية الوطنية',
+
             ];
     }
 }

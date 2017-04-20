@@ -34,7 +34,7 @@
             <table>
 
                 <thead style="padding-bottom: 20px"><tr><td>
-                        <img src="{{asset('storage/headerPrint.JPG')}}">
+                        <img src="{{asset('storage/headerPrint_statistics.JPG')}}">
                     </td></tr>
                 </thead>
             </table>
@@ -51,68 +51,54 @@
                     <h2 style="color: red">{{$forms[0]->higri_date}}</h2>
                 </label>
 
-
-                <table  style="border:solid;border-color: black; width:100%; font-size: larger;" border="1">
-
-                    <tr>
-                        <th style="background-color: black; color: white ; text-align: center;font-size: larger">اسم المقرر</th>
-                        <th style="background-color: black; color: white ; text-align: center;font-size: larger">القاعة</th>
-                        <th style="background-color: black; color: white ; text-align: center;font-size: larger">عدد الحضور</th>
-                        <th style="background-color: black; color: white ; text-align: center;font-size: larger">عدد الغياب</th>
-                        <th style="background-color: black; color: white ; text-align: center;font-size: larger">عدد الأوراق المسلمة</th>
-                    </tr>
-
-
-                    <tr>
-                        <td colspan="3" style="font-size: larger; font-weight: bold">{{$forms[0]->course_name}}</td>
-                        <td style="font-size: larger; font-weight: bold">{{$forms[0]->time}}</td>
-                        <td colspan="2" style="font-size: larger; font-weight: bold">{{$forms[0]->instructor}}</td>
-                    </tr>
-
-                </table>
                 <br>
                 <br>
-
-
-
 
                 <table class="tableStyle"  style="border:solid;border-color: black;  width:100%" border="1">
 
 
                     <thead class="tableStyle">
                     <tr class="tableStyle" >
-                        <th style="text-align: center">م</th>
-                        <th style="text-align: center" >الرقم الأكاديمي</th>
-                        <th style="text-align: center">السجل المدني</th>
-                        <th style="text-align: center">اسم الطالــــــــــــب</th>
-                        <th style="text-align: center">رقم النموذج</th>
-                        <th style="text-align: center">التــــــــــوقيع</th>
+                        <th style="background-color: black; color: white ; text-align: center;font-size: large">م</th>
+                        <th style="background-color: black; color: white ; text-align: center;font-size: large">اسم المقرر</th>
+                        <th style="background-color: black; color: white ; text-align: center;font-size: large">القاعة</th>
+                        <th style="background-color: black; color: white ; text-align: center;font-size: large" colspan="2">عدد الحضور</th>
+                        <th style="background-color: black; color: white ; text-align: center;font-size: large">عدد الغياب</th>
+                        <th style="background-color: black; color: white ; text-align: center;font-size: large">عدد الأوراق المستلمة</th>
                     </tr>
                     </thead>
                     <tbody class="tableStyle" >
-                    <?php $x=1; ?>
+                    <?php $x=0; ?>
+                    <?php $studentTotal=0; ?>
                     @foreach($forms as $form)
-                    <tr class="tableStyle" >
-                        <td  style="text-align: center">{{$x}}</td>
-                        <td  style="text-align: center">{{$form->sid}}</td>
-                        <td>{{$form->nid}}</td>
-                        <td style="text-align: right;"><div style="padding-right: 6px">{{$form->Sname}}</div></td>
-                        <td >&nbsp;</td>
-                        <td ><div style="background-color: white; min-height: 30px"></div>&nbsp;</td>
-                    </tr>
+                        <tr class="tableStyle" >
+                            <td style="text-align: center">{{($x+1)}}</td>
+                            <td style="text-align: center">{{$form->course_name}}</td>
+                            <td style="text-align: center">{{$form->room}}</td>
+                            <td style="text-align: center">{{$z[$x]}}</td>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <?php $studentTotal=$studentTotal+$z[$x]; ?>
                         <?php $x++; ?>
                     @endforeach
+                    <tr class="tableStyle">
+                        <td style="text-align: center" colspan="3">المجموع</td>
+                        <td style="text-align: center">{{$studentTotal}}</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
                     <tbody>
                     </table>
                 <br>
                 <br>
                 <br>
-                <br>
-                <br>
 
 
-                <span><h4>ــــــــــــــــ يعبأ من قبل مسؤول اللجنة ــــــــــــــــ</h4></span>
-                <table style="border:solid;border-color: black;  width:100%; font-size: large;" border="1">
+                <span><h4>ــــــــــــــــ يعبأ من قبل مشرف المركز ــــــــــــــــ</h4></span>
+                {{--<table style="border:solid;border-color: black;  width:100%; font-size: large;" border="1">
                     <tr>
                         <th  style="text-align: center">عدد الحضور</th>
                         <th style="text-align: center" >نموذج 1</th>
@@ -133,25 +119,25 @@
                     </tr>
 
 
-                </table>
+                </table>--}}
                 <br>
 
-                <div style="text-align: center">
+                <div style="text-align: center" class="row col-md-8">
 
-                    <div class="col-md-6">
-                    <h3>اسم مسؤول اللجنة<br>
+                    <div class="col-md-4" style="float: right">
+                    <h3>اسم مشرف المركز<br>
                         <br>
                         <br>
                         ................................</h3>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-4" style="float: left">
 
 <h3>  التوقيـــــــــــــــــع
                         <br>
                         <br>
                         <br>
-                    ...........................</h3>
+    ................................</h3>
                     </div>
                 </div>
 

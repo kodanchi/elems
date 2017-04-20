@@ -16,6 +16,12 @@
 
                     <div class="panel-body">
 
+
+                        <p style="color: red">
+                <b> مواعيد الاختبارات :<br>
+                                                      الفترة : 13-28 شعبان 1438 هــ
+                     | الوقت : 4:00 - 6:00 م
+                </b>    </p>
                         {!! Form::open(['url' => '/form/emr/updateform/updateStatus', 'method' => 'post', 'files' => true ,'class'=>'newsletter-form' ]) !!}
 
                         {{ Form::hidden('NID', $info[0]->NID) }}

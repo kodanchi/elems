@@ -29,5 +29,7 @@
         <li><a href="{{url('students/objection/')}}"><span class="glyphicon glyphicon-home"></span> &nbsp; {{trans('settings.home')}}</a></li>
     @elseif(Request::is('cp/students/finance/*') || Request::is('cp/students/finance'))
         <li><a href="{{url('cp/students/finance')}}"><span class="glyphicon glyphicon-home"></span> &nbsp; {{trans('settings.home')}}</a></li>
+    @elseif(Request::is('cp/students/Info/*') || Request::is('cp/students/Info'))
+        <li><a href="{{url('cp/students/Info')}}"><span class="glyphicon glyphicon-home"></span> &nbsp; {{trans('settings.home')}}</a></li>
     @endif
 </ul>

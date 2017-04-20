@@ -105,6 +105,7 @@
                         <th  style="text-align: center">السجل المدني</th>
                         <th style="text-align: center">اسم الطالــــــــــــب</th>
                         <th  style="text-align: center">رقم النموذج</th>
+                        <th  style="text-align: center">الوقت</th>
                         <th  style="text-align: center">التــــــــــوقيع</th>
                     </tr>
                     </thead>
@@ -116,6 +117,7 @@
                         <td  style="text-align: center">{{$form->sid}}</td>
                         <td>{{$form->nid}}</td>
                         <td style="text-align: right;"><div style="padding-right: 6px">{{$form->Sname}}</div></td>
+                        <td >&nbsp;</td>
                         <td >&nbsp;</td>
                         <td ><div style="background-color: white; min-height: 30px"></div>&nbsp;</td>
                     </tr>
@@ -155,22 +157,23 @@
                 </table>
                 <br>
 
-                <div style="text-align: center">
 
-                    <div class="col-md-6">
-                    <h3>اسم مسؤول اللجنة<br>
-                        <br>
-                        <br>
-                        ................................</h3>
+                <div style="text-align: center" class="row col-md-8">
+
+                    <div class="col-md-4" style="float: right">
+                        <h3>اسم مسؤول المركز<br>
+                            <br>
+                            <br>
+                            ................................</h3>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-4" style="float: left">
 
-<h3>  التوقيـــــــــــــــــع
-                        <br>
-                        <br>
-                        <br>
-                    ...........................</h3>
+                        <h3>  التوقيـــــــــــــــــع
+                            <br>
+                            <br>
+                            <br>
+                            ................................</h3>
                     </div>
                 </div>
 

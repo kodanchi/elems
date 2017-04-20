@@ -19,6 +19,7 @@
                                 <thead class="">
                                 <th class="text-center">{{trans('warehouse.sn')}}</th>
                                 <th class="text-center">{{trans('warehouse.dlcode')}}</th>
+                                <th class="text-center">موديل الجهاز</th>
                                 <th class="text-center">{{trans('warehouse.type')}}</th>
                                 <th class="text-center">{{trans('warehouse.status')}}</th>
                                 <th class="text-center">{{trans('warehouse.view')}}</th>
@@ -28,6 +29,7 @@
                                     <tr class="text-center">
                                         <td>{{$asset->SN}}</td>
                                         <td style="direction: ltr">{{$asset->DL_code}}</td>
+                                        <td style="direction: ltr">{{$asset->brand}}</td>
                                         <td>{{$asset->type}}</td>
                                         <td>{{trans('warehouse.assetStatus.'.$asset->status)}}</td>
                                         <td><a href="{{url('cp/warehouse/view/'.$asset->id)}}">

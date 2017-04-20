@@ -7,11 +7,11 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading" style="">
-                        {{--                        {!! Form::open(array('url' => '/cp/students/helpdesk/assign/'.$form->id))!!}
-                                                {!! Form::hidden('id', $form->id, ['id' => 'id']) !!}
-                                                {!! Form::submit(trans('استلام'),  ['class' => 'form-control' , 'name'=> 'CPassign' , 'value'=> 'CPassign' ]) !!}
-                                                {{trans('students.applicants')}}  | {{$form->id}}
-                                                {!! Form::close() !!}--}}
+{{--                        {!! Form::open(array('url' => '/cp/students/helpdesk/assign/'.$form->id))!!}
+                        {!! Form::hidden('id', $form->id, ['id' => 'id']) !!}
+                        {!! Form::submit(trans('استلام'),  ['class' => 'form-control' , 'name'=> 'CPassign' , 'value'=> 'CPassign' ]) !!}
+                        {{trans('students.applicants')}}  | {{$form->id}}
+                        {!! Form::close() !!}--}}
                         {{trans('students.applicants')}}  | {{$form->id}}
                         @if(!in_array('admin',Auth::user()->getAllroles()) && !$form->username)
                             <a href="{{url('cp/students/helpdesk/assign/'.$form->id)}}" style="float: left">
@@ -19,9 +19,9 @@
                             </a>
                         @else
                             @if($form->username)
-                                <p style="float: left">{{trans('cp.username')}}: {{$form->username}}</p>
+                            <p style="float: left">{{trans('cp.username')}}: {{$form->username}}</p>
                             @endif
-                            @endforelse
+                        @endforelse
                     </div>
 
                     <div class="panel-body ">
@@ -55,7 +55,7 @@
                                 </div>
 
 
-                                <div class="row">
+                                 <div class="row">
                                     <div class="col-md-6">
                                         <h4>{{trans('حالة الطلب')}}</h4>
                                         <hr>
@@ -67,26 +67,26 @@
 
                                         @if($form->attach_file !='null')
 
-                                            <a href="{{asset('storage/'.$form->attach_file)}}" target="_blank" class="btn btn-info">
-                                                <span class="glyphicon glyphicon-paperclip"></span> {{trans('sp.view_attach')}}
-                                            </a>
+                                        <a href="{{asset('storage/'.$form->attach_file)}}" target="_blank" class="btn btn-info">
+                                            <span class="glyphicon glyphicon-paperclip"></span> {{trans('sp.view_attach')}}
+                                        </a>
 
                                         @endif
 
-                                    </div>
                                 </div>
+                                    </div>
 
                                 <div class="row">
 
 
-                                    <div class="col col-md-6">
-                                        <h5>{{trans('الموضوع')}}: {{$form->subject}}</h5>
+                                        <div class="col col-md-6">
+                                            <h5>{{trans('الموضوع')}}: {{$form->subject}}</h5>
 
-                                    </div>
+                                        </div>
 
-                                    <div class="col-md-6">
-                                        <h5>{{trans('شرح المشكلة')}}: {{$form->des}}</h5>
-                                    </div>
+                                        <div class="col-md-6">
+                                            <h5>{{trans('شرح المشكلة')}}: {{$form->des}}</h5>
+                                        </div>
 
 
                                     @if($form->response_attach_file !='null' && isset($form->response_attach_file))
@@ -102,7 +102,7 @@
 
                                         </div>
                                     @endif
-                                </div>
+                                    </div>
 
 
 
@@ -118,7 +118,7 @@
                                             @if(in_array('admin',Auth::user()->getAllroles()) || Auth::user()->getUsername() == $form->username)
                                                 {!! Form::select('status', $status , $form->status , ['class' => 'form-control']) !!}
                                             @else
-                                                {!! Form::select('status', $status , $form->status , ['class' => 'form-control', 'readonly']) !!}
+                                            {!! Form::select('status', $status , $form->status , ['class' => 'form-control', 'readonly']) !!}
                                                 @endforelse
                                         </div>
 
@@ -129,7 +129,7 @@
                                             @if(in_array('admin',Auth::user()->getAllroles()) || Auth::user()->getUsername() == $form->username)
 
                                                 {!! Form::textarea('replay', $form->replay, ['class' => 'form-control']) !!}
-                                            @else
+                                                @else
                                                 {!! Form::textarea('replay', $form->replay, ['class' => 'form-control', 'readonly']) !!}
                                                 @endforelse
                                         </div>
@@ -139,50 +139,45 @@
                                             {!! Form::file('response_attach_file', ['class' => 'form-control','accept'=>'.pdf', 'id'=>'response_attach_file']) !!}
                                         </div>
                                         @if(in_array('admin',Auth::user()->getAllroles()) || Auth::user()->getUsername() == $form->username)
-                                            {!! Form::submit('الرد على الطلب',  ['class' => 'form-control' , 'name'=> 'CPupdate' , 'value'=> 'CPupdate', 'onclick'=>'return foo();']) !!}
+                                        {!! Form::submit('الرد على الطلب',  ['class' => 'form-control' , 'name'=> 'CPupdate' , 'value'=> 'CPupdate', 'onclick'=>'return foo();']) !!}
                                             <small>سيتم إرسال بريد إلكتروني إلى الطالب/الطالبة فور النقر على الرد على الطلب</small>
                                         @endif
 
-                                        <hr>
-                                        <a href="/cp/students/helpdesk/pending" class="button col-md-6">{{trans('settings.back')}}</a>
-                                        @if($next != null)
-                                            <a href="/cp/students/helpdesk/view/{{$next}}" class="button col-md-6">{{trans('settings.next')}}</a>
-                                        @endif
 
                                     </div>
 
 
                                     <div class="col-md-6">
                                         @if($form->status == 'pending')
-                                            <div class="col-md-6">
-                                                <!--- Status Field --->
-                                                <div class="form-group">
+                                        <div class="col-md-6">
+                                            <!--- Status Field --->
+                                            <div class="form-group">
 
-                                                    {!! Form::label('serviceTypeLabel', trans('تحويل الطلب إلى إدارة أخرى').':') !!}
-                                                    {!! Form::select('serviceType', $serviceType, null , ['class' => 'form-control selectpicker', 'id' => 'serviceType', 'name' => 'serviceType', 'data-live-search' => 'true'] ) !!}
+                                                {!! Form::label('serviceTypeLabel', trans('تحويل الطلب إلى إدارة أخرى').':') !!}
+                                                {!! Form::select('serviceType', $serviceType, null , ['class' => 'form-control selectpicker', 'id' => 'serviceType', 'name' => 'serviceType', 'data-live-search' => 'true'] ) !!}
 
-                                                    {{--<select name="serviceType" id="serviceType" class="form-control selectpicker" data-live-search="true" onchange="myFunction()">
-                                                        <option disabled>{{trans('serviceType.'.$form->serviceType)}}</option>
+                                                {{--<select name="serviceType" id="serviceType" class="form-control selectpicker" data-live-search="true" onchange="myFunction()">
+                                                    <option disabled>{{trans('serviceType.'.$form->serviceType)}}</option>
+                                                @foreach ($serviceType as $key => $value)
+                                                    <option value="{{$value}}">{{$value}}</option>
+                                                @endforeach
                                                     @foreach ($serviceType as $key => $value)
                                                         <option value="{{$value}}">{{$value}}</option>
                                                     @endforeach
-                                                        @foreach ($serviceType as $key => $value)
-                                                            <option value="{{$value}}">{{$value}}</option>
-                                                        @endforeach
-                                                    </select>--}}
-                                                    {{--{{dd($to_user[0])}}--}}
-                                                    {{--{!! Form::label('to_user', trans('تحويل الطلب إلى شخص محدد').':') !!}
-                                                    {!! Form::select('to_user', $to_user[0], $to_user[0], ['class' => 'form-control']) !!}
-                                                    @foreach($to_user as $user)
-                                                        {{$user->name}}
-                                                    @endforeach--}}
-                                                    {{--{!! Form::label('to_user', trans('تحويل الطلب إلى شخص محدد').':') !!}
-                                                    {!! Form::select('to_user', $to_user[0], $to_user[0], ['class' => 'form-control']) !!}--}}
+                                                </select>--}}
+{{--{{dd($to_user[0])}}--}}
+                                                {{--{!! Form::label('to_user', trans('تحويل الطلب إلى شخص محدد').':') !!}
+                                                {!! Form::select('to_user', $to_user[0], $to_user[0], ['class' => 'form-control']) !!}
+                                                @foreach($to_user as $user)
+                                                    {{$user->name}}
+                                                @endforeach--}}
+                                                {{--{!! Form::label('to_user', trans('تحويل الطلب إلى شخص محدد').':') !!}
+                                                {!! Form::select('to_user', $to_user[0], $to_user[0], ['class' => 'form-control']) !!}--}}
 
-
-                                                </div>
 
                                             </div>
+
+                                        </div>
                                             <div class="col-md-6" id="to_user_div" name="to_user_div">
                                                 <label id="to_user_label" name="to_user_label"></label>
                                             </div>
@@ -194,7 +189,7 @@
                                                     if(serviceType){
                                                         $.ajax({
                                                             type:"GET",
-                                                            url:"{{url('cp/students/helpdesk/view/'.$form->id.'/toUser')}}?serviceType="+serviceType,
+                                                            url:"{{url('cp/students/helpdesk/viewNew/'.$form->id.'/toUser')}}?serviceType="+serviceType,
                                                             success:function(res){
                                                                 if(res){
                                                                     $("#to_user").empty();
@@ -208,7 +203,7 @@
                                                                         $("#to_user").append('<option value="'+key+'">'+value+'</option>');
                                                                         x++;
                                                                     });
-                                                                    $("#to_user_div").append('</select>');
+                                                                    $("#to_user_div").append('</select></br>');
                                                                     $('#to_user').selectpicker('refresh');
                                                                 }else{
                                                                     $("#to_user").empty();
@@ -225,43 +220,43 @@
                                                 });
                                             </script>
 
-                                            {{--                                            <div class="form-group">
-                                                                                            <label>State
-                                                                                                <select name="state" id="state" class="form-control input-sm">
-                                                                                                    <option value=""></option>
-                                                                                                    @foreach($serviceType as $type=>$value)
-                                                                                                        <option value="">{{$value}}</option>
-                                                                                                    @endforeach
-                                                                                                </select>
-                                                                                            </label>
-                                                                                        </div>
-
-                                                                                        <div class="form-group">
-                                                                                            <label>City
-                                                                                                <select id="city" class="form-control input-sm" name="city_id">
-                                                                                                    <option value=""></option>
-                                                                                                </select>
-                                                                                            </label>
-                                                                                        </div>--}}
-
-                                            <hr>
-                                            <hr>
-                                            <hr>
-                                            <div class="col-md-6">
-
-
-                                                @if(in_array('admin',Auth::user()->getAllroles()) || Auth::user()->getUsername() == $form->username)
-                                                    {!! Form::submit(trans('تحويل'),  ['class' => 'form-control' , 'name'=> 'CPtrans' , 'value'=> 'CPtrans' , 'onclick'=>'return foo2();']) !!}
-                                                @endif
+{{--                                            <div class="form-group">
+                                                <label>State
+                                                    <select name="state" id="state" class="form-control input-sm">
+                                                        <option value=""></option>
+                                                        @foreach($serviceType as $type=>$value)
+                                                            <option value="">{{$value}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </label>
                                             </div>
+
+                                            <div class="form-group">
+                                                <label>City
+                                                    <select id="city" class="form-control input-sm" name="city_id">
+                                                        <option value=""></option>
+                                                    </select>
+                                                </label>
+                                            </div>--}}
+
+<hr>
+<hr>
+<hr>
+                                        <div class="col-md-6">
+
+
+                                            @if(in_array('admin',Auth::user()->getAllroles()) || Auth::user()->getUsername() == $form->username)
+                                                {!! Form::submit(trans('تحويل'),  ['class' => 'form-control' , 'name'=> 'CPtrans' , 'value'=> 'CPtrans' , 'onclick'=>'return foo2();']) !!}
+                                            @endif
+                                        </div>
                                         @endif
 
                                         @if(!empty($logs))
-                                            <div class="col-md-12">
+                                        <div class="col-md-12">
 
-                                                <h5>سجل تحويل الطلب</h5>
-                                                <table class="table table-striped">
-                                                    <thead>
+                                            <h5>سجل تحويل الطلب</h5>
+                                            <table class="table table-striped">
+                                                <thead>
                                                     <th>
                                                         المحول
                                                     </th>
@@ -277,32 +272,32 @@
                                                     <th>
                                                         الوقت
                                                     </th>
-                                                    </thead>
-                                                    <tbody>
-                                                    @foreach($logs as $log)
-                                                        <tr>
-                                                            <td>
-                                                                {{$log->from_user}}
-                                                            </td>
-                                                            <td>
-                                                                {{$log->to_user}}
-                                                            </td>
-                                                            <td>
-                                                                {{--                                                            {{trans("hd_dep.").$log->from_department}}--}}
-                                                                {{trans('hd_dep.'.$log->from_department)}}
-                                                            </td>
-                                                            <td>
-                                                                {{trans('hd_dep.'.$log->to_department)}}
-                                                            </td>
-                                                            <td>
-                                                                {{date("D | M j Y | G:i:s ",strtotime($log->added_on)) }}
-                                                            </td>
-                                                        </tr>
+                                                </thead>
+                                                <tbody>
+                                                @foreach($logs as $log)
+                                                    <tr>
+                                                        <td>
+                                                            {{$log->from_user}}
+                                                        </td>
+                                                        <td>
+                                                            {{$log->to_user}}
+                                                        </td>
+                                                        <td>
+{{--                                                            {{trans("hd_dep.").$log->from_department}}--}}
+                                                            {{trans('hd_dep.'.$log->from_department)}}
+                                                        </td>
+                                                        <td>
+                                                            {{trans('hd_dep.'.$log->to_department)}}
+                                                        </td>
+                                                        <td>
+                                                           {{date("D | M j Y | G:i:s ",strtotime($log->added_on)) }}
+                                                        </td>
+                                                    </tr>
                                                     @endforeach
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        @endif
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                            @endif
                                     </div>
 
 
@@ -311,7 +306,11 @@
 
                                     {!! Form::close() !!}
                                 </div>
-
+                                <hr>
+                                <a href="/cp/students/helpdesk/pending" class="button col-md-3">{{trans('settings.back')}}</a>
+                                @if($next != null)
+                                    <a href="/cp/students/helpdesk/view/{{$next}}" class="button col-md-3">{{trans('settings.next')}}</a>
+                                @endif
                             </div>
                             <div class="col-md-12">
 
@@ -325,9 +324,9 @@
 
                 @if($form->username)
 
-                    <h5 style=" float: left;"><b>   تاريخ تعديل/استلام الطلب :</b>{{date("D | j M Y | g:i  A",strtotime($form->updated_at))}}</h5>
+                <h5 style=" float: left;"><b>   تاريخ تعديل/استلام الطلب :</b>{{date("D | j M Y | g:i  A",strtotime($form->updated_at))}}</h5>
 
-                @endif
+                    @endif
             </div>
         </div>
     </div>
@@ -373,4 +372,4 @@
         });
     </script>
 
-@endsection
+    @endsection

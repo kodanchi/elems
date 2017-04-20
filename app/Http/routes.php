@@ -88,6 +88,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
 
     Route::get('/cp/printforms/searches/', 'PrintController@GeneratePDF3');
 
+    Route::get('/cp/printforms/statistics/', 'PrintController@statistics');
+
+    Route::post('/cp/printforms/statisticsForm/', 'PrintController@GeneratePDF4');
+
     Route::get('/cp/printforms/export', 'PrintController@stickerExcelExport');
 
     Route::get('cp/printforms',array('as'=>'index','uses'=>'PrintController@myform'));
@@ -101,9 +105,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
 
     Route::get('students/Info', 'Std_updates@index');
     Route::get('students/Info/edit/{id}', 'Std_updates@EditIndex');
-    Route::get('cp/students/Info/exportindex', 'Std_updates@ExcelExportIndex');
-    Route::get('cp/students/Info/export', 'Std_updates@linksExcelExport');
-    Route::get('cp/students/Info/export2', 'Std_updates@ResultExcelExport');
     Route::any('students/Info/update/{id}', 'Std_updates@UpdateIndex');
 
 
@@ -128,7 +129,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
     Route::get('/form/emr/new', 'RegFormController@create');
     Route::post('/form/emr/add', 'RegFormController@add');
     Route::get('/form/emr/{id}/view', 'RegFormController@view');
-    Route::get('students/Info/edit/{id}', 'Std_updates@EditIndex');
     Route::get('/form/emr/updateform', 'RegFormController@updateTheRegFormIndex');
     Route::get('/form/emr/updateform/{id}', 'RegFormController@EditFormIndex');
     Route::post('/form/emr/updateform/updateStatus', 'RegFormController@updateFormIndex');
@@ -292,11 +292,38 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
 
     });
 
+
+    Route::group(['middleware' => ['CPInfo']], function () {
+        Route::get('cp/students/Info', 'Std_updates@CPIndex');
+        Route::get('cp/students/Info/export', 'Std_updates@linksExcelExport');
+        Route::get('cp/students/Info/view/{id}', 'Std_updates@CPview');
+        Route::get('/cp/students/Info/pending', 'Std_updates@CPPending');
+        Route::get('/cp/students/Info/Approved', 'Std_updates@CPApproved');
+        Route::get('/cp/students/Info/Reject', 'Std_updates@CPReject');
+        Route::get('cp/students/Info/export2', 'Std_updates@ResultExcelExport');
+        Route::post('/cp/students/Info/search', 'Std_updates@search');
+        Route::get('/cp/students/Info/edit/{id}', 'Std_updates@CPeditInfoIndex');
+        Route::any('/cp/students/Info/update/{id}', 'Std_updates@CPeditInfo');
+
+
+
+
+
+        Route::post('cp/students/Info/view/update', 'Std_updates@CPupdatestatus');
+
+    });
+
+
+
+
     Route::group(['middleware' => ['helpdeskCP']], function () {
 
         Route::get('/cp/students/helpdesk', 'TecsController@CPindex');
+        //Route::get('/cp/students/helpdesk/view/{id}', 'TecsController@CPview');
         Route::get('/cp/students/helpdesk/view/{id}', 'TecsController@CPview');
+        Route::get('/cp/students/helpdesk/view/{id}/toUser','TecsController@getUsersList');
         Route::post('/cp/students/helpdesk/update', array('uses' => 'TecsController@CPupdateOrCPtrans'));
+        //Route::post('/cp/students/helpdesk/updatea', array('uses' => 'TecsController@CPupdateOrCPtran'));
         Route::get('/cp/students/helpdesk/assign/{id}', 'TecsController@AssignToMe');
         Route::post('/cp/students/helpdesk/search', 'TecsController@search');
         Route::get('/cp/students/helpdesk/search', 'TecsController@search2');
@@ -389,8 +416,14 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
         Route::get('/cp/exams/new', 'ExamsController@add');
         Route::get('/cp/exams/major/{id}', 'ExamsController@showExam');
         Route::get('/cp/exams/delete/{id}', 'ExamsController@delete');
-        Route::get('/cp/exams/absence ',array('as'=>'absence ','uses'=>'ExamsController@myform'));
-        Route::get('/cp/exams/absence /ajax/{id}',array('as'=>'absence .ajax','uses'=>'ExamsController@myformAjax'));
+        Route::get('cp/exams/absence','ExamsController@indexabsence');
+        Route::post('cp/exams/absence/update','ExamsController@updateabsence');
+        Route::get('cp/exams/absence/course','ExamsController@getCourseList');
+        Route::get('cp/exams/absence/students','ExamsController@getStudentsList');
+        Route::get('cp/exams/testers','ExamsController@indexTesters');
+        Route::get('cp/exams/testers/centers','ExamsController@getCenterList');
+        Route::get('cp/exams/testers/nid','ExamsController@getNIDList');
+        Route::post('cp/exams/testers/update','ExamsController@updateTesters');
         Route::post('/cp/exams', 'ExamsController@create');
 
     });

@@ -13,7 +13,7 @@
                         @include('errors.status')
                         {{--{{dd($student)}}--}}
                         {{--{!! Form::model($student, array('action' => array('Std_updates@UpdateIndex', $student->SID))) !!}--}}
-                        {!! Form::model($student, ['method' => 'PATCH', 'action' =>  ['Std_updates@UpdateIndex', $student->SID], 'files' => true]) !!}
+                        {!! Form::model($student, ['method' => 'PATCH', 'action' =>  ['Std_updates@CPeditInfo', $student->SID], 'files' => true]) !!}
 
                         {{--{!! Form::open(['url' => url('/students/Info/update/done'), 'method' => 'post',  'files' => true ,'class' => 'newsletter-form']) !!}--}}
                         <br>
@@ -134,72 +134,74 @@
 
 
 
-                                                    <style>
-                                                        .datepicker,
-                                                        .table-condensed {
-                                                            width: 300px;
-                                                            height:300px;
-                                                        }
-                                                    </style>
 
-                                                    <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
 
-                                                    <!-- HTML Form (wrapped in a .bootstrap-iso div) -->
-                                                    <div class="bootstrap-iso ">
-                                                        <div class="container-fluid">
-                                                            <div class="row">
-                                                                <div class="">
-                                                                    <div class="form-group ">
-                                                                        <label class="control-label col-sm-3 requiredField" for="Birth_day">
-                                                                            {{trans('regform.birth_date')}}
-                                                                        </label>
-                                                                        <div class="">
-                                                                            <div class="input-group">
-                                                                                {{--<div class="input-group-addon">
-                                                                                    <i class="fa fa-calendar">
-                                                                                    </i>
-                                                                                </div>--}}
+                                                        <style>
+                                                            .datepicker,
+                                                            .table-condensed {
+                                                                width: 300px;
+                                                                height:300px;
+                                                            }
+                                                        </style>
+
+                                                        <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
+
+                                                        <!-- HTML Form (wrapped in a .bootstrap-iso div) -->
+                                                        <div class="bootstrap-iso ">
+                                                            <div class="container-fluid">
+                                                                <div class="row">
+                                                                    <div class="">
+                                                                        <div class="form-group ">
+                                                                            <label class="control-label col-sm-3 requiredField" for="Birth_day">
+                                                                                {{trans('regform.birth_date')}}
+                                                                            </label>
+                                                                            <div class="">
+                                                                                <div class="input-group">
+                                                                                    {{--<div class="input-group-addon">
+                                                                                        <i class="fa fa-calendar">
+                                                                                        </i>
+                                                                                    </div>--}}
+                                                                                </div>
+                                                                                @if($student->Birth_day)
+                                                                                    <input class="form-control" id="Birth_day" name="Birth_day" placeholder="MM/DD/YYYY" value="{{$student->Birth_day}}" type="text" readonly />
+                                                                                @else
+                                                                                    <input class="form-control" id="Birth_day" name="Birth_day" placeholder="MM/DD/YYYY" type="text" readonly />
+                                                                                    @endforelse
                                                                             </div>
-                                                                            @if($student->Birth_day)
-                                                                                <input class="form-control" id="Birth_day" name="Birth_day" placeholder="MM/DD/YYYY" value="{{$student->Birth_day}}" type="text" readonly />
-                                                                            @else
-                                                                                <input class="form-control" id="Birth_day" name="Birth_day" placeholder="MM/DD/YYYY" type="text" readonly />
-                                                                                @endforelse
                                                                         </div>
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <div class="">
-                                                                            <input name="_honey" style="display:none" type="text"/>
+                                                                        <div class="form-group">
+                                                                            <div class="">
+                                                                                <input name="_honey" style="display:none" type="text"/>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
 
 
-                                                    <!-- Extra JavaScript/CSS added manually in "Settings" tab -->
-                                                    <!-- Include jQuery -->
+                                                        <!-- Extra JavaScript/CSS added manually in "Settings" tab -->
+                                                        <!-- Include jQuery -->
 
-                                                    <!-- Include Date Range Picker -->
+                                                        <!-- Include Date Range Picker -->
 
 
-                                                    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+                                                            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 
-                                                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+                                                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
-                                                    <script>
-                                                        $(document).ready(function(){
-                                                            var date_input=$('input[name="Birth_day"]'); //our date input has the name "date"
-                                                            var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
-                                                            date_input.datepicker({
-                                                                format: 'd/mm/yyyy',
-                                                                container: container,
-                                                                todayHighlight: true,
-                                                                autoclose: true,
+                                                        <script>
+                                                            $(document).ready(function(){
+                                                                var date_input=$('input[name="Birth_day"]'); //our date input has the name "date"
+                                                                var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+                                                                date_input.datepicker({
+                                                                    format: 'd/mm/yyyy',
+                                                                    container: container,
+                                                                    todayHighlight: true,
+                                                                    autoclose: true,
+                                                                })
                                                             })
-                                                        })
-                                                    </script>
+                                                        </script>
 
 
                          {{--  {!! Form::select('selectCalendar1', ['h' =>  trans('regform.hijri'),'g'=>  trans('regform.miladi')] , 'ummalqura' ,
@@ -225,89 +227,90 @@
 
                         <div class="row">
 
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    {!! Form::label('Graduation_Place', 'مكان التخرج') !!}
-                                    {!! Form::text('Graduation_Place',null ,['class' => 'form-control']) !!}
-                                </div>
-                            </div>
+
                             <div class="col-md-6">
                                 <div class="form-group">
 
 
-                                    <style>
-                                        .datepicker,
-                                        .table-condensed {
-                                            width: 300px;
-                                            height:300px;
-                                        }
-                                    </style>
+                                        <style>
+                                            .datepicker,
+                                            .table-condensed {
+                                                width: 300px;
+                                                height:300px;
+                                            }
+                                        </style>
 
-                                    <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
+                                        <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
 
-                                    <!-- HTML Form (wrapped in a .bootstrap-iso div) -->
-                                    <div class="bootstrap-iso ">
-                                        <div class="container-fluid">
-                                            <div class="row">
-                                                <div class="">
-                                                    <div class="form-group ">
-                                                        <label class="control-label col-sm-3 requiredField" for="Graduation_Date">
-                                                            تاريخ التخرج:
-                                                        </label>
-                                                        <div class="">
-                                                            <div class="input-group">
-                                                                {{--<div class="input-group-addon">
-                                                                    <i class="fa fa-calendar">
-                                                                    </i>
-                                                                </div>--}}
+                                        <!-- HTML Form (wrapped in a .bootstrap-iso div) -->
+                                        <div class="bootstrap-iso ">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="">
+                                                        <div class="form-group ">
+                                                            <label class="control-label col-sm-3 requiredField" for="Graduation_Date">
+                                                                تاريخ التخرج:
+                                                            </label>
+                                                            <div class="">
+                                                                <div class="input-group">
+                                                                    {{--<div class="input-group-addon">
+                                                                        <i class="fa fa-calendar">
+                                                                        </i>
+                                                                    </div>--}}
+                                                                </div>
+                                                                @if($student->Graduation_Date)
+                                                                    <input class="form-control" id="Graduation_Date" name="Graduation_Date" placeholder="MM/DD/YYYY" value="{{$student->Graduation_Date}}" type="text" readonly />
+                                                                @else
+                                                                    <input class="form-control" id="Graduation_Date" name="Graduation_Date" placeholder="MM/DD/YYYY" type="text" readonly />
+                                                                    @endforelse
                                                             </div>
-                                                            @if($student->Graduation_Date)
-                                                                <input class="form-control" id="Graduation_Date" name="Graduation_Date" placeholder="MM/DD/YYYY" value="{{$student->Graduation_Date}}" type="text" readonly />
-                                                            @else
-                                                                <input class="form-control" id="Graduation_Date" name="Graduation_Date" placeholder="MM/DD/YYYY" type="text" readonly />
-                                                                @endforelse
                                                         </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <div class="">
-                                                            <input name="_honey" style="display:none" type="text"/>
+                                                        <div class="form-group">
+                                                            <div class="">
+                                                                <input name="_honey" style="display:none" type="text"/>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
 
 
-                                    <!-- Extra JavaScript/CSS added manually in "Settings" tab -->
-                                    <!-- Include jQuery -->
+                                        <!-- Extra JavaScript/CSS added manually in "Settings" tab -->
+                                        <!-- Include jQuery -->
 
-                                    <!-- Include Date Range Picker -->
+                                        <!-- Include Date Range Picker -->
 
 
-                                    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+                                        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 
-                                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+                                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
-                                    <script>
-                                        //alert(document.getElementById('Graduation_Date').offsetWidth);
-                                        $(document).ready(function(){
-                                            var date_input=$('input[name="Graduation_Date"]'); //our date input has the name "date"
-                                            var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
-                                            //alert(container);
-                                            date_input.datepicker({
-                                                format: 'd/mm/yyyy',
-                                                container: container,
-                                                todayHighlight: true,
-                                                autoclose: true,
+                                        <script>
+                                            //alert(document.getElementById('Graduation_Date').offsetWidth);
+                                            $(document).ready(function(){
+                                                var date_input=$('input[name="Graduation_Date"]'); //our date input has the name "date"
+                                                var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+                                                //alert(container);
+                                                date_input.datepicker({
+                                                    format: 'd/mm/yyyy',
+                                                    container: container,
+                                                    todayHighlight: true,
+                                                    autoclose: true,
+                                                })
                                             })
-                                        })
-                                    </script>
+                                        </script>
 
 
                                 </div>
                                 <div id="cal2"></div>
 
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {!! Form::label('Graduation_Place', 'مكان التخرج') !!}
+                                    {!! Form::text('Graduation_Place',null ,['class' => 'form-control']) !!}
+                                </div>
                             </div>
                         </div>
 
@@ -332,10 +335,17 @@
                         <h4 style="	color: #2e6da4">المرفقات: </h4><hr>
                         <div class="row">
 
-                            <div class="col-md-4">
+
+
+                        <div class="col-md-4">
                                 <div class="form-group">
+
+                                    <a href="{{asset('storage/'.$student->attachment1)}}" target="_blank" class="btn btn-primary">
+                                        <span class="glyphicon glyphicon-paperclip"></span>  &nbsp;  شهادة الثانوية &nbsp;
+                                    </a>
+                                    <hr>
                                     <div class="form-group">
-                                        {!! Form::label('attachment1', 'إرفاق الشهادة الثانوية') !!}
+                                        {!! Form::label('attachment1', 'تحديث الشهادة الثانوية') !!}
                                         {!! Form::file('attachment1', ['class' => 'form-control','accept'=>'.pdf']) !!}
 
                                     </div>
@@ -344,23 +354,45 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
+
+                                    <a href="{{asset('storage/'.$student->attachment2)}}" target="_blank" class="btn btn-primary">
+                                        <span class="glyphicon glyphicon-paperclip"></span> &nbsp;  الهوية الوطنية&nbsp;
+                                    </a>
+                                    <br> <br> <br>
                                     <div class="form-group">
-                                        {!! Form::label('attachment2','إرفاق الهوية الوطنية /الإقامة ') !!}
+                                        {!! Form::label('attachment2','تحديث الهوية الوطنية /الإقامة ') !!}
                                         {!! Form::file('attachment2', ['class' => 'form-control','accept'=>'.pdf']) !!}
                                     </div>
                                 </div>
                             </div>  <div class="col-md-4">
                                 <div class="form-group">
+                                    @if($student->attachment3 != NULL)
+
+                                        <a href="{{asset('storage/'.$student->attachment3)}}" target="_blank" class="btn btn-primary">
+                                            <span class="glyphicon glyphicon-paperclip"></span> &nbsp; جواز السفر او الرخصة &nbsp;
+                                        </a>
+                                        <br> <br> <br>
+                                    @else
+
+                                    <br>
+                                    <br> <br> <br>
+
+
+                                        @endforelse
                                     <div class="form-group">
-                                        {!! Form::label('attachment3','إرفاق جواز السفر او الرخصة ') !!}
+                                        {!! Form::label('attachment3','تحديث جواز السفر او الرخصة ') !!}
                                         {!! Form::file('attachment3', ['class' => 'form-control','accept'=>'.pdf']) !!}
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <hr>
-                        <hr>
 
+                        <hr>
+                        <hr>
+                            <br>
+
+{{--
+                            <a href="{{url('cp/students/Info/edit/'.$student->id)}}" class="button col-md-6">{{trans('settings.back')}}</a>
+--}}
 
                         {!! Form::submit(trans('تحديث'), ['class' => ' col-md-3']) !!}
                         {!! Form::close() !!}
@@ -379,7 +411,7 @@
                             </div>
                             </div>
 
-    <script type="text/javascript">
+    <script >
 
 
         $('#Nationally').change(function () {
