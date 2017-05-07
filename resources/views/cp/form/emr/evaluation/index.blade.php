@@ -34,6 +34,9 @@
                                 @if(Auth::user()->getRole() == 'admin')
                                     <a href="{{url('cp/form/emr/evaluation/export')}}" class=" form-control button">{{trans('cp.export_res')}}</a>
                                     @endif
+                                <hr>
+
+                             {{--   <a href="/cp/exams/services/home" class="button col-md-12">{{trans('settings.back')}}</a>--}}
                                 {!! Form::close() !!}
                             </div>
 

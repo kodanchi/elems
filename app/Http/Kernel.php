@@ -66,7 +66,17 @@ class Kernel extends HttpKernel
         'CPInfo' => [
             \App\Http\Middleware\Authenticate::class,
             \App\Http\Middleware\RedirectIfNotStdUpdateAdmin::class
-        ]
+        ],
+
+
+        'CPExam' => [
+            \App\Http\Middleware\Authenticate::class,
+            \App\Http\Middleware\RedirectIfNotExamsAdmin::class
+        ],
+
+        /*'timeout' => [
+            \App\Http\Middleware\SessionTimeout::class
+        ],*/
     ];
 
     /**
@@ -85,5 +95,6 @@ class Kernel extends HttpKernel
         'adminAuth' => \App\Http\Middleware\RedirectIfNotAdmin::class,
         'formSubmitCheck' => \App\Http\Middleware\RedirectIfSubmitted::class,
         'conflictAuth' => \App\Http\Middleware\RedirectIfNotConflictAdmin::class,
+        'timeout' => \App\Http\Middleware\SessionTimeout::class,
     ];
 }

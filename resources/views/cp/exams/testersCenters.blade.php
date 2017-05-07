@@ -13,12 +13,12 @@
                 @include('errors.status')
                 <div class="panel panel-default">
 
-                    <div class="panel-heading"> تصدير كشوفات إحصائيات المراكز</div>
+                    <div class="panel-heading"> تصدير أسماء المراقبين</div>
 
                     <div class="panel-body ">
 
 
-                        {!! Form::open(['url' => '/cp/printforms/statisticsForm', 'method' => 'post', 'files' => true ,'class'=>'newsletter-form' ]) !!}
+                        {!! Form::open(['url' => '/cp/exams/testersForm', 'method' => 'post', 'files' => true ,'class'=>'newsletter-form' ]) !!}
 
 
                                {!! Form::label('date_l', 'اختر التاريخ:') !!}
@@ -27,7 +27,7 @@
                                    <?php
                                    for ($x = 0; $x < sizeof($dates); $x++) {
                                    ?>
-                                   <option value="{{ $dates[$x]->date }}">{{ $dates[$x]->date}}</option>
+                                   <option value="{{ $dates[$x]->date }}">{{ $dates[$x]->date}} ({{ $dates[$x]->higri_date}})</option>
                                    <?php
                                    }
                                    ?>
@@ -45,7 +45,7 @@
                                         }
                                         ?>
                                     </select>
-{{--<h4>text here</h4>--}}
+
 
 
 <br>
@@ -54,9 +54,8 @@
 <br>
 
                                     {!! Form::submit(trans('بحث'), ['class' => ' col-md-3', 'onclick' => 'myFunction()']) !!}
+
                        {{-- <a href="/cp/exams/services/home" class="button col-md-3">{{trans('settings.back')}}</a>--}}
-
-
                             {!! Form::close() !!}
 
 

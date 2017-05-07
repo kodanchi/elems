@@ -29,6 +29,7 @@
                                         {!! Form::label('email', trans('regform.email').':') !!}
                                         {!! Form::text('email', null, ['class' => 'form-control']) !!}
                                         <small>{{trans('regform.example')}}: username@uod.edu.sa {{trans('regform.or')}} username@uohb.edu.sa</small>
+
                                     </div>
                                     <div align="center">
                                         {!! Recaptcha::render() !!}
@@ -37,6 +38,10 @@
                                     {!! Form::submit('إرسال', ['class' => 'form-control']) !!}
                                     {!! Form::close() !!}
                                     <a class="btn btn-block" href="{{url('/form/emr/pin')}}">{{trans('regform.gotPinAlready')}}</a>
+
+                                    {{--<div style="text-align: center">
+                                        <h4 style="color: red">لقد تم إيقاف التسجيل</h4>
+                                    </div>--}}
                                 </div>
 
                             </div>

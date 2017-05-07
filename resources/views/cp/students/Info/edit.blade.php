@@ -231,8 +231,13 @@
                             <div class="col-md-6">
                                 <div class="form-group">
 
+                                    <div class="form-group">
+                                        {!! Form::label('Graduation_Date', 'سنة التخرج') !!}
+                                        {!! Form::select('Graduation_Date',$years ,null,['class' => 'form-control' ] ) !!}
 
-                                        <style>
+
+
+                                        {{--<style>
                                             .datepicker,
                                             .table-condensed {
                                                 width: 300px;
@@ -253,10 +258,10 @@
                                                             </label>
                                                             <div class="">
                                                                 <div class="input-group">
-                                                                    {{--<div class="input-group-addon">
+                                                                    --}}{{--<div class="input-group-addon">
                                                                         <i class="fa fa-calendar">
                                                                         </i>
-                                                                    </div>--}}
+                                                                    </div>--}}{{--
                                                                 </div>
                                                                 @if($student->Graduation_Date)
                                                                     <input class="form-control" id="Graduation_Date" name="Graduation_Date" placeholder="MM/DD/YYYY" value="{{$student->Graduation_Date}}" type="text" readonly />
@@ -299,7 +304,7 @@
                                                     autoclose: true,
                                                 })
                                             })
-                                        </script>
+                                        </script>--}}
 
 
                                 </div>
@@ -345,8 +350,8 @@
                                     </a>
                                     <hr>
                                     <div class="form-group">
-                                        {!! Form::label('attachment1', 'تحديث الشهادة الثانوية') !!}
-                                        {!! Form::file('attachment1', ['class' => 'form-control','accept'=>'.pdf']) !!}
+                                        {!! Form::label('attachment1_L', 'تحديث الشهادة الثانوية') !!}
+                                        {!! Form::file('attachment1', ['class' => 'form-control','accept'=>'.pdf', 'id'=>'attachment1']) !!}
 
                                     </div>
 
@@ -360,8 +365,8 @@
                                     </a>
                                     <br> <br> <br>
                                     <div class="form-group">
-                                        {!! Form::label('attachment2','تحديث الهوية الوطنية /الإقامة ') !!}
-                                        {!! Form::file('attachment2', ['class' => 'form-control','accept'=>'.pdf']) !!}
+                                        {!! Form::label('attachment2_L','تحديث الهوية الوطنية /الإقامة ') !!}
+                                        {!! Form::file('attachment2', ['class' => 'form-control','accept'=>'.pdf', 'id'=>'attachment2']) !!}
                                     </div>
                                 </div>
                             </div>  <div class="col-md-4">
@@ -380,8 +385,8 @@
 
                                         @endforelse
                                     <div class="form-group">
-                                        {!! Form::label('attachment3','تحديث جواز السفر او الرخصة ') !!}
-                                        {!! Form::file('attachment3', ['class' => 'form-control','accept'=>'.pdf']) !!}
+                                        {!! Form::label('attachment3_L','تحديث جواز السفر او الرخصة ') !!}
+                                        {!! Form::file('attachment3', ['class' => 'form-control','accept'=>'.pdf', 'id'=>'attachment3']) !!}
                                     </div>
                                 </div>
                             </div>
@@ -393,9 +398,11 @@
 {{--
                             <a href="{{url('cp/students/Info/edit/'.$student->id)}}" class="button col-md-6">{{trans('settings.back')}}</a>
 --}}
-
+                            <div class="col-md-8">
                         {!! Form::submit(trans('تحديث'), ['class' => ' col-md-3']) !!}
-                        {!! Form::close() !!}
+
+                            {!! Form::close() !!}
+                                </div>
 
 
 
@@ -498,6 +505,33 @@
                 }
             });
 
+        });
+
+        $('#attachment1').bind('change', function() {
+            //alert(this.files[0].size);
+            if (this.files[0].size>4000095) {
+                //this.files[0].size gets the size of your file.
+                alert("حجم الملف (الشهادة الثانوية) يجب ان يكون أقل من 4 ميجابايت");
+                $("#attachment1").val('');
+            }
+        });
+
+        $('#attachment2').bind('change', function() {
+            //alert(this.files[0].size);
+            if (this.files[0].size>4000095) {
+                //this.files[0].size gets the size of your file.
+                alert("حجم الملف (الهوية الوطنية/الإقامة) يجب ان يكون أقل من 4 ميجابايت");
+                $("#attachment2").val('');
+            }
+        });
+
+        $('#attachment3').bind('change', function() {
+            //alert(this.files[0].size);
+            if (this.files[0].size>4000095) {
+                //this.files[0].size gets the size of your file.
+                alert("حجم الملف (جواز السفر او الرخصة) يجب ان يكون أقل من 4 ميجابايت");
+                $("#attachment3").val('');
+            }
         });
 </script>
 

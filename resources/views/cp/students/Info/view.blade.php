@@ -120,12 +120,12 @@
                             </div>
                         </div>
                         <hr>
+                        <hr>
 
-                        @if(Auth::User()->getRole() == 'admin' )
                             <div class="col-md-6">
                                 <a href="{{url('cp/students/Info/edit/'.$student->id)}}" class="button btn btn-default col-md-6"><b>تحديث بيانات الطالب/ـة</b></a>
                             </div>
-                        @endif
+
 
 
 

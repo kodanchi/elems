@@ -104,8 +104,8 @@
                                         <div class="col col-md-6">
                                             <!--- Upload Field --->
                                             <div class="form-group">
-                                                {!! Form::label('file', trans('sp.attach').':') !!}
-                                                {!! Form::file('file', ['class' => 'form-control','accept'=>'.pdf']) !!}
+                                                {!! Form::label('file_L', trans('sp.attach').':') !!}
+                                                {!! Form::file('file', ['class' => 'form-control','accept'=>'.pdf','id'=>'file']) !!}
                                                 <small>يرفق ملف pdf </small>
                                                 <small class="red">الحجم المسموح: 4MB أو أقل</small>
                                             </div>
@@ -179,6 +179,15 @@
             });
 
 
+        });
+
+        $('#file').bind('change', function() {
+            //alert(this.files[0].size);
+            if (this.files[0].size>4000095) {
+                //this.files[0].size gets the size of your file.
+                alert("حجم الملف يجب ان يكون أقل من 4 ميجابايت");
+                $("#file").val('');
+            }
         });
     </script>
     @endsection

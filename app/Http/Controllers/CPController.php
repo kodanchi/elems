@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\EmailValidation;
 use App\Evaluation;
 use App\FacultyForm;
+use Illuminate\Http\Request;
+use Barryvdh\Snappy\Facades\SnappyPdf as PDF;
 use App\Http\Requests\AgreeRequest;
 use App\Http\Requests\RegFormRequest;
 use App\Http\Requests\updateRegFormRequest;
@@ -13,7 +15,6 @@ use App\RegForm;
 use App\Survey;
 use App\User;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
 use DB;
 use App\Http\Requests;
 
@@ -24,6 +25,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\URL;
+
 use Maatwebsite\Excel\Facades\Excel;
 use Validator;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -42,6 +44,10 @@ class CPController extends Controller
         $forms = RegForm::latest()->simplePaginate(10);
         return view('cp.index',compact('forms'));
     }
+
+
+
+
 
     public function users()
     {
@@ -741,6 +747,7 @@ from reg_forms
     {
         $forms = DB::select('  select form_id as \'ID\',
   NID AS \'NID\',
+  card_id,
 		fname as \'First Name\',
 		faname as \'Father Name\',
 		gfaname as \'Grandfather Name\',

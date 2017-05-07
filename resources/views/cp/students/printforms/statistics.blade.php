@@ -49,6 +49,7 @@
                     </h2>
                     <h2>   الفصل الدراسي الأول لعام 1437 / 1438 هـ</h2>
                     <h2 style="color: red">{{$forms[0]->higri_date}}</h2>
+                    <h4>   تاريخ الطباعة:       {{$date}}</h4>
                 </label>
 
                 <br>
@@ -61,6 +62,7 @@
                     <tr class="tableStyle" >
                         <th style="background-color: black; color: white ; text-align: center;font-size: large">م</th>
                         <th style="background-color: black; color: white ; text-align: center;font-size: large">اسم المقرر</th>
+                        <th style="background-color: black; color: white ; text-align: center;font-size: large">المبنى</th>
                         <th style="background-color: black; color: white ; text-align: center;font-size: large">القاعة</th>
                         <th style="background-color: black; color: white ; text-align: center;font-size: large" colspan="2">عدد الحضور</th>
                         <th style="background-color: black; color: white ; text-align: center;font-size: large">عدد الغياب</th>
@@ -74,17 +76,18 @@
                         <tr class="tableStyle" >
                             <td style="text-align: center">{{($x+1)}}</td>
                             <td style="text-align: center">{{$form->course_name}}</td>
+                            <td style="text-align: center">{{$form->building}}</td>
                             <td style="text-align: center">{{$form->room}}</td>
-                            <td style="text-align: center">{{$z[$x]}}</td>
+                            <td style="text-align: center">{{reset($z[$x])}}</td>
                             <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                             <td>&nbsp;</td>
                             <td>&nbsp;</td>
                         </tr>
-                        <?php $studentTotal=$studentTotal+$z[$x]; ?>
+                        <?php $studentTotal=$studentTotal+reset($z[$x]); ?>
                         <?php $x++; ?>
                     @endforeach
                     <tr class="tableStyle">
-                        <td style="text-align: center" colspan="3">المجموع</td>
+                        <td style="text-align: center" colspan="4">المجموع</td>
                         <td style="text-align: center">{{$studentTotal}}</td>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>

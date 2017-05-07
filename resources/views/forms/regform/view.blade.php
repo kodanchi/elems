@@ -8,6 +8,7 @@
                 <div class="panel panel-default">
 
                     <div class="panel-heading">{{trans('regform.applicant_request')}} | {{$form->id}}</div>
+                    <div class="panel-heading">تجيد الرغبة  | {{$form->update_status}}</div>
                     <div class="panel-body">
 
                         @include('errors.status')

@@ -89,7 +89,7 @@
                                     </div>
 
 
-                                    @if($form->response_attach_file !='null' && isset($form->response_attach_file))
+{{--                                    @if($form->response_attach_file !='null' && isset($form->response_attach_file))
                                         <hr>
                                         <hr>
                                         <div class="col-md-6">
@@ -101,11 +101,51 @@
                                             </a>
 
                                         </div>
-                                    @endif
+                                    @endif--}}
                                 </div>
 
 
 
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-12">
+
+                                        <div class="form-group">
+                                            <h4>تاريخ المحادثات:</h4>
+                                            <table class="table table-striped">
+                                            @foreach ($messages as $message)
+                                                    <tr>
+                                                        <td>
+                                                @if($message->sender=='1')
+                                                    <h6>اللجنة:</h6>
+                                                    <h6>{{$message->message}}</h6>
+                                                    @if($message->response_attach_file !='null')
+
+                                                        <a href="{{asset('storage/'.$message->response_attach_file)}}" target="_blank" class="btn btn-info">
+                                                            <span class="glyphicon glyphicon-paperclip"></span> {{trans('sp.view_attach')}}
+                                                        </a>
+
+                                                    @endif
+                                                    {{--<h6>---------------------------------</h6>--}}
+                                                @elseif($message->sender=='0')
+                                                    <h6>الطالب/ـة:</h6>
+                                                    <h6>{{$message->message}}</h6>
+                                                    @if($message->attach_file !='null')
+
+                                                        <a href="{{asset('storage/'.$message->attach_file)}}" target="_blank" class="btn btn-info">
+                                                            <span class="glyphicon glyphicon-paperclip"></span> {{trans('sp.view_attach')}}
+                                                        </a>
+
+                                                    @endif
+                                                    {{--<h6>---------------------------------</h6>--}}
+                                                    @endforelse
+                                                        </td>
+                                                    </tr>
+                                            @endforeach
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
                                 <hr>
                                 <h4>{{trans('sp.updateStatus')}}</h4>
                                 <div class="row">
@@ -225,6 +265,8 @@
                                                 });
                                             </script>
 
+                                            {{--<input class="glyphicon glyphicon-edit" type="button" name="answer" value="أضف ملاحظة" onclick="showDiv()" />--}}
+
                                             {{--                                            <div class="form-group">
                                                                                             <label>State
                                                                                                 <select name="state" id="state" class="form-control input-sm">
@@ -244,12 +286,35 @@
                                                                                             </label>
                                                                                         </div>--}}
 
-                                            <hr>
-                                            <hr>
-                                            <hr>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <button  title="أضف ملاحظة مع التحويل" STYLE=" display:inline-block;   float: left; width:40px; height:35px" type="button" onclick="showDiv()">
+                                                <span class="glyphicon glyphicon-edit"></span>
+                                            </button>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            @if(in_array('admin',Auth::user()->getAllroles()) || Auth::user()->getUsername() == $form->username)
+                                                <div class="col-md-12">
+                                                    <!--- Des Field --->
+                                                    <div class="form-group">
+
+
+
+                                                        <div id="comment"  style="display:none;" class="answer_list" >
+
+                                                            {!! Form::textarea('comment', null, ['class' => 'form-control' , 'resize'=>'none']) !!}
+                                                        </div>
+
+
+
+                                                    </div>
+                                                </div>
+                                            @endif
+
                                             <div class="col-md-6">
-
-
                                                 @if(in_array('admin',Auth::user()->getAllroles()) || Auth::user()->getUsername() == $form->username)
                                                     {!! Form::submit(trans('تحويل'),  ['class' => 'form-control' , 'name'=> 'CPtrans' , 'value'=> 'CPtrans' , 'onclick'=>'return foo2();']) !!}
                                                 @endif
@@ -260,7 +325,7 @@
                                             <div class="col-md-12">
 
                                                 <h5>سجل تحويل الطلب</h5>
-                                                <table class="table table-striped">
+                                                <table class="table table-striped" id="tableTrans" name="tableTrans">
                                                     <thead>
                                                     <th>
                                                         المحول
@@ -277,8 +342,12 @@
                                                     <th>
                                                         الوقت
                                                     </th>
+                                                    <th>
+                                                        الملاحظات
+                                                    </th>
                                                     </thead>
                                                     <tbody>
+                                                    <?php $xyz=1; ?>
                                                     @foreach($logs as $log)
                                                         <tr>
                                                             <td>
@@ -297,7 +366,12 @@
                                                             <td>
                                                                 {{date("D | M j Y | G:i:s ",strtotime($log->added_on)) }}
                                                             </td>
+                                                            @if($log->comment)
+                                                            <td style="font-weight: bolder; font-size: x-large;text-align: center;color: #1f59c0" title="أنظر للملاحظة">...</td>
+                                                            <td class="hide">{{$log->comment}}</td>
+                                                                @endif
                                                         </tr>
+                                                        <?php $xyz++; ?>
                                                     @endforeach
                                                     </tbody>
                                                 </table>
@@ -307,8 +381,66 @@
 
 
 
+                                    {{--<div class="modal fade" id="myModal" role="dialog">
+                                        <div class="modal-dialog">
+
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title">Modal Header</h4>
+                                                </div>
+                                                <div class="modal-body" id="">
+                                                    <p id="messageShown" name="messageShown"></p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>--}}
+
+                                    {{--<div id="orderModal" class="modal hide fade" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                                            <h3>Order</h3>
+
+                                        </div>
+                                        <div id="orderDetails" class="modal-body"></div>
+                                        <div id="orderItems" class="modal-body"></div>
+                                        <div class="modal-footer">
+                                            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                                        </div>
+                                    </div>--}}
 
 
+
+                                    <div class="modal fade" id="myModal">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title">ملاحظات</h4>
+                                                </div>
+                                                <div class="modal-body">
+
+                                                    <textarea readonly style="background-color: white;width: 100%; height: 100%;resize:none; text-align: right" class="input-sm" rows="8" id="txtfname">
+                                                    </textarea>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default " style="alignment: right" data-dismiss="modal">إغلاق</button>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+
+                                    <script>
+                                        $('#tableTrans tbody tr  td').on('click',function(){
+                                            $("#myModal").modal("show");
+                                            $("#txtfname").val($(this).closest('tr').children()[6].textContent);
+                                        });
+                                    </script>
                                     {!! Form::close() !!}
                                 </div>
 
@@ -333,6 +465,17 @@
     </div>
 
     <script>
+
+
+        function showDiv() {
+            //document.getElementById('comment').style.display = "block";
+            if($('#comment').css('display') == 'none'){
+                $('#comment').show('slow');
+            } else {
+                $('#comment').hide('slow');
+            }
+        }
+
         function foo()
         {
             //alert("Submit button clicked! ");

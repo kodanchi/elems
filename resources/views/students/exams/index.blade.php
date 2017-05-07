@@ -61,7 +61,10 @@
                                     {!! Form::label('nid', 'رقم الهوية/الإقامة:') !!}
                                     {!! Form::text('nid', null, ['class' => 'form-control']) !!}
                                 </div>
+
+
                                 {!! Form::submit('تحقق', ['class' => 'form-control']) !!}
+
                                 {!! Form::close() !!}
                             </div>
 

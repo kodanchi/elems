@@ -49,6 +49,7 @@ class RegForm extends Model
         'isInspector',
         'isController',
         'update_status',
+        'card_id',
 
     ];
 
@@ -61,7 +62,7 @@ class RegForm extends Model
         'su_cellphone' => 'integer',
         'emer_cellphone' => 'integer',
         'is_contract' => 'boolean',
-
+        'card_id' => 'integer',
 
 
     ];

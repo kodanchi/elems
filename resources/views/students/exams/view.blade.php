@@ -68,9 +68,10 @@
                                             <tbody>
                                                 @foreach($student as $date)
                                                     <tr>
+
                                                         <td>{{$date->higri_date}}</td>
                                                         <td>{{$date->date}}</td>
-                                                        <td>{{$date->time}}</td>
+                                                        <td style="text-align: center;direction: ltr">{{$date->time}} pm</td>
                                                         <td>{{$date->subject}}</td>
                                                         <td>{{$date->des}}</td>
                                                         <td>{{$date->building}}</td>
@@ -84,14 +85,19 @@
                                 </div>
 
 
-
                                {{-- <a href="/students/exams/lookup" class="button col-md-3">{{trans('settings.back')}}</a>--}}
                             </div>
+
+
                             <div class="col-md-12">
 
 
                             </div>
                         </div>
+
+                        <h3 style="color: red">ملاحظة: لا يسمح للطالب بالدخول للاختبارات النهائية إذا كان معتذراً من مقرر أو الفصل الدراسي، علماً أن الدرجة المحتسبة للطالب المعتذر ستسجل "منسحب" حتى وإن خالف التعليمات وأجرى الاختبار.
+
+                        </h3>
                     </div>
                 </div>
             </div>

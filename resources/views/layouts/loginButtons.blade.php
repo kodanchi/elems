@@ -32,7 +32,7 @@
                 <li><a tabindex="0" href="{{url('cp/students/sp')}}"><i class="fa fa-btn fa-list-alt"></i>{{trans('settings.sp')}}</a></li><br>
                 @endif
                 @if(in_array('admin',Auth::user()->getAllroles()) || in_array('Registration',Auth::user()->getAllroles()) || in_array('financial',Auth::user()->getAllroles()) || in_array('graduate',Auth::user()->getAllroles()) || in_array('academicAffairs',Auth::user()->getAllroles()) || in_array('blackboard',Auth::user()->getAllroles()) || in_array('technicalSupport',Auth::user()->getAllroles()))
-                <li><a tabindex="0" href="{{url('cp/students/helpdesk/pending')}}"><i class="fa fa-btn fa-list-alt"></i>{{trans('settings.HD')}}</a></li><br>
+                <li><a tabindex="0" href="{{url('cp/students/helpdesk/pending')}}"><i class="fa fa-btn fa-list-alt"></i>الدعم والمساندة</a></li><br>
                 @endif
                 @if(in_array('admin',Auth::user()->getAllroles()))
                 <li><a tabindex="0" href="{{url('cp/students/objection')}}"><i class="fa fa-btn fa-list-alt"></i>{{trans('settings.objection')}}</a></li>
@@ -46,9 +46,15 @@
                 @if(in_array('admin',Auth::user()->getAllroles()) || in_array('WH',Auth::user()->getAllroles()))
                 <li><a tabindex="0" href="{{url('cp/warehouse')}}"><i class="fa fa-btn fa-list-alt"></i>{{trans('settings.warehouse')}}</a></li>
                 @endif
-                  @if(in_array('admin',Auth::user()->getAllroles()) || in_array('StdUpdate',Auth::user()->getAllroles()))
-                     <li><a tabindex="0" href="{{url('cp/students/Info/pending')}}"><i class="fa fa-btn fa-list-alt"></i>تحديث البيانات</a></li>
-                 @endif
+                @if(in_array('admin',Auth::user()->getAllroles()) || in_array('WH',Auth::user()->getAllroles()))
+                    <li><a tabindex="0" href="{{url('cp/warehouse')}}"><i class="fa fa-btn fa-list-alt"></i>{{trans('settings.warehouse')}}</a></li>
+                @endif
+                @if(in_array('admin',Auth::user()->getAllroles()) || in_array('StdUpdate',Auth::user()->getAllroles()))
+                    <li><a tabindex="0" href="{{url('cp/students/Info/pending')}}"><i class="fa fa-btn fa-list-alt"></i>تحديث البيانات</a></li>
+                @endif
+                @if(in_array('admin',Auth::user()->getAllroles()) || in_array('RM',Auth::user()->getAllroles()))
+                    <li><a tabindex="0" href="{{url('cp/exams/services/home')}}"><i class="fa fa-btn fa-list-alt"></i>خدمات الاختبارات</a></li>
+                @endif
             </ul>
         </li>
     {{--@endif--}}

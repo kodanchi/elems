@@ -50,6 +50,7 @@
                     </h2>
                     <h2>   الفصل الدراسي الأول لعام 1437 / 1438 هـ</h2>
                     <h2 style="color: red">{{$forms[0]->higri_date}}</h2>
+                    <h4>   تاريخ الطباعة:       {{$date}}</h4>
                 </label>
 
 
@@ -70,7 +71,7 @@
 
                     </tr>
 
-                    <tr> <th colspan="6" style="text-align: center;font-size: larger">المراقبــــــــــــــــــــــــــــــــــــــــــــــــين</th> </tr>
+                {{--    <tr> <th colspan="6" style="text-align: center;font-size: larger">المراقبــــــــــــــــــــــــــــــــــــــــــــــــين</th> </tr>
                     <tr>
 
                     <th colspan="2"  style="background-color: black; color: white ; text-align: center;font-size: larger">اسم المراقب (1)</th>
@@ -86,7 +87,7 @@
                         <td></td>
                         <td colspan="2">&nbsp;</td>
                         <td>&nbsp;</td>
-                    </tr>
+                    </tr>--}}
 
                 </table>
                 <br>
@@ -100,13 +101,13 @@
 
                     <thead class="tableStyle">
                     <tr class="tableStyle" >
-                        <th   style="text-align: center">م</th>
-                        <th style="text-align: center" >الرقم الأكاديمي</th>
-                        <th  style="text-align: center">السجل المدني</th>
-                        <th style="text-align: center">اسم الطالــــــــــــب</th>
-                        <th  style="text-align: center">رقم النموذج</th>
-                        <th  style="text-align: center">الوقت</th>
-                        <th  style="text-align: center">التــــــــــوقيع</th>
+                        <th   style="text-align: center ; font-size: large">م</th>
+                        <th style="text-align: center ; font-size: large" >الرقم الأكاديمي</th>
+                        <th  style="text-align: center ; font-size: large">السجل المدني</th>
+                        <th style="text-align: center ; font-size: large">اسم الطالــــــــــــب</th>
+                        <th  style="text-align: center ; font-size: large">رقم النموذج</th>
+                        <th  style="text-align: center ; font-size: large">الوقت</th>
+                        <th  style="text-align: center ; font-size: large">التــــــــــوقيع</th>
                     </tr>
                     </thead>
                     <tbody class="tableStyle" >
@@ -156,12 +157,69 @@
 
                 </table>
                 <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <table  style="border:solid;border-color: black; width:100%; font-size: larger;" border="1">
+
+                <tr>
+                    <th  colspan="" style="background-color: black; color: white ; text-align: center;font-size: larger">م</th>
+                    <th  colspan="" style="background-color: black; color: white ; text-align: center;font-size: larger">المراقب</th>
+                    {{--<th style="background-color: black; color: white ; text-align: center;font-size: larger">الحضور</th>
+                    <th colspan="" style="background-color: black; color: white ; text-align: center;font-size: larger">التوقيع</th>
+                    <th colspan="" style="background-color: black; color: white ; text-align: center;font-size: larger">الانصراف</th>--}}
+                    <th colspan="" style="background-color: black; color: white ; text-align: center;font-size: larger">التوقيع</th>
+                </tr>
+
+                <?php $y=1; ?>
+                @foreach($testers as $tester)
+                    <tr class="tableStyle" >
+                        <td  style="text-align: center">{{$y}}</td>
+                        <td colspan="" style="font-size: larger; font-weight: bold">{{$tester->fname}} {{$tester->faname}} {{$tester->gfaname}} {{$tester->lname}}</td>
+                        {{--<td style="font-size: larger; font-weight: bold">&nbsp;</td>
+                        <td colspan="" style="font-size: larger; font-weight: bold">&nbsp;</td>
+                        <td style="font-size: larger; font-weight: bold">&nbsp;</td>--}}
+                        <td colspan="" style="font-size: larger; font-weight: bold">&nbsp;</td>
+                    </tr>
+                    <?php $y++; ?>
+                @endforeach
+
+
+            </table>
+
+
+
+                <br>
+                <br>
+
+
 
 
                 <div style="text-align: center" class="row col-md-8">
 
                     <div class="col-md-4" style="float: right">
-                        <h3>اسم مسؤول المركز<br>
+                        <h3>اسم مشرف المركز<br>
                             <br>
                             <br>
                             ................................</h3>
@@ -181,7 +239,14 @@
             </div>
 
 
+
+
+
+
         </div>
+
+
+
     </div>
 
     {{--<footer>

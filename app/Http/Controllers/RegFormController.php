@@ -235,8 +235,8 @@ class RegFormController extends Controller
     public function evaView(Request $request)
     {
         $validator = Validator::make($request->all(),[
-            'nid' => 'required|numeric|exists:reg_forms,nid,status,1,id,'.$request->get('id'),
-            'id' => 'required|numeric|exists:reg_forms,id,status,1'
+            'nid' => 'required|numeric|exists:reg_forms,nid,status,1,card_id,'.$request->get('id'),
+            'id' => 'required|numeric|exists:reg_forms,card_id,status,1'
         ],[
             'nid.numeric' => 'يجب إدخال رقم الهوية/الإقامة',
             'nid.required' => 'يجب إدخال رقم الهوية/الإقامة',
@@ -252,7 +252,7 @@ class RegFormController extends Controller
         }
         $nid = $request->get('nid');
         $id = $request->get('id');
-        $form = RegForm::where('NID','=',$nid)->where('id','=',$id)->first();
+        $form = RegForm::where('NID','=',$nid)->where('card_id','=',$id)->first();
         //dd($form);
         //$rateForm = DB::select('select * from evaluation where form_id = ?',[$form->id]);
         $rateForm = Evaluation::where('form_id',$form->id)->first();

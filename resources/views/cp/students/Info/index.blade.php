@@ -23,7 +23,7 @@
                                 <th class="text-center">{{trans('sp.nid')}}</th>
                                 <th class="text-center">{{trans('sp.con_status')}}</th>
                                 @if(Auth::User()->getRole() == 'admin' )
-                                    <th class="text-center">تمت المعالجة عن طريق</th>
+                                    <th class="text-center">عيّنت ل</th>
                                 @else
                                     <th></th>
 
