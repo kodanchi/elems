@@ -23,7 +23,7 @@
 
 
                         {!! Form::label('date_l', 'اختر التاريخ:') !!}
-                        <select name="date" class="form-control selectpicker" id="date" style="width:350px" data-live-search="true">
+                        <select name="date" class="form-control selectpicker" id="date" style="width:350px" data-live-search="true" required>
                             <option value="" style="direction: ltr">اختر التاريخ</option>
                             <?php
                             for ($x = 0; $x < sizeof($dates); $x++) {

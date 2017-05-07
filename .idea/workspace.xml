@@ -2,53 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="542d1520-2e6c-47d4-91f6-538cee2d3387" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfNotExamsAdmin.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Middleware/SessionTimeout.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/lang/ar/testersAllocation.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/lang/ar/years.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/cp/examapprove/index.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/cp/examapprove/printB.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/cp/exams/StudentsAbsenceExport.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/cp/exams/StudentsAbsenceExportIndex.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/cp/exams/home.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/cp/exams/printC.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/cp/exams/search.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/cp/exams/testersAllocation.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/cp/exams/testersCenters.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/cp/exams/testersPresenceExport.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/cp/exams/testersPresenceExportIndex.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/cp/exams/viewTesters.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/cp/students/printforms/itHasModelOfTableMightBeHelpfull.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/layouts/PrintB.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CPController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CPController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/RegFormController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/RegFormController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Kernel.php" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Requests/CPStdUpdateRequest.php" afterPath="$PROJECT_DIR$/app/Http/Requests/CPStdUpdateRequest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfNotExamsAdmin.php" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfNotExamsAdmin.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/RegForm.php" afterPath="$PROJECT_DIR$/app/RegForm.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/ar/HdStatus.php" afterPath="$PROJECT_DIR$/resources/lang/ar/HdStatus.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/ar/centers_female.php" afterPath="$PROJECT_DIR$/resources/lang/ar/centers_female.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/ar/testersAllocation.php" afterPath="$PROJECT_DIR$/resources/lang/ar/testersAllocation.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cp/exams/StudentsAbsenceExportIndex.blade.php" afterPath="$PROJECT_DIR$/resources/views/cp/exams/StudentsAbsenceExportIndex.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cp/exams/absence.blade.php" afterPath="$PROJECT_DIR$/resources/views/cp/exams/absence.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cp/exams/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/cp/exams/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cp/exams/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/cp/exams/home.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cp/exams/testers.blade.php" afterPath="$PROJECT_DIR$/resources/views/cp/exams/testers.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cp/form/emr/evaluation/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/cp/form/emr/evaluation/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cp/students/Info/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/cp/students/Info/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cp/students/Info/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/cp/students/Info/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cp/students/Info/view.blade.php" afterPath="$PROJECT_DIR$/resources/views/cp/students/Info/view.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cp/students/helpdesk/view.blade.php" afterPath="$PROJECT_DIR$/resources/views/cp/students/helpdesk/view.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cp/exams/testersAllocation.blade.php" afterPath="$PROJECT_DIR$/resources/views/cp/exams/testersAllocation.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cp/exams/testersCenters.blade.php" afterPath="$PROJECT_DIR$/resources/views/cp/exams/testersCenters.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cp/exams/testersPresenceExportIndex.blade.php" afterPath="$PROJECT_DIR$/resources/views/cp/exams/testersPresenceExportIndex.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cp/students/printforms/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/cp/students/printforms/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cp/students/printforms/printA.blade.php" afterPath="$PROJECT_DIR$/resources/views/cp/students/printforms/printA.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cp/students/printforms/statistics.blade.php" afterPath="$PROJECT_DIR$/resources/views/cp/students/printforms/statistics.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cp/students/printforms/statisticsHome.blade.php" afterPath="$PROJECT_DIR$/resources/views/cp/students/printforms/statisticsHome.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/forms/regform/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/forms/regform/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/forms/regform/view.blade.php" afterPath="$PROJECT_DIR$/resources/views/forms/regform/view.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/loginButtons.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/loginButtons.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/students/Info/view.blade.php" afterPath="$PROJECT_DIR$/resources/views/students/Info/view.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/students/exams/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/students/exams/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/students/exams/view.blade.php" afterPath="$PROJECT_DIR$/resources/views/students/exams/view.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/students/helpdesk/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/students/helpdesk/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/students/helpdesk/view.blade.php" afterPath="$PROJECT_DIR$/resources/views/students/helpdesk/view.blade.php" />
     </list>
     <ignored path="elems.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -77,11 +44,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1309">
+              <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/cp/examapprove/index.blade.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/cp/students/printforms/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding>
+                <marker date="1494169048578" expanded="true" signature="2502:2513" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testersAllocation.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/lang/ar/testersAllocation.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+              <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -90,8 +79,18 @@
       <file leaf-file-name="loginButtons.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/loginButtons.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="426">
-              <caret line="54" column="112" selection-start-line="54" selection-start-column="112" selection-end-line="54" selection-end-column="112" />
+            <state relative-caret-position="1037">
+              <caret line="61" column="74" selection-start-line="61" selection-start-column="74" selection-end-line="61" selection-end-column="74" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/home.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="139" column="55" selection-start-line="139" selection-start-column="55" selection-end-line="139" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -100,63 +99,73 @@
       <file leaf-file-name="testersAllocation.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/testersAllocation.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="207" column="45" selection-start-line="204" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="view.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/cp/students/helpdesk/view.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3129">
-              <caret line="319" column="48" selection-start-line="319" selection-start-column="48" selection-end-line="319" selection-end-column="54" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StudentsAbsenceExportIndex.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/StudentsAbsenceExportIndex.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="952">
-              <caret line="56" column="26" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="120" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SPController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SPController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="236" column="0" selection-start-line="236" selection-start-column="0" selection-end-line="236" selection-end-column="0" />
+            <state relative-caret-position="3383">
+              <caret line="199" column="67" selection-start-line="199" selection-start-column="61" selection-end-line="199" selection-end-column="67" />
               <folding>
-                <marker date="1494134784381" expanded="true" signature="4279:4496" ph="select cours... courses" />
-                <marker date="1494134784381" expanded="true" signature="5707:5747" ph="select major... students" />
-                <marker date="1494134784381" expanded="true" signature="5852:5959" ph="select date " />
-                <marker date="1494134784381" expanded="true" signature="8061:8095" ph="select * fro... students" />
-                <marker date="1494134784381" expanded="true" signature="8261:8590" ph="select * fro... exams" />
-                <marker date="1494134784381" expanded="true" signature="9227:9261" ph="select * fro... students" />
-                <marker date="1494134784381" expanded="true" signature="9306:9635" ph="select * fro... exams" />
-                <marker date="1494134784381" expanded="true" signature="12100:12134" ph="select * fro... students" />
-                <marker date="1494134784381" expanded="true" signature="12317:12646" ph="select * fro... exams" />
-                <marker date="1494134784381" expanded="true" signature="13849:13883" ph="select * fro... students" />
-                <marker date="1494134784381" expanded="true" signature="14066:14395" ph="select * fro... exams" />
-                <marker date="1494134784381" expanded="true" signature="18820:18854" ph="select * fro... students" />
-                <marker date="1494134784381" expanded="true" signature="19027:19356" ph="select * fro... exams" />
-                <marker date="1494134784381" expanded="true" signature="23962:24661" ph="select id as... student_postpond" />
+                <marker date="1494166833887" expanded="true" signature="4111:4122" ph="..." />
+                <marker date="1494166833887" expanded="true" signature="13697:13708" ph="..." />
+                <marker date="1494166833887" expanded="true" signature="16531:16542" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testersPresenceExportIndex.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ExamsController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ExamsController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="10302">
+              <caret line="618" column="0" selection-start-line="618" selection-start-column="0" selection-end-line="618" selection-end-column="0" />
+              <folding>
+                <marker date="1494167320214" expanded="true" signature="517:548" ph="select DISTI... " />
+                <marker date="1494167320214" expanded="true" signature="649:726" ph="select * fro... courses" />
+                <marker date="1494167320214" expanded="true" signature="1254:1285" ph="select DISTI... " />
+                <marker date="1494167320214" expanded="true" signature="1386:1483" ph="select * fro... courses" />
+                <marker date="1494167320214" expanded="true" signature="1845:1876" ph="select DISTI... " />
+                <marker date="1494167320214" expanded="true" signature="1986:2065" ph="select * fro... courses" />
+                <marker date="1494167320214" expanded="true" signature="2633:3502" ph="select SSC.s... SSC" />
+                <marker date="1494167320214" expanded="true" signature="3691:4574" ph="select cours... SSC" />
+                <marker date="1494167320214" expanded="true" signature="4054:4433" ph="select cours... SSC" />
+                <marker date="1494167320214" expanded="true" signature="5313:5344" ph="select DISTI... " />
+                <marker date="1494167320214" expanded="true" signature="5381:5419" ph="select * fro... centers" />
+                <marker date="1494167320214" expanded="true" signature="6975:7937" ph="select DISTI... courses" />
+                <marker date="1494167320214" expanded="true" signature="8236:8263" ph="select cid,d... courses" />
+                <marker date="1494167320214" expanded="true" signature="9916:10757" ph="SELECT DISTI... " />
+                <marker date="1494167320214" expanded="true" signature="12644:12696" ph="select * fro... Students_absence" />
+                <marker date="1494167320214" expanded="true" signature="12921:13013" ph="insert into Students_absence... " />
+                <marker date="1494167320214" expanded="true" signature="14909:15104" ph="select disti... SIC" />
+                <marker date="1494167320214" expanded="true" signature="16157:16262" ph="select reg_f... reg_forms" />
+                <marker date="1494167320214" expanded="true" signature="16542:16715" ph="select disti... testers_location" />
+                <marker date="1494167320214" expanded="true" signature="16542:16754" ph="select disti... testers_location" />
+                <marker date="1494167320214" expanded="true" signature="18052:18090" ph="select id fr... reg_forms" />
+                <marker date="1494167320214" expanded="true" signature="18173:18236" ph="select * fro... testers_presence" />
+                <marker date="1494167320214" expanded="true" signature="18473:18583" ph="insert into testers_presence... " />
+                <marker date="1494167320214" expanded="true" signature="19290:19417" ph="select reg_f... reg_forms" />
+                <marker date="1494167320214" expanded="true" signature="20097:20293" ph="select disti... SIC" />
+                <marker date="1494167320214" expanded="true" signature="20751:21443" ph="select DISTI... SIC" />
+                <marker date="1494167320214" expanded="true" signature="22364:23077" ph="select DISTI... SIC" />
+                <marker date="1494167320214" expanded="true" signature="25070:25175" ph="select reg_f... reg_forms" />
+                <marker date="1494167320214" expanded="true" signature="25474:25544" ph="select * fro... testers_location" />
+                <marker date="1494167320214" expanded="true" signature="25811:25960" ph="update teste... " />
+                <marker date="1494167320214" expanded="true" signature="26208:26335" ph="update teste... " />
+                <marker date="1494167320214" expanded="true" signature="26757:26881" ph="insert into testers_location... " />
+                <marker date="1494167320214" expanded="true" signature="27120:27224" ph="insert into testers_location... " />
+                <marker date="1494167320214" expanded="true" signature="28278:28785" ph="SELECT teste... " />
+                <marker date="1494167320214" expanded="true" signature="28278:28843" ph="SELECT DISTI... " />
+                <marker date="1494167320214" expanded="true" signature="29440:29493" ph="select cente... centers" />
+                <marker date="1494167320214" expanded="true" signature="30224:30593" ph="SELECT disti... Students_absence" />
+                <marker date="1494167320214" expanded="true" signature="31441:31494" ph="select cente... centers" />
+                <marker date="1494167320214" expanded="true" signature="32246:32751" ph="SELECT disti... testers_presence" />
+                <marker date="1494167320214" expanded="true" signature="32441:32488" ph="/*rate, comm... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testersPresenceExportIndex.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/testersPresenceExportIndex.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
-              <caret line="138" column="61" selection-start-line="138" selection-start-column="61" selection-end-line="138" selection-end-column="61" />
+            <state relative-caret-position="646">
+              <caret line="38" column="43" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -165,29 +174,66 @@
       <file leaf-file-name="testers.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/testers.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2652">
-              <caret line="156" column="26" selection-start-line="156" selection-start-column="22" selection-end-line="156" selection-end-column="120" />
-              <folding />
+            <state relative-caret-position="646">
+              <caret line="38" column="72" selection-start-line="38" selection-start-column="72" selection-end-line="38" selection-end-column="72" />
+              <folding>
+                <marker date="1494164225532" expanded="true" signature="3421:3432" ph="..." />
+                <marker date="1494164225532" expanded="true" signature="12759:12770" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RedirectIfNotExamsAdmin.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Middleware/RedirectIfNotExamsAdmin.php">
+      <file leaf-file-name="PrintController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PrintController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="testersCenters.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/testersCenters.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="969">
-              <caret line="57" column="27" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="120" />
-              <folding />
+            <state relative-caret-position="629">
+              <caret line="47" column="58" selection-start-line="47" selection-start-column="58" selection-end-line="47" selection-end-column="58" />
+              <folding>
+                <marker date="1494169157523" expanded="true" signature="1421:1616" ph="select disti... SIC" />
+                <marker date="1494169157523" expanded="true" signature="2090:2135" ph="select cours... courses" />
+                <marker date="1494169157523" expanded="true" signature="2365:2413" ph="select disti... SIC" />
+                <marker date="1494169157523" expanded="true" signature="4430:5129" ph="select SIC.b... SIC" />
+                <marker date="1494169157523" expanded="true" signature="5555:5600" ph="select cours... courses" />
+                <marker date="1494169157523" expanded="true" signature="5994:6721" ph="select DISTI... SIC" />
+                <marker date="1494169157523" expanded="true" signature="6680:6704" ph="/*students.g... " />
+                <marker date="1494169157523" expanded="true" signature="7819:8542" ph="select DISTI... SIC" />
+                <marker date="1494169157523" expanded="true" signature="8501:8529" ph="/*students.g... " />
+                <marker date="1494169157523" expanded="true" signature="8869:8948" ph="insert into lists... " />
+                <marker date="1494169157523" expanded="true" signature="9606:9651" ph="select cours... courses" />
+                <marker date="1494169157523" expanded="true" signature="10044:10791" ph="select DISTI... SIC" />
+                <marker date="1494169157523" expanded="true" signature="13710:14450" ph="select DISTI... SIC" />
+                <marker date="1494169157523" expanded="true" signature="14844:14945" ph="insert into lists... " />
+                <marker date="1494169157523" expanded="true" signature="15868:16666" ph="select DISTI... SIC" />
+                <marker date="1494169157523" expanded="true" signature="17241:17603" ph="SELECT DISTI... testers_location" />
+                <marker date="1494169157523" expanded="true" signature="17991:18105" ph="insert into lists... " />
+                <marker date="1494169157523" expanded="true" signature="19019:19335" ph="select DISTI... lists" />
+                <marker date="1494169157523" expanded="true" signature="20011:20815" ph="select DISTI... SIC" />
+                <marker date="1494169157523" expanded="true" signature="20144:20228" ph="/*exams.time... " />
+                <marker date="1494169157523" expanded="true" signature="20635:20795" ph="/*AND exams.... " />
+                <marker date="1494169157523" expanded="true" signature="22418:22858" ph="select SIC.b... SIC" />
+                <marker date="1494169157523" expanded="true" signature="22817:22845" ph="/*students.g... " />
+                <marker date="1494169157523" expanded="true" signature="24676:25564" ph="select DISTI... SIC" />
+                <marker date="1494169157523" expanded="true" signature="24809:24893" ph="/*exams.time... " />
+                <marker date="1494169157523" expanded="true" signature="25384:25544" ph="/*AND exams.... " />
+                <marker date="1494169157523" expanded="true" signature="27166:28012" ph="select DISTI... SIC" />
+                <marker date="1494169157523" expanded="true" signature="27971:27999" ph="/*students.g... " />
+                <marker date="1494169157523" expanded="true" signature="30052:30986" ph="select DISTI... SIC" />
+                <marker date="1494169157523" expanded="true" signature="30185:30269" ph="/*exams.time... " />
+                <marker date="1494169157523" expanded="true" signature="30760:30817" ph="/*AND exams.... " />
+                <marker date="1494169157523" expanded="true" signature="30847:30924" ph="/*AND studen... " />
+                <marker date="1494169157523" expanded="true" signature="31847:32676" ph="select cente... SIC" />
+                <marker date="1494169157523" expanded="true" signature="32677:32705" ph="/*students.g... " />
+                <marker date="1494169157523" expanded="true" signature="36250:36303" ph="select cente... centers" />
+                <marker date="1494169157523" expanded="true" signature="37191:37838" ph="select DISTI... SIC" />
+                <marker date="1494169157523" expanded="true" signature="39517:40235" ph="select DISTI... SIC" />
+                <marker date="1494169157523" expanded="true" signature="41588:41702" ph="insert into lists... " />
+                <marker date="1494169157523" expanded="true" signature="43258:43842" ph="SELECT SIC.S... students" />
+                <marker date="1494169157523" expanded="true" signature="43706:43841" ph="SELECT cours... Students_absence" />
+                <marker date="1494169157523" expanded="true" signature="44375:44418" ph="select DISTI... " />
+                <marker date="1494169157523" expanded="true" signature="44522:44575" ph="select cente... centers" />
+                <marker date="1494169157523" expanded="true" signature="45292:45826" ph="SELECT DISTI... testers_location" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -233,32 +279,32 @@
         <option value="$PROJECT_DIR$/resources/views/forms/regform/view.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/cp/exams/StudentsAbsenceExport.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/cp/examapprove/printB.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/cp/exams/home.blade.php" />
         <option value="$PROJECT_DIR$/resources/lang/ar/testersAllocation.php" />
         <option value="$PROJECT_DIR$/resources/views/students/exams/view.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/resources/views/forms/regform/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/cp/exams/testersPresenceExport.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ExamsController.php" />
         <option value="$PROJECT_DIR$/resources/views/cp/students/printforms/printA.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/cp/exams/viewTesters.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/cp/exams/printC.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/PrintController.php" />
         <option value="$PROJECT_DIR$/resources/views/students/exams/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/cp/examapprove/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/cp/exams/search.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/cp/exams/absence.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/cp/students/printforms/statisticsHome.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/cp/students/printforms/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/cp/form/emr/evaluation/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/cp/exams/testers.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/cp/exams/testersCenters.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/cp/exams/testersAllocation.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/cp/exams/StudentsAbsenceExportIndex.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/SPController.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/loginButtons.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/RedirectIfNotExamsAdmin.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/loginButtons.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/resources/views/cp/exams/absence.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/cp/exams/testers.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/cp/exams/StudentsAbsenceExportIndex.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/cp/exams/testersAllocation.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ExamsController.php" />
+        <option value="$PROJECT_DIR$/resources/views/cp/students/printforms/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/PrintController.php" />
+        <option value="$PROJECT_DIR$/resources/views/cp/exams/testersCenters.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/cp/students/printforms/statisticsHome.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/cp/exams/testersPresenceExportIndex.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/cp/exams/home.blade.php" />
       </list>
     </option>
   </component>
@@ -352,303 +398,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="elems">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="elems">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="resources">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="views">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="elems">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="resources">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="views">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="cp">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="warehouse">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="elems">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="resources">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="views">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="cp">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="warehouse">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="wh">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="elems">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="resources">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="views">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="cp">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="warehouse">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="reservations">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="rooms">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="elems">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="resources">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="views">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="cp">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="warehouse">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="employees">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="elems">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="resources">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="views">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="cp">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="elems">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="resources">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="lang">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="elems">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="resources">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="lang">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="ar">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="elems">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="resources">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="elems">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="config">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="elems">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="app">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="elems">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="app">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Http">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="elems">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="app">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Http">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Requests">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1173,28 +922,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Middleware" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="elems" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="elems" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="Controllers" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -1215,6 +942,303 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="Exceptions" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="elems">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="elems">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="resources">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="views">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="elems">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="resources">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="views">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="cp">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="warehouse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="elems">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="resources">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="views">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="cp">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="warehouse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="wh">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="elems">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="resources">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="views">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="cp">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="warehouse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="reservations">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="rooms">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="elems">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="resources">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="views">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="cp">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="warehouse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="employees">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="elems">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="resources">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="views">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="cp">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="elems">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="resources">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="lang">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="elems">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="resources">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="lang">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="ar">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="elems">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="resources">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="elems">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="config">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="elems">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="app">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="elems">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="app">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Http">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="elems">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="app">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Http">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Requests">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -1626,6 +1650,7 @@
       <workItem from="1494151603642" duration="7000" />
       <workItem from="1494151711860" duration="136000" />
       <workItem from="1494151909228" duration="1000" />
+      <workItem from="1494171087442" duration="71000" />
     </task>
     <task id="LOCAL-00001" summary="EMR is complete but without emailing">
       <created>1479797757022</created>
@@ -1753,11 +1778,18 @@
       <option name="project" value="LOCAL" />
       <updated>1491734742957</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="before giving the exams roles to centers">
+      <created>1494153209199</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1494153209199</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1944054000" />
+    <option name="totallyTimeSpent" value="1958340000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -1773,7 +1805,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29498714" sideWeight="0.49798116" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26349613" sideWeight="0.50201887" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2667095" sideWeight="0.50201887" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23283984" sideWeight="0.54875" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969153" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1843,7 +1875,8 @@
     <MESSAGE value="before changing the style" />
     <MESSAGE value="before pdf" />
     <MESSAGE value="before statistics" />
-    <option name="LAST_COMMIT_MESSAGE" value="before statistics" />
+    <MESSAGE value="before giving the exams roles to centers" />
+    <option name="LAST_COMMIT_MESSAGE" value="before giving the exams roles to centers" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1976,13 +2009,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="170" column="80" selection-start-line="170" selection-start-column="80" selection-end-line="170" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/forms/regform/view.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-324">
@@ -1994,7 +2020,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="655">
           <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2034,64 +2059,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="26" column="54" selection-start-line="26" selection-start-column="54" selection-end-line="26" selection-end-column="54" />
-          <folding>
-            <marker date="1493910563295" expanded="false" signature="2449:2459" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5406">
-          <caret line="327" column="66" selection-start-line="327" selection-start-column="60" selection-end-line="327" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ExamsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11509">
-          <caret line="689" column="180" selection-start-line="689" selection-start-column="146" selection-end-line="689" selection-end-column="180" />
-          <folding>
-            <marker date="1494062351717" expanded="true" signature="517:548" ph="select DISTI... " />
-            <marker date="1494062351717" expanded="true" signature="649:726" ph="select * fro... courses" />
-            <marker date="1494062351717" expanded="true" signature="1254:1285" ph="select DISTI... " />
-            <marker date="1494062351717" expanded="true" signature="1386:1483" ph="select * fro... courses" />
-            <marker date="1494062351717" expanded="true" signature="1845:1876" ph="select DISTI... " />
-            <marker date="1494062351717" expanded="true" signature="1986:2065" ph="select * fro... courses" />
-            <marker date="1494062351717" expanded="true" signature="2633:3502" ph="select SSC.s... SSC" />
-            <marker date="1494062351717" expanded="true" signature="3691:4574" ph="select cours... SSC" />
-            <marker date="1494062351717" expanded="true" signature="4054:4433" ph="select cours... SSC" />
-            <marker date="1494062351717" expanded="true" signature="5313:5344" ph="select DISTI... " />
-            <marker date="1494062351717" expanded="true" signature="5381:5419" ph="select * fro... centers" />
-            <marker date="1494062351717" expanded="true" signature="6975:7937" ph="select DISTI... courses" />
-            <marker date="1494062351717" expanded="true" signature="8236:8263" ph="select cid,d... courses" />
-            <marker date="1494062351717" expanded="true" signature="9916:10757" ph="SELECT DISTI... " />
-            <marker date="1494062351717" expanded="true" signature="12379:12431" ph="select * fro... Students_absence" />
-            <marker date="1494062351717" expanded="true" signature="12656:12748" ph="insert into Students_absence... " />
-            <marker date="1494062351717" expanded="true" signature="14644:14839" ph="select disti... SIC" />
-            <marker date="1494062351717" expanded="true" signature="15892:15997" ph="select reg_f... reg_forms" />
-            <marker date="1494062351717" expanded="true" signature="16277:16450" ph="select disti... testers_location" />
-            <marker date="1494062351717" expanded="true" signature="16277:16489" ph="select disti... testers_location" />
-            <marker date="1494062351717" expanded="true" signature="17787:17825" ph="select id fr... reg_forms" />
-            <marker date="1494062351717" expanded="true" signature="17908:17971" ph="select * fro... testers_presence" />
-            <marker date="1494062351717" expanded="true" signature="18208:18318" ph="insert into testers_presence... " />
-            <marker date="1494062351717" expanded="true" signature="19025:19152" ph="select reg_f... reg_forms" />
-            <marker date="1494062351717" expanded="true" signature="19832:20028" ph="select disti... SIC" />
-            <marker date="1494062351717" expanded="true" signature="20486:21178" ph="select DISTI... SIC" />
-            <marker date="1494062351717" expanded="true" signature="22099:22812" ph="select DISTI... SIC" />
-            <marker date="1494062351717" expanded="true" signature="24797:24902" ph="select reg_f... reg_forms" />
-            <marker date="1494062351717" expanded="true" signature="25201:25271" ph="select * fro... testers_location" />
-            <marker date="1494062351717" expanded="true" signature="25444:25593" ph="update teste... " />
-            <marker date="1494062351717" expanded="true" signature="25923:26047" ph="insert into testers_location... " />
-            <marker date="1494062351717" expanded="true" signature="27137:27644" ph="SELECT teste... " />
-            <marker date="1494062351717" expanded="true" signature="27137:27702" ph="SELECT DISTI... " />
-            <marker date="1494062351717" expanded="true" signature="28299:28352" ph="select cente... centers" />
-            <marker date="1494062351717" expanded="true" signature="29083:29452" ph="SELECT disti... Students_absence" />
-            <marker date="1494062351717" expanded="true" signature="30300:30353" ph="select cente... centers" />
-            <marker date="1494062351717" expanded="true" signature="31105:31610" ph="SELECT disti... testers_presence" />
-            <marker date="1494062351717" expanded="true" signature="31300:31347" ph="/*rate, comm... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2099,14 +2066,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3332">
           <caret line="196" column="44" selection-start-line="196" selection-start-column="44" selection-end-line="196" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PrintController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17323">
-          <caret line="1029" column="5" selection-start-line="1029" selection-start-column="5" selection-end-line="1029" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2145,13 +2104,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/ar/testersAllocation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="19" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/printC.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="936">
@@ -2170,7 +2122,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-226">
           <caret line="36" column="70" selection-start-line="27" selection-start-column="85" selection-end-line="27" selection-end-column="171" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2188,28 +2139,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/absence.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1989">
-          <caret line="117" column="26" selection-start-line="117" selection-start-column="22" selection-end-line="117" selection-end-column="120" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/cp/students/printforms/statisticsHome.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="56" column="27" selection-start-line="56" selection-start-column="23" selection-end-line="56" selection-end-column="120" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/cp/students/printforms/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1462">
-          <caret line="86" column="20" selection-start-line="86" selection-start-column="16" selection-end-line="86" selection-end-column="120" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/cp/form/emr/evaluation/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
@@ -2217,35 +2146,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/testers.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2652">
-          <caret line="156" column="26" selection-start-line="156" selection-start-column="22" selection-end-line="156" selection-end-column="120" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/cp/examapprove/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/testersCenters.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="969">
-          <caret line="57" column="27" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="120" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/StudentsAbsenceExportIndex.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="56" column="26" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="120" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2272,18 +2176,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/testersPresenceExport.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/lang/ar/centers_male.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="51" column="154" selection-start-line="51" selection-start-column="154" selection-end-line="51" selection-end-column="154" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/testersAllocation.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/RedirectIfNotExamsAdmin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="207" column="45" selection-start-line="204" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="170">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -2291,38 +2194,214 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3129">
           <caret line="319" column="48" selection-start-line="319" selection-start-column="48" selection-end-line="319" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/absence.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="83" selection-start-line="23" selection-start-column="83" selection-end-line="23" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/StudentsAbsenceExportIndex.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="121" selection-start-line="20" selection-start-column="121" selection-end-line="20" selection-end-column="121" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/testersAllocation.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3383">
+          <caret line="199" column="67" selection-start-line="199" selection-start-column="61" selection-end-line="199" selection-end-column="67" />
+          <folding>
+            <marker date="1494166833887" expanded="true" signature="4111:4122" ph="..." />
+            <marker date="1494166833887" expanded="true" signature="13697:13708" ph="..." />
+            <marker date="1494166833887" expanded="true" signature="16531:16542" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ExamsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10302">
+          <caret line="618" column="0" selection-start-line="618" selection-start-column="0" selection-end-line="618" selection-end-column="0" />
+          <folding>
+            <marker date="1494167320214" expanded="true" signature="517:548" ph="select DISTI... " />
+            <marker date="1494167320214" expanded="true" signature="649:726" ph="select * fro... courses" />
+            <marker date="1494167320214" expanded="true" signature="1254:1285" ph="select DISTI... " />
+            <marker date="1494167320214" expanded="true" signature="1386:1483" ph="select * fro... courses" />
+            <marker date="1494167320214" expanded="true" signature="1845:1876" ph="select DISTI... " />
+            <marker date="1494167320214" expanded="true" signature="1986:2065" ph="select * fro... courses" />
+            <marker date="1494167320214" expanded="true" signature="2633:3502" ph="select SSC.s... SSC" />
+            <marker date="1494167320214" expanded="true" signature="3691:4574" ph="select cours... SSC" />
+            <marker date="1494167320214" expanded="true" signature="4054:4433" ph="select cours... SSC" />
+            <marker date="1494167320214" expanded="true" signature="5313:5344" ph="select DISTI... " />
+            <marker date="1494167320214" expanded="true" signature="5381:5419" ph="select * fro... centers" />
+            <marker date="1494167320214" expanded="true" signature="6975:7937" ph="select DISTI... courses" />
+            <marker date="1494167320214" expanded="true" signature="8236:8263" ph="select cid,d... courses" />
+            <marker date="1494167320214" expanded="true" signature="9916:10757" ph="SELECT DISTI... " />
+            <marker date="1494167320214" expanded="true" signature="12644:12696" ph="select * fro... Students_absence" />
+            <marker date="1494167320214" expanded="true" signature="12921:13013" ph="insert into Students_absence... " />
+            <marker date="1494167320214" expanded="true" signature="14909:15104" ph="select disti... SIC" />
+            <marker date="1494167320214" expanded="true" signature="16157:16262" ph="select reg_f... reg_forms" />
+            <marker date="1494167320214" expanded="true" signature="16542:16715" ph="select disti... testers_location" />
+            <marker date="1494167320214" expanded="true" signature="16542:16754" ph="select disti... testers_location" />
+            <marker date="1494167320214" expanded="true" signature="18052:18090" ph="select id fr... reg_forms" />
+            <marker date="1494167320214" expanded="true" signature="18173:18236" ph="select * fro... testers_presence" />
+            <marker date="1494167320214" expanded="true" signature="18473:18583" ph="insert into testers_presence... " />
+            <marker date="1494167320214" expanded="true" signature="19290:19417" ph="select reg_f... reg_forms" />
+            <marker date="1494167320214" expanded="true" signature="20097:20293" ph="select disti... SIC" />
+            <marker date="1494167320214" expanded="true" signature="20751:21443" ph="select DISTI... SIC" />
+            <marker date="1494167320214" expanded="true" signature="22364:23077" ph="select DISTI... SIC" />
+            <marker date="1494167320214" expanded="true" signature="25070:25175" ph="select reg_f... reg_forms" />
+            <marker date="1494167320214" expanded="true" signature="25474:25544" ph="select * fro... testers_location" />
+            <marker date="1494167320214" expanded="true" signature="25811:25960" ph="update teste... " />
+            <marker date="1494167320214" expanded="true" signature="26208:26335" ph="update teste... " />
+            <marker date="1494167320214" expanded="true" signature="26757:26881" ph="insert into testers_location... " />
+            <marker date="1494167320214" expanded="true" signature="27120:27224" ph="insert into testers_location... " />
+            <marker date="1494167320214" expanded="true" signature="28278:28785" ph="SELECT teste... " />
+            <marker date="1494167320214" expanded="true" signature="28278:28843" ph="SELECT DISTI... " />
+            <marker date="1494167320214" expanded="true" signature="29440:29493" ph="select cente... centers" />
+            <marker date="1494167320214" expanded="true" signature="30224:30593" ph="SELECT disti... Students_absence" />
+            <marker date="1494167320214" expanded="true" signature="31441:31494" ph="select cente... centers" />
+            <marker date="1494167320214" expanded="true" signature="32246:32751" ph="SELECT disti... testers_presence" />
+            <marker date="1494167320214" expanded="true" signature="32441:32488" ph="/*rate, comm... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/lang/ar/testersAllocation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/ar/centers_male.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/cp/students/printforms/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="289">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <marker date="1494169048578" expanded="true" signature="2502:2513" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PrintController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="47" column="58" selection-start-line="47" selection-start-column="58" selection-end-line="47" selection-end-column="58" />
+          <folding>
+            <marker date="1494169157523" expanded="true" signature="1421:1616" ph="select disti... SIC" />
+            <marker date="1494169157523" expanded="true" signature="2090:2135" ph="select cours... courses" />
+            <marker date="1494169157523" expanded="true" signature="2365:2413" ph="select disti... SIC" />
+            <marker date="1494169157523" expanded="true" signature="4430:5129" ph="select SIC.b... SIC" />
+            <marker date="1494169157523" expanded="true" signature="5555:5600" ph="select cours... courses" />
+            <marker date="1494169157523" expanded="true" signature="5994:6721" ph="select DISTI... SIC" />
+            <marker date="1494169157523" expanded="true" signature="6680:6704" ph="/*students.g... " />
+            <marker date="1494169157523" expanded="true" signature="7819:8542" ph="select DISTI... SIC" />
+            <marker date="1494169157523" expanded="true" signature="8501:8529" ph="/*students.g... " />
+            <marker date="1494169157523" expanded="true" signature="8869:8948" ph="insert into lists... " />
+            <marker date="1494169157523" expanded="true" signature="9606:9651" ph="select cours... courses" />
+            <marker date="1494169157523" expanded="true" signature="10044:10791" ph="select DISTI... SIC" />
+            <marker date="1494169157523" expanded="true" signature="13710:14450" ph="select DISTI... SIC" />
+            <marker date="1494169157523" expanded="true" signature="14844:14945" ph="insert into lists... " />
+            <marker date="1494169157523" expanded="true" signature="15868:16666" ph="select DISTI... SIC" />
+            <marker date="1494169157523" expanded="true" signature="17241:17603" ph="SELECT DISTI... testers_location" />
+            <marker date="1494169157523" expanded="true" signature="17991:18105" ph="insert into lists... " />
+            <marker date="1494169157523" expanded="true" signature="19019:19335" ph="select DISTI... lists" />
+            <marker date="1494169157523" expanded="true" signature="20011:20815" ph="select DISTI... SIC" />
+            <marker date="1494169157523" expanded="true" signature="20144:20228" ph="/*exams.time... " />
+            <marker date="1494169157523" expanded="true" signature="20635:20795" ph="/*AND exams.... " />
+            <marker date="1494169157523" expanded="true" signature="22418:22858" ph="select SIC.b... SIC" />
+            <marker date="1494169157523" expanded="true" signature="22817:22845" ph="/*students.g... " />
+            <marker date="1494169157523" expanded="true" signature="24676:25564" ph="select DISTI... SIC" />
+            <marker date="1494169157523" expanded="true" signature="24809:24893" ph="/*exams.time... " />
+            <marker date="1494169157523" expanded="true" signature="25384:25544" ph="/*AND exams.... " />
+            <marker date="1494169157523" expanded="true" signature="27166:28012" ph="select DISTI... SIC" />
+            <marker date="1494169157523" expanded="true" signature="27971:27999" ph="/*students.g... " />
+            <marker date="1494169157523" expanded="true" signature="30052:30986" ph="select DISTI... SIC" />
+            <marker date="1494169157523" expanded="true" signature="30185:30269" ph="/*exams.time... " />
+            <marker date="1494169157523" expanded="true" signature="30760:30817" ph="/*AND exams.... " />
+            <marker date="1494169157523" expanded="true" signature="30847:30924" ph="/*AND studen... " />
+            <marker date="1494169157523" expanded="true" signature="31847:32676" ph="select cente... SIC" />
+            <marker date="1494169157523" expanded="true" signature="32677:32705" ph="/*students.g... " />
+            <marker date="1494169157523" expanded="true" signature="36250:36303" ph="select cente... centers" />
+            <marker date="1494169157523" expanded="true" signature="37191:37838" ph="select DISTI... SIC" />
+            <marker date="1494169157523" expanded="true" signature="39517:40235" ph="select DISTI... SIC" />
+            <marker date="1494169157523" expanded="true" signature="41588:41702" ph="insert into lists... " />
+            <marker date="1494169157523" expanded="true" signature="43258:43842" ph="SELECT SIC.S... students" />
+            <marker date="1494169157523" expanded="true" signature="43706:43841" ph="SELECT cours... Students_absence" />
+            <marker date="1494169157523" expanded="true" signature="44375:44418" ph="select DISTI... " />
+            <marker date="1494169157523" expanded="true" signature="44522:44575" ph="select cente... centers" />
+            <marker date="1494169157523" expanded="true" signature="45292:45826" ph="SELECT DISTI... testers_location" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1309">
+          <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/RedirectIfNotExamsAdmin.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/testersCenters.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
-          <folding />
+        <state relative-caret-position="153">
+          <caret line="24" column="147" selection-start-line="24" selection-start-column="139" selection-end-line="24" selection-end-column="147" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/cp/students/printforms/statisticsHome.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1436">
+          <caret line="24" column="147" selection-start-line="24" selection-start-column="147" selection-end-line="24" selection-end-column="147" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/testers.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" column="72" selection-start-line="38" selection-start-column="72" selection-end-line="38" selection-end-column="72" />
+          <folding>
+            <marker date="1494164225532" expanded="true" signature="3421:3432" ph="..." />
+            <marker date="1494164225532" expanded="true" signature="12759:12770" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/testersPresenceExport.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="51" column="154" selection-start-line="51" selection-start-column="154" selection-end-line="51" selection-end-column="154" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/loginButtons.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="54" column="112" selection-start-line="54" selection-start-column="112" selection-end-line="54" selection-end-column="112" />
+        <state relative-caret-position="1037">
+          <caret line="61" column="74" selection-start-line="61" selection-start-column="74" selection-end-line="61" selection-end-column="74" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/testersPresenceExportIndex.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="138" column="61" selection-start-line="138" selection-start-column="61" selection-end-line="138" selection-end-column="61" />
+        <state relative-caret-position="646">
+          <caret line="38" column="43" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="139" column="55" selection-start-line="139" selection-start-column="55" selection-end-line="139" selection-end-column="55" />
           <folding />
         </state>
       </provider>

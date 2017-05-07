@@ -16,7 +16,7 @@
                         {!! Form::open(['url' => 'cp/exams/testers/testersAllocation/update', 'method' => 'post','class'=>'newsletter-form' ]) !!}
 
                         {!! Form::label('tester_l','المراقب') !!}<br>
-                        <select name="tester" class="form-control selectpicker" id="tester" style="width:350px" data-live-search="true">
+                        <select name="tester" class="form-control selectpicker" id="tester" style="width:350px" data-live-search="true" required>
                             <option value="" style="direction: ltr">اختر المراقب</option>
                             @foreach ($testers as $key => $value)
                                 <option value="{{ $key }}">{{ $value }}</option>
@@ -26,8 +26,14 @@
                         <br>
                         <br>
 
+                        <div class="form-group">
+                            {!! Form::label('type_l','مهمة المراقب') !!}<br>
+                            {!! Form::select('type',trans('testersAllocation.testers_type'), null, ['class' => 'form-control selectpicker','required','id'=>'type']) !!}
+                        </div>
+
+
                         {!! Form::label('dat_l','التاريخ') !!}<br>
-                        <select name="date" class="form-control selectpicker" id="date" style="width:350px" data-live-search="true">
+                        <select name="date" class="form-control selectpicker" id="date" style="width:350px" data-live-search="true" required>
                             <option value="" style="direction: ltr">اختر التاريخ</option>
                             <?php
                             for ($x = 0; $x < sizeof($dates); $x++) {
@@ -40,6 +46,8 @@
 
                         <br>
                         <br>
+
+
 
                         <div id="centers" name="centers" class="form-group">
                             {!! Form::label('center_l','المركز', ['id' => 'center_l']) !!}
@@ -55,12 +63,7 @@
 
                         <div class="form-group">
                             {!! Form::label('time_l','الوقت') !!}<br>
-                            {!! Form::select('time',trans('testersAllocation.time'), null, ['class' => 'form-control selectpicker']) !!}
-                        </div>
-
-                        <div class="form-group">
-                            {!! Form::label('type_l','مهمة المراقب') !!}<br>
-                            {!! Form::select('type',trans('testersAllocation.testers_type'), null, ['class' => 'form-control selectpicker']) !!}
+                            {!! Form::select('time',trans('testersAllocation.time'), null, ['class' => 'form-control selectpicker','required']) !!}
                         </div>
 
                         <br>
@@ -78,8 +81,9 @@
                                         success:function(res){
                                             if(res){
                                                 $("#center").empty();
-                                                $("#centers").append('<select name="center" id="center" class="form-control selectpicker" style="width:350px" data-live-search="true">');
+                                                $("#centers").append('<select name="center" id="center" class="form-control selectpicker" style="width:350px" data-live-search="true" required>');
                                                 var x=0;
+                                                @if(in_array('admin',Auth::user()->getAllroles()))
                                                 $.each(res,function(key,value){
                                                     if (x==0){
                                                         $("#center").append('<option value="">اختر المركز</option>');
@@ -88,6 +92,82 @@
                                                     $("#center").append('<option value="'+key+'">'+value+'</option>');
                                                     x++;
                                                 });
+                                                @elseif(in_array('RM',Auth::user()->getAllroles()))
+                                                if (x==0){
+                                                    $("#center").append('<option value="">اختر المركز</option>');
+                                                    $("#center").append('<option value="1">المقر الرئيسي للجامعة (الراكة)</option>');
+                                                }
+                                                @elseif(in_array('DM',Auth::user()->getAllroles()))
+                                                if (x==0){
+                                                    $("#center").append('<option value="">اختر المركز</option>');
+                                                    $("#center").append('<option value="2">كلية التربية بالدمام (المريكبات)</option>');
+                                                }
+                                                @elseif(in_array('HM',Auth::user()->getAllroles()))
+                                                if (x==0){
+                                                    $("#center").append('<option value="">اختر المركز</option>');
+                                                    $("#center").append('<option value="3">مبنى السنة التحضيرية بحفر الباطن</option>');
+                                                }
+                                                @elseif(in_array('JM',Auth::user()->getAllroles()))
+                                                if (x==0){
+                                                    $("#center").append('<option value="">اختر المركز</option>');
+                                                    $("#center").append('<option value="4">كلية التربية بالجبيل</option>');
+                                                }
+                                                @elseif(in_array('KM',Auth::user()->getAllroles()))
+                                                if (x==0){
+                                                    $("#center").append('<option value="">اختر المركز</option>');
+                                                    $("#center").append('<option value="5">كلية العلوم والآداب بالخفجي</option>');
+                                                }
+                                                @elseif(in_array('NM',Auth::user()->getAllroles()))
+                                                if (x==0){
+                                                    $("#center").append('<option value="">اختر المركز</option>');
+                                                    $("#center").append('<option value="6">كلية العلوم والآداب بالنعيرية</option>');
+                                                }
+                                                @elseif(in_array('RF',Auth::user()->getAllroles()))
+                                                if (x==0){
+                                                    $("#center").append('<option value="">اختر المركز</option>');
+                                                    $("#center").append('<option value="7">المقر الرئيسي للجامعة (الراكة)</option>');
+                                                }
+                                                @elseif(in_array('DF',Auth::user()->getAllroles()))
+                                                if (x==0){
+                                                    $("#center").append('<option value="">اختر المركز</option>');
+                                                    $("#center").append('<option value="8">كلية البنات بالدمام (الريان)</option>');
+                                                }
+                                                @elseif(in_array('HF',Auth::user()->getAllroles()))
+                                                if (x==0){
+                                                    $("#center").append('<option value="">اختر المركز</option>');
+                                                    $("#center").append('<option value="9">كلية التربية الأدبية بحفر الباطن</option>');
+                                                }
+                                                @elseif(in_array('JF',Auth::user()->getAllroles()))
+                                                if (x==0){
+                                                    $("#center").append('<option value="">اختر المركز</option>');
+                                                    $("#center").append('<option value="10">كلية التربية بالجبيل</option>');
+                                                }
+                                                @elseif(in_array('KF',Auth::user()->getAllroles()))
+                                                if (x==0){
+                                                    $("#center").append('<option value="">اختر المركز</option>');
+                                                    $("#center").append('<option value="11">كلية العلوم والآداب بالخفجي</option>');
+                                                }
+                                                @elseif(in_array('NF',Auth::user()->getAllroles()))
+                                                if (x==0){
+                                                    $("#center").append('<option value="">اختر المركز</option>');
+                                                    $("#center").append('<option value="12">كلية العلوم والآداب بالنعيرية</option>');
+                                                }
+                                                @elseif(in_array('JK',Auth::user()->getAllroles()))
+                                                if (x==0){
+                                                    $("#center").append('<option value="">اختر المركز</option>');
+                                                    $("#center").append('<option value="13">سجن الخبر</option>');
+                                                }
+                                                @elseif(in_array('JD',Auth::user()->getAllroles()))
+                                                if (x==0){
+                                                    $("#center").append('<option value="">اختر المركز</option>');
+                                                    $("#center").append('<option value="14">سجن الدمام</option>');
+                                                }
+                                                @elseif(in_array('JQ',Auth::user()->getAllroles()))
+                                                if (x==0){
+                                                    $("#center").append('<option value="">اختر المركز</option>');
+                                                    $("#center").append('<option value="15">سجن القطيف</option>');
+                                                }
+                                                @endforelse
                                                 $("#centers").append('</select>');
                                                 $('#center').selectpicker('refresh');
                                                 $("#center_l").show();
@@ -113,23 +193,30 @@
                                         type:"GET",
                                         url:"{{url('cp/exams/testers/testersAllocation/buildings')}}?center="+CID+"&date="+date,
                                         success:function(res){
-                                            if(res){
+                                            if(res) {
                                                 $("#building").empty();
-                                                $("#buildings").append('<select name="building" id="building" class="form-control selectpicker" style="width:350px" data-live-search="true">');
-                                                var y=0;
-                                                $.each(res,function(key,value){
-                                                    if (y==0){
-                                                        $("#building").append('<option value="">اختر المبنى</option>');
-                                                    }
-                                                    $("#building").append('<option value="'+value+'">'+value+'</option>');
-                                                    y++;
-                                                });
-                                                $("#buildings").append('</select>');
-                                                $('#building').selectpicker('refresh');
-                                                $("#building_l").show();
-                                            }else{
-                                                $("#building").empty();
-                                                $("#building_l").hide();
+                                                var type = $("#type").val();
+                                                //alert(type);
+                                                if (type == 'tester' || type == 'main tester') {
+                                                    $("#buildings").append('<select name="building" id="building" class="form-control selectpicker" style="width:350px" data-live-search="true" required>');
+
+                                                    var y = 0;
+                                                    $.each(res, function (key, value) {
+                                                        if (y == 0) {
+                                                            $("#building").append('<option value="">اختر المبنى</option>');
+                                                        }
+                                                        if (value){
+                                                        $("#building").append('<option value="' + value + '">' + value + '</option>');
+                                                        }
+                                                        y++;
+                                                    });
+                                                    $("#buildings").append('</select>');
+                                                    $('#building').selectpicker('refresh');
+                                                    $("#building_l").show();
+                                                } else {
+                                                    $("#building").empty();
+                                                    $("#building_l").hide();
+                                                }
                                             }
                                         }
                                     });
@@ -151,7 +238,11 @@
                                         success:function(res){
                                             if(res){
                                                 $("#room").empty();
-                                                $("#rooms").append('<select name="room" id="room" class="form-control selectpicker" style="width:350px" data-live-search="true">');
+                                                var type = $("#type").val();
+                                                //alert(type);
+                                                if(type=='tester' || type=='main tester') {
+                                                    $("#rooms").append('<select name="room" id="room" class="form-control selectpicker" style="width:350px" data-live-search="true" required>');
+                                                }
                                                 var y=0;
                                                 $.each(res,function(key,value){
                                                     if (y==0){

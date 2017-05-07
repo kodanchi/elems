@@ -335,6 +335,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
         // students absence form
         Route::get('cp/exams/absence','ExamsController@indexabsence');
         Route::post('cp/exams/absence/update','ExamsController@updateabsence');
+        Route::get('cp/exams/absence/center','ExamsController@getCenterList');
         Route::get('cp/exams/absence/course','ExamsController@getCourseList');
         Route::get('cp/exams/absence/students','ExamsController@getStudentsList');
 

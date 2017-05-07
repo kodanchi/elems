@@ -19,8 +19,21 @@ class RedirectIfNotExamsAdmin
 
         $authRoles = [
             'admin',
-            'exams',
             'RM',
+            'DM',
+            'HM',
+            'JM',
+            'KM',
+            'NM',
+            'RF',
+            'DF',
+            'HF',
+            'JF',
+            'KF',
+            'NF',
+            'JK',
+            'JD',
+            'JQ',
         ];
 
         $userRoles = Auth::user()->getAllroles();

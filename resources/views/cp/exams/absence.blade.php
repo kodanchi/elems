@@ -6,6 +6,7 @@
             <div class="col-md-6 col-md-offset-3">
 
                 @include('errors.errors')
+                @include('errors.status')
 
                 <div class="panel panel-default">
                     <div class="panel-heading">إدخال غياب طالب</div>
@@ -21,7 +22,7 @@
                         {{--{!! Form::select('date', ['' => 'Select'] +$dates,'',array('class'=>'form-control','id'=>'date','style'=>'width:350px;'))!!}--}}
                          {{--  <label>  اختر التاريخ :</label>--}}
                         {!! Form::label('date_l','التاريخ', ['id' => 'date_l']) !!}
-                            <select name="date" class="form-control selectpicker" id="date" style="width:350px" data-live-search="true">
+                            <select name="date" class="form-control selectpicker" id="date" style="width:350px" data-live-search="true" required>
                                 <option value="" style="direction: ltr">اختر التاريخ</option>
                                 @<?php
                                 for ($x = 0; $x < sizeof($dates); $x++) {
@@ -32,6 +33,11 @@
                                 ?>
                             </select>
                         <br>
+                        <br>
+
+                        <div id="cn" name="cn">
+                            {!! Form::label('center_l','المادة', ['id' => 'center_l']) !!}
+                        </div>
                         <br>
 
                         <div id="cc" name="cc">
@@ -52,18 +58,115 @@
                             </select>--}}
 
                         <script type="text/javascript">
-                            $(document).ready(function() { $("#course_l").hide(); $("#student_l").hide(); });
+                            $(document).ready(function() { $("#course_l").hide(); $("#center_l").hide(); $("#student_l").hide(); });
                             //$('.selectpicker').selectpicker();
                             $('#date').change(function(){
                                 var date = $(this).val();
                                 if(date){
                                     $.ajax({
                                         type:"GET",
-                                        url:"{{url('cp/exams/absence/course')}}?date="+date,
+                                        url:"{{url('cp/exams/absence/center')}}?date="+date,
+                                        success:function(res){
+                                            if(res){
+                                                $("#center").empty();
+                                                $("#course").empty();
+                                                $("#students").empty();
+                                                $("#cn").append('<select name="center" id="center" class="form-control selectpicker" style="width:350px" data-live-search="true" required> <option value="">اختر المركز</option>');
+                                                var x=0;
+                                                @if(in_array('admin',Auth::user()->getAllroles()))
+                                                $.each(res,function(key,value){
+                                                    $("#center").append('<option value="'+key+'">'+value+'</option>');
+                                                });
+                                                @elseif(in_array('RM',Auth::user()->getAllroles()))
+                                                if (x==0){
+                                                    $("#center").append('<option value="1">المقر الرئيسي للجامعة (الراكة)</option>');
+                                                }
+                                                @elseif(in_array('DM',Auth::user()->getAllroles()))
+                                                if (x==0){
+                                                    $("#center").append('<option value="2">كلية التربية بالدمام (المريكبات)</option>');
+                                                }
+                                                @elseif(in_array('HM',Auth::user()->getAllroles()))
+                                                if (x==0){
+                                                    $("#center").append('<option value="3">مبنى السنة التحضيرية بحفر الباطن</option>');
+                                                }
+                                                @elseif(in_array('JM',Auth::user()->getAllroles()))
+                                                if (x==0){
+                                                    $("#center").append('<option value="4">كلية التربية بالجبيل</option>');
+                                                }
+                                                @elseif(in_array('KM',Auth::user()->getAllroles()))
+                                                if (x==0){
+                                                    $("#center").append('<option value="5">كلية العلوم والآداب بالخفجي</option>');
+                                                }
+                                                @elseif(in_array('NM',Auth::user()->getAllroles()))
+                                                if (x==0){
+                                                    $("#center").append('<option value="6">كلية العلوم والآداب بالنعيرية</option>');
+                                                }
+                                                @elseif(in_array('RF',Auth::user()->getAllroles()))
+                                                if (x==0){
+                                                    $("#center").append('<option value="7">المقر الرئيسي للجامعة (الراكة)</option>');
+                                                }
+                                                @elseif(in_array('DF',Auth::user()->getAllroles()))
+                                                if (x==0){
+                                                    $("#center").append('<option value="">اختر المركز</option>');
+                                                    $("#center").append('<option value="8">كلية البنات بالدمام (الريان)</option>');
+                                                }
+                                                @elseif(in_array('HF',Auth::user()->getAllroles()))
+                                                if (x==0){
+                                                    $("#center").append('<option value="9">كلية التربية الأدبية بحفر الباطن</option>');
+                                                }
+                                                @elseif(in_array('JF',Auth::user()->getAllroles()))
+                                                if (x==0){
+                                                    $("#center").append('<option value="10">كلية التربية بالجبيل</option>');
+                                                }
+                                                @elseif(in_array('KF',Auth::user()->getAllroles()))
+                                                if (x==0){
+                                                    $("#center").append('<option value="11">كلية العلوم والآداب بالخفجي</option>');
+                                                }
+                                                @elseif(in_array('NF',Auth::user()->getAllroles()))
+                                                if (x==0){
+                                                    $("#center").append('<option value="12">كلية العلوم والآداب بالنعيرية</option>');
+                                                }
+                                                @elseif(in_array('JK',Auth::user()->getAllroles()))
+                                                if (x==0){
+                                                    $("#center").append('<option value="13">سجن الخبر</option>');
+                                                }
+                                                @elseif(in_array('JD',Auth::user()->getAllroles()))
+                                                if (x==0){
+                                                    $("#center").append('<option value="14">سجن الدمام</option>');
+                                                }
+                                                @elseif(in_array('JQ',Auth::user()->getAllroles()))
+                                                if (x==0){
+                                                    $("#center").append('<option value="15">سجن القطيف</option>');
+                                                }
+                                                @endforelse
+                                                $("#cn").append('</select>');
+                                                $('#center').selectpicker('refresh');
+                                                $("#center_l").show();
+                                            }else{
+                                                $("#center").empty();
+                                                $("#center_l").hide();
+                                            }
+                                        }
+                                    });
+
+                                }else{
+                                    $("#center").empty();
+                                    $("#course").empty();
+                                    $("#students").empty();
+                                }
+                            });
+                            $('#cn').change(function(){
+                                var center = $("#center").val();
+                                var date = $("#date").val();
+                                if(center && date){
+                                    $.ajax({
+                                        type:"GET",
+                                        url:"{{url('cp/exams/absence/course')}}?center="+center+"&date="+date,
                                         success:function(res){
                                             if(res){
                                                 $("#course").empty();
-                                                $("#cc").append('<select name="course" id="course" class="form-control selectpicker" style="width:350px" data-live-search="true"> <option>اختر المادة</option>');
+                                                $("#students").empty();
+                                                $("#cc").append('<select name="course" id="course" class="form-control selectpicker" style="width:350px" data-live-search="true" required> <option value="">اختر المادة</option>');
                                                 $.each(res,function(key,value){
                                                     $("#course").append('<option value="'+value+'">'+value+'</option>');
                                                 });
@@ -91,7 +194,7 @@
                                         success:function(res){
                                             if(res){
                                                 $("#students").empty();
-                                                $("#ss").append('<select name="students" id="students" class="form-control selectpicker" style="width:350px" data-live-search="true"> <option>اختر الطالب</option>');
+                                                $("#ss").append('<select name="students" id="students" class="form-control selectpicker" style="width:350px" data-live-search="true" required> <option value="">اختر الطالب</option>');
                                                 $.each(res,function(key,value){
                                                     $("#students").append('<option value="'+value+'">'+value+' | '+key+'</option>');
                                                 });

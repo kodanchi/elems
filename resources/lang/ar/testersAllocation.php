@@ -19,7 +19,7 @@ return [
         'center leader' => 'مشرف مركز' ,
         //'center leader' => 'مسؤول مركز' ,
         'controller' => 'كنترول' ,
-        //'supporter' => 'مساندة' ,
+        'supporter' => 'خدمات' ,
         'security' => 'أمن' ,
         'point of contact' => 'ضابط اتصال' ,
     ],

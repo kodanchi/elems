@@ -52,7 +52,14 @@
                 @if(in_array('admin',Auth::user()->getAllroles()) || in_array('StdUpdate',Auth::user()->getAllroles()))
                     <li><a tabindex="0" href="{{url('cp/students/Info/pending')}}"><i class="fa fa-btn fa-list-alt"></i>تحديث البيانات</a></li>
                 @endif
-                @if(in_array('admin',Auth::user()->getAllroles()) || in_array('RM',Auth::user()->getAllroles()))
+                @if(in_array('admin',Auth::user()->getAllroles()) || in_array('RM',Auth::user()->getAllroles()) ||
+                in_array('DM',Auth::user()->getAllroles()) || in_array('HF',Auth::user()->getAllroles()) ||
+                in_array('HM',Auth::user()->getAllroles()) || in_array('JF',Auth::user()->getAllroles()) ||
+                in_array('JM',Auth::user()->getAllroles()) || in_array('KF',Auth::user()->getAllroles()) ||
+                in_array('KM',Auth::user()->getAllroles()) || in_array('NF',Auth::user()->getAllroles()) ||
+                in_array('NM',Auth::user()->getAllroles()) || in_array('JK',Auth::user()->getAllroles()) ||
+                in_array('RF',Auth::user()->getAllroles()) || in_array('JD',Auth::user()->getAllroles()) ||
+                in_array('DF',Auth::user()->getAllroles()) || in_array('JQ',Auth::user()->getAllroles()))
                     <li><a tabindex="0" href="{{url('cp/exams/services/home')}}"><i class="fa fa-btn fa-list-alt"></i>خدمات الاختبارات</a></li>
                 @endif
             </ul>
