@@ -16,7 +16,7 @@
 
 
 
-            {!! Form::open(['url' => '/cp/printforms/search', 'method' => 'post', 'files' => true ,'class'=>'newsletter-form' ]) !!}
+            {!! Form::open(['url' => '/cp/printforms/getExcelForms', 'method' => 'post', 'files' => true ,'class'=>'newsletter-form' ]) !!}
 
                         {!! Form::label('date_l','التاريخ', ['id' => 'date_l']) !!}
                             <select name="date" class="form-control selectpicker" id="date" style="width:350px" data-live-search="true" required>
@@ -202,34 +202,5 @@
     </div>
 
 
-
-
-
-            <script type="text/javascript">
-                $(document).ready(function() {
-                    $('select[name="centers"]').on('change', function() {
-                        var center_id = $(this).val();
-                        if(center_id) {
-                            $.ajax({
-                                url: '/cp/printforms/ajax/'+center_id,
-                                type: "GET",
-                                dataType: "json",
-                                success:function(data) {
-
-
-
-                                    $('select[name="room"]').empty();
-                                    $.each(data, function(key, value) {
-                                        $('select[name="room"]').append('<option value="'+ value['room'] +'">'+ value['room'] +'</option>');
-                                    });
-
-                                }
-                            });
-                        }else{
-                            $('select[name="room"]').empty();
-                        }
-                    });
-                });
-            </script>
 </div>
     @endsection

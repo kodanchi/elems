@@ -41,7 +41,7 @@ return [
     'rePassword' => 'تأكيد كلمة المرور',
 
     //reset
-    'reset' => 'إعادة ظبط كلمة المرور',
+    'reset' => 'إعادة ضبط كلمة المرور',
     'sendPassRestBtn' => 'إرسال الرابط الى الايميل',
 
     'placement' => 'pull-right',

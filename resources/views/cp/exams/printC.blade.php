@@ -47,10 +47,12 @@
                        <span style="color: red">{{$forms[0]->center_name}}</span>
 
                     </h2>
-                    <h2>   الفصل الدراسي الأول لعام 1437 / 1438 هـ</h2>
+                    <h2>   الفصل الدراسي الثاني لعام 1437 / 1438 هـ</h2>
                    {{-- <h2 style="color: red"></h2>--}}
 
                     <h2 style="color: red">({{$forms[0]->date}}) | {{$forms[0]->higri_date}}</h2>
+
+                    <h2 style="color: red">({{$forms[0]->time}})</h2>
 
                 </label>
 
@@ -59,11 +61,13 @@
 
 
                  <tr>
-                     <th colspan="7" style="text-align: center;font-size: larger">المراقبــــــــــــــــــــــــــــــــــــــــــــــــين</th>
+                     <th colspan="9" style="text-align: center;font-size: larger">المراقبــــــــــــــــــــــــــــــــــــــــــــــــين</th>
                  </tr>
                     <tr>
                     <th style="background-color: black; color: white ; text-align: center;font-size: larger">م</th>
                     <th style="background-color: black; color: white ; text-align: center;font-size: larger">اسم المراقب </th>
+                        <th style="background-color: black; color: white ; text-align: center;font-size: larger">الهوية</th>
+                        <th style="background-color: black; color: white ; text-align: center;font-size: larger">الجوال</th>
                     <th style="background-color: black; color: white ; text-align: center;font-size: larger">المهمة</th>
                     <th style="background-color: black; color: white ; text-align: center;font-size: larger">الحضور</th>
                     <th colspan="" style="background-color: black; color: white ; text-align: center;font-size: larger">التوقيع</th>
@@ -75,9 +79,11 @@
                 <?php $x=1; ?>
                     @foreach($forms as $form)
                         <tr class="tableStyle" >
-                            <td  style="text-align: center">{{$x}}</td>
-                            <td  style="text-align: center">{{$form->fname}} {{$form->faname}} {{$form->gfaname}} {{$form->lname}}</td>
-                            <td  style="text-align: center">{{trans('testersAllocation.testers_type.'.$form->tester_type)}}</td>
+                            <td style="text-align: center">{{$x}}</td>
+                            <td style="text-align: center">{{$form->fname}} {{$form->faname}} {{$form->gfaname}} {{$form->lname}}</td>
+                            <td style="text-align: center">{{$form->NID}}</td>
+                            <td style="text-align: center">{{$form->cellphone}}</td>
+                            <td style="text-align: center">{{trans('testersAllocation.testers_type.'.$form->tester_type)}}</td>
                             <td style="font-size: larger; font-weight: bold">&nbsp;</td>
                             <td colspan="" style="font-size: larger; font-weight: bold">&nbsp;</td>
                             <td style="font-size: larger; font-weight: bold">&nbsp;</td>
@@ -90,6 +96,25 @@
                 </table>
                 <br>
                 <br>
+
+                <div style="text-align: center" class="row col-md-8">
+
+                    <div class="col-md-4" style="float: right">
+                        <h3>اسم مشرف المركز<br>
+                            <br>
+                            <br>
+                            ................................</h3>
+                    </div>
+
+                    <div class="col-md-4" style="float: left">
+
+                        <h3>  التوقيـــــــــــــــــع
+                            <br>
+                            <br>
+                            <br>
+                            ................................</h3>
+                    </div>
+                </div>
 
                 <br>
                 <br>

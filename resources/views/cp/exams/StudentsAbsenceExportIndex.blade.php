@@ -58,30 +58,30 @@
                                 <option value="">المركز</option>
                                 <option value="2">كلية التربية بالدمام (المريكبات)</option>
                             </select>
-                        @elseif(in_array('HM',Auth::user()->getAllroles()))
-                            {!! Form::label('center', '  المركز:') !!}
-                            <select name="center" class="form-control selectpicker" data-live-search="true" required>
-                                <option value="">المركز</option>
-                                <option value="3">مبنى السنة التحضيرية بحفر الباطن</option>
-                            </select>
-                        @elseif(in_array('JM',Auth::user()->getAllroles()))
-                            {!! Form::label('center', '  المركز:') !!}
-                            <select name="center" class="form-control selectpicker" data-live-search="true" required>
-                                <option value="">المركز</option>
-                                <option value="4">كلية التربية بالجبيل</option>
-                            </select>
-                        @elseif(in_array('KM',Auth::user()->getAllroles()))
-                            {!! Form::label('center', '  المركز:') !!}
-                            <select name="center" class="form-control selectpicker" data-live-search="true" required>
-                                <option value="">المركز</option>
-                                <option value="5">كلية العلوم والآداب بالخفجي</option>
-                            </select>
-                        @elseif(in_array('NM',Auth::user()->getAllroles()))
-                            {!! Form::label('center', '  المركز:') !!}
-                            <select name="center" class="form-control selectpicker" data-live-search="true" required>
-                                <option value="">المركز</option>
-                                <option value="6">كلية العلوم والآداب بالنعيرية</option>
-                            </select>
+                            {{--@elseif(in_array('HM',Auth::user()->getAllroles()))
+                                {!! Form::label('center', '  المركز:') !!}
+                                <select name="center" class="form-control selectpicker" data-live-search="true" required>
+                                    <option value="">المركز</option>
+                                    <option value="3">مبنى السنة التحضيرية بحفر الباطن</option>
+                                </select>--}}
+                            {{--@elseif(in_array('JM',Auth::user()->getAllroles()))
+                                {!! Form::label('center', '  المركز:') !!}
+                                <select name="center" class="form-control selectpicker" data-live-search="true" required>
+                                    <option value="">المركز</option>
+                                    <option value="4">كلية التربية بالجبيل</option>
+                                </select>--}}
+                            {{--@elseif(in_array('KM',Auth::user()->getAllroles()))
+                                {!! Form::label('center', '  المركز:') !!}
+                                <select name="center" class="form-control selectpicker" data-live-search="true" required>
+                                    <option value="">المركز</option>
+                                    <option value="5">كلية العلوم والآداب بالخفجي</option>
+                                </select>--}}
+                            {{--@elseif(in_array('NM',Auth::user()->getAllroles()))
+                                {!! Form::label('center', '  المركز:') !!}
+                                <select name="center" class="form-control selectpicker" data-live-search="true" required>
+                                    <option value="">المركز</option>
+                                    <option value="6">كلية العلوم والآداب بالنعيرية</option>
+                                </select>--}}
                         @elseif(in_array('RF',Auth::user()->getAllroles()))
                             {!! Form::label('center', '  المركز:') !!}
                             <select name="center" class="form-control selectpicker" data-live-search="true" required>
@@ -94,30 +94,30 @@
                                 <option value="">المركز</option>
                                 <option value="8">كلية البنات بالدمام (الريان)</option>
                             </select>
-                        @elseif(in_array('HF',Auth::user()->getAllroles()))
-                            {!! Form::label('center', '  المركز:') !!}
-                            <select name="center" class="form-control selectpicker" data-live-search="true" required>
-                                <option value="">المركز</option>
-                                <option value="9">كلية التربية الأدبية بحفر الباطن</option>
-                            </select>
-                        @elseif(in_array('JF',Auth::user()->getAllroles()))
-                            {!! Form::label('center', '  المركز:') !!}
-                            <select name="center" class="form-control selectpicker" data-live-search="true" required>
-                                <option value="">المركز</option>
-                                <option value="10">كلية التربية بالجبيل</option>
-                            </select>
-                        @elseif(in_array('KF',Auth::user()->getAllroles()))
-                            {!! Form::label('center', '  المركز:') !!}
-                            <select name="center" class="form-control selectpicker" data-live-search="true" required>
-                                <option value="">المركز</option>
-                                <option value="11">كلية العلوم والآداب بالخفجي</option>
-                            </select>
-                        @elseif(in_array('NF',Auth::user()->getAllroles()))
-                            {!! Form::label('center', '  المركز:') !!}
-                            <select name="center" class="form-control selectpicker" data-live-search="true" required>
-                                <option value="">المركز</option>
-                                <option value="12">كلية العلوم والآداب بالنعيرية</option>
-                            </select>
+                            {{--@elseif(in_array('HF',Auth::user()->getAllroles()))
+                                {!! Form::label('center', '  المركز:') !!}
+                                <select name="center" class="form-control selectpicker" data-live-search="true" required>
+                                    <option value="">المركز</option>
+                                    <option value="9">كلية التربية الأدبية بحفر الباطن</option>
+                                </select>--}}
+                            {{--@elseif(in_array('JF',Auth::user()->getAllroles()))
+                                {!! Form::label('center', '  المركز:') !!}
+                                <select name="center" class="form-control selectpicker" data-live-search="true" required>
+                                    <option value="">المركز</option>
+                                    <option value="10">كلية التربية بالجبيل</option>
+                                </select>--}}
+                            {{--@elseif(in_array('KF',Auth::user()->getAllroles()))
+                                {!! Form::label('center', '  المركز:') !!}
+                                <select name="center" class="form-control selectpicker" data-live-search="true" required>
+                                    <option value="">المركز</option>
+                                    <option value="11">كلية العلوم والآداب بالخفجي</option>
+                                </select>--}}
+                            {{--@elseif(in_array('NF',Auth::user()->getAllroles()))
+                                {!! Form::label('center', '  المركز:') !!}
+                                <select name="center" class="form-control selectpicker" data-live-search="true" required>
+                                    <option value="">المركز</option>
+                                    <option value="12">كلية العلوم والآداب بالنعيرية</option>
+                                </select>--}}
                         @elseif(in_array('JK',Auth::user()->getAllroles()))
                             {!! Form::label('center', '  المركز:') !!}
                             <select name="center" class="form-control selectpicker" data-live-search="true" required>
@@ -135,6 +135,34 @@
                             <select name="center" class="form-control selectpicker" data-live-search="true" required>
                                 <option value="">المركز</option>
                                 <option value="15">سجن القطيف</option>
+                            </select>
+                        @elseif(in_array('HM',Auth::user()->getAllroles()) || in_array('HF',Auth::user()->getAllroles()))
+                            {!! Form::label('center', '  المركز:') !!}
+                            <select name="center" class="form-control selectpicker" data-live-search="true" required>
+                                <option value="">المركز</option>
+                                <option value="3">مبنى السنة التحضيرية بحفر الباطن (M)</option>
+                                <option value="9">كلية التربية الأدبية بحفر الباطن (F)</option>
+                            </select>
+                        @elseif(in_array('KM',Auth::user()->getAllroles()) || in_array('KF',Auth::user()->getAllroles()))
+                            {!! Form::label('center', '  المركز:') !!}
+                            <select name="center" class="form-control selectpicker" data-live-search="true" required>
+                                <option value="">المركز</option>
+                                <option value="5">كلية العلوم والآداب بالخفجي (M)</option>
+                                <option value="11">كلية العلوم والآداب بالخفجي (F)</option>
+                            </select>
+                        @elseif(in_array('JM',Auth::user()->getAllroles()) || in_array('JF',Auth::user()->getAllroles()))
+                            {!! Form::label('center', '  المركز:') !!}
+                            <select name="center" class="form-control selectpicker" data-live-search="true" required>
+                                <option value="">المركز</option>
+                                <option value="4">كلية التربية بالجبيل (M)</option>
+                                <option value="10">كلية التربية بالجبيل (F)</option>
+                            </select>
+                        @elseif(in_array('NM',Auth::user()->getAllroles()) || in_array('NF',Auth::user()->getAllroles()))
+                            {!! Form::label('center', '  المركز:') !!}
+                            <select name="center" class="form-control selectpicker" data-live-search="true" required>
+                                <option value="">المركز</option>
+                                <option value="6">كلية العلوم والآداب بالنعيرية (M)</option>
+                                <option value="12">كلية العلوم والآداب بالنعيرية (F)</option>
                             </select>
                         @endforelse
 

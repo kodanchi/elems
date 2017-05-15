@@ -42,10 +42,10 @@
 
 
                 <div class="panel panel-default">
-                    <div class="alert alert-danger" role="alert">
-                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                   {{-- <div class="alert alert-danger" role="alert">
+        --}}{{--                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                         تم اغلاق التقديم
-                    </div>
+                    </div>--}}
                     <div class="panel-heading">{{trans('sp.applicants')}}</div>
 
                     <div class="panel panel-default">
@@ -60,7 +60,7 @@
                                 <!--- SID Field --->
                                 <div class="form-group">
                                     {!! Form::label('sid', trans('sp.sid').':') !!}
-                                    {!! Form::text('sid', null, ['class' => 'form-control' , 'readonly' => 'true']  ) !!}
+                                    {!! Form::text('sid', null, ['class' => 'form-control' ]  ) !!}
                                 </div>
                                 <label>
                                     {!! Form::checkbox('agree', '1', null,  ['id' => 'agree']) !!}

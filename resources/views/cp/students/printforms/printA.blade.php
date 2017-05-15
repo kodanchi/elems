@@ -43,12 +43,14 @@
                 <label style="text-align: center">
 
                     <h2> كشف الحضور والغياب للاختبارات النهائية<br>
+                        مركز
+                        <span style="color: red">{{$forms[0]->center}}</span>
                                             مبنى
                        <span style="color: red">{{$forms[0]->building}}</span>
                         القاعة
                         (<span style="color: red">{{$forms[0]->room}}</span>)
                     </h2>
-                    <h2>   الفصل الدراسي الأول لعام 1437 / 1438 هـ</h2>
+                    <h2>   الفصل الدراسي الثاني لعام 1437 / 1438 هـ</h2>
                     <h2 style="color: red">{{$forms[0]->higri_date}}</h2>
                     <h4>   تاريخ الطباعة:       {{$date}}</h4>
                 </label>
@@ -106,7 +108,7 @@
                         <th  style="text-align: center ; font-size: large">السجل المدني</th>
                         <th style="text-align: center ; font-size: large">اسم الطالــــــــــــب</th>
                         <th  style="text-align: center ; font-size: large">رقم النموذج</th>
-                        <th  style="text-align: center ; font-size: large">الوقت</th>
+
                         <th  style="text-align: center ; font-size: large">التــــــــــوقيع</th>
                     </tr>
                     </thead>
@@ -119,7 +121,7 @@
                         <td>{{$form->nid}}</td>
                         <td style="text-align: right;"><div style="padding-right: 6px">{{$form->Sname}}</div></td>
                         <td >&nbsp;</td>
-                        <td >&nbsp;</td>
+
                         <td ><div style="background-color: white; min-height: 30px"></div>&nbsp;</td>
                     </tr>
                         <?php $x++; ?>

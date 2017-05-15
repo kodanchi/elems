@@ -104,8 +104,10 @@
                                 <hr>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h4>الرد على الطلب: </h4>
-                                    <table class="table table-striped">
+
+
+                                        @if( ! empty($messages))
+
                                     @foreach ($messages as $message)
                                             <tr>
                                                 <td>
@@ -135,6 +137,17 @@
                                                 </td>
                                         </tr>
                                     @endforeach
+
+                                        @else
+                                        <h4>الرد على الطلب: </h4>
+                                        <table class="table table-striped">
+                                            <h6>{{$form->replay}}</h6>
+
+
+                                            @endif
+
+
+
                                     </table>
                                 </div>
                             </div>

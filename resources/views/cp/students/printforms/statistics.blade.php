@@ -47,7 +47,7 @@
                        <span style="color: red">{{$forms[0]->center}}</span>
 
                     </h2>
-                    <h2>   الفصل الدراسي الأول لعام 1437 / 1438 هـ</h2>
+                    <h2>   الفصل الدراسي الثاني لعام 1437 / 1438 هـ</h2>
                     <h2 style="color: red">{{$forms[0]->higri_date}}</h2>
                     <h4>   تاريخ الطباعة:       {{$date}}</h4>
                 </label>

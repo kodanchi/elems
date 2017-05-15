@@ -2,5 +2,6 @@
     return [
         'Administrator'=>'Administrator',
         'faculty'=>'Faculty',
-        'other'=>'Other'
+        'TA/Lecturer'=>'TA/Lecturer'//,
+        //'other'=>'Other'
     ];

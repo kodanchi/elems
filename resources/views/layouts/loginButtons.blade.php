@@ -46,9 +46,7 @@
                 @if(in_array('admin',Auth::user()->getAllroles()) || in_array('WH',Auth::user()->getAllroles()))
                 <li><a tabindex="0" href="{{url('cp/warehouse')}}"><i class="fa fa-btn fa-list-alt"></i>{{trans('settings.warehouse')}}</a></li>
                 @endif
-                @if(in_array('admin',Auth::user()->getAllroles()) || in_array('WH',Auth::user()->getAllroles()))
-                    <li><a tabindex="0" href="{{url('cp/warehouse')}}"><i class="fa fa-btn fa-list-alt"></i>{{trans('settings.warehouse')}}</a></li>
-                @endif
+
                 @if(in_array('admin',Auth::user()->getAllroles()) || in_array('StdUpdate',Auth::user()->getAllroles()))
                     <li><a tabindex="0" href="{{url('cp/students/Info/pending')}}"><i class="fa fa-btn fa-list-alt"></i>تحديث البيانات</a></li>
                 @endif

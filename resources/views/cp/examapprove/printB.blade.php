@@ -111,7 +111,27 @@ padding-bottom: 5px;">إثبات حضور للاختبارت النهائية </
                     <br>                       وكيل العمادة لشؤون التعلم عن بعد
                     <br>
                     <br>
+
+
+                    <img src="{{asset('storage/signature1.jpg')}}" style="width: 200px ; height: 100px">
+
+                    <br>
                     <br>                         د.عبدالله سعيد المريح
+            </div>
+
+
+
+            <div style="float: right">
+                <p style=" text-align: center; padding-left: 10px; font-size: x-large">
+                    <br>
+                    <br>
+
+
+
+                    <img src="{{asset('storage/stamp1.png')}}" style="width: 270px ; height: 200px">
+
+
+
             </div>
 
 
@@ -120,7 +140,8 @@ padding-bottom: 5px;">إثبات حضور للاختبارت النهائية </
 
 
 
-                </p>
+
+            </p>
 
 
 

@@ -79,13 +79,31 @@
                                                                 </div>
                                                             </div>
 
+<hr>
 
+                                                        <div class="center-block text-center aligncenter">
+                                                            <a href="{{asset('storage/examA5.pdf')}}" target="_blank" class="btn btn-primary">
+                                                                <span class="glyphicon glyphicon-paperclip"></span>  &nbsp;  مهام ومسؤوليات المراقب &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                            </a>
+
+
+
+
+
+                                                            <a href="{{asset('storage/examA3.pdf')}}" target="_blank" class="btn btn-primary">
+                                                                <span class="glyphicon glyphicon-paperclip"></span>  &nbsp;  مسؤوليات ومهام مسؤول اللجنة &nbsp;
+                                                            </a>
+                                                        </div>
 
                                                             {{-- <a href="/students/exams/lookup" class="button col-md-3">{{trans('settings.back')}}</a>--}}
+
                                                     </div>
+                                                    <br>
+                                                    <br>
                                                     <div class="col-md-12">
+                                                        <br>
 
-
+                                                        <h3 style="color: red">ملاحظة: يرجى الدخول على الجدول بشكل يومي لوجود تحديثات محتملة</h3>
                                                     </div>
                                                 </div>
                                             </div>
