@@ -11,8 +11,8 @@
                     <div class="panel-body ">
                         <div class="row">
 
-                            <img src="{{asset('storage/uod_portal.jpg')}}" class="img-responsive" alt="portal">
-                            <hr>
+                           {{-- <img src="{{asset('storage/uod_portal.jpg')}}" class="img-responsive" alt="portal">
+                            <hr>--}}
 
                             @include('errors.status')
                             @include('errors.errors')

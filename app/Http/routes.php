@@ -107,6 +107,14 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
 
     Route::post('/cp/printforms/search/', 'PrintController@serachcenters');
 
+    //Non-sense
+    Route::get('/cp/printforms/TestersAndStatistics/', 'PrintController@TestersAndStatistics');
+    Route::get('/cp/printforms/TestersAndStatistics/building', 'PrintController@getBuildingsListForTestersAndStatistics');
+
+    Route::post('/cp/printforms/testersAndStatisticsForm/', 'PrintController@TestersAndGeneratePDF4');
+
+    Route::get('/cp/printforms/testersAndStatisticsForm/{center_id}/{date}', 'PrintController@TestersAndGeneratePDF4GET');
+    Route::get('/cp/printforms/testersAndStatisticsForm/delete/{id}/{center_id}/{date}', 'PrintController@testersAndStatisticsFormDelete');
 
     //Info route 3/14/2017
 
@@ -343,6 +351,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
         Route::get('cp/exams/testersMK/courses','ExamsController@getCoursesListMK');
         Route::get('cp/exams/testersMK/card','ExamsController@getCardListMK');
         Route::post('cp/exams/testersMK/update','ExamsController@updateTestersMK');
+
         // students absence form
         Route::get('cp/exams/absence','ExamsController@indexabsence');
         Route::get('cp/exams/absence/update','ExamsController@updateabsence');
@@ -352,6 +361,13 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
         Route::get('cp/exams/absence/course','ExamsController@getCourseList');
         Route::get('cp/exams/absence/students','ExamsController@getStudentsList');
 
+        // students notice form
+        Route::get('cp/exams/notice','ExamsController@indexNotice');
+        Route::get('cp/exams/notice/update','ExamsController@updateNotice');
+        Route::post('cp/exams/notice/update','ExamsController@updateNotice');
+        Route::get('cp/exams/notice/center','ExamsController@getCenterListForNotice');
+        Route::get('cp/exams/notice/building','ExamsController@getBuildingsListForNotice');
+        Route::get('cp/exams/notice/SID','ExamsController@getStudentsListForNotice');
 
         //testers schedule
         Route::get('/cp/exams/testers/testersAllocation', 'ExamsController@TestersAllocationIndex');
@@ -396,6 +412,11 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
 
         //testers for finance
         Route::get('/cp/printforms/testers/export', 'PrintController@testersForFinanceExcelExport');
+
+
+        //student exams table
+        Route::get('/cp/exams/lookup', 'ExamsController@getCPExamLookup');
+        Route::post('/cp/exams/lookup/table', 'ExamsController@CPexamLookup');
 
     });
 

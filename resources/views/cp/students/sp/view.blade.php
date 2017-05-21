@@ -14,6 +14,7 @@
                             @include('errors.status')
                             <div class="col-md-12 newsletter-form">
                                 <h4>{{trans('sp.fid')}}: {{$form->fid}}</h4>
+                                <h4 style="color: red"> التخصص: {{$form->major}}</h4>
 
                                 <hr>
 

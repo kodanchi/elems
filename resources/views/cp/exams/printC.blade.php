@@ -83,7 +83,11 @@
                             <td style="text-align: center">{{$form->fname}} {{$form->faname}} {{$form->gfaname}} {{$form->lname}}</td>
                             <td style="text-align: center">{{$form->NID}}</td>
                             <td style="text-align: center">{{$form->cellphone}}</td>
-                            <td style="text-align: center">{{trans('testersAllocation.testers_type.'.$form->tester_type)}}</td>
+                            @if($form->tester_type=='مراقب جودة')
+                                <td style="text-align: center">{{$form->tester_type}}</td>
+                            @else
+                                <td style="text-align: center">{{trans('testersAllocation.testers_type.'.$form->tester_type)}}</td>
+                            @endforelse
                             <td style="font-size: larger; font-weight: bold">&nbsp;</td>
                             <td colspan="" style="font-size: larger; font-weight: bold">&nbsp;</td>
                             <td style="font-size: larger; font-weight: bold">&nbsp;</td>

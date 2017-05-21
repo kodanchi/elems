@@ -28,7 +28,7 @@
                             <?php
                             for ($x = 0; $x < sizeof($dates); $x++) {
                             ?>
-                            <option value="{{ $dates[$x]->date }}">{{ $dates[$x]->date}}</option>
+                            <option value="{{ $dates[$x]->date }}">{{ $dates[$x]->date}} ({{ $dates[$x]->higri_date}})</option>
                             <?php
                             }
                             ?>
@@ -40,6 +40,7 @@
                             {!! Form::label('center', '  المركز:') !!}
                             <select name="center" class="form-control selectpicker" data-live-search="true" required>
                                 <option value="">المركز</option>
+                                <option value="19">DL</option>
                                 <?php
                                 for ($x = 0; $x < sizeof($centers); $x++) {
                                 ?>
@@ -181,10 +182,8 @@
 
                         {!! Form::submit(trans('استعراض'), ['class' => ' col-md-3', 'onclick' => 'myFunction()']) !!}
                   {{--      <a href="/cp/exams/services/home" class="button btn-default">{{trans('settings.back')}}</a>--}}
-
-
                         {!! Form::close() !!}
-
+                            <button id="btnBack" name="btnBack" style="height: 42px" class="btn btn-default col-md-3" onclick="location.href='{{url('/cp/exams/services/home')}}';">رجوع</button>
 
 
 

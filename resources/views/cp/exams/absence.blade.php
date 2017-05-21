@@ -30,7 +30,7 @@
                             @<?php
                             for ($x = 0; $x < sizeof($dates); $x++) {
                             ?>
-                            <option value="{{ $dates[$x]->date }}">{{ $dates[$x]->date}}</option>
+                            <option value="{{ $dates[$x]->date }}">{{ $dates[$x]->date}} ({{ $dates[$x]->higri_date}})</option>
                             <?php
                             }
                             ?>
@@ -59,6 +59,7 @@
                         <br>
 
                         <button id="btn" name="btn" class="btn btn-primary col-md-3">تحديث</button>
+                        <button id="btnBack" name="btnBack" class="btn btn-default col-md-3" onclick="location.href='{{url('/cp/exams/services/home')}}';">رجوع</button>
                         {{--<select name="dcd" id="cd" class="form-control selectpicker" data-live-search="true"  style="width:350px">
                             <option value="">اختر</option>
                             <option value="">اختر</option>
@@ -364,6 +365,11 @@
                                 }
 
                             });
+
+                            /*$('#btnBack').on('click',function(){
+                                //alert("aaaa");
+
+                            });*/
                         </script>
 
                         <input  name="status" type="hidden" value="1">

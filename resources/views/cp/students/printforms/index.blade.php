@@ -24,7 +24,7 @@
                                 <?php
                                 for ($x = 0; $x < sizeof($dates); $x++) {
                                 ?>
-                                <option value="{{ $dates[$x]->date }}">{{ $dates[$x]->date}}</option>
+                                <option value="{{ $dates[$x]->date }}">{{ $dates[$x]->date}} ({{ $dates[$x]->higri_date}})</option>
                                 <?php
                                 }
                                 ?>
@@ -53,10 +53,6 @@
                                                     var x=0;
                                                     @if(in_array('admin',Auth::user()->getAllroles()))
                                                     $.each(res,function(key,value){
-                                                        if (x==0){
-                                                            $("#center").append('<option value="">اختر المركز</option>');
-                                                            $("#center").append('<option value="0">DL</option>');
-                                                        }
                                                         $("#center").append('<option value="'+key+'">'+value+'</option>');
                                                         x++;
                                                     });
@@ -187,8 +183,8 @@
 
                                     {!! Form::submit(trans('بحث'), ['class' => ' col-md-3', 'onclick' => 'myFunction()']) !!}
                 {{--        <a href="/cp/exams/services/home" class="button col-md-3">{{trans('settings.back')}}</a>--}}
-
                             {!! Form::close() !!}
+                        <button id="btnBack" name="btnBack" style="height: 42px" class="btn btn-default col-md-3" onclick="location.href='{{url('/cp/exams/services/home')}}';">رجوع</button>
 
 
 

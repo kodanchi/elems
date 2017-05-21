@@ -6,7 +6,7 @@
         <div class="row ">
             @include('errors.errors')
 
-
+{{--
 
             <div class="col-md-6">
                 <div class="panel panel-default">
@@ -29,77 +29,48 @@
                                         تقديم أصل العذر وليس الصورة منه .
                                     </li>
                                     <li class="list-group-item">
-                                        تقديم عذر الطالب/ ـة في مدة لا تتجاوز عشرة أيام من تاريخ الاختبار المعني.
+                                        تقديم عذر الطالب/ ـة في مدة لا تتجاوز خمسة أيام من تاريخ الاختبار المعني.
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>--}}
 
-            <div class="col-md-6">
+            <div class="col-md-6 col-md-offset-3">
+
 
 
                 <div class="panel panel-default">
-                   {{-- <div class="alert alert-danger" role="alert">
-        --}}{{--                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                        تم اغلاق التقديم
-                    </div>--}}
-                    <div class="panel-heading">{{trans('sp.applicants')}}</div>
-
-                    <div class="panel panel-default">
+                    <div class="panel-heading">{{trans('exams.lookup')}}</div>
 
                     <div class="panel-body ">
                         <div class="row">
 
 
                             <div class="col-md-12">
-
-                                {!! Form::open(['url' => '/students/sp/pin', 'method' => 'post']) !!}
-                                <!--- SID Field --->
-                                <div class="form-group">
-                                    {!! Form::label('sid', trans('sp.sid').':') !!}
-                                    {!! Form::text('sid', null, ['class' => 'form-control' ]  ) !!}
-                                </div>
-                                <label>
-                                    {!! Form::checkbox('agree', '1', null,  ['id' => 'agree']) !!}
-                                    أوفق على الإدلاء بالمعلومات الصحيحة وأتحمل كامل المسؤولية في حال كانت المعلومات غير صحيحة
-                                </label>
-                                    <div align="center">
-                                        {!! Recaptcha::render() !!}
-                                    </div>
-                                    <br>
-                                {!! Form::submit('تقدم', ['class' => 'form-control']) !!}
-                                {!! Form::close() !!}
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="panel panel-default">
-                    <div class="panel-heading">{{trans('sp.lookup')}}</div>
-
-                    <div class="panel-body ">
-                        <div class="row">
-
-
-                            <div class="col-md-12">
-                            {!! Form::open(['url' => '/students/sp/view', 'method' => 'post']) !!}
+                            {!! Form::open(['url' => '/cp/exams/lookup/table', 'method' => 'post']) !!}
                             <!--- SID Field --->
                                 <div class="form-group">
-                                    {!! Form::label('sid', 'الرقم الأكاديمي:') !!}
-                                    {!! Form::text('sid', null, ['class' => 'form-control']) !!}
+                                    {!! Form::label('indicator_l','طريقة البحث', ['id' => 'indicator_l']) !!}
+                                    <select name="indicator" class="form-control selectpicker" id="date" style="width:350px" data-live-search="true" required>
+                                        <option value="" style="direction: ltr">اختر طريقة البحث</option>
+                                        <option value="sid" style="direction: ltr">الرقم الجامعي</option>
+                                        <option value="nid" style="direction: ltr">الهوية</option>
+                                    </select>
+                                    <br>
+                                    <br>
                                 </div>
-                                <!--- FID Field --->
+                                <!--- NID Field --->
                                 <div class="form-group">
-                                    {!! Form::label('id', 'رمز الطلب:') !!}
                                     {!! Form::text('id', null, ['class' => 'form-control']) !!}
                                 </div>
+
+
                                 {!! Form::submit('تحقق', ['class' => 'form-control']) !!}
                                 {!! Form::close() !!}
+                                <button id="btnBack" name="btnBack"  class="btn btn-block btn-default col-md-3" onclick="location.href='{{url('/cp/exams/services/home')}}';">رجوع</button>
                             </div>
 
                         </div>
@@ -107,7 +78,6 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
 
     @endsection

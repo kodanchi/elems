@@ -27,10 +27,10 @@
                                 </div>
                                 <!--- NID Field --->
 
-                                {!! Form::submit('استعراض', ['class' => ' col-md-3' ]) !!}
-
+                                {!! Form::submit('استعراض', ['class' => 'form-control' ]) !!}
                               {{--  <a href="/cp/exams/services/home" class="button col-md-3">{{trans('settings.back')}}</a>--}}
                                 {!! Form::close() !!}
+                                <button id="btnBack" name="btnBack"  class="btn btn-block btn-default col-md-3" onclick="location.href='{{url('/cp/exams/services/home')}}';">رجوع</button>
                             </div>
 
                         </div>

@@ -28,7 +28,7 @@
                 @if(in_array('admin',Auth::user()->getAllroles()))
                 <li><a tabindex="0" href="{{url('cp/students/conflict')}}"><i class="fa fa-btn fa-list-alt"></i>{{trans('settings.conflict')}}</a></li><br>
                 @endif
-                @if(in_array('admin',Auth::user()->getAllroles()))
+                @if(in_array('admin',Auth::user()->getAllroles()) || in_array('SOCDL',Auth::user()->getAllroles()) || in_array('ABADL',Auth::user()->getAllroles()))
                 <li><a tabindex="0" href="{{url('cp/students/sp')}}"><i class="fa fa-btn fa-list-alt"></i>{{trans('settings.sp')}}</a></li><br>
                 @endif
                 @if(in_array('admin',Auth::user()->getAllroles()) || in_array('Registration',Auth::user()->getAllroles()) || in_array('financial',Auth::user()->getAllroles()) || in_array('graduate',Auth::user()->getAllroles()) || in_array('academicAffairs',Auth::user()->getAllroles()) || in_array('blackboard',Auth::user()->getAllroles()) || in_array('technicalSupport',Auth::user()->getAllroles()))

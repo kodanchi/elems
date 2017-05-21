@@ -41,7 +41,8 @@
                         <th  style="text-align: center ; font-size: large">التاريخ </th>
                         <th  style="text-align: center ; font-size: large">الوقت </th>
                         @if(Auth::User()->getRole() == 'admin' )
-                            {{--<th  style="text-align: center ; font-size: large">تعديل </th>--}}
+                            -<th  style="text-align: center ; font-size: large">التعليق </th>
+                            <th  style="text-align: center ; font-size: large">التقييم </th>
                             <th  style="text-align: center ; font-size: large">حذف </th>
                             @endif
                     </tr>
@@ -63,6 +64,10 @@
                                         <span class="glyphicon glyphicon-pencil btn-lg"></span>
                                     </a>
                                 </td>--}}
+
+                                <td>{{$form->comment}}</td>
+
+                                <td>{{$form->rate}}</td>
                                 <td>
                                     <button type="button" class="btn-link" data-toggle="modal" data-target="#exampleModal" data-whatever="{{$form->id}}"><span class="glyphicon glyphicon-remove-circle  btn-lg" style="color: rgba(203, 0, 14, 0.92)"></span></button>
                                 </td>

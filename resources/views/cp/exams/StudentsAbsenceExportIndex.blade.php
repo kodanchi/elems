@@ -27,7 +27,7 @@
                             <?php
                             for ($x = 0; $x < sizeof($dates); $x++) {
                             ?>
-                            <option value="{{ $dates[$x]->date }}">{{ $dates[$x]->date}}</option>
+                            <option value="{{ $dates[$x]->date }}">{{ $dates[$x]->date}} ({{ $dates[$x]->higri_date}})</option>
                             <?php
                             }
                             ?>
@@ -179,6 +179,7 @@
 
                         {!! Form::close() !!}
 
+                            <button id="btnBack" name="btnBack" style="height: 42px" class="btn btn-default col-md-3" onclick="location.href='{{url('/cp/exams/services/home')}}';">رجوع</button>
 
 
 

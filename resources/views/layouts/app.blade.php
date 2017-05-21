@@ -102,20 +102,22 @@
 <div class="site-branding-area">
     <div class="container">
         <div class="row">
-            <div class="col-sm-12">
-                <div class="logo" dir="ltr">
-                    <img src="{{asset('storage/logo.png')}}" alt="E-Learning" width="370px">
+            <div class="col-md-12">
+                <div>
+                    <div  style=" float:  left">
+                        <img src="{{asset('storage/logo.png')}}" alt="E-Learning" width="370px" height="200px">
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div>
+
+                    <div style=" float:  right">
+                        <img src="{{asset('storage/iualogo.png')}}" class="img-responsive" alt="portal" width="370px" height="200px">
+                    </div>
                 </div>
             </div>
-
-            {{--<div class="col-sm-6">
-                <div class="shopping-item">
-                    <a href="cart.html">Cart - <span class="cart-amunt">$800</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
-                </div>
-            </div>--}}
-        </div>
-    </div>
-</div> <!-- End site branding area -->
+        </div><!-- End site branding area -->
 
 <div class="mainmenu-area">
     <div class="container">
