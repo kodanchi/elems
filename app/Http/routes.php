@@ -116,6 +116,15 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
     Route::get('/cp/printforms/testersAndStatisticsForm/{center_id}/{date}', 'PrintController@TestersAndGeneratePDF4GET');
     Route::get('/cp/printforms/testersAndStatisticsForm/delete/{id}/{center_id}/{date}', 'PrintController@testersAndStatisticsFormDelete');
 
+    //Non-sense-2
+    Route::get('/cp/printforms/testersAllocationPresenceStatistics/', 'PrintController@TestersAllocationPresenceStatistics');
+    Route::get('/cp/printforms/testersAllocationPresenceStatistics/building', 'PrintController@getBuildingsListForTestersAllocationPresenceStatistics');
+
+    Route::post('/cp/printforms/testersAllocationPresenceStatisticsForm/', 'PrintController@TestersAllocationPresenceAndGeneratePDF4');
+
+    Route::get('/cp/printforms/testersAllocationPresenceStatisticsForm/{center_id}/{date}', 'PrintController@TestersAllocationPresenceAndGeneratePDF4GET');
+    Route::get('/cp/printforms/testersAllocationPresenceStatisticsForm/delete/{id}/{center_id}/{date}', 'PrintController@testersAllocationPresenceStatisticsFormDelete');
+
     //Info route 3/14/2017
 
     Route::get('students/Info', 'Std_updates@index');
@@ -296,6 +305,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
 
     Route::get('/cp/exams/testers/search', 'ExamsController@TestersSearchIndex');
     Route::post('/cp/exams/testers/view', 'ExamsController@TestersSchedule');
+
+    Route::get('/cp/exams/testers/search/date', 'ExamsController@TestersSearchDateIndex');
+    Route::post('/cp/exams/testers/view/presence', 'ExamsController@TestersSchedulePresence');
+
 
     Route::group(['middleware' => ['conflictCP']], function () {
         Route::get('/cp/students/conflict', 'ConflictFormController@CPindex');

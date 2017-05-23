@@ -38,6 +38,7 @@
                         <th style="text-align: center ; font-size: large" >رقم الهوية الوطنية / الإقامة </th>
                         <th style="text-align: center ; font-size: large">اسم المراقب</th>
                                            <th  style="text-align: center ; font-size: large">اسم المركز </th>
+                                           <th  style="text-align: center ; font-size: large">المبنى </th>
                         <th  style="text-align: center ; font-size: large">التاريخ </th>
                         <th  style="text-align: center ; font-size: large">الوقت </th>
                         @if(Auth::User()->getRole() == 'admin' )
@@ -57,6 +58,7 @@
                             <td style="text-align: right;"><div style="padding-right: 6px">{{$form->fname}} {{$form->faname}} {{$form->gfaname}} {{$form->lname}}</div></td>
 
                             <td>{{$form->center_name}}</td>
+                            <td>{{$form->building}}</td>
                             <td>{{$form->date}}</td>
                             <td>{{$form->time}}</td>
                             @if(Auth::User()->getRole() == 'admin')

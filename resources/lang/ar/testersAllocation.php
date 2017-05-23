@@ -22,6 +22,8 @@ return [
         'supporter' => 'خدمات' ,
         'security' => 'أمن' ,
         'point of contact' => 'ضابط اتصال' ,
+        'driver' => 'سائق' ,
+
     ],
 
 

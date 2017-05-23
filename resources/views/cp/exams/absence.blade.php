@@ -296,13 +296,14 @@
                             });
                             $('#cc').on('change',function(){
                                 var CID = $("#course").val();
+                                var center_id = $("#center").val();
                                 var date = $("#date").val();
                                 var building = $("#building").val();
-                                if(CID && date && building){
+                                if(CID && date && building && center_id){
                                     //alert(CID + date + building);
                                     $.ajax({
                                         type:"GET",
-                                        url:"{{url('cp/exams/absence/students')}}?CID="+CID+"&date="+date+"&building="+building,
+                                        url:"{{url('cp/exams/absence/students')}}?CID="+CID+"&date="+date+"&building="+building+"&center_id="+center_id,
                                         success:function(res){
                                             //alert("in");
                                             if(res){

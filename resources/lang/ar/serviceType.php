@@ -7,5 +7,6 @@
             'academicAffairs' => 'الشؤون الاكاديمية',
             'blackboard' => 'البلاك بورد',
             'technicalSupport' => 'الدعم الفني',
+            'exams' => 'الاختبارات النهائية',
 
     ];

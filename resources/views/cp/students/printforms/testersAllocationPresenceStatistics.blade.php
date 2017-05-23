@@ -32,21 +32,18 @@
                     <tr class="tableStyle" >
                         <th style="background-color: black; color: white ; text-align: center; ">المبنى</th>
                         <th style="background-color: black; color: white ; text-align: center; ">القاعة</th>
-                        @if($center!='19')
-                            <th style="background-color: black; color: white ; text-align: center; ">عدد الحضور</th>
-                        @endif
                         <th style="background-color: black; color: white ; text-align: center; ">المراقبين</th>
-                        <th style="background-color: black; color: white ; text-align: center; ">عدد المراقبين</th>
+                        <th style="background-color: black; color: white ; text-align: center; ">العدد</th>
+                        <th style="background-color: black; color: white ; text-align: center; ">المحضرين</th>
+                        <th style="background-color: black; color: white ; text-align: center; ">العدد</th>
                     </tr>
+                    <?php $yArray=array(); ?>
                     <?php $x=0; ?>
                     <?php $studentTotal=0; ?>
                         @foreach($forms as $form)
                             <tr class="tableStyle" >
                                 <td style="text-align: center">{{$form->building}}</td>
                                 <td style="text-align: center">{{$form->room}}</td>
-                                @if($center!='19')
-                                <td style="text-align: center">{{$sumArray[$x]}}</td>
-                                @endif
                                 <td>
                                     <?php $y=0; ?>
                                     @foreach($testers as $tester)
@@ -54,20 +51,67 @@
                                         <?php $form->building=trim($form->building); $tester->building=trim($tester->building);  ?>
                                         @if($form->room==$tester->room && $form->building==$tester->building)
                                             {{--<p>{{$tester->NID}}</p> <p>{{$tester->tester}}</p> <p>{{$tester->time}}</p> <p>{{$tester->tester_type}}</p>--}}
-                                            <div>
-                                            {{$tester->NID}} | {{$tester->tester}} | {{$tester->time}} | {{trans('testersAllocation.testers_type.'.$tester->tester_type)}}
-                                                @if(Auth::User()->getRole() == 'admin')
-                                                    <button type="button" class="btn-link" data-toggle="modal" data-target="#exampleModal" data-whatever="{{$tester->id}}"><span class="glyphicon glyphicon-remove-circle  " style="color: rgba(203, 0, 14, 0.92)"></span></button>
-                                                @endif
-                                            </div>
-                                                <?php $y++; ?>
+                                            @if($y%2==0)
+                                                <div style="background-color: #d6d7d3">{{$tester->NID}} | {{$tester->tester}} | {{$tester->time}} | {{$tester->tester_type}}
+    {{--                                                @if(Auth::User()->getRole() == 'admin')
+                                                        <button type="button" class="btn-link" data-toggle="modal" data-target="#exampleModal" data-whatever="{{$tester->id}}"><span class="glyphicon glyphicon-remove-circle  " style="color: rgba(203, 0, 14, 0.92)"></span></button>
+                                                    @endif--}}
+                                                </div>
+                                            @else
+                                                <div>{{$tester->NID}} | {{$tester->tester}} | {{$tester->time}} | {{$tester->tester_type}}
+                                                    {{--                                                @if(Auth::User()->getRole() == 'admin')
+                                                                                                        <button type="button" class="btn-link" data-toggle="modal" data-target="#exampleModal" data-whatever="{{$tester->id}}"><span class="glyphicon glyphicon-remove-circle  " style="color: rgba(203, 0, 14, 0.92)"></span></button>
+                                                                                                    @endif--}}
+                                                </div>
+                                            @endforelse
+                                            <?php $y++; ?>
+                                        @endif
+                                    @endforeach
+                                    <?php array_push($yArray, $y); ?>
+                                </td>
+                                <td style="/*color: red;*/font-size: larger">
+                                    {{$y}}
+                                </td>
+                                <td>
+                                    <?php $yy=0; ?>
+                                    @foreach($testersPresence as $tester)
+                                        <?php $form->room=trim($form->room); $tester->room=trim($tester->room);  ?>
+                                        @if($form->room==$tester->room && $form->building==$tester->building)
+                                            {{--<p>{{$tester->NID}}</p> <p>{{$tester->tester}}</p> <p>{{$tester->time}}</p> <p>{{$tester->tester_type}}</p>--}}
+                                            @if($yy%2==0)
+                                                <div style="background-color: #d6d7d3">{{$tester->tester}} | {{$tester->time}}
+        {{--                                                @if(Auth::User()->getRole() == 'admin')
+                                                        <button type="button" class="btn-link" data-toggle="modal" data-target="#exampleModal" data-whatever="{{$tester->id}}"><span class="glyphicon glyphicon-remove-circle  " style="color: rgba(203, 0, 14, 0.92)"></span></button>
+                                                    @endif--}}
+                                                </div>
+                                            @else
+                                                <div>{{$tester->tester}} | {{$tester->time}}
+                                                    {{--                                                @if(Auth::User()->getRole() == 'admin')
+                                                                                                        <button type="button" class="btn-link" data-toggle="modal" data-target="#exampleModal" data-whatever="{{$tester->id}}"><span class="glyphicon glyphicon-remove-circle  " style="color: rgba(203, 0, 14, 0.92)"></span></button>
+                                                                                                    @endif--}}
+                                                </div>
+                                            @endforelse
+                                            <?php $yy++; ?>
                                         @endif
                                     @endforeach
                                 </td>
-                                <td>{{$y}}</td>
+                                <?php $lastElm=0; ?>
+                                <?php foreach ($yArray as $elm){
+                                    $lastElm=$elm;
+                                } ?>
+                                {{--@if(in_array($yy,$yArray))--}}
+                                @if($yy==$lastElm)
+                                    <td style="font-size: larger">
+                                        {{$yy}}
+                                    </td>
+                                @else
+                                    <td style="color: red;font-size: x-large">
+                                        {{$yy}}
+                                    </td>
+                                @endif
                             </tr>
 
-                                <?php $studentTotal=$studentTotal+$sumArray[$x]; ?>
+                                <?php /*$studentTotal=$studentTotal+$sumArray[$x]; */?>
 
                             <?php $x++; ?>
                         @endforeach
@@ -76,14 +120,30 @@
                 @endif
                 <h3 style="color: red">عام</h3>
                 <br>
-
+                <h1>-----------------</h1>
+                <h4>المراقبين</h4>
+                <h1>-----------------</h1>
                 @foreach($testers as $tester)
                     @if(!$tester->room)
                         {{--<p>{{$tester->NID}}</p> <p>{{$tester->tester}}</p> <p>{{$tester->time}}</p> <p>{{$tester->tester_type}}</p>--}}
-                        <p>{{$tester->NID}} | {{$tester->tester}} | {{$tester->time}} | {{trans('testersAllocation.testers_type.'.$tester->tester_type)}}
-                        @if(Auth::User()->getRole() == 'admin')
+                        <p>{{$tester->NID}} | {{$tester->tester}} | {{$tester->time}} | {{$tester->tester_type}}
+{{--                        @if(Auth::User()->getRole() == 'admin')
                             <button type="button" class="btn-link" data-toggle="modal" data-target="#exampleModal" data-whatever="{{$tester->id}}"><span class="glyphicon glyphicon-remove-circle " style="color: rgba(203, 0, 14, 0.92)"></span></button>
-                        @endif
+                        @endif--}}
+                        </p>
+                    @endif
+                @endforeach
+
+                <h1>-----------------</h1>
+                <h4>المحضرين</h4>
+                <h1>-----------------</h1>
+                @foreach($testersPresence as $tester)
+                    @if(!$tester->room)
+                        {{--<p>{{$tester->NID}}</p> <p>{{$tester->tester}}</p> <p>{{$tester->time}}</p> <p>{{$tester->tester_type}}</p>--}}
+                        <p>{{$tester->tester}} | {{$tester->time}}
+{{--                            @if(Auth::User()->getRole() == 'admin')
+                                <button type="button" class="btn-link" --}}{{--data-toggle="modal" data-target="#exampleModal" data-whatever="{{$tester->id}}"--}}{{--><span class="glyphicon glyphicon-remove-circle " style="color: rgba(203, 0, 14, 0.92)"></span></button>
+                            @endif--}}
                         </p>
                     @endif
                 @endforeach
