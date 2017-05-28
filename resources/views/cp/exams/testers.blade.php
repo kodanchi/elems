@@ -26,6 +26,9 @@
                         {{--{!! Form::select('date', ['' => 'Select'] +$dates,'',array('class'=>'form-control','id'=>'date','style'=>'width:350px;'))!!}--}}
                          {{--  <label>  اختر التاريخ :</label>--}}
                         {!! Form::label('date_l','التاريخ', ['id' => 'date_l']) !!}
+
+                        {!! Form::hidden('user_id', $systemUserID, ['id' => 'user_id']) !!}
+                        {!! Form::hidden('user_name', $systemUserName, ['id' => 'user_name']) !!}
                             <select name="date" class="form-control selectpicker" id="date" style="width:350px" data-live-search="true" required>
                                 <option value="" style="direction: ltr">اختر التاريخ</option>
                                 <?php
@@ -276,11 +279,14 @@
                                 var rate = $("#rate").val();
                                 var time = $("#time").val();
                                 var comment = $("#comment").val();
+                                var user_id = $("#user_id").val();
+                                var user_name = $("#user_name").val();
+                                //alert(user_id + user_name);
                                 if(NID && date && center && time && rate){
-                                    //alert(NID + date + center + time + rate + comment);
+                                    //alert(user_id + user_name);
                                     $.ajax({
                                         type:"GET",
-                                        url:"{{url('cp/exams/testers/update')}}?NID="+NID+"&date="+date+"&center="+center+"&time="+time+"&rate="+rate+"&comment="+comment,
+                                        url:"{{url('cp/exams/testers/update')}}?NID="+NID+"&date="+date+"&center="+center+"&time="+time+"&rate="+rate+"&comment="+comment+"&user_id="+user_id+"&user_name="+user_name,
                                         success:function(res){
                                             //alert("in");
                                             if(res){

@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="542d1520-2e6c-47d4-91f6-538cee2d3387" name="Default" comment="23-5 before notice view">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/cp/exams/testersearch.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/cp/exams/viewTestersPresence.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/cp/students/printforms/testersAllocationPresenceStatistics.blade.php" />
+    <list default="true" id="542d1520-2e6c-47d4-91f6-538cee2d3387" name="Default" comment="after the exams are finished and before shifting to LD Project">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/cp/exams/noticeView.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/cp/exams/testersMKPresenceExport.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/cp/exams/testersMKPresenceExportIndex.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/ar/serviceType.php" afterPath="$PROJECT_DIR$/resources/lang/ar/serviceType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/ar/testersAllocation.php" afterPath="$PROJECT_DIR$/resources/lang/ar/testersAllocation.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cp/exams/absence.blade.php" afterPath="$PROJECT_DIR$/resources/views/cp/exams/absence.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cp/examapprove/printB.blade.php" afterPath="$PROJECT_DIR$/resources/views/cp/examapprove/printB.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cp/exams/examsForms.blade.php" afterPath="$PROJECT_DIR$/resources/views/cp/exams/examsForms.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cp/exams/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/cp/exams/home.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cp/exams/testers.blade.php" afterPath="$PROJECT_DIR$/resources/views/cp/exams/testers.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cp/exams/testersMK.blade.php" afterPath="$PROJECT_DIR$/resources/views/cp/exams/testersMK.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cp/exams/testersPresenceExport.blade.php" afterPath="$PROJECT_DIR$/resources/views/cp/exams/testersPresenceExport.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cp/students/printforms/testersStatistics.blade.php" afterPath="$PROJECT_DIR$/resources/views/cp/students/printforms/testersStatistics.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cp/exams/viewTesters.blade.php" afterPath="$PROJECT_DIR$/resources/views/cp/exams/viewTesters.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cp/exams/viewTestersPresence.blade.php" afterPath="$PROJECT_DIR$/resources/views/cp/exams/viewTestersPresence.blade.php" />
     </list>
     <ignored path="elems.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,96 +46,100 @@
       <file leaf-file-name="PrintController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PrintController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17646">
-              <caret line="1048" column="12" selection-start-line="1048" selection-start-column="12" selection-end-line="1048" selection-end-column="32" />
+            <state relative-caret-position="30957">
+              <caret line="1831" column="19" selection-start-line="1831" selection-start-column="17" selection-end-line="1831" selection-end-column="19" />
               <folding>
                 <element signature="e#40#58#0#PHP" expanded="true" />
-                <marker date="1495377069187" expanded="true" signature="2285:2480" ph="select disti... SIC" />
-                <marker date="1495377069187" expanded="true" signature="2954:2999" ph="select cours... courses" />
-                <marker date="1495377069187" expanded="true" signature="3229:3277" ph="select disti... SIC" />
-                <marker date="1495377069187" expanded="true" signature="5293:5992" ph="select SIC.b... SIC" />
-                <marker date="1495377069187" expanded="true" signature="6418:6463" ph="select cours... courses" />
-                <marker date="1495377069187" expanded="true" signature="6857:7584" ph="select DISTI... SIC" />
-                <marker date="1495377069187" expanded="true" signature="7543:7567" ph="/*students.g... " />
-                <marker date="1495377069187" expanded="true" signature="8682:9405" ph="select DISTI... SIC" />
-                <marker date="1495377069187" expanded="true" signature="9364:9392" ph="/*students.g... " />
-                <marker date="1495377069187" expanded="true" signature="9732:9811" ph="insert into lists... " />
-                <marker date="1495377069187" expanded="true" signature="10469:10514" ph="select cours... courses" />
-                <marker date="1495377069187" expanded="true" signature="10907:11654" ph="select DISTI... SIC" />
-                <marker date="1495377069187" expanded="true" signature="14573:15313" ph="select DISTI... SIC" />
-                <marker date="1495377069187" expanded="true" signature="15707:15808" ph="insert into lists... " />
-                <marker date="1495377069187" expanded="true" signature="16731:17544" ph="select DISTI... SIC" />
-                <marker date="1495377069187" expanded="true" signature="18119:18613" ph="SELECT DISTI... testers_location" />
-                <marker date="1495377069187" expanded="true" signature="19016:19130" ph="insert into lists... " />
-                <marker date="1495377069187" expanded="true" signature="20037:20353" ph="select DISTI... lists" />
-                <marker date="1495377069187" expanded="true" signature="21029:21833" ph="select DISTI... SIC" />
-                <marker date="1495377069187" expanded="true" signature="21162:21246" ph="/*exams.time... " />
-                <marker date="1495377069187" expanded="true" signature="21653:21813" ph="/*AND exams.... " />
-                <marker date="1495377069187" expanded="true" signature="23436:23876" ph="select SIC.b... SIC" />
-                <marker date="1495377069187" expanded="true" signature="23835:23863" ph="/*students.g... " />
-                <marker date="1495377069187" expanded="true" signature="25686:26589" ph="select DISTI... SIC" />
-                <marker date="1495377069187" expanded="true" signature="25819:25903" ph="/*exams.time... " />
-                <marker date="1495377069187" expanded="true" signature="26409:26569" ph="/*AND exams.... " />
-                <marker date="1495377069187" expanded="true" signature="28103:28983" ph="select DISTI... SIC" />
-                <marker date="1495377069187" expanded="true" signature="28103:28987" ph="select DISTI... SIC" />
-                <marker date="1495377069187" expanded="true" signature="28923:28951" ph="/*students.g... " />
-                <marker date="1495377069187" expanded="true" signature="31000:31053" ph="select cente... centers" />
-                <marker date="1495377069187" expanded="true" signature="31303:31995" ph="select DISTI... SIC" />
-                <marker date="1495377069187" expanded="true" signature="33510:34157" ph="select DISTI... SIC" />
-                <marker date="1495377069187" expanded="true" signature="36248:36815" ph="select DISTI... SIC" />
-                <marker date="1495377069187" expanded="true" signature="36901:37283" ph="SELECT teste... " />
-                <marker date="1495377069187" expanded="true" signature="38807:39454" ph="select DISTI... SIC" />
-                <marker date="1495377069187" expanded="true" signature="41554:42121" ph="select DISTI... SIC" />
-                <marker date="1495377069187" expanded="true" signature="42207:42589" ph="SELECT teste... " />
-                <marker date="1495377069187" expanded="true" signature="43650:44368" ph="select DISTI... SIC" />
-                <marker date="1495377069187" expanded="true" signature="46764:46878" ph="insert into lists... " />
-                <marker date="1495377069187" expanded="true" signature="47562:47620" ph="delete from " />
-                <marker date="1495377069187" expanded="true" signature="47710:47773" ph="select * fro... testers_location" />
-                <marker date="1495377069187" expanded="true" signature="48587:48640" ph="select cente... centers" />
-                <marker date="1495377069187" expanded="true" signature="48923:49615" ph="select DISTI... SIC" />
-                <marker date="1495377069187" expanded="true" signature="51163:51810" ph="select DISTI... SIC" />
-                <marker date="1495377069187" expanded="true" signature="53918:54485" ph="select DISTI... SIC" />
-                <marker date="1495377069187" expanded="true" signature="54571:54966" ph="SELECT teste... " />
-                <marker date="1495377069187" expanded="true" signature="55027:55647" ph="SELECT disti... testers_presence" />
-                <marker date="1495377069187" expanded="true" signature="57253:57900" ph="select DISTI... SIC" />
-                <marker date="1495377069187" expanded="true" signature="60008:60575" ph="select DISTI... SIC" />
-                <marker date="1495377069187" expanded="true" signature="60661:61043" ph="SELECT teste... " />
-                <marker date="1495377069187" expanded="true" signature="60661:61056" ph="SELECT teste... " />
-                <marker date="1495377069187" expanded="true" signature="61118:61708" ph="SELECT teste... " />
-                <marker date="1495377069187" expanded="true" signature="61118:61721" ph="SELECT disti... testers_presence" />
-                <marker date="1495377069187" expanded="true" signature="62855:63573" ph="select DISTI... SIC" />
-                <marker date="1495377069187" expanded="true" signature="64913:65027" ph="insert into lists... " />
-                <marker date="1495377069187" expanded="true" signature="65726:65784" ph="delete from " />
-                <marker date="1495377069187" expanded="true" signature="65874:65937" ph="select * fro... testers_location" />
-                <marker date="1495377069187" expanded="true" signature="66674:67608" ph="select DISTI... SIC" />
-                <marker date="1495377069187" expanded="true" signature="66807:66891" ph="/*exams.time... " />
-                <marker date="1495377069187" expanded="true" signature="67382:67439" ph="/*AND exams.... " />
-                <marker date="1495377069187" expanded="true" signature="67469:67546" ph="/*AND studen... " />
-                <marker date="1495377069187" expanded="true" signature="68469:69298" ph="select cente... SIC" />
-                <marker date="1495377069187" expanded="true" signature="69299:69327" ph="/*students.g... " />
-                <marker date="1495377069187" expanded="true" signature="72883:72936" ph="select cente... centers" />
-                <marker date="1495377069187" expanded="true" signature="73824:74471" ph="select DISTI... SIC" />
-                <marker date="1495377069187" expanded="true" signature="76150:76868" ph="select DISTI... SIC" />
-                <marker date="1495377069187" expanded="true" signature="78221:78335" ph="insert into lists... " />
-                <marker date="1495377069187" expanded="true" signature="79891:80475" ph="SELECT SIC.S... students" />
-                <marker date="1495377069187" expanded="true" signature="80339:80474" ph="SELECT cours... Students_absence" />
-                <marker date="1495377069187" expanded="true" signature="81008:81051" ph="select DISTI... " />
-                <marker date="1495377069187" expanded="true" signature="81155:81208" ph="select cente... centers" />
-                <marker date="1495377069187" expanded="true" signature="81403:82095" ph="select DISTI... SIC" />
-                <marker date="1495377069187" expanded="true" signature="83736:84534" ph="SELECT DISTI... testers_location" />
-                <marker date="1495377069187" expanded="true" signature="84195:84346" ph="/*and (teste... " />
-                <marker date="1495377069187" expanded="true" signature="84611:85430" ph="SELECT DISTI... testers_location" />
-                <marker date="1495377069187" expanded="true" signature="85094:85245" ph="/*and (teste... " />
-                <marker date="1495377069187" expanded="true" signature="86597:86642" ph="select cours... courses" />
-                <marker date="1495377069187" expanded="true" signature="87035:87782" ph="select DISTI... SIC" />
-                <marker date="1495377069187" expanded="true" signature="90199:90241" ph="select * fro... lists" />
-                <marker date="1495377069187" expanded="true" signature="91052:91865" ph="select DISTI... SIC" />
-                <marker date="1495377069187" expanded="true" signature="92440:92900" ph="SELECT DISTI... testers_location" />
-                <marker date="1495377069187" expanded="true" signature="93187:93301" ph="insert into lists... " />
-                <marker date="1495377069187" expanded="true" signature="94224:94338" ph="insert into lists... " />
-                <marker date="1495377069187" expanded="true" signature="95264:95580" ph="select DISTI... lists" />
-                <marker date="1495377069187" expanded="true" signature="96616:96938" ph="SELECT disti... testers_presence" />
-                <marker date="1495377069187" expanded="true" signature="97034:97355" ph="SELECT CONCA... testers_presence" />
+                <marker date="1495653172501" expanded="true" signature="2285:2480" ph="select disti... SIC" />
+                <marker date="1495653172501" expanded="true" signature="2954:2999" ph="select cours... courses" />
+                <marker date="1495653172501" expanded="true" signature="3229:3277" ph="select disti... SIC" />
+                <marker date="1495653172501" expanded="true" signature="5293:5992" ph="select SIC.b... SIC" />
+                <marker date="1495653172501" expanded="true" signature="6418:6463" ph="select cours... courses" />
+                <marker date="1495653172501" expanded="true" signature="6857:7584" ph="select DISTI... SIC" />
+                <marker date="1495653172501" expanded="true" signature="7543:7567" ph="/*students.g... " />
+                <marker date="1495653172501" expanded="true" signature="8682:9405" ph="select DISTI... SIC" />
+                <marker date="1495653172501" expanded="true" signature="9364:9392" ph="/*students.g... " />
+                <marker date="1495653172501" expanded="true" signature="9732:9811" ph="insert into lists... " />
+                <marker date="1495653172501" expanded="true" signature="10469:10514" ph="select cours... courses" />
+                <marker date="1495653172501" expanded="true" signature="10907:11654" ph="select DISTI... SIC" />
+                <marker date="1495653172501" expanded="true" signature="14573:15313" ph="select DISTI... SIC" />
+                <marker date="1495653172501" expanded="true" signature="15707:15808" ph="insert into lists... " />
+                <marker date="1495653172501" expanded="true" signature="16731:17544" ph="select DISTI... SIC" />
+                <marker date="1495653172501" expanded="true" signature="18119:18613" ph="SELECT DISTI... testers_location" />
+                <marker date="1495653172501" expanded="true" signature="19016:19130" ph="insert into lists... " />
+                <marker date="1495653172501" expanded="true" signature="20037:20353" ph="select DISTI... lists" />
+                <marker date="1495653172501" expanded="true" signature="21029:21833" ph="select DISTI... SIC" />
+                <marker date="1495653172501" expanded="true" signature="21162:21246" ph="/*exams.time... " />
+                <marker date="1495653172501" expanded="true" signature="21653:21813" ph="/*AND exams.... " />
+                <marker date="1495653172501" expanded="true" signature="23436:23876" ph="select SIC.b... SIC" />
+                <marker date="1495653172501" expanded="true" signature="23835:23863" ph="/*students.g... " />
+                <marker date="1495653172501" expanded="true" signature="25686:26589" ph="select DISTI... SIC" />
+                <marker date="1495653172501" expanded="true" signature="25819:25903" ph="/*exams.time... " />
+                <marker date="1495653172501" expanded="true" signature="26409:26569" ph="/*AND exams.... " />
+                <marker date="1495653172501" expanded="true" signature="28103:28983" ph="select DISTI... SIC" />
+                <marker date="1495653172501" expanded="true" signature="28103:28987" ph="select DISTI... SIC" />
+                <marker date="1495653172501" expanded="true" signature="28923:28951" ph="/*students.g... " />
+                <marker date="1495653172501" expanded="true" signature="31000:31053" ph="select cente... centers" />
+                <marker date="1495653172501" expanded="true" signature="31303:31995" ph="select DISTI... SIC" />
+                <marker date="1495653172501" expanded="true" signature="33510:34157" ph="select DISTI... SIC" />
+                <marker date="1495653172501" expanded="true" signature="36248:36815" ph="select DISTI... SIC" />
+                <marker date="1495653172501" expanded="true" signature="36901:37283" ph="SELECT teste... " />
+                <marker date="1495653172501" expanded="true" signature="38821:39468" ph="select DISTI... SIC" />
+                <marker date="1495653172501" expanded="true" signature="41568:42135" ph="select DISTI... SIC" />
+                <marker date="1495653172501" expanded="true" signature="42221:42603" ph="SELECT teste... " />
+                <marker date="1495653172501" expanded="true" signature="43675:44393" ph="select DISTI... SIC" />
+                <marker date="1495653172501" expanded="true" signature="60197:60311" ph="insert into lists... " />
+                <marker date="1495653172501" expanded="true" signature="61007:61083" ph="select disti... " />
+                <marker date="1495653172501" expanded="true" signature="61114:61172" ph="delete from " />
+                <marker date="1495653172501" expanded="true" signature="61227:61346" ph="delete from " />
+                <marker date="1495653172501" expanded="true" signature="61478:61541" ph="select * fro... testers_location" />
+                <marker date="1495653172501" expanded="true" signature="62355:62408" ph="select cente... centers" />
+                <marker date="1495653172501" expanded="true" signature="62691:63383" ph="select DISTI... SIC" />
+                <marker date="1495653172501" expanded="true" signature="64931:65578" ph="select DISTI... SIC" />
+                <marker date="1495653172501" expanded="true" signature="67686:68253" ph="select DISTI... SIC" />
+                <marker date="1495653172501" expanded="true" signature="68339:68734" ph="SELECT teste... " />
+                <marker date="1495653172501" expanded="true" signature="68795:69415" ph="SELECT disti... testers_presence" />
+                <marker date="1495653172501" expanded="true" signature="71021:71668" ph="select DISTI... SIC" />
+                <marker date="1495653172501" expanded="true" signature="73776:74343" ph="select DISTI... SIC" />
+                <marker date="1495653172501" expanded="true" signature="74429:74811" ph="SELECT teste... " />
+                <marker date="1495653172501" expanded="true" signature="74429:74824" ph="SELECT teste... " />
+                <marker date="1495653172501" expanded="true" signature="74886:75476" ph="SELECT teste... " />
+                <marker date="1495653172501" expanded="true" signature="74886:75489" ph="SELECT disti... testers_presence" />
+                <marker date="1495653172501" expanded="true" signature="76623:77341" ph="select DISTI... SIC" />
+                <marker date="1495653172501" expanded="true" signature="78681:78795" ph="insert into lists... " />
+                <marker date="1495653172501" expanded="true" signature="79494:79552" ph="delete from " />
+                <marker date="1495653172501" expanded="true" signature="79642:79705" ph="select * fro... testers_location" />
+                <marker date="1495653172501" expanded="true" signature="80442:81376" ph="select DISTI... SIC" />
+                <marker date="1495653172501" expanded="true" signature="80575:80659" ph="/*exams.time... " />
+                <marker date="1495653172501" expanded="true" signature="81150:81207" ph="/*AND exams.... " />
+                <marker date="1495653172501" expanded="true" signature="81237:81314" ph="/*AND studen... " />
+                <marker date="1495653172501" expanded="true" signature="82237:83066" ph="select cente... SIC" />
+                <marker date="1495653172501" expanded="true" signature="83067:83095" ph="/*students.g... " />
+                <marker date="1495653172501" expanded="true" signature="86651:86704" ph="select cente... centers" />
+                <marker date="1495653172501" expanded="true" signature="87592:88239" ph="select DISTI... SIC" />
+                <marker date="1495653172501" expanded="true" signature="89918:90636" ph="select DISTI... SIC" />
+                <marker date="1495653172501" expanded="true" signature="91989:92103" ph="insert into lists... " />
+                <marker date="1495653172501" expanded="true" signature="93659:94243" ph="SELECT SIC.S... students" />
+                <marker date="1495653172501" expanded="true" signature="94107:94242" ph="SELECT cours... Students_absence" />
+                <marker date="1495653172501" expanded="true" signature="94776:94819" ph="select DISTI... " />
+                <marker date="1495653172501" expanded="true" signature="94923:94976" ph="select cente... centers" />
+                <marker date="1495653172501" expanded="true" signature="95171:95863" ph="select DISTI... SIC" />
+                <marker date="1495653172501" expanded="true" signature="97504:98302" ph="SELECT DISTI... testers_location" />
+                <marker date="1495653172501" expanded="true" signature="97963:98114" ph="/*and (teste... " />
+                <marker date="1495653172501" expanded="true" signature="98379:99198" ph="SELECT DISTI... testers_location" />
+                <marker date="1495653172501" expanded="true" signature="98862:99013" ph="/*and (teste... " />
+                <marker date="1495653172501" expanded="true" signature="100365:100410" ph="select cours... courses" />
+                <marker date="1495653172501" expanded="true" signature="100803:101550" ph="select DISTI... SIC" />
+                <marker date="1495653172501" expanded="true" signature="103967:104009" ph="select * fro... lists" />
+                <marker date="1495653172501" expanded="true" signature="104820:105633" ph="select DISTI... SIC" />
+                <marker date="1495653172501" expanded="true" signature="106208:106668" ph="SELECT DISTI... testers_location" />
+                <marker date="1495653172501" expanded="true" signature="106955:107069" ph="insert into lists... " />
+                <marker date="1495653172501" expanded="true" signature="107992:108106" ph="insert into lists... " />
+                <marker date="1495653172501" expanded="true" signature="109032:109348" ph="select DISTI... lists" />
+                <marker date="1495653172501" expanded="true" signature="110384:110523" ph="SELECT disti... testers_presence" />
+                <marker date="1495653172501" expanded="true" signature="110384:110714" ph="SELECT disti... testers_presence" />
+                <marker date="1495653172501" expanded="true" signature="110810:111131" ph="SELECT CONCA... testers_presence" />
+                <marker date="1495653172501" expanded="true" signature="111132:111152" ph="/*and center... " />
               </folding>
             </state>
           </provider>
@@ -141,41 +148,187 @@
       <file leaf-file-name="ExamsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ExamsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11186">
-              <caret line="672" column="0" selection-start-line="672" selection-start-column="0" selection-end-line="672" selection-end-column="0" />
+            <state relative-caret-position="16915">
+              <caret line="995" column="40" selection-start-line="995" selection-start-column="32" selection-end-line="995" selection-end-column="40" />
               <folding>
                 <element signature="e#40#55#0#PHP" expanded="true" />
-                <marker date="1495453482251" expanded="true" signature="594:625" ph="select DISTI... " />
-                <marker date="1495453482251" expanded="true" signature="726:803" ph="select * fro... courses" />
-                <marker date="1495453482251" expanded="true" signature="1331:1362" ph="select DISTI... " />
-                <marker date="1495453482251" expanded="true" signature="1463:1560" ph="select * fro... courses" />
-                <marker date="1495453482251" expanded="true" signature="1922:1953" ph="select DISTI... " />
-                <marker date="1495453482251" expanded="true" signature="2063:2142" ph="select * fro... courses" />
-                <marker date="1495453482251" expanded="true" signature="2710:3579" ph="select SSC.s... SSC" />
-                <marker date="1495453482251" expanded="true" signature="3768:4651" ph="select cours... SSC" />
-                <marker date="1495453482251" expanded="true" signature="4131:4510" ph="select cours... SSC" />
-                <marker date="1495453482251" expanded="true" signature="5390:5421" ph="select DISTI... " />
-                <marker date="1495453482251" expanded="true" signature="5458:5496" ph="select * fro... centers" />
-                <marker date="1495453482251" expanded="true" signature="7052:8014" ph="select DISTI... courses" />
-                <marker date="1495453482251" expanded="true" signature="8313:8340" ph="select cid,d... courses" />
-                <marker date="1495453482251" expanded="true" signature="10051:10892" ph="SELECT DISTI... " />
-                <marker date="1495453482251" expanded="true" signature="12639:12695" ph="SELECT stude... students" />
-                <marker date="1495453482251" expanded="true" signature="12756:13597" ph="SELECT DISTI... " />
-                <marker date="1495453482251" expanded="true" signature="15159:15214" ph="SELECT stude... studentsWHERE" />
-                <marker date="1495453482251" expanded="true" signature="15264:16105" ph="SELECT DISTI... " />
-                <marker date="1495453482251" expanded="true" signature="16951:17643" ph="select DISTI... SIC" />
-                <marker date="1495453482251" expanded="true" signature="18913:19060" ph="select disti... courses" />
-                <marker date="1495453482251" expanded="true" signature="19873:20070" ph="select disti... SIC" />
+                <marker date="1495706338707" expanded="true" signature="631:662" ph="select DISTI... " />
+                <marker date="1495706338707" expanded="true" signature="763:840" ph="select * fro... courses" />
+                <marker date="1495706338707" expanded="true" signature="1368:1399" ph="select DISTI... " />
+                <marker date="1495706338707" expanded="true" signature="1500:1597" ph="select * fro... courses" />
+                <marker date="1495706338707" expanded="true" signature="1959:1990" ph="select DISTI... " />
+                <marker date="1495706338707" expanded="true" signature="2100:2179" ph="select * fro... courses" />
+                <marker date="1495706338707" expanded="true" signature="2747:3616" ph="select SSC.s... SSC" />
+                <marker date="1495706338707" expanded="true" signature="3805:4688" ph="select cours... SSC" />
+                <marker date="1495706338707" expanded="true" signature="4168:4547" ph="select cours... SSC" />
+                <marker date="1495706338707" expanded="true" signature="5427:5458" ph="select DISTI... " />
+                <marker date="1495706338707" expanded="true" signature="5495:5533" ph="select * fro... centers" />
+                <marker date="1495706338707" expanded="true" signature="7089:8051" ph="select DISTI... courses" />
+                <marker date="1495706338707" expanded="true" signature="8350:8377" ph="select cid,d... courses" />
+                <marker date="1495706338707" expanded="true" signature="10088:10929" ph="SELECT DISTI... " />
+                <marker date="1495706338707" expanded="true" signature="12676:12732" ph="SELECT stude... students" />
+                <marker date="1495706338707" expanded="true" signature="12793:13634" ph="SELECT DISTI... " />
+                <marker date="1495706338707" expanded="true" signature="15196:15251" ph="SELECT stude... studentsWHERE" />
+                <marker date="1495706338707" expanded="true" signature="15301:16142" ph="SELECT DISTI... " />
+                <marker date="1495706338707" expanded="true" signature="16988:17680" ph="select DISTI... SIC" />
+                <marker date="1495706338707" expanded="true" signature="18950:19097" ph="select disti... courses" />
+                <marker date="1495706338707" expanded="true" signature="19910:20107" ph="select disti... SIC" />
+                <marker date="1495706338707" expanded="true" signature="19910:20124" ph="select disti... SIC" />
+                <marker date="1495706338707" expanded="true" signature="20652:20689" ph="select cid f... courses" />
+                <marker date="1495706338707" expanded="true" signature="20690:20708" ph="/*and course... " />
+                <marker date="1495706338707" expanded="true" signature="20803:20870" ph="select * fro... Students_absence" />
+                <marker date="1495706338707" expanded="true" signature="21120:21212" ph="insert into Students_absence... " />
+                <marker date="1495706338707" expanded="true" signature="21953:21990" ph="select cid f... courses" />
+                <marker date="1495706338707" expanded="true" signature="21991:22009" ph="/*and course... " />
+                <marker date="1495706338707" expanded="true" signature="22101:22168" ph="select * fro... Students_absence" />
+                <marker date="1495706338707" expanded="true" signature="22386:22478" ph="insert into Students_absence... " />
+                <marker date="1495706338707" expanded="true" signature="23981:24049" ph="select disti... centers" />
+                <marker date="1495706338707" expanded="true" signature="24480:25172" ph="select DISTI... SIC" />
+                <marker date="1495706338707" expanded="true" signature="26386:26593" ph="select disti... SIC" />
+                <marker date="1495706338707" expanded="true" signature="28500:28563" ph="select * fro... notices" />
+                <marker date="1495706338707" expanded="true" signature="29745:29839" ph="insert into notices... " />
+                <marker date="1495706338707" expanded="true" signature="30057:30151" ph="insert into notices... " />
+                <marker date="1495706338707" expanded="true" signature="32150:32213" ph="select * fro... notices" />
+                <marker date="1495706338707" expanded="true" signature="33433:33527" ph="insert into notices... " />
+                <marker date="1495706338707" expanded="true" signature="33741:33835" ph="insert into notices... " />
+                <marker date="1495706338707" expanded="true" signature="34186:34520" ph="SELECT disti... " />
+                <marker date="1495706338707" expanded="true" signature="34727:34762" ph="select name users" />
+                <marker date="1495706338707" expanded="true" signature="36694:36762" ph="select disti... centers" />
+                <marker date="1495706338707" expanded="true" signature="37799:37904" ph="select reg_f... reg_forms" />
+                <marker date="1495706338707" expanded="true" signature="38184:38396" ph="select disti... testers_location" />
+                <marker date="1495706338707" expanded="true" signature="39781:39819" ph="select id fr... reg_forms" />
+                <marker date="1495706338707" expanded="true" signature="39902:39965" ph="select * fro... testers_presence" />
+                <marker date="1495706338707" expanded="true" signature="40278:40396" ph="insert into testers_presence... " />
+                <marker date="1495706338707" expanded="true" signature="40602:40720" ph="insert into comments... " />
+                <marker date="1495706338707" expanded="true" signature="41527:41565" ph="select id fr... reg_forms" />
+                <marker date="1495706338707" expanded="true" signature="41648:41739" ph="select * fro... testers_presence" />
+                <marker date="1495706338707" expanded="true" signature="41973:42061" ph="select * fro... testers_location" />
+                <marker date="1495706338707" expanded="true" signature="42343:42461" ph="insert into testers_presence... " />
+                <marker date="1495706338707" expanded="true" signature="42666:42784" ph="insert into comments... " />
+                <marker date="1495706338707" expanded="true" signature="43568:43603" ph="select name users" />
+                <marker date="1495706338707" expanded="true" signature="43948:44046" ph="SELECT cours... courses" />
+                <marker date="1495706338707" expanded="true" signature="44446:44656" ph="SELECT disti... testers_location" />
+                <marker date="1495706338707" expanded="true" signature="45904:45942" ph="select id fr... reg_forms" />
+                <marker date="1495706338707" expanded="true" signature="46048:46107" ph="select * fro... testers_presenceMK" />
+                <marker date="1495706338707" expanded="true" signature="46353:46452" ph="insert into testers_presenceMK... " />
+                <marker date="1495706338707" expanded="true" signature="46619:46730" ph="insert into comments... " />
+                <marker date="1495706338707" expanded="true" signature="47487:47614" ph="select reg_f... reg_forms" />
+                <marker date="1495706338707" expanded="true" signature="48839:48908" ph="select disti... centers" />
+                <marker date="1495706338707" expanded="true" signature="49350:50042" ph="select DISTI... SIC" />
+                <marker date="1495706338707" expanded="true" signature="50963:51676" ph="select DISTI... SIC" />
+                <marker date="1495706338707" expanded="true" signature="53669:53774" ph="select reg_f... reg_forms" />
+                <marker date="1495706338707" expanded="true" signature="54073:54143" ph="select * fro... testers_location" />
+                <marker date="1495706338707" expanded="true" signature="54410:54559" ph="update teste... " />
+                <marker date="1495706338707" expanded="true" signature="54807:54934" ph="update teste... " />
+                <marker date="1495706338707" expanded="true" signature="55356:55480" ph="insert into testers_location... " />
+                <marker date="1495706338707" expanded="true" signature="55719:55823" ph="insert into testers_location... " />
+                <marker date="1495706338707" expanded="true" signature="56877:57442" ph="SELECT DISTI... " />
+                <marker date="1495706338707" expanded="true" signature="58212:58265" ph="select cente... centers" />
+                <marker date="1495706338707" expanded="true" signature="59164:59776" ph="SELECT disti... Students_absence" />
+                <marker date="1495706338707" expanded="true" signature="60689:61301" ph="SELECT disti... Students_absence" />
+                <marker date="1495706338707" expanded="true" signature="62185:62243" ph="delete from " />
+                <marker date="1495706338707" expanded="true" signature="62334:62394" ph="select * fro... Students_absence" />
+                <marker date="1495706338707" expanded="true" signature="62994:63047" ph="select cente... centers" />
+                <marker date="1495706338707" expanded="true" signature="63970:64659" ph="SELECT disti... testers_presence" />
+                <marker date="1495706338707" expanded="true" signature="65610:66168" ph="SELECT disti... testers_presence" />
+                <marker date="1495706338707" expanded="true" signature="67093:67151" ph="delete from " />
+                <marker date="1495706338707" expanded="true" signature="67241:67301" ph="select * fro... testers_presence" />
+                <marker date="1495706338707" expanded="true" signature="67959:68012" ph="select cente... centers" />
+                <marker date="1495706338707" expanded="true" signature="68947:69436" ph="SELECT disti... testers_presenceMK" />
+                <marker date="1495706338707" expanded="true" signature="71040:71682" ph="SELECT DISTI... " />
+                <marker date="1495706338707" expanded="true" signature="71741:72247" ph="SELECT DISTI... " />
+                <marker date="1495706338707" expanded="true" signature="72304:72477" ph="SELECT id ,d... " />
+                <marker date="1495706338707" expanded="true" signature="72304:72479" ph="SELECT id ,d... " />
+                <marker date="1495706338707" expanded="true" signature="72954:73102" ph="SELECT id ,d... " />
+                <marker date="1495706338707" expanded="true" signature="74259:74593" ph="SELECT disti... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="testersMK.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/testersMK.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="51" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="51" />
+              <folding>
+                <marker date="1495703650353" expanded="true" signature="3181:3192" ph="..." />
+                <marker date="1495703650353" expanded="true" signature="5876:5887" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testers.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/testers.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="30" selection-end-column="97" />
+              <folding>
+                <marker date="1495703350569" expanded="true" signature="5783:5794" ph="..." />
+                <marker date="1495703350569" expanded="true" signature="18390:18401" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewVoucher.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/cp/students/finance/NewVoucher.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1292">
+              <caret line="76" column="76" selection-start-line="76" selection-start-column="76" selection-end-line="76" selection-end-column="76" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FinanceController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FinanceController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18292">
+              <caret line="1099" column="84" selection-start-line="1099" selection-start-column="76" selection-end-line="1099" selection-end-column="84" />
+              <folding>
+                <marker date="1491299293797" expanded="true" signature="4641:4685" ph="select * fro... fstudents" />
+                <marker date="1491299293797" expanded="true" signature="4951:5040" ph="select DISTI... fstudents" />
+                <marker date="1491299293797" expanded="true" signature="5117:5173" ph="select * fro... fstudents" />
+                <marker date="1491299293797" expanded="true" signature="5931:5951" ph="select * fro... master" />
+                <marker date="1491299293797" expanded="true" signature="6838:6882" ph="select * fro... fstudents" />
+                <marker date="1491299293797" expanded="true" signature="7001:7045" ph="select * fro... fstudents" />
+                <marker date="1491299293797" expanded="true" signature="7121:7210" ph="select DISTI... fstudents" />
+                <marker date="1491299293797" expanded="true" signature="7287:7374" ph="select Amoun... fstudents" />
+                <marker date="1491299293797" expanded="true" signature="7444:7525" ph="select CH, s... SIT" />
+                <marker date="1491299293797" expanded="true" signature="19638:19682" ph="select * fro... fstudents" />
+                <marker date="1491299293797" expanded="true" signature="29104:29147" ph="select * fro... sit" />
+                <marker date="1491299293797" expanded="true" signature="29455:29502" ph="insert into sit... " />
+                <marker date="1491299293797" expanded="true" signature="43005:43049" ph="select * fro... fstudents" />
+                <marker date="1491299293797" expanded="true" signature="45505:45540" ph="select name users" />
+                <marker date="1491299293797" expanded="true" signature="45666:45688" ph="select * fro... accounts" />
+                <marker date="1491299293797" expanded="true" signature="46169:46227" ph="select TOP 1... master" />
+                <marker date="1491299293797" expanded="true" signature="50862:51116" ph="select stude... fstudents" />
+                <marker date="1491299293797" expanded="true" signature="51976:51995" ph="select * fro... terms" />
+                <marker date="1491299293797" expanded="true" signature="52548:52585" ph="select * fro... terms" />
+                <marker date="1491299293797" expanded="true" signature="53381:53403" ph="select * fro... accounts" />
+                <marker date="1491299293797" expanded="true" signature="54545:54588" ph="select * fro... accounts" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="viewTestersPresence.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/viewTestersPresence.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2431">
+              <caret line="143" column="44" selection-start-line="143" selection-start-column="44" selection-end-line="143" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2006">
-              <caret line="127" column="26" selection-start-line="122" selection-start-column="92" selection-end-line="122" selection-end-column="132" />
+            <state relative-caret-position="310">
+              <caret line="431" column="0" selection-start-line="431" selection-start-column="0" selection-end-line="431" selection-end-column="0" />
               <folding>
                 <element signature="e#7#392#0#PHP" expanded="true" />
               </folding>
@@ -183,48 +336,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testersAllocationPresenceStatisticsHome.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/cp/students/printforms/testersAllocationPresenceStatisticsHome.blade.php">
+      <file leaf-file-name="testersAllocation.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/lang/ar/testersAllocation.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="104" selection-start-line="20" selection-start-column="65" selection-end-line="20" selection-end-column="104" />
-              <folding>
-                <marker date="1495345664362" expanded="true" signature="14649:14660" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="testersAllocationPresenceStatistics.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/cp/students/printforms/testersAllocationPresenceStatistics.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
-              <folding>
-                <marker date="1495379824260" expanded="false" signature="3336:3365" ph="..." />
-                <marker date="1495379824260" expanded="false" signature="5872:5901" ph="..." />
-                <marker date="1495379824260" expanded="false" signature="8871:8900" ph="..." />
-                <marker date="1495379824260" expanded="false" signature="9755:9784" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="testersStatistics.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/cp/students/printforms/testersStatistics.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="54" column="108" selection-start-line="54" selection-start-column="108" selection-end-line="54" selection-end-column="108" />
+            <state relative-caret-position="255">
+              <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="loginButtons.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/loginButtons.blade.php">
+      <file leaf-file-name="examsForms.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/examsForms.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="65" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="65" />
+            <state relative-caret-position="646">
+              <caret line="38" column="62" selection-start-line="38" selection-start-column="62" selection-end-line="38" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -246,11 +372,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/students/exams/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/cp/form/emr/evaluation/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Middleware/RedirectIfNotExamsAdmin.php" />
-        <option value="$PROJECT_DIR$/resources/views/cp/examapprove/printB.blade.php" />
-        <option value="$PROJECT_DIR$/resources/lang/ar/settings.php" />
         <option value="$PROJECT_DIR$/resources/views/cp/students/printforms/formsExcel.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/cp/students/printforms/formTypes.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/cp/students/printforms/printA.blade.php" />
@@ -265,13 +386,10 @@
         <option value="$PROJECT_DIR$/resources/views/layouts/loginButtons.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/cp/exams/viewTesters.blade.php" />
         <option value="$PROJECT_DIR$/resources/lang/ar/notice.php" />
-        <option value="$PROJECT_DIR$/resources/views/cp/exams/examsForms.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/SPController.php" />
         <option value="$PROJECT_DIR$/resources/views/students/sp/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/cp/exams/search.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/cp/exams/studentExamsTableIndex.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/cp/exams/StudentsAbsenceExportIndex.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/cp/exams/testersMK.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/cp/examapprove/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/cp/students/printforms/statisticsHome.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/cp/exams/notice.blade.php" />
@@ -283,20 +401,28 @@
         <option value="$PROJECT_DIR$/resources/views/cp/students/printforms/indexExcel.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/cp/students/printforms/testersStatisticsHome.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/cp/exams/home.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TecsController.php" />
         <option value="$PROJECT_DIR$/resources/lang/ar/serviceType.php" />
-        <option value="$PROJECT_DIR$/resources/views/cp/students/printforms/testersAllocationPresenceStatisticsHome.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/cp/students/printforms/testersStatistics.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/PrintController.php" />
         <option value="$PROJECT_DIR$/resources/views/cp/students/printforms/testersAllocationPresenceStatistics.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/cp/exams/testersearch.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/resources/views/cp/exams/absence.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/cp/exams/testersPresenceExport.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/resources/views/cp/exams/testersMKPresenceExportIndex.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/cp/exams/testersMKPresenceExport.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/cp/students/printforms/testersAllocationPresenceStatisticsHome.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/cp/exams/noticeView.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/SPController.php" />
+        <option value="$PROJECT_DIR$/resources/views/cp/exams/home.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/cp/examapprove/printB.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/cp/exams/examsForms.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/PrintController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/FinanceController.php" />
         <option value="$PROJECT_DIR$/resources/views/cp/exams/testers.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/cp/exams/viewTestersPresence.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/cp/exams/testersMK.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ExamsController.php" />
+        <option value="$PROJECT_DIR$/resources/views/cp/exams/viewTestersPresence.blade.php" />
       </list>
     </option>
   </component>
@@ -390,6 +516,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -562,7 +689,93 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="students" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Info" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="elems" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="elems" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cp" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="students" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="finance" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="elems" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="elems" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cp" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="exams" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="elems" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="elems" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cp" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="examapprove" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -603,6 +816,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="lang" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="en" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="elems" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="elems" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lang" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ar" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -676,7 +915,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -1441,7 +1679,22 @@
       <workItem from="1495458098715" duration="292000" />
       <workItem from="1495462327435" duration="804000" />
       <workItem from="1495520294620" duration="69000" />
-      <workItem from="1495520404259" duration="17000" />
+      <workItem from="1495520404259" duration="84000" />
+      <workItem from="1495521324532" duration="244000" />
+      <workItem from="1495522345053" duration="3412000" />
+      <workItem from="1495526742578" duration="1846000" />
+      <workItem from="1495528603561" duration="212000" />
+      <workItem from="1495532192007" duration="17000" />
+      <workItem from="1495532400744" duration="98000" />
+      <workItem from="1495532671415" duration="670000" />
+      <workItem from="1495533396654" duration="713000" />
+      <workItem from="1495536345911" duration="499000" />
+      <workItem from="1495548339728" duration="561000" />
+      <workItem from="1495632826582" duration="1563000" />
+      <workItem from="1495648101564" duration="1000" />
+      <workItem from="1495699208123" duration="264000" />
+      <workItem from="1495706932792" duration="2701000" />
+      <workItem from="1495958896559" duration="61000" />
     </task>
     <task id="LOCAL-00001" summary="EMR is complete but without emailing">
       <created>1479797757022</created>
@@ -1590,11 +1843,18 @@
       <option name="project" value="LOCAL" />
       <updated>1494840157862</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="23-5 before notice view">
+      <created>1495520454009</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1495520454009</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2216856000" />
+    <option name="totallyTimeSpent" value="2269779000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -1610,14 +1870,14 @@
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29498714" sideWeight="0.49798116" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2506427" sideWeight="0.50201887" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2667095" sideWeight="0.50201887" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23283984" sideWeight="0.54875" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14401077" sideWeight="0.5565553" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969153" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16902314" sideWeight="0.29643527" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32839838" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.4861368" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14939435" sideWeight="0.45125" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14401077" sideWeight="0.44344473" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1684,7 +1944,8 @@
     <MESSAGE value="after giving the exams roles" />
     <MESSAGE value="before changing SP" />
     <MESSAGE value="23-5 before notice view" />
-    <option name="LAST_COMMIT_MESSAGE" value="23-5 before notice view" />
+    <MESSAGE value="after the exams are finished and before shifting to LD Project" />
+    <option name="LAST_COMMIT_MESSAGE" value="after the exams are finished and before shifting to LD Project" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1693,83 +1954,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/students/exams/view.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/ar/sp.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-225">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/ar/status.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/students/conflicts/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1122">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/students/sp/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="131" column="32" selection-start-line="131" selection-start-column="32" selection-end-line="131" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/ar/notice.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="14" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/app/icon_new10.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/cp/warehouse/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="30" column="51" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/students/sp/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="31" column="82" selection-start-line="31" selection-start-column="82" selection-end-line="31" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SPController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3060">
-          <caret line="198" column="23" selection-start-line="198" selection-start-column="23" selection-end-line="198" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/studentExamsTableIndex.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="72" column="69" selection-start-line="72" selection-start-column="69" selection-end-line="72" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/StudentsAbsenceExportIndex.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="434">
@@ -1798,24 +1982,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/testersMK.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="701">
-          <caret line="155" column="66" selection-start-line="155" selection-start-column="0" selection-end-line="156" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/testersAllocation.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="344">
           <caret line="89" column="106" selection-start-line="89" selection-start-column="106" selection-end-line="89" selection-end-column="106" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/view.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -1837,13 +2007,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="191" column="0" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/cp/students/printforms/statisticsHome.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="20" column="79" selection-start-line="20" selection-start-column="65" selection-end-line="20" selection-end-column="79" />
         </state>
       </provider>
     </entry>
@@ -1872,13 +2035,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="19" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/examsForms.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="85" column="31" selection-start-line="85" selection-start-column="31" selection-end-line="85" selection-end-column="55" />
         </state>
       </provider>
     </entry>
@@ -1929,27 +2085,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/cp/students/printforms/printA.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="53" column="65" selection-start-line="53" selection-start-column="65" selection-end-line="53" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/cp/students/printforms/testersAllocationPresenceStatisticsHome.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="104" selection-start-line="20" selection-start-column="65" selection-end-line="20" selection-end-column="104" />
-          <folding>
-            <marker date="1495345664362" expanded="true" signature="14649:14660" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1964,22 +2103,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="65" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/cp/students/printforms/statistics.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/cp/students/printforms/testersStatistics.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="54" column="108" selection-start-line="54" selection-start-column="108" selection-end-line="54" selection-end-column="108" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2004,24 +2127,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/viewTesters.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1632">
-          <caret line="102" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="132" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/absence.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
           <caret line="308" column="52" selection-start-line="308" selection-start-column="52" selection-end-line="308" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/testersPresenceExport.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -2032,120 +2141,106 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/ar/testersAllocation.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/view.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="272">
+          <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/testers.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/viewTesters.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="288" column="0" selection-start-line="288" selection-start-column="0" selection-end-line="288" selection-end-column="0" />
+        <state relative-caret-position="1020">
+          <caret line="60" column="86" selection-start-line="60" selection-start-column="86" selection-end-line="60" selection-end-column="125" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PrintController.php">
+    <entry file="file://$PROJECT_DIR$/resources/lang/ar/notice.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17646">
-          <caret line="1048" column="12" selection-start-line="1048" selection-start-column="12" selection-end-line="1048" selection-end-column="32" />
+        <state relative-caret-position="221">
+          <caret line="13" column="14" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/cp/students/Info/view.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1071">
+          <caret line="63" column="35" selection-start-line="63" selection-start-column="35" selection-end-line="65" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/testersPresenceExport.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="51" column="20" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/cp/students/printforms/statistics.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="51" column="55" selection-start-line="51" selection-start-column="50" selection-end-line="51" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/app/ICONexammindmap.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/cp/students/printforms/statisticsHome.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="20" column="50" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/testersMKPresenceExportIndex.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/noticeView.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/testersMKPresenceExport.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="64" selection-start-line="20" selection-start-column="64" selection-end-line="20" selection-end-column="25" />
           <folding>
-            <element signature="e#40#58#0#PHP" expanded="true" />
-            <marker date="1495377069187" expanded="true" signature="2285:2480" ph="select disti... SIC" />
-            <marker date="1495377069187" expanded="true" signature="2954:2999" ph="select cours... courses" />
-            <marker date="1495377069187" expanded="true" signature="3229:3277" ph="select disti... SIC" />
-            <marker date="1495377069187" expanded="true" signature="5293:5992" ph="select SIC.b... SIC" />
-            <marker date="1495377069187" expanded="true" signature="6418:6463" ph="select cours... courses" />
-            <marker date="1495377069187" expanded="true" signature="6857:7584" ph="select DISTI... SIC" />
-            <marker date="1495377069187" expanded="true" signature="7543:7567" ph="/*students.g... " />
-            <marker date="1495377069187" expanded="true" signature="8682:9405" ph="select DISTI... SIC" />
-            <marker date="1495377069187" expanded="true" signature="9364:9392" ph="/*students.g... " />
-            <marker date="1495377069187" expanded="true" signature="9732:9811" ph="insert into lists... " />
-            <marker date="1495377069187" expanded="true" signature="10469:10514" ph="select cours... courses" />
-            <marker date="1495377069187" expanded="true" signature="10907:11654" ph="select DISTI... SIC" />
-            <marker date="1495377069187" expanded="true" signature="14573:15313" ph="select DISTI... SIC" />
-            <marker date="1495377069187" expanded="true" signature="15707:15808" ph="insert into lists... " />
-            <marker date="1495377069187" expanded="true" signature="16731:17544" ph="select DISTI... SIC" />
-            <marker date="1495377069187" expanded="true" signature="18119:18613" ph="SELECT DISTI... testers_location" />
-            <marker date="1495377069187" expanded="true" signature="19016:19130" ph="insert into lists... " />
-            <marker date="1495377069187" expanded="true" signature="20037:20353" ph="select DISTI... lists" />
-            <marker date="1495377069187" expanded="true" signature="21029:21833" ph="select DISTI... SIC" />
-            <marker date="1495377069187" expanded="true" signature="21162:21246" ph="/*exams.time... " />
-            <marker date="1495377069187" expanded="true" signature="21653:21813" ph="/*AND exams.... " />
-            <marker date="1495377069187" expanded="true" signature="23436:23876" ph="select SIC.b... SIC" />
-            <marker date="1495377069187" expanded="true" signature="23835:23863" ph="/*students.g... " />
-            <marker date="1495377069187" expanded="true" signature="25686:26589" ph="select DISTI... SIC" />
-            <marker date="1495377069187" expanded="true" signature="25819:25903" ph="/*exams.time... " />
-            <marker date="1495377069187" expanded="true" signature="26409:26569" ph="/*AND exams.... " />
-            <marker date="1495377069187" expanded="true" signature="28103:28983" ph="select DISTI... SIC" />
-            <marker date="1495377069187" expanded="true" signature="28103:28987" ph="select DISTI... SIC" />
-            <marker date="1495377069187" expanded="true" signature="28923:28951" ph="/*students.g... " />
-            <marker date="1495377069187" expanded="true" signature="31000:31053" ph="select cente... centers" />
-            <marker date="1495377069187" expanded="true" signature="31303:31995" ph="select DISTI... SIC" />
-            <marker date="1495377069187" expanded="true" signature="33510:34157" ph="select DISTI... SIC" />
-            <marker date="1495377069187" expanded="true" signature="36248:36815" ph="select DISTI... SIC" />
-            <marker date="1495377069187" expanded="true" signature="36901:37283" ph="SELECT teste... " />
-            <marker date="1495377069187" expanded="true" signature="38807:39454" ph="select DISTI... SIC" />
-            <marker date="1495377069187" expanded="true" signature="41554:42121" ph="select DISTI... SIC" />
-            <marker date="1495377069187" expanded="true" signature="42207:42589" ph="SELECT teste... " />
-            <marker date="1495377069187" expanded="true" signature="43650:44368" ph="select DISTI... SIC" />
-            <marker date="1495377069187" expanded="true" signature="46764:46878" ph="insert into lists... " />
-            <marker date="1495377069187" expanded="true" signature="47562:47620" ph="delete from " />
-            <marker date="1495377069187" expanded="true" signature="47710:47773" ph="select * fro... testers_location" />
-            <marker date="1495377069187" expanded="true" signature="48587:48640" ph="select cente... centers" />
-            <marker date="1495377069187" expanded="true" signature="48923:49615" ph="select DISTI... SIC" />
-            <marker date="1495377069187" expanded="true" signature="51163:51810" ph="select DISTI... SIC" />
-            <marker date="1495377069187" expanded="true" signature="53918:54485" ph="select DISTI... SIC" />
-            <marker date="1495377069187" expanded="true" signature="54571:54966" ph="SELECT teste... " />
-            <marker date="1495377069187" expanded="true" signature="55027:55647" ph="SELECT disti... testers_presence" />
-            <marker date="1495377069187" expanded="true" signature="57253:57900" ph="select DISTI... SIC" />
-            <marker date="1495377069187" expanded="true" signature="60008:60575" ph="select DISTI... SIC" />
-            <marker date="1495377069187" expanded="true" signature="60661:61043" ph="SELECT teste... " />
-            <marker date="1495377069187" expanded="true" signature="60661:61056" ph="SELECT teste... " />
-            <marker date="1495377069187" expanded="true" signature="61118:61708" ph="SELECT teste... " />
-            <marker date="1495377069187" expanded="true" signature="61118:61721" ph="SELECT disti... testers_presence" />
-            <marker date="1495377069187" expanded="true" signature="62855:63573" ph="select DISTI... SIC" />
-            <marker date="1495377069187" expanded="true" signature="64913:65027" ph="insert into lists... " />
-            <marker date="1495377069187" expanded="true" signature="65726:65784" ph="delete from " />
-            <marker date="1495377069187" expanded="true" signature="65874:65937" ph="select * fro... testers_location" />
-            <marker date="1495377069187" expanded="true" signature="66674:67608" ph="select DISTI... SIC" />
-            <marker date="1495377069187" expanded="true" signature="66807:66891" ph="/*exams.time... " />
-            <marker date="1495377069187" expanded="true" signature="67382:67439" ph="/*AND exams.... " />
-            <marker date="1495377069187" expanded="true" signature="67469:67546" ph="/*AND studen... " />
-            <marker date="1495377069187" expanded="true" signature="68469:69298" ph="select cente... SIC" />
-            <marker date="1495377069187" expanded="true" signature="69299:69327" ph="/*students.g... " />
-            <marker date="1495377069187" expanded="true" signature="72883:72936" ph="select cente... centers" />
-            <marker date="1495377069187" expanded="true" signature="73824:74471" ph="select DISTI... SIC" />
-            <marker date="1495377069187" expanded="true" signature="76150:76868" ph="select DISTI... SIC" />
-            <marker date="1495377069187" expanded="true" signature="78221:78335" ph="insert into lists... " />
-            <marker date="1495377069187" expanded="true" signature="79891:80475" ph="SELECT SIC.S... students" />
-            <marker date="1495377069187" expanded="true" signature="80339:80474" ph="SELECT cours... Students_absence" />
-            <marker date="1495377069187" expanded="true" signature="81008:81051" ph="select DISTI... " />
-            <marker date="1495377069187" expanded="true" signature="81155:81208" ph="select cente... centers" />
-            <marker date="1495377069187" expanded="true" signature="81403:82095" ph="select DISTI... SIC" />
-            <marker date="1495377069187" expanded="true" signature="83736:84534" ph="SELECT DISTI... testers_location" />
-            <marker date="1495377069187" expanded="true" signature="84195:84346" ph="/*and (teste... " />
-            <marker date="1495377069187" expanded="true" signature="84611:85430" ph="SELECT DISTI... testers_location" />
-            <marker date="1495377069187" expanded="true" signature="85094:85245" ph="/*and (teste... " />
-            <marker date="1495377069187" expanded="true" signature="86597:86642" ph="select cours... courses" />
-            <marker date="1495377069187" expanded="true" signature="87035:87782" ph="select DISTI... SIC" />
-            <marker date="1495377069187" expanded="true" signature="90199:90241" ph="select * fro... lists" />
-            <marker date="1495377069187" expanded="true" signature="91052:91865" ph="select DISTI... SIC" />
-            <marker date="1495377069187" expanded="true" signature="92440:92900" ph="SELECT DISTI... testers_location" />
-            <marker date="1495377069187" expanded="true" signature="93187:93301" ph="insert into lists... " />
-            <marker date="1495377069187" expanded="true" signature="94224:94338" ph="insert into lists... " />
-            <marker date="1495377069187" expanded="true" signature="95264:95580" ph="select DISTI... lists" />
-            <marker date="1495377069187" expanded="true" signature="96616:96938" ph="SELECT disti... testers_presence" />
-            <marker date="1495377069187" expanded="true" signature="97034:97355" ph="SELECT CONCA... testers_presence" />
+            <element signature="e#411#437#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SPController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="196" column="24" selection-start-line="196" selection-start-column="24" selection-end-line="196" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/cp/students/printforms/testersAllocationPresenceStatisticsHome.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="69" selection-start-line="20" selection-start-column="69" selection-end-line="20" selection-end-column="69" />
+          <folding>
+            <marker date="1495538355456" expanded="true" signature="14655:14666" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/cp/students/printforms/testersAllocationPresenceStatistics.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+        <state relative-caret-position="319">
+          <caret line="103" column="66" selection-start-line="103" selection-start-column="66" selection-end-line="103" selection-end-column="66" />
           <folding>
             <marker date="1495379824260" expanded="false" signature="3336:3365" ph="..." />
             <marker date="1495379824260" expanded="false" signature="5872:5901" ph="..." />
@@ -2155,48 +2250,332 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/cp/students/printforms/testersStatistics.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="47" column="74" selection-start-line="47" selection-start-column="65" selection-end-line="47" selection-end-column="74" />
+          <folding>
+            <element signature="e#2127#2153#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/cp/examapprove/printB.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2176">
+          <caret line="129" column="20" selection-start-line="129" selection-start-column="16" selection-end-line="131" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="515">
+          <caret line="279" column="34" selection-start-line="279" selection-start-column="34" selection-end-line="279" selection-end-column="34" />
+          <folding>
+            <element signature="e#5736#5787#0#HTML" expanded="true" />
+            <element signature="e#8509#8535#0#HTML" expanded="true" />
+            <element signature="e#12124#12175#0#HTML" expanded="true" />
+            <element signature="e#12974#13000#0#HTML" expanded="true" />
+            <element signature="e#18279#18330#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/examsForms.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" column="62" selection-start-line="38" selection-start-column="62" selection-end-line="38" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FinanceController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18292">
+          <caret line="1099" column="84" selection-start-line="1099" selection-start-column="76" selection-end-line="1099" selection-end-column="84" />
+          <folding>
+            <marker date="1491299293797" expanded="true" signature="4641:4685" ph="select * fro... fstudents" />
+            <marker date="1491299293797" expanded="true" signature="4951:5040" ph="select DISTI... fstudents" />
+            <marker date="1491299293797" expanded="true" signature="5117:5173" ph="select * fro... fstudents" />
+            <marker date="1491299293797" expanded="true" signature="5931:5951" ph="select * fro... master" />
+            <marker date="1491299293797" expanded="true" signature="6838:6882" ph="select * fro... fstudents" />
+            <marker date="1491299293797" expanded="true" signature="7001:7045" ph="select * fro... fstudents" />
+            <marker date="1491299293797" expanded="true" signature="7121:7210" ph="select DISTI... fstudents" />
+            <marker date="1491299293797" expanded="true" signature="7287:7374" ph="select Amoun... fstudents" />
+            <marker date="1491299293797" expanded="true" signature="7444:7525" ph="select CH, s... SIT" />
+            <marker date="1491299293797" expanded="true" signature="19638:19682" ph="select * fro... fstudents" />
+            <marker date="1491299293797" expanded="true" signature="29104:29147" ph="select * fro... sit" />
+            <marker date="1491299293797" expanded="true" signature="29455:29502" ph="insert into sit... " />
+            <marker date="1491299293797" expanded="true" signature="43005:43049" ph="select * fro... fstudents" />
+            <marker date="1491299293797" expanded="true" signature="45505:45540" ph="select name users" />
+            <marker date="1491299293797" expanded="true" signature="45666:45688" ph="select * fro... accounts" />
+            <marker date="1491299293797" expanded="true" signature="46169:46227" ph="select TOP 1... master" />
+            <marker date="1491299293797" expanded="true" signature="50862:51116" ph="select stude... fstudents" />
+            <marker date="1491299293797" expanded="true" signature="51976:51995" ph="select * fro... terms" />
+            <marker date="1491299293797" expanded="true" signature="52548:52585" ph="select * fro... terms" />
+            <marker date="1491299293797" expanded="true" signature="53381:53403" ph="select * fro... accounts" />
+            <marker date="1491299293797" expanded="true" signature="54545:54588" ph="select * fro... accounts" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/cp/students/finance/NewVoucher.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1292">
+          <caret line="76" column="76" selection-start-line="76" selection-start-column="76" selection-end-line="76" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/testers.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="30" selection-end-column="97" />
+          <folding>
+            <marker date="1495703350569" expanded="true" signature="5783:5794" ph="..." />
+            <marker date="1495703350569" expanded="true" signature="18390:18401" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/testersMK.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="51" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="51" />
+          <folding>
+            <marker date="1495703650353" expanded="true" signature="3181:3192" ph="..." />
+            <marker date="1495703650353" expanded="true" signature="5876:5887" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PrintController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30957">
+          <caret line="1831" column="19" selection-start-line="1831" selection-start-column="17" selection-end-line="1831" selection-end-column="19" />
+          <folding>
+            <element signature="e#40#58#0#PHP" expanded="true" />
+            <marker date="1495653172501" expanded="true" signature="2285:2480" ph="select disti... SIC" />
+            <marker date="1495653172501" expanded="true" signature="2954:2999" ph="select cours... courses" />
+            <marker date="1495653172501" expanded="true" signature="3229:3277" ph="select disti... SIC" />
+            <marker date="1495653172501" expanded="true" signature="5293:5992" ph="select SIC.b... SIC" />
+            <marker date="1495653172501" expanded="true" signature="6418:6463" ph="select cours... courses" />
+            <marker date="1495653172501" expanded="true" signature="6857:7584" ph="select DISTI... SIC" />
+            <marker date="1495653172501" expanded="true" signature="7543:7567" ph="/*students.g... " />
+            <marker date="1495653172501" expanded="true" signature="8682:9405" ph="select DISTI... SIC" />
+            <marker date="1495653172501" expanded="true" signature="9364:9392" ph="/*students.g... " />
+            <marker date="1495653172501" expanded="true" signature="9732:9811" ph="insert into lists... " />
+            <marker date="1495653172501" expanded="true" signature="10469:10514" ph="select cours... courses" />
+            <marker date="1495653172501" expanded="true" signature="10907:11654" ph="select DISTI... SIC" />
+            <marker date="1495653172501" expanded="true" signature="14573:15313" ph="select DISTI... SIC" />
+            <marker date="1495653172501" expanded="true" signature="15707:15808" ph="insert into lists... " />
+            <marker date="1495653172501" expanded="true" signature="16731:17544" ph="select DISTI... SIC" />
+            <marker date="1495653172501" expanded="true" signature="18119:18613" ph="SELECT DISTI... testers_location" />
+            <marker date="1495653172501" expanded="true" signature="19016:19130" ph="insert into lists... " />
+            <marker date="1495653172501" expanded="true" signature="20037:20353" ph="select DISTI... lists" />
+            <marker date="1495653172501" expanded="true" signature="21029:21833" ph="select DISTI... SIC" />
+            <marker date="1495653172501" expanded="true" signature="21162:21246" ph="/*exams.time... " />
+            <marker date="1495653172501" expanded="true" signature="21653:21813" ph="/*AND exams.... " />
+            <marker date="1495653172501" expanded="true" signature="23436:23876" ph="select SIC.b... SIC" />
+            <marker date="1495653172501" expanded="true" signature="23835:23863" ph="/*students.g... " />
+            <marker date="1495653172501" expanded="true" signature="25686:26589" ph="select DISTI... SIC" />
+            <marker date="1495653172501" expanded="true" signature="25819:25903" ph="/*exams.time... " />
+            <marker date="1495653172501" expanded="true" signature="26409:26569" ph="/*AND exams.... " />
+            <marker date="1495653172501" expanded="true" signature="28103:28983" ph="select DISTI... SIC" />
+            <marker date="1495653172501" expanded="true" signature="28103:28987" ph="select DISTI... SIC" />
+            <marker date="1495653172501" expanded="true" signature="28923:28951" ph="/*students.g... " />
+            <marker date="1495653172501" expanded="true" signature="31000:31053" ph="select cente... centers" />
+            <marker date="1495653172501" expanded="true" signature="31303:31995" ph="select DISTI... SIC" />
+            <marker date="1495653172501" expanded="true" signature="33510:34157" ph="select DISTI... SIC" />
+            <marker date="1495653172501" expanded="true" signature="36248:36815" ph="select DISTI... SIC" />
+            <marker date="1495653172501" expanded="true" signature="36901:37283" ph="SELECT teste... " />
+            <marker date="1495653172501" expanded="true" signature="38821:39468" ph="select DISTI... SIC" />
+            <marker date="1495653172501" expanded="true" signature="41568:42135" ph="select DISTI... SIC" />
+            <marker date="1495653172501" expanded="true" signature="42221:42603" ph="SELECT teste... " />
+            <marker date="1495653172501" expanded="true" signature="43675:44393" ph="select DISTI... SIC" />
+            <marker date="1495653172501" expanded="true" signature="60197:60311" ph="insert into lists... " />
+            <marker date="1495653172501" expanded="true" signature="61007:61083" ph="select disti... " />
+            <marker date="1495653172501" expanded="true" signature="61114:61172" ph="delete from " />
+            <marker date="1495653172501" expanded="true" signature="61227:61346" ph="delete from " />
+            <marker date="1495653172501" expanded="true" signature="61478:61541" ph="select * fro... testers_location" />
+            <marker date="1495653172501" expanded="true" signature="62355:62408" ph="select cente... centers" />
+            <marker date="1495653172501" expanded="true" signature="62691:63383" ph="select DISTI... SIC" />
+            <marker date="1495653172501" expanded="true" signature="64931:65578" ph="select DISTI... SIC" />
+            <marker date="1495653172501" expanded="true" signature="67686:68253" ph="select DISTI... SIC" />
+            <marker date="1495653172501" expanded="true" signature="68339:68734" ph="SELECT teste... " />
+            <marker date="1495653172501" expanded="true" signature="68795:69415" ph="SELECT disti... testers_presence" />
+            <marker date="1495653172501" expanded="true" signature="71021:71668" ph="select DISTI... SIC" />
+            <marker date="1495653172501" expanded="true" signature="73776:74343" ph="select DISTI... SIC" />
+            <marker date="1495653172501" expanded="true" signature="74429:74811" ph="SELECT teste... " />
+            <marker date="1495653172501" expanded="true" signature="74429:74824" ph="SELECT teste... " />
+            <marker date="1495653172501" expanded="true" signature="74886:75476" ph="SELECT teste... " />
+            <marker date="1495653172501" expanded="true" signature="74886:75489" ph="SELECT disti... testers_presence" />
+            <marker date="1495653172501" expanded="true" signature="76623:77341" ph="select DISTI... SIC" />
+            <marker date="1495653172501" expanded="true" signature="78681:78795" ph="insert into lists... " />
+            <marker date="1495653172501" expanded="true" signature="79494:79552" ph="delete from " />
+            <marker date="1495653172501" expanded="true" signature="79642:79705" ph="select * fro... testers_location" />
+            <marker date="1495653172501" expanded="true" signature="80442:81376" ph="select DISTI... SIC" />
+            <marker date="1495653172501" expanded="true" signature="80575:80659" ph="/*exams.time... " />
+            <marker date="1495653172501" expanded="true" signature="81150:81207" ph="/*AND exams.... " />
+            <marker date="1495653172501" expanded="true" signature="81237:81314" ph="/*AND studen... " />
+            <marker date="1495653172501" expanded="true" signature="82237:83066" ph="select cente... SIC" />
+            <marker date="1495653172501" expanded="true" signature="83067:83095" ph="/*students.g... " />
+            <marker date="1495653172501" expanded="true" signature="86651:86704" ph="select cente... centers" />
+            <marker date="1495653172501" expanded="true" signature="87592:88239" ph="select DISTI... SIC" />
+            <marker date="1495653172501" expanded="true" signature="89918:90636" ph="select DISTI... SIC" />
+            <marker date="1495653172501" expanded="true" signature="91989:92103" ph="insert into lists... " />
+            <marker date="1495653172501" expanded="true" signature="93659:94243" ph="SELECT SIC.S... students" />
+            <marker date="1495653172501" expanded="true" signature="94107:94242" ph="SELECT cours... Students_absence" />
+            <marker date="1495653172501" expanded="true" signature="94776:94819" ph="select DISTI... " />
+            <marker date="1495653172501" expanded="true" signature="94923:94976" ph="select cente... centers" />
+            <marker date="1495653172501" expanded="true" signature="95171:95863" ph="select DISTI... SIC" />
+            <marker date="1495653172501" expanded="true" signature="97504:98302" ph="SELECT DISTI... testers_location" />
+            <marker date="1495653172501" expanded="true" signature="97963:98114" ph="/*and (teste... " />
+            <marker date="1495653172501" expanded="true" signature="98379:99198" ph="SELECT DISTI... testers_location" />
+            <marker date="1495653172501" expanded="true" signature="98862:99013" ph="/*and (teste... " />
+            <marker date="1495653172501" expanded="true" signature="100365:100410" ph="select cours... courses" />
+            <marker date="1495653172501" expanded="true" signature="100803:101550" ph="select DISTI... SIC" />
+            <marker date="1495653172501" expanded="true" signature="103967:104009" ph="select * fro... lists" />
+            <marker date="1495653172501" expanded="true" signature="104820:105633" ph="select DISTI... SIC" />
+            <marker date="1495653172501" expanded="true" signature="106208:106668" ph="SELECT DISTI... testers_location" />
+            <marker date="1495653172501" expanded="true" signature="106955:107069" ph="insert into lists... " />
+            <marker date="1495653172501" expanded="true" signature="107992:108106" ph="insert into lists... " />
+            <marker date="1495653172501" expanded="true" signature="109032:109348" ph="select DISTI... lists" />
+            <marker date="1495653172501" expanded="true" signature="110384:110523" ph="SELECT disti... testers_presence" />
+            <marker date="1495653172501" expanded="true" signature="110384:110714" ph="SELECT disti... testers_presence" />
+            <marker date="1495653172501" expanded="true" signature="110810:111131" ph="SELECT CONCA... testers_presence" />
+            <marker date="1495653172501" expanded="true" signature="111132:111152" ph="/*and center... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/cp/exams/viewTestersPresence.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="12" column="117" selection-start-line="12" selection-start-column="117" selection-end-line="12" selection-end-column="117" />
+        <state relative-caret-position="2431">
+          <caret line="143" column="44" selection-start-line="143" selection-start-column="44" selection-end-line="143" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ExamsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11186">
-          <caret line="672" column="0" selection-start-line="672" selection-start-column="0" selection-end-line="672" selection-end-column="0" />
+        <state relative-caret-position="16915">
+          <caret line="995" column="40" selection-start-line="995" selection-start-column="32" selection-end-line="995" selection-end-column="40" />
           <folding>
             <element signature="e#40#55#0#PHP" expanded="true" />
-            <marker date="1495453482251" expanded="true" signature="594:625" ph="select DISTI... " />
-            <marker date="1495453482251" expanded="true" signature="726:803" ph="select * fro... courses" />
-            <marker date="1495453482251" expanded="true" signature="1331:1362" ph="select DISTI... " />
-            <marker date="1495453482251" expanded="true" signature="1463:1560" ph="select * fro... courses" />
-            <marker date="1495453482251" expanded="true" signature="1922:1953" ph="select DISTI... " />
-            <marker date="1495453482251" expanded="true" signature="2063:2142" ph="select * fro... courses" />
-            <marker date="1495453482251" expanded="true" signature="2710:3579" ph="select SSC.s... SSC" />
-            <marker date="1495453482251" expanded="true" signature="3768:4651" ph="select cours... SSC" />
-            <marker date="1495453482251" expanded="true" signature="4131:4510" ph="select cours... SSC" />
-            <marker date="1495453482251" expanded="true" signature="5390:5421" ph="select DISTI... " />
-            <marker date="1495453482251" expanded="true" signature="5458:5496" ph="select * fro... centers" />
-            <marker date="1495453482251" expanded="true" signature="7052:8014" ph="select DISTI... courses" />
-            <marker date="1495453482251" expanded="true" signature="8313:8340" ph="select cid,d... courses" />
-            <marker date="1495453482251" expanded="true" signature="10051:10892" ph="SELECT DISTI... " />
-            <marker date="1495453482251" expanded="true" signature="12639:12695" ph="SELECT stude... students" />
-            <marker date="1495453482251" expanded="true" signature="12756:13597" ph="SELECT DISTI... " />
-            <marker date="1495453482251" expanded="true" signature="15159:15214" ph="SELECT stude... studentsWHERE" />
-            <marker date="1495453482251" expanded="true" signature="15264:16105" ph="SELECT DISTI... " />
-            <marker date="1495453482251" expanded="true" signature="16951:17643" ph="select DISTI... SIC" />
-            <marker date="1495453482251" expanded="true" signature="18913:19060" ph="select disti... courses" />
-            <marker date="1495453482251" expanded="true" signature="19873:20070" ph="select disti... SIC" />
+            <marker date="1495706338707" expanded="true" signature="631:662" ph="select DISTI... " />
+            <marker date="1495706338707" expanded="true" signature="763:840" ph="select * fro... courses" />
+            <marker date="1495706338707" expanded="true" signature="1368:1399" ph="select DISTI... " />
+            <marker date="1495706338707" expanded="true" signature="1500:1597" ph="select * fro... courses" />
+            <marker date="1495706338707" expanded="true" signature="1959:1990" ph="select DISTI... " />
+            <marker date="1495706338707" expanded="true" signature="2100:2179" ph="select * fro... courses" />
+            <marker date="1495706338707" expanded="true" signature="2747:3616" ph="select SSC.s... SSC" />
+            <marker date="1495706338707" expanded="true" signature="3805:4688" ph="select cours... SSC" />
+            <marker date="1495706338707" expanded="true" signature="4168:4547" ph="select cours... SSC" />
+            <marker date="1495706338707" expanded="true" signature="5427:5458" ph="select DISTI... " />
+            <marker date="1495706338707" expanded="true" signature="5495:5533" ph="select * fro... centers" />
+            <marker date="1495706338707" expanded="true" signature="7089:8051" ph="select DISTI... courses" />
+            <marker date="1495706338707" expanded="true" signature="8350:8377" ph="select cid,d... courses" />
+            <marker date="1495706338707" expanded="true" signature="10088:10929" ph="SELECT DISTI... " />
+            <marker date="1495706338707" expanded="true" signature="12676:12732" ph="SELECT stude... students" />
+            <marker date="1495706338707" expanded="true" signature="12793:13634" ph="SELECT DISTI... " />
+            <marker date="1495706338707" expanded="true" signature="15196:15251" ph="SELECT stude... studentsWHERE" />
+            <marker date="1495706338707" expanded="true" signature="15301:16142" ph="SELECT DISTI... " />
+            <marker date="1495706338707" expanded="true" signature="16988:17680" ph="select DISTI... SIC" />
+            <marker date="1495706338707" expanded="true" signature="18950:19097" ph="select disti... courses" />
+            <marker date="1495706338707" expanded="true" signature="19910:20107" ph="select disti... SIC" />
+            <marker date="1495706338707" expanded="true" signature="19910:20124" ph="select disti... SIC" />
+            <marker date="1495706338707" expanded="true" signature="20652:20689" ph="select cid f... courses" />
+            <marker date="1495706338707" expanded="true" signature="20690:20708" ph="/*and course... " />
+            <marker date="1495706338707" expanded="true" signature="20803:20870" ph="select * fro... Students_absence" />
+            <marker date="1495706338707" expanded="true" signature="21120:21212" ph="insert into Students_absence... " />
+            <marker date="1495706338707" expanded="true" signature="21953:21990" ph="select cid f... courses" />
+            <marker date="1495706338707" expanded="true" signature="21991:22009" ph="/*and course... " />
+            <marker date="1495706338707" expanded="true" signature="22101:22168" ph="select * fro... Students_absence" />
+            <marker date="1495706338707" expanded="true" signature="22386:22478" ph="insert into Students_absence... " />
+            <marker date="1495706338707" expanded="true" signature="23981:24049" ph="select disti... centers" />
+            <marker date="1495706338707" expanded="true" signature="24480:25172" ph="select DISTI... SIC" />
+            <marker date="1495706338707" expanded="true" signature="26386:26593" ph="select disti... SIC" />
+            <marker date="1495706338707" expanded="true" signature="28500:28563" ph="select * fro... notices" />
+            <marker date="1495706338707" expanded="true" signature="29745:29839" ph="insert into notices... " />
+            <marker date="1495706338707" expanded="true" signature="30057:30151" ph="insert into notices... " />
+            <marker date="1495706338707" expanded="true" signature="32150:32213" ph="select * fro... notices" />
+            <marker date="1495706338707" expanded="true" signature="33433:33527" ph="insert into notices... " />
+            <marker date="1495706338707" expanded="true" signature="33741:33835" ph="insert into notices... " />
+            <marker date="1495706338707" expanded="true" signature="34186:34520" ph="SELECT disti... " />
+            <marker date="1495706338707" expanded="true" signature="34727:34762" ph="select name users" />
+            <marker date="1495706338707" expanded="true" signature="36694:36762" ph="select disti... centers" />
+            <marker date="1495706338707" expanded="true" signature="37799:37904" ph="select reg_f... reg_forms" />
+            <marker date="1495706338707" expanded="true" signature="38184:38396" ph="select disti... testers_location" />
+            <marker date="1495706338707" expanded="true" signature="39781:39819" ph="select id fr... reg_forms" />
+            <marker date="1495706338707" expanded="true" signature="39902:39965" ph="select * fro... testers_presence" />
+            <marker date="1495706338707" expanded="true" signature="40278:40396" ph="insert into testers_presence... " />
+            <marker date="1495706338707" expanded="true" signature="40602:40720" ph="insert into comments... " />
+            <marker date="1495706338707" expanded="true" signature="41527:41565" ph="select id fr... reg_forms" />
+            <marker date="1495706338707" expanded="true" signature="41648:41739" ph="select * fro... testers_presence" />
+            <marker date="1495706338707" expanded="true" signature="41973:42061" ph="select * fro... testers_location" />
+            <marker date="1495706338707" expanded="true" signature="42343:42461" ph="insert into testers_presence... " />
+            <marker date="1495706338707" expanded="true" signature="42666:42784" ph="insert into comments... " />
+            <marker date="1495706338707" expanded="true" signature="43568:43603" ph="select name users" />
+            <marker date="1495706338707" expanded="true" signature="43948:44046" ph="SELECT cours... courses" />
+            <marker date="1495706338707" expanded="true" signature="44446:44656" ph="SELECT disti... testers_location" />
+            <marker date="1495706338707" expanded="true" signature="45904:45942" ph="select id fr... reg_forms" />
+            <marker date="1495706338707" expanded="true" signature="46048:46107" ph="select * fro... testers_presenceMK" />
+            <marker date="1495706338707" expanded="true" signature="46353:46452" ph="insert into testers_presenceMK... " />
+            <marker date="1495706338707" expanded="true" signature="46619:46730" ph="insert into comments... " />
+            <marker date="1495706338707" expanded="true" signature="47487:47614" ph="select reg_f... reg_forms" />
+            <marker date="1495706338707" expanded="true" signature="48839:48908" ph="select disti... centers" />
+            <marker date="1495706338707" expanded="true" signature="49350:50042" ph="select DISTI... SIC" />
+            <marker date="1495706338707" expanded="true" signature="50963:51676" ph="select DISTI... SIC" />
+            <marker date="1495706338707" expanded="true" signature="53669:53774" ph="select reg_f... reg_forms" />
+            <marker date="1495706338707" expanded="true" signature="54073:54143" ph="select * fro... testers_location" />
+            <marker date="1495706338707" expanded="true" signature="54410:54559" ph="update teste... " />
+            <marker date="1495706338707" expanded="true" signature="54807:54934" ph="update teste... " />
+            <marker date="1495706338707" expanded="true" signature="55356:55480" ph="insert into testers_location... " />
+            <marker date="1495706338707" expanded="true" signature="55719:55823" ph="insert into testers_location... " />
+            <marker date="1495706338707" expanded="true" signature="56877:57442" ph="SELECT DISTI... " />
+            <marker date="1495706338707" expanded="true" signature="58212:58265" ph="select cente... centers" />
+            <marker date="1495706338707" expanded="true" signature="59164:59776" ph="SELECT disti... Students_absence" />
+            <marker date="1495706338707" expanded="true" signature="60689:61301" ph="SELECT disti... Students_absence" />
+            <marker date="1495706338707" expanded="true" signature="62185:62243" ph="delete from " />
+            <marker date="1495706338707" expanded="true" signature="62334:62394" ph="select * fro... Students_absence" />
+            <marker date="1495706338707" expanded="true" signature="62994:63047" ph="select cente... centers" />
+            <marker date="1495706338707" expanded="true" signature="63970:64659" ph="SELECT disti... testers_presence" />
+            <marker date="1495706338707" expanded="true" signature="65610:66168" ph="SELECT disti... testers_presence" />
+            <marker date="1495706338707" expanded="true" signature="67093:67151" ph="delete from " />
+            <marker date="1495706338707" expanded="true" signature="67241:67301" ph="select * fro... testers_presence" />
+            <marker date="1495706338707" expanded="true" signature="67959:68012" ph="select cente... centers" />
+            <marker date="1495706338707" expanded="true" signature="68947:69436" ph="SELECT disti... testers_presenceMK" />
+            <marker date="1495706338707" expanded="true" signature="71040:71682" ph="SELECT DISTI... " />
+            <marker date="1495706338707" expanded="true" signature="71741:72247" ph="SELECT DISTI... " />
+            <marker date="1495706338707" expanded="true" signature="72304:72477" ph="SELECT id ,d... " />
+            <marker date="1495706338707" expanded="true" signature="72304:72479" ph="SELECT id ,d... " />
+            <marker date="1495706338707" expanded="true" signature="72954:73102" ph="SELECT id ,d... " />
+            <marker date="1495706338707" expanded="true" signature="74259:74593" ph="SELECT disti... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/lang/ar/testersAllocation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2006">
-          <caret line="127" column="26" selection-start-line="122" selection-start-column="92" selection-end-line="122" selection-end-column="132" />
+        <state relative-caret-position="310">
+          <caret line="431" column="0" selection-start-line="431" selection-start-column="0" selection-end-line="431" selection-end-column="0" />
           <folding>
             <element signature="e#7#392#0#PHP" expanded="true" />
           </folding>

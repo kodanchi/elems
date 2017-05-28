@@ -36,15 +36,15 @@
                             <div class="col-md-12">
 
                                 <div class="col-md-4">
-                                    <a href="{{asset('storage/examA1.pdf')}}" target="_blank" class="btn btn-primary btn-block">الأخطاء الشائعة</a>
+                                    <a href="{{asset('storage/FexamA1.pdf')}}" target="_blank" class="btn btn-primary btn-block">الأخطاء الشائعة</a>
                                 </div>
 
                                 <div class="col-md-4">
-                                    <a href="{{asset('storage/examA2.pdf')}}" target="_blank" class="btn btn-primary btn-block">إرشادات هامة</a>
+                                    <a href="{{asset('storage/FexamA2.pdf')}}" target="_blank" class="btn btn-primary btn-block">إرشادات هامة</a>
                                 </div>
 
                                 <div class="col-md-4">
-                                    <a href="{{asset('storage/examA3.pdf')}}" target="_blank" class="btn btn-primary btn-block">
+                                    <a href="{{asset('storage/FexamA3.pdf')}}" target="_blank" class="btn btn-primary btn-block">
                                          &nbsp;  مسؤوليات ومهام مسؤول اللجنة &nbsp;
                                     </a>
                                 </div>
@@ -58,19 +58,19 @@
                                 <div class="col-md-12">
 
                                     <div class="col-md-4">
-                                        <a href="{{asset('storage/examA4.pdf')}}" target="_blank" class="btn btn-primary btn-block">
+                                        <a href="{{asset('storage/FexamA4.pdf')}}" target="_blank" class="btn btn-primary btn-block">
                                             &nbsp;  مسؤوليات ومهام مشرف المركز &nbsp;
                                         </a>
                                     </div>
 
                                     <div class="col-md-4">
-                                        <a href="{{asset('storage/examA5.pdf')}}" target="_blank" class="btn btn-primary btn-block">
+                                        <a href="{{asset('storage/FexamA5.pdf')}}" target="_blank" class="btn btn-primary btn-block">
                                             &nbsp;  مهام ومسؤوليات المراقب &nbsp;
                                         </a>
                                     </div>
 
                                     <div class="col-md-4">
-                                        <a href="{{asset('storage/examA6.pdf')}}" target="_blank" class="btn btn-primary btn-block">
+                                        <a href="{{asset('storage/FexamA6.pdf')}}" target="_blank" class="btn btn-primary btn-block">
                                             &nbsp;  تقييم المراقب &nbsp;
                                         </a>
                                     </div>
@@ -86,12 +86,12 @@
                                 <div class="col-md-12">
 
                                     <div class="col-md-4 center-block">
-                                        <a href="{{asset('storage/examA7.pdf')}}" target="_blank" class="btn btn-primary btn-block">
+                                        <a href="{{asset('storage/FexamA7.pdf')}}" target="_blank" class="btn btn-primary btn-block">
                                             &nbsp;  تعهد البطاقة الجامعية &nbsp;
                                         </a>
                                     </div>
                                     <div class="col-md-4 center-block">
-                                        <a href="{{asset('storage/examA8.pdf')}}" target="_blank" class="btn btn-primary btn-block">
+                                        <a href="{{asset('storage/FexamA8.pdf')}}" target="_blank" class="btn btn-primary btn-block">
                                             &nbsp;  محضر غش &nbsp;
                                         </a>
                                     </div>

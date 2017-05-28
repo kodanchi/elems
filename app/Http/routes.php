@@ -306,6 +306,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
     Route::get('/cp/exams/testers/search', 'ExamsController@TestersSearchIndex');
     Route::post('/cp/exams/testers/view', 'ExamsController@TestersSchedule');
 
+    //table of testers and his/her presence
     Route::get('/cp/exams/testers/search/date', 'ExamsController@TestersSearchDateIndex');
     Route::post('/cp/exams/testers/view/presence', 'ExamsController@TestersSchedulePresence');
 
@@ -381,6 +382,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
         Route::get('cp/exams/notice/center','ExamsController@getCenterListForNotice');
         Route::get('cp/exams/notice/building','ExamsController@getBuildingsListForNotice');
         Route::get('cp/exams/notice/SID','ExamsController@getStudentsListForNotice');
+        Route::get('cp/exams/notice/view','ExamsController@noticeView');
 
         //testers schedule
         Route::get('/cp/exams/testers/testersAllocation', 'ExamsController@TestersAllocationIndex');
@@ -408,11 +410,17 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
         //Route::get('/cp/exams/StudentsAbsenceEdit/{id}', 'ExamsController@studentsAbsenceDelete');
 
 
+        //tester presence view
         Route::get('/cp/exams/testersPresenceExport', 'ExamsController@testersPresenceExportIndex');
         Route::post('/cp/exams/testersPresenceExport/export', 'ExamsController@testersPresenceExport');
         Route::get('/cp/exams/testersPresenceExport/export', 'ExamsController@testersPresenceExport');
         Route::get('/cp/exams/testersPresenceExport/export/{center_id}/{date}', 'ExamsController@testersPresenceExportGET');
         Route::get('/cp/exams/testersPresenceExport/export/delete/{id}/{center_id}/{date}', 'ExamsController@testersPresenceDelete');
+
+        //tester presence MK view
+        Route::get('/cp/exams/testersMKPresenceExport', 'ExamsController@testersMKPresenceExportIndex');
+        Route::post('/cp/exams/testersMKPresenceExport/export', 'ExamsController@testersMKPresenceExport');
+
 
 
         Route::get('/cp/exams/examsForms', 'ExamsController@ExamsForms');

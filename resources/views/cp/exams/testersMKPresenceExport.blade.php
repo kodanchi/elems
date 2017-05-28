@@ -18,15 +18,9 @@
             <div class="col-md-12 text-center">
                 <label style="text-align: center">
 
-                    <h2> كشف تحضير المراقبين</h2><br>
-                    @if($forms)
-                    <h2>       لمركز         {{$forms[0]->center_name}}  </h2>
-
-                    <h4>   تاريخ البحث:       {{$date}}
-
-                    </h4> </label>
-                    @endif
-
+                    <h2> كشف تحضير المراقبين من قبل لجنة التصحيح</h2><br>
+                    <h4>   تاريخ البحث:       {{$date}}</h4>
+                </label>
 
 
                 <table class="tableStyle"  style="border:solid;border-color: black;  width:100%" border="1">
@@ -37,14 +31,12 @@
                         <th   style="text-align: center ; font-size: large">م</th>
                         <th style="text-align: center ; font-size: large" >رقم الهوية الوطنية / الإقامة </th>
                         <th style="text-align: center ; font-size: large">اسم المراقب</th>
-                                           <th  style="text-align: center ; font-size: large">اسم المركز </th>
-                                           <th  style="text-align: center ; font-size: large">المبنى </th>
+                                           <th  style="text-align: center ; font-size: large">اسم المادة </th>
+                                           <th  style="text-align: center ; font-size: large">رقم المادة </th>
                         <th  style="text-align: center ; font-size: large">التاريخ </th>
-                        <th  style="text-align: center ; font-size: large">الوقت </th>
                         @if(Auth::User()->getRole() == 'admin' )
                             <th  style="text-align: center ; font-size: large">التعليق </th>
                             <th  style="text-align: center ; font-size: large">التقييم </th>
-                            <th  style="text-align: center ; font-size: large">حذف </th>
                             @endif
                     </tr>
                     </thead>
@@ -55,12 +47,11 @@
                         <tr class="tableStyle" >
                             <td  style="text-align: center">{{$x}}</td>
                             <td  style="text-align: center">{{$form->NID}}</td>
-                            <td style="text-align: right;"><div style="padding-right: 6px">{{$form->fname}} {{$form->faname}} {{$form->gfaname}} {{$form->lname}}</div></td>
+                            <td style="text-align: right;"><div style="padding-right: 6px">{{$form->tester}}</div></td>
 
-                            <td>{{$form->center_name}}</td>
-                            <td>{{$form->building}}</td>
+                            <td>{{$form->course_name}}</td>
+                            <td>{{$form->course}}</td>
                             <td>{{$form->date}}</td>
-                            <td>{{$form->time}}</td>
                             @if(Auth::User()->getRole() == 'admin')
                                 {{--<td><a href="{{url('/cp/exams/testersPresenceExportEdit/'.$form->id)}}">
                                         <span class="glyphicon glyphicon-pencil btn-lg"></span>
@@ -70,9 +61,6 @@
                                 <td>{{$form->comment}}</td>
 
                                 <td>{{$form->rate}}</td>
-                                <td>
-                                    <button type="button" class="btn-link" data-toggle="modal" data-target="#exampleModal" data-whatever="{{$form->id}}"><span class="glyphicon glyphicon-remove-circle  btn-lg" style="color: rgba(203, 0, 14, 0.92)"></span></button>
-                                </td>
                             @endif
                         </tr>
                     <?php $x++; ?>
@@ -119,7 +107,7 @@
                             //$newDate=urlencode($forms[0]->date);
                             ?>
                             <input type="hidden" disabled="disabled" name="date" id="date" value="{{$newDate}}">
-                            <input type="hidden" disabled="disabled" name="center_id" id="center_id" value="{{$forms[0]->center_id}}">
+                            {{--<input type="hidden" disabled="disabled" name="center_id" id="center_id" value="{{$forms[0]->center_id}}">--}}
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default btn-md" data-dismiss="modal" >إلغاء</button>

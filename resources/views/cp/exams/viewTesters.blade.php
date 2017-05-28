@@ -84,14 +84,14 @@
                                                         <div class="row">
                                                         <div class="col-md-12 ">
                                                                 <div class="col-md-4 center-block">
-                                                                    <a href="{{asset('storage/examA5.pdf')}}" target="_blank" class="btn btn-primary btn-block">&nbsp;  مهام ومسؤوليات المراقب &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                    <a href="{{asset('FexamA5.pdf')}}" target="_blank" class="btn btn-primary btn-block">&nbsp;  مهام ومسؤوليات المراقب &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                                     </a>
                                                                 </div>
 
 
 
                                                                 <div class="col-md-4 center-block">
-                                                                    <a href="{{asset('storage/examA3.pdf')}}" target="_blank" class="btn btn-primary btn-block">&nbsp;  مسؤوليات ومهام مسؤول اللجنة &nbsp;
+                                                                    <a href="{{asset('FexamA3.pdf')}}" target="_blank" class="btn btn-primary btn-block">&nbsp;  مسؤوليات ومهام مسؤول اللجنة &nbsp;
                                                                     </a>
                                                                 </div>
 

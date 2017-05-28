@@ -122,13 +122,17 @@ padding-bottom: 5px;">إثبات حضور للاختبارت النهائية </
 
 
             <div style="float: right">
-                <p style=" text-align: center; padding-left: 10px; font-size: x-large">
                     <br>
                     <br>
 
 
 
-                    <img src="{{asset('storage/stamp1.png')}}" style="width: 270px ; height: 200px">
+                {{--<div style="z-index: 99;position: relative;  ">
+                    <h3>الختم</h3>
+                </div>--}}
+                <div style="z-index: 1;position: fixed;  ">
+                    <img src="{{asset('storage/stamp1.png')}}" style="width: 270px ; height: 200px;">
+                </div>
 
 
 

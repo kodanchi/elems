@@ -15,6 +15,8 @@
 
                         {!! Form::open(['url' => 'cp/exams/testersMK/update', 'method' => 'post','class'=>'newsletter-form' ]) !!}
 
+                        {!! Form::hidden('user_id', $systemUserID, ['id' => 'user_id']) !!}
+                        {!! Form::hidden('user_name', $systemUserName, ['id' => 'user_name']) !!}
 
                         {!! Form::label('date_l','التاريخ', ['id' => 'date_l']) !!}
                             <select name="date" class="form-control selectpicker" id="date" style="width:350px" data-live-search="true" required>

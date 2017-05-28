@@ -124,31 +124,35 @@
                                     </div>
                                 </div>
 
+
+                            @if(!in_array('MK',Auth::user()->getAllroles()))
                             <div class="col-md-2">
                                 <div class="center">
                                     <a href="{{url('cp/exams/testers')}}" >
+                                    {{--<a href="{{url('cp/exams/testersMK')}}" >--}}
                                         {{--<img src="{{asset('storage/reg.png')}}" alt="E-Learning" width="400px"  height="120px" class="img-circle">--}}
                                         {{--<img src="{{asset('storage/regN.png')}}" alt="E-Learning" width="300px"  height="72px" class="img-circle">--}}
                                         <img src="{{asset('storage/icon_new5.svg')}}" alt="E-Learning" width="300px"  height="72px" class="img-circle">
                                         <h4 style="text-align: center">تحضير المراقبين</h4></a>
                                 </div>
                             </div>
+                            @endif
+
+                            @if(in_array('MK',Auth::user()->getAllroles()))
+                            <div class="col-md-2">
+                                <div class="center">
+                                    <a href="{{url('cp/exams/testersMK')}}">
+                                    {{--<img src="{{asset('storage/reg.png')}}" alt="E-Learning" width="400px"  height="120px" class="img-circle">--}}
+                                    {{--<img src="{{asset('storage/regN.png')}}" alt="E-Learning" width="300px"  height="72px" class="img-circle">--}}
+                                    <img src="{{asset('storage/icon_new5.svg')}}" alt="E-Learning" width="300px"  height="72px" class="img-circle">
+                                    <h4 style="text-align: center">تقييم المراقبين</h4></a>
+                                </div>
+                            </div>
+                            @endif
 
 
 
 
-                                @if(in_array('admin',Auth::user()->getAllroles()))
-                                <div class="col-md-2" >
-                                    <div class="center">
-                                        <a href="{{url('/cp/exams/testers/testersAllocation')}}">
-                                            {{--<img src="{{asset('storage/dis.png')}}" alt="E-Learning" width="500px"  height="120px" class="img-circle">--}}
-                                            {{--<img src="{{asset('storage/disN.png')}}" alt="E-Learning" width="300px"  height="72px" class="img-circle">--}}
-                                            <img src="{{asset('storage/icon_new8.svg')}}" alt="E-Learning" width="300px"  height="72px" class="img-circle">
-                                            <h4 style="text-align: center">تعيين المراقبين لللمراكز</h4></a>
-                                    </div>
-                                </div><!--/.col-md-4-->
-
-                                @endif
 
                             <div class="col-md-2" >
                                 <div class="center">
@@ -184,6 +188,16 @@
                                         <h4 style="text-align: center">جدول المراقبين</h4></a>
                                 </div>
                             </div>
+
+                            <div class="col-md-2">
+                                <div class="center">
+                                    <a href="{{url('cp/exams/testers/search/date')}}">
+                                        {{--<img src="{{asset('storage/rate.png')}}" alt="E-Learning" width="400px" height="120px" class="img-circle" >--}}
+                                        {{--<img src="{{asset('storage/rateN.png')}}" alt="E-Learning" width="300px" height="72px" class="img-circle" >--}}
+                                        <img src="{{asset('storage/ICONobserver_presence.png')}}" alt="E-Learning" width="300px" height="72px" class="img-circle" >
+                                        <h4 style="text-align: center">جدول حضور المراقب</h4></a>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="row col-md-12 "  style="border-style: solid; border-color: #8c1c00;"></div>
@@ -191,6 +205,29 @@
 
                         <div class="row col-md-12 " >
                             <br>
+
+                            <div class="col-md-2">
+                                <div class="center">
+                                    <a href="{{url('cp/exams/notice/view')}}">
+                                        {{--<img src="{{asset('storage/rate.png')}}" alt="E-Learning" width="400px" height="120px" class="img-circle" >--}}
+                                        {{--<img src="{{asset('storage/rateN.png')}}" alt="E-Learning" width="300px" height="72px" class="img-circle" >--}}
+                                        <img src="{{asset('storage/ICONstd_notice_view.png')}}" alt="E-Learning" width="300px" height="72px" class="img-circle" >
+                                        <h4 style="text-align: center">الملاحظات على الطلاب</h4></a>
+                                </div>
+                            </div>
+
+                            @if(in_array('admin',Auth::user()->getAllroles()) || in_array('MK',Auth::user()->getAllroles()))
+                                <div class="col-md-2">
+                                    <div class="center">
+                                        <a href="{{url('cp/exams/testersMKPresenceExport')}}">
+                                            {{--<img src="{{asset('storage/rate.png')}}" alt="E-Learning" width="400px" height="120px" class="img-circle" >--}}
+                                            {{--<img src="{{asset('storage/rateN.png')}}" alt="E-Learning" width="300px" height="72px" class="img-circle" >--}}
+                                            <img src="{{asset('storage/ICONobserver_evaluation.png')}}" alt="E-Learning" width="300px" height="72px" class="img-circle" >
+                                            <h4 style="text-align: center">تقييم المراقبين (لجنة التصحيح)</h4></a>
+                                    </div>
+                                </div>
+                            @endif
+
                             @if(in_array('admin',Auth::user()->getAllroles()))
                                 <div class="col-md-2" >
                                     <div class="center">
@@ -205,17 +242,30 @@
 
 
 
-                                @if(in_array('admin',Auth::user()->getAllroles()))
-                                    <div class="col-md-2">
-                                        <div class="center">
-                                            <a href="{{url('cp/form/emr/evaluation')}}">
-                                                {{--<img src="{{asset('storage/rate.png')}}" alt="E-Learning" width="400px" height="120px" class="img-circle" >--}}
-                                                {{--<img src="{{asset('storage/rateN.png')}}" alt="E-Learning" width="300px" height="72px" class="img-circle" >--}}
-                                                <img src="{{asset('storage/icon_new3_option2.svg')}}" alt="E-Learning" width="300px" height="72px" class="img-circle" >
-                                                <h4 style="text-align: center">تقييم المراقبين</h4></a>
-                                        </div>
+                            @if(in_array('admin',Auth::user()->getAllroles()))
+                                <div class="col-md-2">
+                                    <div class="center">
+                                        <a href="{{url('cp/form/emr/evaluation')}}">
+                                            {{--<img src="{{asset('storage/rate.png')}}" alt="E-Learning" width="400px" height="120px" class="img-circle" >--}}
+                                            {{--<img src="{{asset('storage/rateN.png')}}" alt="E-Learning" width="300px" height="72px" class="img-circle" >--}}
+                                            <img src="{{asset('storage/icon_new3_option2.svg')}}" alt="E-Learning" width="300px" height="72px" class="img-circle" >
+                                            <h4 style="text-align: center">تقييم المراقبين</h4></a>
                                     </div>
-                                @endif
+                                </div>
+                            @endif
+
+                            @if(in_array('admin',Auth::user()->getAllroles()))
+                                <div class="col-md-2" >
+                                    <div class="center">
+                                        <a href="{{url('/cp/exams/testers/testersAllocation')}}">
+                                            {{--<img src="{{asset('storage/dis.png')}}" alt="E-Learning" width="500px"  height="120px" class="img-circle">--}}
+                                            {{--<img src="{{asset('storage/disN.png')}}" alt="E-Learning" width="300px"  height="72px" class="img-circle">--}}
+                                            <img src="{{asset('storage/icon_new8.svg')}}" alt="E-Learning" width="300px"  height="72px" class="img-circle">
+                                            <h4 style="text-align: center">تعيين المراقبين لللمراكز</h4></a>
+                                    </div>
+                                </div><!--/.col-md-4-->
+
+                            @endif
 
                             @if(in_array('admin',Auth::user()->getAllroles()))
                                 <div class="col-md-2">
@@ -223,12 +273,41 @@
                                         <a href="{{url('cp/printforms/TestersAndStatistics')}}">
                                             {{--<img src="{{asset('storage/rate.png')}}" alt="E-Learning" width="400px" height="120px" class="img-circle" >--}}
                                             {{--<img src="{{asset('storage/rateN.png')}}" alt="E-Learning" width="300px" height="72px" class="img-circle" >--}}
-                                            <img src="{{asset('storage/exammindmap.png')}}" alt="E-Learning" width="300px" height="72px" class="img-circle" >
+                                            <img src="{{asset('storage/ICONexammindmap.png')}}" alt="E-Learning" width="300px" height="72px" class="img-circle" >
                                             <h4 style="text-align: center">تفاصيل المراقبين المعينين</h4></a>
                                     </div>
                                 </div>
                             @endif
+
                         </div>
+
+                        @if(in_array('admin',Auth::user()->getAllroles()))
+                        <div class="row col-md-12 "  style="border-style: solid; border-color: #8c1c00;"></div>
+                        @endif
+
+                        <div class="row col-md-12 " >
+                            <br>
+
+
+
+
+
+                            @if(in_array('admin',Auth::user()->getAllroles()))
+                                <div class="col-md-2">
+                                    <div class="center">
+                                        <a href="{{url('cp/printforms/testersAllocationPresenceStatistics/')}}">
+                                            {{--<img src="{{asset('storage/rate.png')}}" alt="E-Learning" width="400px" height="120px" class="img-circle" >--}}
+                                            {{--<img src="{{asset('storage/rateN.png')}}" alt="E-Learning" width="300px" height="72px" class="img-circle" >--}}
+                                            <img src="{{asset('storage/ICONobserver_presence_compare.png')}}" alt="E-Learning" width="300px" height="72px" class="img-circle" >
+                                            <h4 style="text-align: center">المراقبين المعيينين والمحضرين</h4></a>
+                                    </div>
+                                </div>
+                            @endif
+
+
+
+                        </div>
+
                         </div>
 
                     </div>
