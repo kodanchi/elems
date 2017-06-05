@@ -36,7 +36,10 @@
                                     </div>
 
                                     <div class="col-md-6">
-                                        <h5>{{trans('objection.major')}}: {{trans('majorCodes.'.$student->major)}}</h5>
+                                        <h5 style="color: red">{{trans('objection.major')}}: {{trans('majorCodes.'.$student->major)}}</h5>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5 style="color: red">المركز الذي تم الإختبار فيه: {{trans('AllCenters.'.$course->center_id)}}</h5>
                                     </div>
 
                                 </div>
@@ -114,11 +117,15 @@
                                     <a href="/cp/students/objection/view/{{$next}}" class="button col-md-3">{{trans('settings.next')}}</a>
                                 @endif
                             </div>
+
+
                             <div class="col-md-12">
 
-
                             </div>
+
+
                         </div>
+                        <h5 style="float: right"><b>تاريخ الطلب : </b>{{date("D | j M Y | g:i  A",strtotime($form->created_at))}}</h5>
                     </div>
                 </div>
             </div>

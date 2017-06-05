@@ -113,7 +113,7 @@
                         <div class="row col-md-12 " >
 
                             <br>
-
+                            @if(in_array('admin',Auth::user()->getAllroles()))
                                 <div class="col-md-2" >
                                     <div class="center">
                                         <a href="{{url('/cp/exams/testersCenters')}}">
@@ -123,9 +123,10 @@
                                             <h4 style="text-align: center">كشوفات المراقبين</h4></a>
                                     </div>
                                 </div>
+                            @endif
 
 
-                            @if(!in_array('MK',Auth::user()->getAllroles()))
+                            @if(in_array('admin',Auth::user()->getAllroles()))
                             <div class="col-md-2">
                                 <div class="center">
                                     <a href="{{url('cp/exams/testers')}}" >
@@ -138,7 +139,7 @@
                             </div>
                             @endif
 
-                            @if(in_array('MK',Auth::user()->getAllroles()))
+                            @if(in_array('MK',Auth::user()->getAllroles()) )
                             <div class="col-md-2">
                                 <div class="center">
                                     <a href="{{url('cp/exams/testersMK')}}">
@@ -167,7 +168,7 @@
 
 
 
-
+                            @if(in_array('admin',Auth::user()->getAllroles()))
                                 <div class="col-md-2" >
                                     <div class="center">
                                         <a href="{{url('/cp/exams/testersPresenceExport')}}">
@@ -199,6 +200,7 @@
                                 </div>
                             </div>
                         </div>
+                        @endif
 
                         <div class="row col-md-12 "  style="border-style: solid; border-color: #8c1c00;"></div>
 

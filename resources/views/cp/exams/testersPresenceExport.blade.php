@@ -131,7 +131,7 @@
         </div>
     </div>
 
-    <script >
+    <script>
 
         //$(document).ready(function() { $("#center_id").hide(); $("#date").hide();});
 

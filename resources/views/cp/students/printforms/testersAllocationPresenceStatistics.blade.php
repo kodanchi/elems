@@ -49,6 +49,7 @@
                                     @foreach($testers as $tester)
                                         <?php $form->room=trim($form->room); $tester->room=trim($tester->room);  ?>
                                         <?php $form->building=trim($form->building); $tester->building=trim($tester->building);  ?>
+
                                         @if($form->room==$tester->room && $form->building==$tester->building)
                                             {{--<p>{{$tester->NID}}</p> <p>{{$tester->tester}}</p> <p>{{$tester->time}}</p> <p>{{$tester->tester_type}}</p>--}}
                                             @if($y%2==0)
@@ -76,6 +77,7 @@
                                     <?php $yy=0; ?>
                                     @foreach($testersPresence as $tester)
                                         <?php $form->room=trim($form->room); $tester->room=trim($tester->room);  ?>
+                                        <?php $form->building=trim($form->building); $tester->building=trim($tester->building);  ?>
                                         @if($form->room==$tester->room && $form->building==$tester->building)
                                             {{--<p>{{$tester->NID}}</p> <p>{{$tester->tester}}</p> <p>{{$tester->time}}</p> <p>{{$tester->tester_type}}</p>--}}
                                             @if($yy%2==0)

@@ -131,7 +131,7 @@ padding-bottom: 5px;">إثبات حضور للاختبارت النهائية </
                     <h3>الختم</h3>
                 </div>--}}
                 <div style="z-index: 1;position: fixed;  ">
-                    <img src="{{asset('storage/stamp1.png')}}" style="width: 270px ; height: 200px;">
+                    <img src="{{asset('storage/collegeSignature.png')}}" style="width: 270px ; height: 200px;">
                 </div>
 
 

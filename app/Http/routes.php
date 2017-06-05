@@ -132,6 +132,69 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
     Route::any('students/Info/update/{id}', 'Std_updates@UpdateIndex');
 
 
+    /*******
+     * @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+     * @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+     * @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+     * @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+     * @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+     * @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+     * @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+     * @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+     * @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+     * @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+     * @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+     * @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+     * @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+     * @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+     ******/
+
+
+    //new project LD
+    Route::get('ld/test/programs', 'LD@ViewPrograms');
+    Route::post('ld/test/add/program', 'LD@AddPrograms');
+    Route::post('ld/test/delete/program', 'LD@DeletePrograms');
+
+    Route::get('ld/test/programInstance', 'LD@ViewProgramsInstance');
+    Route::post('/ld/test/add/programInstance', 'LD@AddProgramsInstance');
+    Route::post('ld/test/delete/ProgramsInstance', 'LD@DeleteProgramsInstance');
+
+    Route::get('ld/test/courses/', 'LD@ViewCourses');
+    Route::post('/ld/test/add/courses', 'LD@AddCourses');
+    Route::post('ld/test/delete/courses', 'LD@DeleteCourse');
+
+    Route::get('ld/test/tasks', 'LD@ViewTask');
+    Route::post('ld/test/add/task', 'LD@AddTask');
+    Route::post('ld/test/delete/task', 'LD@DeleteTask');
+
+
+    Route::get('ld/test/faculty/', 'LD@ViewFaculty');
+    Route::post('/ld/test/add/faculty', 'LD@AddFaculty');
+    Route::post('ld/test/delete/faculty', 'LD@DeleteFaculty');
+
+    //Route::get('ld/test/delete/program/delete/{id}', 'LD@resvApproveReject');
+
+
+
+
+    /*******
+     * @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+     * @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+     * @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+     * @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+     * @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+     * @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+     * @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+     * @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+     * @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+     * @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+     * @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+     * @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+     * @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+     * @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+     ******/
+
+
 
     /*Route::get('/form', 'FormsController@closed');
     Route::get('/form/emr', 'RegFormController@closed');
@@ -306,9 +369,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
     Route::get('/cp/exams/testers/search', 'ExamsController@TestersSearchIndex');
     Route::post('/cp/exams/testers/view', 'ExamsController@TestersSchedule');
 
-    //table of testers and his/her presence
-    Route::get('/cp/exams/testers/search/date', 'ExamsController@TestersSearchDateIndex');
-    Route::post('/cp/exams/testers/view/presence', 'ExamsController@TestersSchedulePresence');
+
 
 
     Route::group(['middleware' => ['conflictCP']], function () {
@@ -394,7 +455,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
 
 
 
-//testers name list FORM
+       //testers name list FORM
         Route::get('/cp/exams/testersCenters', 'PrintController@IndexC');
         Route::get('/cp/exams/testersCenters/CC', 'PrintController@IndexCC');
         Route::post('/cp/exams/testersForm', 'PrintController@printC');
@@ -438,6 +499,11 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
         //student exams table
         Route::get('/cp/exams/lookup', 'ExamsController@getCPExamLookup');
         Route::post('/cp/exams/lookup/table', 'ExamsController@CPexamLookup');
+
+//table of testers and his/her presence
+        Route::get('/cp/exams/testers/search/date', 'ExamsController@TestersSearchDateIndex');
+        Route::post('/cp/exams/testers/view/presence', 'ExamsController@TestersSchedulePresence');
+
 
     });
 

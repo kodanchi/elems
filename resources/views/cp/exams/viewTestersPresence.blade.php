@@ -6,6 +6,7 @@
                   <div class="row ">
                       <div class="col-md-12">
                           <div class="panel panel-default">
+
                               <div class="panel-heading">    جدول تحضير المراقب - {{$forms[0]->card_id}}</div>
 
                               <div class="panel-body ">
@@ -170,6 +171,10 @@
                                                   </div>
                                               </div>
                                           @endif
+
+
+
+
 
                                   </div>
                               </div>
